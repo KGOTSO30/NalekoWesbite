@@ -1,0 +1,41 @@
+/* src/index.css (or your main CSS file) */
+  @font-face {
+    font-family: "Spaced";
+    src: url('Fonts/spaced-otf.otf') format("opentype");
+    }
+        /* Custom CSS for specific colors and shadows not directly in Tailwind's default palette */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .header {
+            font-family: 'Spaced';
+        }
+        .bg-naleko-dark-blue {
+            background-color: #120C4E;
+        }
+        .text-naleko-dark-blue {
+            color: #120C4E;
+        }
+        .bg-light-blue-alpha {
+            background-color: rgba(132, 181, 232, 0.38);
+        }
+        .shadow-custom-light {
+            box-shadow: 7px 7px 7px #D9D9D9;
+        }
+        .shadow-custom-dark {
+            box-shadow: 1.8px 3.6px 3.6px rgba(0, 0, 0, 0.25);
+        }
+        .outline-white-1px {
+            outline: 1px white solid;
+            outline-offset: -1px;
+        }
+        .outline-naleko-blue-0_54px {
+            outline: 0.54px #120C4E solid;
+            outline-offset: -0.54px;
+        }
+        .border-white-1_5px {
+            border: 1.5px white solid;
+        }
+        .text-naleko-blue-alpha {
+            color: rgba(17.74, 12.26, 78.05, 0.95);
+        }

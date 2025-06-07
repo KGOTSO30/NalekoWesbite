@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect With Us</title>
+    <title>Who We Serve</title>
      <link href="/src/StylesFinal.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com">
-    </script>
+      <!-- Swiper.js for the carousel functionality -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,11 +18,11 @@
              <!--  Navigation Bar Begins Here-->
       <header class="bg-naleko-dark-blue text-white py-6 px-4 shadow-md">
         <div class="container ">
-            <div class="text-4xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
-            <nav class="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2 text-sm md:text-base font-semibold">
+            <div class="text-4xl md:text-5xl header mb-[31px] header">Naleko Digital Solutions</div>
+            <nav class="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2 text-sm md:text-base header">
                <a href="WhoWeAre.html" class="hover:text-blue-300 transition duration-300">Who we are</a>
                 <a href="WhatWeDo.html" class="hover:text-blue-300 transition duration-300">What we do</a>
-                <a href="WhoWeServe.html" class="hover:text-blue-300 transition duration-300">Who we serve</a>
+                <a href="#StartPoint" class="hover:text-blue-300 transition duration-300">Who we serve</a>
                 <a href="ContactUs.html" class="hover:text-blue-300 transition duration-300">Contact Us</a>
                 <a href="#" class="hover:text-blue-300 transition duration-300">Corp Training</a>
                 <a href="#" class="hover:text-blue-300 transition duration-300">Academy</a>
@@ -47,7 +50,248 @@
                 <!--  Navigation Bar ENDS Here-->
 
 
+<main class="flex-grow p-4">
 
+                    <section class="text-center py-12 px-4 mb-4">
+                    
+                    <!-- Main Title -->
+                    <h2 id="StartPoint" class="text-3xl font-black text-[#120C4E] mb-4">
+                        Who we serve
+                    </h2>
+
+                    <!-- Primary Subheading -->
+                    <p class="text-lg font-black text-[#120C4E] max-w-6xl mx-auto mb-3">
+                        "A trusted, impact-driven partner empowering organizations with innovative, scalable cloud solutions that transform operations, drive growth, and create lasting value."
+                    </p>
+
+                    <!-- Secondary Subheading -->
+                    <p class="text-base text-black max-w-6xl mx-auto">
+                        Naleko Digital Solutions consistently delivers exceptional results across industries, combining technical excellence with a deep understanding of business and social impact.
+                    </p>
+
+                    </section>
+
+    <!-- Swiper Carousel Container -->
+        <div class="swiper testimonial-carousel max-w-6xl mx-auto px-4 mb-4">
+            <div class="swiper-wrapper">
+
+                <!-- Slide 1: Analytics Hive -->
+                <div class="swiper-slide w-96 h-75">
+                    <div class="card-content">
+                        <!-- Logo Heading -->
+                        <div class="flex-shrink-0">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/AnalyticsHive.jpeg" alt="Analytics Hive Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x64/FFFFFF/000000?text=Analytics+Hive';">
+                        </div>
+                        <!-- Testimonial Text -->
+                        <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
+                            “Our partnership with Naleko led to high-impact Salesforce implementations in the financial sector and SMBs, improving sales productivity and client onboarding. Naleko brought precision, collaboration, and strong communication to every project.”
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="flex-shrink-0">
+                            <p class="font-semibold text-gray-900">Justice Chikomba</p>
+                            <p class="text-sm text-gray-500">CEO of Analytics Hive</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: African Women's Movement -->
+                <div class="swiper-slide w-96 h-75">
+                    <div class="card-content">
+                        <!-- Logo Heading -->
+                        <div class="flex-shrink-0">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/AWM.jpeg" alt="African Women's Movement Logo" onerror="this.onerror=null;this.src='https://placehold.co/145x64/FFFFFF/000000?text=AWM';">
+                        </div>
+                        <!-- Testimonial Text -->
+                        <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
+                            "At the African Women’s Movement (AWM), we believe in the power of collaboration to drive meaningful change, and our partnership with Naleko Digital Solutions has been nothing short of transformative."
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="flex-shrink-0">
+                            <p class="font-semibold text-gray-900">Refilwe Matenche</p>
+                            <p class="text-sm text-gray-500">President of African Women’s Movement (AWM)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: She Leads Holdings -->
+                <div class="swiper-slide w-96 h-75">
+                    <div class="card-content">
+                        <!-- Logo Heading -->
+                        <div class="flex-shrink-0">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/SheLeads.jpeg" alt="Partner Logo">
+                        </div>
+                        <!-- Testimonial Text -->
+                        <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
+                          “Naleko delivered a seamless Salesforce rollout, automating sales, logistics, and finance, and integrating with Xero. Their expert consultant ensured a smooth, responsive, and highly tailored experience that supported business growth.”
+                      </blockquote>
+                        <!-- Author -->
+                        <div class="flex-shrink-0">
+                            <p class="font-semibold text-gray-900">Nthabiseng Sekanka</p>
+                            <p class="text-sm text-gray-500">CEO of She Leads Holdings</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Tshegofatsa Rona Welfare -->
+                <div class="swiper-slide w-96 h-75">
+                    <div class="card-content">
+                        <!-- Logo Heading -->
+                        <div class="flex-shrink-0">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/TshegofatsaRona.jpeg" alt="Partner Logo">
+                        </div>
+                        <!-- Testimonial Text -->
+                        <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
+                                “Naleko empowered our non-profit with a Salesforce system that revolutionized donor, volunteer, and fundraising management. Their training and support were crucial in helping our team adopt the system confidently.”
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="flex-shrink-0">
+                            <p class="font-semibold text-gray-900">Cynthia Dinalane</p>
+                            <p class="text-sm text-gray-500">Founder of Tshegofatsa Rona Welfare</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Thandulwazi Maths & Science Academy -->
+                <div class="swiper-slide w-96 h-75">
+                    <div class="card-content">
+                        <!-- Logo Heading -->
+                        <div class="flex-shrink-0">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/Thandulwazi.jpeg" alt="Partner Logo">
+                        </div>
+                        <!-- Testimonial Text -->
+                        <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
+                           “Through their sponsorship and mentorship at the TeensinAI Global Techathon, Naleko inspired the next generation of innovators. Their team’s energy and commitment left a lasting impact on our learners.”
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="flex-shrink-0">
+                            <p class="font-semibold text-gray-900">Khumo Kekana</p>
+                            <p class="text-sm text-gray-500">Parent Volunteer of Thandulwazi Maths & Science Academy</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Slide 6: Engen South Africa -->
+                <div class="swiper-slide w-96 h-75">
+                    <div class="card-content">
+                        <!-- Logo Heading -->
+                        <div class="flex-shrink-0">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/Engen.jpeg" alt="Partner Logo">
+                        </div>
+                        <!-- Testimonial Text -->
+                        <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
+                           “Naleko’s team was professional, dedicated, and highly skilled throughout our Salesforce project. Their lasting impact is a testament to their quality and work ethic.”
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="flex-shrink-0">
+                            <p class="font-semibold text-gray-900">Crystal Burger</p>
+                            <p class="text-sm text-gray-500">Project Manager of Engen South Africa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Redigitised -->
+                <div class="swiper-slide w-96 h-75">
+                    <div class="card-content">
+                        <!-- Logo Heading -->
+                        <div class="flex-shrink-0">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/Redigitised.png" alt="Partner Logo">
+                        </div>
+                        <!-- Testimonial Text -->
+                        <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
+                           “Naleko exceeded expectations with their tailored, future-forward solutions and unwavering support. A dependable partner who genuinely cares about client success.”
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="flex-shrink-0">
+                            <p class="font-semibold text-gray-900">Luke Woods</p>
+                            <p class="text-sm text-gray-500">MD of Redigitised UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                      <!-- Slide 8: Divine Renovation -->
+                <div class="swiper-slide w-96 h-75">
+                    <div class="card-content">
+                        <!-- Logo Heading -->
+                        <div class="flex-shrink-0">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/StithiansCollege.png" alt="Partner Logo">
+                        </div>
+                        <!-- Testimonial Text -->
+                        <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
+                           “Naleko Digital Solutions embodies grace, professionalism, and integrity in every interaction. Their values driven approach and sincere commitment make them a trusted and inspiring partner.”
+
+                        </blockquote>
+                        <!-- Author -->
+                        <div class="flex-shrink-0">
+                            <p class="font-semibold text-gray-900">Neil Houston</p>
+                            <p class="text-sm text-gray-500">IT Manager of Divine Renovation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+    </section>
+
+</div>
+
+    <script>
+        // Initialize Swiper.js
+        const swiper = new Swiper('.testimonial-carousel', {
+            // This is the 'coverflow' effect you wanted
+            effect: 'coverflow',
+            grabCursor: true,      // Shows a "grab" cursor on hover
+            centeredSlides: true,  // Keeps one slide in the absolute center
+            slidesPerView: 'auto', // Automatically calculates how many slides to show
+            loop: true,            // Enables continuous looping
+            spaceBetween: 30,
+            
+            // Autoplay configuration
+            autoplay: {
+                delay: 3000,                 // 7 seconds
+                disableOnInteraction: false, // Autoplay will not be disabled after user interactions
+                pauseOnMouseEnter: true,     // Pauses autoplay on mouse enter
+            },
+            
+            // Configuration for the coverflow effect
+            coverflowEffect: {
+                rotate: 30,        // Rotation of the side slides
+                stretch: 1,        // How much to stretch the slides
+                depth: 50,        // The depth of the 3D effect
+                modifier: 2,       // A multiplier for all effects
+                slideShadows: true,// Adds shadows to the sides of the slides
+            },
+            
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+
+            <section class="flex flex-col items-center justify-center text-center px-4 py-10 bg-white">
+                <!-- Heading -->
+                <h2 class="text-2xl font-semibold text-[#120C4E] mb-4">
+                    Your Team’s Success Could Be Next
+                </h2>
+
+                <!-- Subtext -->
+                <p class="text-base text-[#120C4E] max-w-xl mb-6">
+                    Partner with Naleko to unlock smarter systems, stronger teams, and long-term digital success.
+                </p>
+
+                <!-- Button -->
+                <div class="bg-[rgba(17,12,78,0.95)] text-white text-xl font-semibold px-6 py-3 rounded-lg hover:bg-opacity-90 transition">
+                    Book a Discovery Call
+                </div>
+            </section>
+
+
+</main>
 
 
 
@@ -56,8 +300,8 @@
                 <!--  Site Footer Begins Here -->
 
     
-    <footer class=" bg-naleko-dark-blue text-white py-8 px-4 p-4">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer class=" bg-naleko-dark-blue text-white py-8 px-4 p-4"> <!-- Need five columns-->
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                  <div class="flex items-center mb-4">
                 <!-- Cloud Icon -->
@@ -104,9 +348,9 @@
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="#WhoWeAre" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                    <li><a href="#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
                     <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
                 </ul>
             </div>
@@ -120,7 +364,7 @@
                 </ul>
             </div>
 
-            <div class="flex flex-row justify-between items-center mb-10">
+            
                     <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                 <div class="flex items-center mb-2">
@@ -143,10 +387,13 @@
             </div>
                  
             </div>
-            <div class="flex flex-col items-center md:items-end text-center md:text-right">
-                 <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder" class="mt-4 w-16 h-20">
+            <div class="flex flex-col items-center md:items-start text-center md:text-right">
+                
+                    <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder" class="mt-0 w-13 h-18 scale-75">
+                
             </div>
-            </div>
+            
+            
             
             
         </div>
@@ -157,5 +404,7 @@
 
                 <!--  Site footer Ends Here -->
     
+
+                
 </body>
 </html>

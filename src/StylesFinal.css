@@ -39,3 +39,258 @@
         .text-naleko-blue-alpha {
             color: rgba(17.74, 12.26, 78.05, 0.95);
         }
+
+
+        /* Page Container - Equivalent to w-[1284px] h-[2485px] relative bg-white overflow-hidden */
+.page-container {
+    width: 1284px; /* You might want to make this responsive with max-width and percentages */
+    height: 2485px; /* Consider using min-height and letting content dictate height */
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    margin: 0 auto; /* Center the container if it has a fixed width */
+}
+
+
+/* StylesFinal.css */
+
+/* ... (your existing custom styles) ... */
+
+.header-background {
+    background-image: url('/src/Images/GirlsIntech.jpeg'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: center; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+/* Optional: Add an overlay for better text readability if your image is busy */
+.header-overlay {
+    position: relative; /* Needed for the pseudo-element overlay */
+}
+
+.header-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 0; /* Ensures the overlay is behind the content */
+}
+
+/* To make sure your header content is above the overlay */
+.header-overlay > div {
+    position: relative;
+    z-index: 1;
+}
+
+.call-to-action-button {
+    display: inline-flex;
+    padding: 10px 20px; /* p-2.5 */
+    background-color: rgba(49, 46, 129, 0.95); /* bg-indigo-950/95 */
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* gap-2.5 */
+    color: white;
+    font-size: 24px; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+    text-decoration: none;
+    cursor: pointer;
+    left: 518px;
+    top: 238px; /* Relative to hero-section top */
+    position: absolute;
+}
+
+
+/* What We Offer Section */
+.offer-section {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 593px; /* Adjust based on your layout */
+    padding: 20px;
+}
+
+.offer-section .section-title {
+    color: #312E81;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    width: 655px;
+    left: 326px;
+    top: 0;
+    position: absolute;
+}
+
+.offer-section .section-tagline {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    width: 224px;
+    left: 541px;
+    top: 55px;
+    position: absolute;
+}
+
+.offer-cards-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 80px; /* gap-20 is 80px */
+    width: 1202px;
+    left: 46px;
+    top: 97px; /* Relative to offer-section top */
+    position: absolute;
+}
+
+.offer-card {
+    width: 320px; /* w-80 is 320px */
+    height: 256px; /* h-64 is 256px */
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative; /* For absolute positioning of inner elements */
+    outline: 1px solid white; /* Some cards had this */
+    outline-offset: -1px; /* Some cards had this */
+}
+
+.offer-card .card-title {
+    color: rgba(49, 46, 129, 0.95);
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    width: 288px; /* w-72 */
+    margin: 0 auto;
+}
+
+.offer-card .card-description {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    position: absolute;
+    top: 111px;
+    left: 0;
+    right: 0;
+    width: 288px; /* w-72 */
+    margin: 0 auto;
+}
+
+/* Adjustments for specific card descriptions based on Figma's generated positions */
+.offer-card:nth-child(2) .card-description {
+    width: 320px; /* w-80 */
+    left: 4px;
+}
+
+.offer-card:nth-child(3) .card-description {
+    width: 384px; /* w-96 */
+    left: -4px;
+}
+
+.offer-card:nth-child(4) .card-title {
+    width: 320px; /* w-80 */
+    left: 19.5px;
+}
+
+.offer-card:nth-child(4) .card-description {
+    width: 320px; /* w-80 */
+    left: 4.5px;
+    top: 130px;
+}
+
+.offer-card:nth-child(5) .card-title {
+    width: 320px; /* w-80 */
+    left: 18.5px;
+}
+
+.offer-card:nth-child(5) .card-description {
+    width: 320px; /* w-80 */
+    height: 96px; /* h-24 */
+    left: 0.5px;
+    top: 130px;
+}
+
+/* The Result Section */
+.result-section {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 1325px; /* Adjust based on your layout */
+    padding: 20px;
+}
+
+.result-section .section-title {
+    color: #312E81;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 530px;
+    top: 0;
+}
+
+.result-section .section-subtitle {
+    color: #312E81;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    width: 686px;
+    left: 279px;
+    top: 72px;
+    position: absolute;
+}
+
+.result-section .section-description {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    width: 1098px;
+    left: 74px;
+    top: 142px;
+    position: absolute;
+}
+
+/* Adjust the call-to-action button for this section */
+.result-section .call-to-action-button {
+    left: 517px;
+    top: 233px;
+    position: absolute;
+}
+
+
+/* StylesFinal.css */
+
+/* ... other styles ... */
+
+.shadow-custom-card {
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Your specific custom shadow */
+}
+
+.shadow-custom-dark {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* This is actually Tailwind's default shadow-md */
+    /* If you have a different "custom dark" shadow, specify it here. */
+}
+
+.shadow-custom-light {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* This is Tailwind's default shadow-sm */
+    /* If you have a different "custom light" shadow, specify it here. */
+}
+
+
+.Picture-background {
+    background-image: url('/src/Images/adobestock_305758760.webp'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: cover; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}

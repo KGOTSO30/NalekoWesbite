@@ -24,13 +24,13 @@
         <div class="container ">
             <div class="text-4xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
             <nav class="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2 text-sm md:text-base header">
-                <a href="#WhoWeAre" class="hover:text-blue-300 transition duration-300">Who we are</a>
-                <a href="WhatWeDo.html" class="hover:text-blue-300 transition duration-300">What we do</a>
-                <a href="WhoWeServe.html" class="hover:text-blue-300 transition duration-300">Who we serve</a>
-                <a href="ContactUs.html" class="hover:text-blue-300 transition duration-300">Contact Us</a>
-                <a href="#" class="hover:text-blue-300 transition duration-300">Corp Training</a>
-                <a href="#" class="hover:text-blue-300 transition duration-300">Academy</a>
-                <a href="#" class="hover:text-blue-300 transition duration-300">Girls in Tech</a>
+                <a href="Web-Pages/WhoWeAre.html" class="hover:text-blue-300 transition duration-300">Who we are</a>
+                <a href="Web-Pages/WhatWeDo.html" class="hover:text-blue-300 transition duration-300">What we do</a>
+                <a href="Web-Pages/WhoWeServe.html" class="hover:text-blue-300 transition duration-300">Who we serve</a>
+                <a href="Web-Pages/ContactUs.html" class="hover:text-blue-300 transition duration-300">Contact Us</a>
+                <a href="Web-Pages/CorpTraining.html" class="hover:text-blue-300 transition duration-300">Corp Training</a>
+                <a href="Web-Pages/Academy.html" class="hover:text-blue-300 transition duration-300">Academy</a>
+                <a href="Web-Pages/GirlsInTech.html" class="hover:text-blue-300 transition duration-300">Girls in Tech</a>
                 <div class="flex space-x-2 ml-4">
                     <!-- LinkedIn -->
                     <a href="https://za.linkedin.com/company/nalekodigital" class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
@@ -76,7 +76,7 @@
 
            <!-- CTA Button -->
             <div>
-              <a href="#solutions" class="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition mb-8 mt-8">
+              <a href="Web-Pages/WhatWeDo.html" class="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition mb-8 mt-8">
                   Discover Our Solutions
               </a>
             </div>
@@ -116,15 +116,15 @@
       activeSlide: 0,
       slides: [
         {
-          image: '/src/Images/Hero/slide1.jpg',
+          image: '/src/Images/slide1.jpg',
           subtext: "Unlock Efficiency, Security and Innovation in the cloud"
         },
         {
-          image: '/src/Images/Hero/slide2.jpg',
+          image: '/src/Images/slide2.jpg',
           subtext: "Elevate your cloud potential with expert solutions for seamless growth"
         },
         {
-          image: '/src/Images/Hero/slide3.jpg',
+          image: '/src/Images/slide3.jpg',
           subtext: "Where innovation meets excellence in the world of Cloud"
         }
       ],
@@ -140,7 +140,7 @@
       init() {
         setInterval(() => {
           this.next();
-        }, 5000); // Auto slide every 3 seconds
+        }, 8000); // Auto slide every 3 seconds
       }
     };
   }
@@ -159,8 +159,8 @@
 
 
           <!-- Who We Serve starts here -->
-           <h2 class="text-4xl md:text-5xl text-center text-navy-blue-900 mb-8 mt-8">Who We Serve</h2>
-        <div class="swiper testimonial-carousel max-w-4xl mx-auto px-4 mb-4 mt-4">
+           <h2 class="text-4xl md:text-5xl text-center text-navy-blue-900 mb-8 mt-20">Who We Serve</h2>
+        <div class="swiper testimonial-carousel max-w-4xl mx-auto px-4 mb-20 mt-8">
             <div class="swiper-wrapper scale-[0.65]">
 
                 <!-- Slide 1: Analytics Hive -->
@@ -168,14 +168,14 @@
                     <div class="card-content">
                         <!-- Logo Heading -->
                         <div class="flex-shrink-0">
-                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/AnalyticsHive.jpeg" alt="Analytics Hive Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x64/FFFFFF/000000?text=Analytics+Hive';">
+                            <img class="h-16 mx-auto object-contain" src="src/Images/AnalyticsHive.jpeg" alt="Analytics Hive Logo" onerror="this.onerror=null;this.src='https://placehold.co/200x64/FFFFFF/000000?text=Analytics+Hive';">
                         </div>
                         <!-- Testimonial Text -->
                         <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
                             “Our partnership with Naleko led to high-impact Salesforce implementations in the financial sector and SMBs, improving sales productivity and client onboarding. Naleko brought precision, collaboration, and strong communication to every project.”
                         </blockquote>
                         <!-- Author -->
-                        <div class="flex-shrink-0">
+                        <div class="flex-shrink-0 text-center">
                             <p class="font-semibold text-gray-900">Justice Chikomba</p>
                             <p class="text-sm text-gray-500">CEO of Analytics Hive</p>
                         </div>
@@ -187,14 +187,14 @@
                     <div class="card-content">
                         <!-- Logo Heading -->
                         <div class="flex-shrink-0">
-                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/AWM.jpeg" alt="African Women's Movement Logo" onerror="this.onerror=null;this.src='https://placehold.co/145x64/FFFFFF/000000?text=AWM';">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/AWM.jpeg" alt="African Women's Movement Logo" onerror="this.onerror=null;this.src='https://placehold.co/145x64/FFFFFF/000000?text=AWM';">
                         </div>
                         <!-- Testimonial Text -->
                         <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
                             "At the African Women’s Movement (AWM), we believe in the power of collaboration to drive meaningful change, and our partnership with Naleko Digital Solutions has been nothing short of transformative."
                         </blockquote>
                         <!-- Author -->
-                        <div class="flex-shrink-0">
+                        <div class="flex-shrink-0 text-center">
                             <p class="font-semibold text-gray-900">Refilwe Matenche</p>
                             <p class="text-sm text-gray-500">President of African Women’s Movement (AWM)</p>
                         </div>
@@ -206,14 +206,14 @@
                     <div class="card-content">
                         <!-- Logo Heading -->
                         <div class="flex-shrink-0">
-                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/SheLeads.jpeg" alt="Partner Logo">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/SheLeads.jpeg" alt="Partner Logo">
                         </div>
                         <!-- Testimonial Text -->
                         <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
                           “Naleko delivered a seamless Salesforce rollout, automating sales, logistics, and finance, and integrating with Xero. Their expert consultant ensured a smooth, responsive, and highly tailored experience that supported business growth.”
                       </blockquote>
                         <!-- Author -->
-                        <div class="flex-shrink-0">
+                        <div class="flex-shrink-0 text-center">
                             <p class="font-semibold text-gray-900">Nthabiseng Sekanka</p>
                             <p class="text-sm text-gray-500">CEO of She Leads Holdings</p>
                         </div>
@@ -225,14 +225,14 @@
                     <div class="card-content">
                         <!-- Logo Heading -->
                         <div class="flex-shrink-0">
-                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/TshegofatsaRona.jpeg" alt="Partner Logo">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/TshegofatsaRona.jpeg" alt="Partner Logo">
                         </div>
                         <!-- Testimonial Text -->
                         <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
                                 “Naleko empowered our non-profit with a Salesforce system that revolutionized donor, volunteer, and fundraising management. Their training and support were crucial in helping our team adopt the system confidently.”
                         </blockquote>
                         <!-- Author -->
-                        <div class="flex-shrink-0">
+                        <div class="flex-shrink-0 text-center">
                             <p class="font-semibold text-gray-900">Cynthia Dinalane</p>
                             <p class="text-sm text-gray-500">Founder of Tshegofatsa Rona Welfare</p>
                         </div>
@@ -244,14 +244,14 @@
                     <div class="card-content">
                         <!-- Logo Heading -->
                         <div class="flex-shrink-0">
-                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/Thandulwazi.jpeg" alt="Partner Logo">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Thandulwazi.jpeg" alt="Partner Logo">
                         </div>
                         <!-- Testimonial Text -->
                         <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
                            “Through their sponsorship and mentorship at the TeensinAI Global Techathon, Naleko inspired the next generation of innovators. Their team’s energy and commitment left a lasting impact on our learners.”
                         </blockquote>
                         <!-- Author -->
-                        <div class="flex-shrink-0">
+                        <div class="flex-shrink-0 text-center">
                             <p class="font-semibold text-gray-900">Khumo Kekana</p>
                             <p class="text-sm text-gray-500">Parent Volunteer of Thandulwazi Maths & Science Academy</p>
                         </div>
@@ -263,14 +263,14 @@
                     <div class="card-content">
                         <!-- Logo Heading -->
                         <div class="flex-shrink-0">
-                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/Engen.jpeg" alt="Partner Logo">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Engen.jpeg" alt="Partner Logo">
                         </div>
                         <!-- Testimonial Text -->
                         <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
                            “Naleko’s team was professional, dedicated, and highly skilled throughout our Salesforce project. Their lasting impact is a testament to their quality and work ethic.”
                         </blockquote>
                         <!-- Author -->
-                        <div class="flex-shrink-0">
+                        <div class="flex-shrink-0 text-center">
                             <p class="font-semibold text-gray-900">Crystal Burger</p>
                             <p class="text-sm text-gray-500">Project Manager of Engen South Africa</p>
                         </div>
@@ -282,14 +282,14 @@
                     <div class="card-content">
                         <!-- Logo Heading -->
                         <div class="flex-shrink-0">
-                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/Redigitised.png" alt="Partner Logo">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/Redigitised.png" alt="Partner Logo">
                         </div>
                         <!-- Testimonial Text -->
                         <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
                            “Naleko exceeded expectations with their tailored, future-forward solutions and unwavering support. A dependable partner who genuinely cares about client success.”
                         </blockquote>
                         <!-- Author -->
-                        <div class="flex-shrink-0">
+                        <div class="flex-shrink-0 text-center">
                             <p class="font-semibold text-gray-900">Luke Woods</p>
                             <p class="text-sm text-gray-500">MD of Redigitised UK</p>
                         </div>
@@ -301,7 +301,7 @@
                     <div class="card-content">
                         <!-- Logo Heading -->
                         <div class="flex-shrink-0">
-                            <img class="h-16 mx-auto object-contain" src="/src/Images/Testimonials/StithiansCollege.png" alt="Partner Logo">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/StithiansCollege.png" alt="Partner Logo">
                         </div>
                         <!-- Testimonial Text -->
                         <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
@@ -309,7 +309,7 @@
 
                         </blockquote>
                         <!-- Author -->
-                        <div class="flex-shrink-0">
+                        <div class="flex-shrink-0 text-center">
                             <p class="font-semibold text-gray-900">Neil Houston</p>
                             <p class="text-sm text-gray-500">IT Manager of Divine Renovation</p>
                         </div>

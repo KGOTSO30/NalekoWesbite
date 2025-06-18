@@ -146,9 +146,158 @@
   }
 </script>
 
-    <!-- HERO SECTION STARTS HERE -->
+    <!-- HERO SECTION ENDS HERE -->
+
+
+  <!--- What We Do section i guess -->
+  <h2 class="text-4xl md:text-5xl text-center text-navy-blue-900 mb-8 mt-20">Our Cloud Services</h2>
+   <section id="what-we-do" class="services-container  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mt-12 mb-8">
+    <div id="cloudSecurityCard" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out text-center flex flex-col items-center cursor-pointer">
+    <img src="/src/Icons/Cloud/1.png" alt="Cloud Security" class="mb-4 w-12 h-12"/>
+    <h3 class="text-[#120C4E] text-xl font-bold font-['Inter'] mb-3">Cloud Security & Compliance</h3>
+    <p class="text-black text-base font-normal font-['Inter'] leading-relaxed">
+        <span class="font-bold">Protect operations</span> with robust security and regulatory compliance.
+    </p>
+    </div>
+
+     <div id="infraOptimizationCard" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out text-center flex flex-col items-center cursor-pointer">
+    <img src="/src/Icons/Cloud/2.png" alt="Infrastructure Optimization Icon" class="mb-4 w-12 h-12"/>
+    <h3 class="text-[#120C4E] text-xl font-bold font-['Inter'] mb-3">Infrastructure Optimisation</h3>
+    <p class="text-black text-base font-normal font-['Inter'] leading-relaxed">
+        <span class="font-bold">Enhance performance</span> while reducing costs.
+    </p>
+    </div>
+
+  <div id="enterpriseIntegrationCard" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out text-center flex flex-col items-center cursor-pointer">
+      <img src="/src/Icons/Cloud/3.png" alt="Enterprise Integration Icon" class="mb-4 w-12 h-12"/>
+      <h3 class="text-[#120C4E] text-xl font-bold font-['Inter'] mb-3">Enterprise Cloud Integration</h3>
+      <p class="text-black text-base font-normal font-['Inter'] leading-relaxed">
+          <span class="font-bold">Unify on-premises and cloud systems</span> for smooth operations.
+      </p>
+  </div>
+
+
+   </section>
+    
+
+  <div id="cloudSecurityModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
+        <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">&times;</button>
+
+        <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Cloud Security & Compliance Details</h2>
+
+        <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
+            This is where you can place more detailed information about Cloud Security & Compliance.
+            You could include service specifics, FAQs, a mini-form, or a call to action.
+            <br><br>
+            For example:
+        </p>
+        <ul class="list-disc list-inside text-black text-base font-normal font-['Inter']">
+            <li>Comprehensive risk assessments</li>
+            <li>Data encryption and access controls</li>
+            <li>Compliance with industry standards (e.g., GDPR, HIPAA)</li>
+            <li>Ongoing monitoring and threat detection</li>
+        </ul>
+
+        <div class="mt-6 text-center">
+            <a href="ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Contact Us for a Quote</a>
+        </div>
+    </div>
+</div>
+
+<div id="infraOptimizationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
+        <button id="closeInfraModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">&times;</button>
+        <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Infrastructure Optimisation Details</h2>
+        <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
+            Optimize your IT infrastructure for peak performance and cost efficiency. This service includes detailed resource scaling, workload balancing, and proactive cost management strategies. We help you achieve maximum output from your cloud investments.
+        </p>
+        <div class="mt-6 text-center">
+            <a href="ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Get an Infrastructure Assessment</a>
+        </div>
+    </div>
+</div>
+
+<div id="enterpriseIntegrationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
+        <button id="closeEnterpriseModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">&times;</button>
+        <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Enterprise Cloud Integration Details</h2>
+        <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
+            Seamlessly connect your existing on-premises systems with new cloud solutions. Our integration services ensure unified data flow, automated processes, and a holistic view of your entire operational landscape.
+        </p>
+        <div class="mt-6 text-center">
+            <a href="ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Discuss Your Integration Needs</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Get all card elements that trigger a modal
+    const cards = [
+        { cardId: 'cloudSecurityCard', modalId: 'cloudSecurityModal' },
+        { cardId: 'infraOptimizationCard', modalId: 'infraOptimizationModal' },
+        { cardId: 'enterpriseIntegrationCard', modalId: 'enterpriseIntegrationModal' },
+        { cardId: 'cloudMigrationCard', modalId: 'cloudMigrationModal' },
+        { cardId: 'managedServicesCard', modalId: 'managedServicesModal' },
+        { cardId: 'industrySolutionsCard', modalId: 'industrySolutionsModal' }
+    ];
+
+    // Function to show a specific modal
+    function showModal(modalElement) {
+        if (modalElement) {
+            modalElement.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent body scrolling
+        }
+    }
+
+    // Function to hide a specific modal
+    function hideModal(modalElement) {
+        if (modalElement) {
+            modalElement.classList.add('hidden');
+            document.body.style.overflow = ''; // Re-enable body scrolling
+        }
+    }
+
+    // Attach event listeners for each card
+    cards.forEach(item => {
+        const card = document.getElementById(item.cardId);
+        const modal = document.getElementById(item.modalId);
+        const closeModalButton = modal ? modal.querySelector('button[id^="close"]') : null; // Finds the close button within this modal
+
+        if (card) {
+            card.addEventListener('click', () => showModal(modal));
+        }
+
+        if (closeModalButton) {
+            closeModalButton.addEventListener('click', () => hideModal(modal));
+        }
+
+        // Close modal when clicking outside of the content area
+        if (modal) {
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) { // Ensure click is directly on the overlay, not its children
+                    hideModal(modal);
+                }
+            });
+        }
+    });
+
+    // Close any open modal with Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            cards.forEach(item => {
+                const modal = document.getElementById(item.modalId);
+                if (modal && !modal.classList.contains('hidden')) {
+                    hideModal(modal);
+                }
+            });
+        }
+    });
+</script>
+<!--- What We Do section i guess -->
 
           <!-- WHat We Know  Starts Here-->
+      <h2 class="text-4xl md:text-5xl text-center text-navy-blue-900 mb-8 mt-20">What We Know</h2>
       <div  class="w3-container w3-center scale-85 mb-4 mt-8" id="blog" >
         <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
         <div class="elfsight-app-ede7470f-fdf2-4c66-bbb0-b0bfa7769c2b" data-elfsight-app-lazy></div>
@@ -159,7 +308,7 @@
 
 
           <!-- Who We Serve starts here -->
-           <h2 class="text-4xl md:text-5xl text-center text-navy-blue-900 mb-8 mt-20">Who We Serve</h2>
+           <h2 class="text-4xl md:text-5xl text-center text-navy-blue-900 mb-20 mt-20">Who We Serve</h2>
         <div class="swiper testimonial-carousel max-w-4xl mx-auto px-4 mb-20 mt-8">
             <div class="swiper-wrapper scale-[0.65]">
 

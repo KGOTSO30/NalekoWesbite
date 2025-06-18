@@ -52,7 +52,7 @@
 <section class="container mx-auto py-16 px-4 " >
         <h2 id="WhoWeAre" class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue mb-4">Our Origin Story</h2>
         <p class="text-naleko-dark-blue text-lg md:text-xl font-extrabold text-center mb-8">Cloud experts driving smart, scalable solutions for a digital-first world.</p>
-        <div class="max-w-6xl mx-auto text-base text-gray-800 leading-relaxed text-justify">
+        <div class="max-w-7xl mx-auto text-base text-gray-800 leading-relaxed text-justify">
             <p class="mb-4"><span class="font-bold">Our company is driven by a <span class="font-bold">love</span> for innovation, striving to <span class="font-bold">make good</span> on every opportunity <span class="font-bold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</span></p>
             <p class="mb-4">Naleko Digital Solutions was born out of <span class="font-bold">collaboration, resilience, and a shared passion for technology.</span> In 2020, during the height of remote work adaptation, a Software Developer, a Software Engineer, and a Business Analyst created a WhatsApp group to support one another. What started as casual peer support quickly blossomed into something far greater, <span class="font-bold">a vision to transform the digital landscape</span>. And so, Naleko Digital Solutions was founded.</p>
             <p class="mb-4">Today, we are a fast-growing IT software company with <span class="font-bold">a strong focus on cloud computing, CRM transformation, and intelligent application development.</span> We empower businesses across healthcare, finance, retail, banking, and insurance to elevate customer experiences and streamline operations through scalable, cloud-first strategies.</p>
@@ -86,28 +86,74 @@
     <!-- Values  Cards-->
     <section id="vision" class="container mx-auto py-16 px-4">
         <h2 class="text-3xl md:text-4xl font-semibold text-center mb-12 text-naleko-dark-blue">Our Values</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-6xl mx-auto">
-            <div class="bg-white-alpha p-6 rounded-xl shadow-custom-light flex flex-col items-center text-center">
+       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-6xl mx-auto">
+
+    <div id="card-innovation" class="flip-card cursor-pointer">
+        <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center">
                 <img src="/src/Icons/WBulb.png" alt="Innovation Icon" class="mb-4 w-12 h-10 text-blue-900">
-                <h3 class="text-lg font-normal mb-2 text-gray-800">Innovation with Purpose</h3>
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Innovation with Purpose</h3>
             </div>
-            <div class="bg-white-alpha p-6 rounded-xl shadow-custom-light flex flex-col items-center text-center">
-                <img src="/src/Icons/Wexcelence.png" alt="Learning Icon" class="mb-4 w-12 h-12 text-blue-900">
-                <h3 class="text-lg font-normal mb-2 text-gray-800">Empowerment through Learning</h3>
-            </div>
-            <div class="bg-white-alpha p-6 rounded-xl shadow-custom-light flex flex-col items-center text-center">
-                <img src="/src/Icons/WCollaborate.png" alt="Collaboration Icon" class="mb-4 w-12 h-11 text-blue-900">
-                <h3 class="text-lg font-normal mb-2 text-gray-800">Collaboration & Community</h3>
-            </div>
-            <div class="bg-white-alpha p-6 rounded-xl shadow-custom-light flex flex-col items-center text-center">
-                <img src="/src/Icons/WHeart.png" alt="Diversity Icon" class="mb-4 w-12 h-12 text-blue-900">
-                <h3 class="text-lg font-normal mb-2 text-gray-800">Diversity<br/>& Inclusion</h3>
-            </div>
-            <div class="bg-white-alpha p-6 rounded-xl shadow-custom-light flex flex-col items-center text-center">
-                <img src="/src/Icons/WIntegrity.png" alt="Customer Icon" class="mb-4 w-12 h-11 text-blue-900">
-                <h3 class="text-lg font-normal mb-2 text-gray-800">Customer-Centric Design</h3>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Innovation with Purpose</h3>
+                <p class="text-sm">We foster a culture of relentless curiosity and groundbreaking solutions, ensuring every innovation serves a clear, impactful goal for our clients.</p>
             </div>
         </div>
+    </div>
+
+    <div id="card-empowerment" class="flip-card cursor-pointer">
+        <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center">
+                <img src="/src/Icons/Wexcelence.png" alt="Learning Icon" class="mb-4 w-12 h-12 text-blue-900">
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Empowerment through Learning</h3>
+            </div>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Empowerment through Learning</h3>
+                <p class="text-sm">We empower our team and clients by promoting continuous growth and knowledge sharing, ensuring everyone has the tools to excel in a dynamic world.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="card-collaboration" class="flip-card cursor-pointer">
+        <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center">
+                <img src="/src/Icons/WCollaborate.png" alt="Collaboration Icon" class="mb-4 w-12 h-11 text-blue-900">
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Collaboration & Community</h3>
+            </div>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Collaboration & Community</h3>
+                <p class="text-sm">We believe in the power of collective effort and foster a supportive environment where diverse ideas converge to create exceptional outcomes.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="card-diversity" class="flip-card cursor-pointer">
+        <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center">
+                <img src="/src/Icons/WHeart.png" alt="Diversity Icon" class="mb-4 w-12 h-12 text-blue-900">
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Diversity<br/>& Inclusion</h3>
+            </div>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Diversity<br/>& Inclusion</h3>
+                <p class="text-sm">We celebrate varied perspectives and experiences, creating an environment where every voice is heard and valued, enriching our solutions.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="card-customer" class="flip-card cursor-pointer">
+        <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center">
+                <img src="/src/Icons/WIntegrity.png" alt="Customer Icon" class="mb-4 w-12 h-11 text-blue-900">
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Customer-Centric Design</h3>
+            </div>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Customer-Centric Design</h3>
+                <p class="text-sm">Our solutions are meticulously crafted around client needs, ensuring intuitive, powerful, and effective tools that truly solve business challenges.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
     </section>
 
 
@@ -120,7 +166,7 @@
                 <img src="/src/Icons/CorpTraining.png" alt="Corp Training Icon" class="mb-4 w-20 h-20">
                 <h3 class="text-3xl font-semibold mb-4 text-naleko-dark-blue">Corp Training</h3>
                 <p class="text-base text-gray-800 mb-6 leading-relaxed">We tailor our solutions to the unique needs of each client. From systems integration to team enablement, our training programs help businesses get the most from their cloud investments.</p>
-                <a href="CorpTraining.html" class="inline-flex items-center justify-center py-2 px-6 rounded-lg  bg-naleko-dark-blue text-white  border border-naleko-dark-blue text-naleko-dark-blue hover:bg-naleko-dark-blue hover:bg-indigo-700 transition duration-300 text-lg">Learn More</a>
+                <a href="CorpTraining.html" class="inline-flex items-center justify-center py-2 px-6 rounded-lg  bg-naleko-dark-blue text-white  border border-naleko-dark-blue  hover:bg-naleko-dark-blue hover:bg-indigo-700 transition duration-300 text-lg">Learn More</a>
             </div>
             <div class="bg-white-alpha p-6 rounded-2xl shadow-custom-dark flex flex-col items-center text-center">
                 <img src="/src/Icons/Academy.png" alt="Academy Icon" class="mb-4 w-20 h-19">
@@ -255,5 +301,22 @@
     </footer>
 
                 <!--  Site footer Ends Here -->
+
+
+                
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all elements with the class 'flip-card'
+        const flipCards = document.querySelectorAll('.flip-card');
+
+        // Loop through each flip card and add a click event listener
+        flipCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Toggle the 'flipped' class on the card
+                card.classList.toggle('flipped');
+            });
+        });
+    });
+</script>
 </body>
 </html>

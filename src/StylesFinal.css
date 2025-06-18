@@ -294,3 +294,30 @@
     background-position: cover; /* This centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
+
+
+ /* Custom styles for the carousel */
+        .carousel-container {
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 33.33%; /* Show three slides at a time */
+            box-sizing: border-box;
+            padding: 1rem;
+        }
+
+        /* Hide scrollbar for carousel */
+        .carousel-container {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }

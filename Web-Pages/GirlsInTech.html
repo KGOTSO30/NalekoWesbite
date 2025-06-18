@@ -65,12 +65,39 @@
     .diamond.red    { background: #D34747; }
     .diamond.purple { background: #8E44AD; }
 
+    /* Custom styles for the carousel */
+        .carousel-container {
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 33.33%; /* Show three slides at a time */
+            box-sizing: border-box;
+            padding: 1rem;
+        }
+
+        /* Hide scrollbar for carousel */
+        .carousel-container {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
   </style>
 </head>
 
 
   <!-- Main -->
    <br>
+   <body>
   <main class="flex-grow p-4 container mx-auto">
     <section class="mb-12 text-center">
       <div class="max-w-3xl mx-auto flex flex-col justify-start items-center gap-6">
@@ -137,6 +164,62 @@
 </div>
     </section>
 <br>
+
+ <section class="relative mb-12">
+    <div class="carousel-container relative w-full overflow-hidden">
+        <div class="carousel-track flex">
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/images/Lawrence.jpg"
+                         alt="Carousel Image of Lawrence"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/images/Lady.jpg"
+                         alt="Carousel Image of Junior Group in White"/>
+                </div>
+            </div>
+
+             <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/images/Project.jpg"
+                         alt="Carousel Image of Juniors as Interns"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/images/Awards.jpg"
+                         alt="Carousel Image of Intern Girls"/>
+                </div>
+            </div>
+
+             <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/images/Group.jpg"
+                         alt="Carousel Image of Intern Group"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/images/Girl.jpg"
+                         alt="Carousel Image of Gents"/>
+                </div>
+            </div>
+           
+           
+
+        </div>
+    </div>
+    <button class="carousel-prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 -ml-4">
+        &#10094;</button>
+    <button class="carousel-next absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 -mr-4">
+        &#10095;</button>
+</section>
    
     <section class="container mx-auto py-16 px-4 text-center">
       <h1 id="GirlinTech" class="text-3xl md:text-4xl font-black text-naleko-dark-blue mb-4">The Bottom Line</h1>
@@ -144,12 +227,53 @@
         Encouraging women in tech isn't just the right thing to do, it's the smart thing to do.
         Their ideas lead to better products, more successful businesses, and a tech industry that reflects the world we live in.
       </p>
-      <a href="ContactUs.html" class="inline-flex items-center justify-center py-2.5 px-10 bg-naleko-dark-blue rounded-lg text-white text-2xl font-semibold hover:bg-indigo-700 transition duration-300">
-        Get Started in Salesforce 
+       <a href="https://trailhead.salesforce.com/users/leratomatenzhe/trailmixes/naleko-girls-in-tech" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center py-2.5 px-10 bg-naleko-dark-blue rounded-lg text-white text-2xl font-semibold hover:bg-indigo-700 transition duration-300">
+    Get Started in Salesforce 
       </a>
     </section>
-
+    
+    <img src="/src/images/TwoLadiesTeaching.jpg" alt="Hero Banner" class="w-full h-[400px] object-cover">
   </main>
+
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const track = document.querySelector(".carousel-track");
+        const slides = document.querySelectorAll(".carousel-slide");
+        const prevButton = document.querySelector(".carousel-prev");
+        const nextButton = document.querySelector(".carousel-next");
+
+        let currentIndex = 0;
+        const slidesToShow = 3;
+        const totalSlides = slides.length;
+
+        function updateCarousel() {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            const newTransform = -slideWidth * currentIndex;
+            track.style.transform = `translateX(${newTransform}px)`;
+        }
+
+        nextButton.addEventListener("click", () => {
+            if (currentIndex < totalSlides - slidesToShow) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevButton.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        // Optional: Resize handling
+        window.addEventListener("resize", updateCarousel);
+    });
+</script>
+
+</html>
 
 
  

@@ -56,7 +56,21 @@
 
 /* ... (your existing custom styles) ... */
 
-.header-background {
+.header-background-corp {
+    background-image: url('/src/Images/GirlsIntech.jpeg'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: center; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.header-background-academy {
+    background-image: url('/src/Images/headerGradImage.jpg'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: center; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.header-background-girls {
     background-image: url('/src/Images/GirlsIntech.jpeg'); /* **CHANGE THIS PATH** to your image */
     background-size: cover; /* This makes sure the image covers the entire header */
     background-position: center; /* This centers the image within the header */
@@ -289,8 +303,137 @@
 
 
 .Picture-background {
-    background-image: url('/src/Images/adobestock_305758760.webp'); /* **CHANGE THIS PATH** to your image */
+    background-image: url('/src/Images/adobestock_305758760\ \(2\).webp'); /* **CHANGE THIS PATH** to your image */
     background-size: cover; /* This makes sure the image covers the entire header */
     background-position: cover; /* This centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
+
+
+ /* Custom styles for the carousel */
+        .carousel-container {
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 33.33%; /* Show three slides at a time */
+            box-sizing: border-box;
+            padding: 1rem;
+        }
+
+        /* Hide scrollbar for carousel */
+        .carousel-container {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+
+
+ /* Our Values the Cards */
+
+.flip-card {
+  background-color: transparent;
+  width: 100%; /* Or a fixed width if not in a grid */
+  height: 250px; /* Adjust height as needed to fit content */
+  perspective: 1000px; /* 3D effect perspective */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s; /* Animation duration */
+  transform-style: preserve-3d; /* Key for 3D flip */
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg); /* Flip when 'flipped' class is active */
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Hide back of element when facing away */
+  backface-visibility: hidden; /* Hide back of element when facing away */
+  display: flex; /* Ensure content is centered */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  padding: 1.5rem; /* Equivalent to p-6 */
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+}
+
+.flip-card-front {
+  z-index: 2; /* Ensures front is on top when not flipped */
+}
+
+.flip-card-back {
+  transform: rotateY(180deg); /* Start rotated for the back face */
+  z-index: 1; /* Ensures back is behind when not flipped */
+}
+
+/* You might need to adjust shadow-custom-light or bg-white-alpha if they are custom Tailwind classes */
+/* If bg-white-alpha is not defined in your tailwind.config.js, change it to bg-white or a color of choice. */
+/* If shadow-custom-light is not defined, change it to a standard shadow like shadow-md or shadow-lg */
+
+
+
+
+   /* The six service boxes */ 
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: white;
+      margin: 0;
+    }
+
+    .services-container {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-box {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 25px 25px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-box h3 {
+      margin: 10px 0 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: black;
+    }
+
+    .service-box p {
+      font-size: 0.875rem;
+      color: black;
+    }
+
+    .button h3 {
+      font-size: 16;
+      color: navy;
+    }

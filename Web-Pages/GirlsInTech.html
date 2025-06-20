@@ -125,7 +125,7 @@
                 <!--  Navigation Bar ENDS Here-->
 
   <main class="flex-grow">
-    <section class="mb-12 text-center">
+    <section class="mb-12  py-16 text-center">
       <div class="max-w-6xl mx-auto flex flex-col justify-start items-center gap-6">
         <h1 id="girls" class="text-indigo-950/95 text-4xl font-black">Empowering Women. Inspiring Innovation</h1>
         <h2 class="max-w-6xl mx-auto text-black text-base font-normal mt-8 text-indigo-950/95 text-2xl font-black">At Naleko Digital Solutions, we champion the advancement of women in technology because innovation thrives when everyone has a seat at the table.</h2>
@@ -192,7 +192,7 @@
 <br>
 
  <section class="relative mb-12">
-    <div class="carousel-container relative w-full overflow-hidden">
+    <div class="carousel-container relative w-full mx-auto overflow-hidden">
         <div class="carousel-track flex">
 
             <div class="carousel-slide flex-none w-1/3 p-4">
@@ -379,39 +379,51 @@
     
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const track = document.querySelector(".carousel-track");
-        const slides = document.querySelectorAll(".carousel-slide");
-        const prevButton = document.querySelector(".carousel-prev");
-        const nextButton = document.querySelector(".carousel-next");
+ document.addEventListener('DOMContentLoaded', function () {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
 
-        let currentIndex = 0;
-        const slidesToShow = 3;
-        const totalSlides = slides.length;
+    // Make sure slideWidth is calculated after images are loaded or layout is stable
+    // It's safer to calculate it inside updateCarousel or on window resize if needed
+    let slideWidth = slides[0].offsetWidth; 
 
-        function updateCarousel() {
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            const newTransform = -slideWidth * currentIndex;
-            track.style.transform = `translateX(${newTransform}px)`;
-        }
+    let currentIndex = 0;
 
-        nextButton.addEventListener("click", () => {
-            if (currentIndex < totalSlides - slidesToShow) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
+    function updateCarousel() {
+        // Recalculate slideWidth in case of dynamic resizing (e.g., responsive design)
+        // This is a good practice if your layout might change.
+        slideWidth = slides[0].offsetWidth; 
+        carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth * 3}px)`; // Move by 3 slides
+    }
 
-        prevButton.addEventListener("click", () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
+    // Initial update to ensure correct positioning on load
+    updateCarousel(); 
 
-        // Optional: Resize handling
-        window.addEventListener("resize", updateCarousel);
+    prevButton.addEventListener('click', () => {
+        // Calculate total number of "pages" of 3 slides
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalPages - 1;
+        updateCarousel();
     });
+
+    nextButton.addEventListener('click', () => {
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    // Auto-advance carousel (optional)
+    setInterval(() => {
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    }, 5000); // Change slide every 5 seconds
+
+    // Optional: Add a resize listener to re-calculate slideWidth
+    window.addEventListener('resize', updateCarousel);
+});
 </script>
 
 

@@ -1,156 +1,116 @@
-@ -0,0 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naleko Digital Solutions - Girls in Tech</title>
-  <link href="/src/StylesFinal.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      padding: 0;
-      background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, auto);
-      gap: 80px;
-      justify-content: center;
-    }
-
-    .diamond {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 170px;
-      height: 170px;
-      background: white;
-      border: 3px solid navy;
-      transform: rotate(45deg);
-    }
-
-    .diamond .text {
-      transform: rotate(-45deg);
-      color: black;
-      font-size: 14px;
-      font-weight: bold;
-      text-align: center;
-      line-height: 1.2;
-      max-width: 120px;
-    }
-
-    .diamond .text h3 {
-  font-size: 12px;      /* adjust heading size */
-  font-weight: bold;
-  margin: 0;
-}
-
-.diamond .text p {
-  font-size: 10px;      /* adjust paragraph size */
-  margin: 0;
-}
-
-    .diamond.orange { background: white; }
-    .diamond.yellow { background: white; }
-    .diamond.green  { background: #49A059; }
-    .diamond.blue   { background: #3E61AD; }
-    .diamond.red    { background: #D34747; }
-    .diamond.purple { background: #8E44AD; }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<body>
+    
 
-
-  <!-- Main -->
-   <br>
-  <main class="flex-grow p-4 container mx-auto">
-    <section class="mb-12 text-center">
-      <div class="max-w-3xl mx-auto flex flex-col justify-start items-center gap-6">
-        <h1 class="text-indigo-950/95 text-4xl font-black">Empowering Women. Inspiring Innovation</h1>
-        <h2 class="max-w-6xl mx-auto text-black text-base font-normal mt-8 text-indigo-950/95 text-2xl font-black">At Naleko Digital Solutions, we champion the advancement of women in technology because innovation thrives when everyone has a seat at the table.</h2>
-      </div>
-      <div class="max-w-6xl mx-auto text-black text-base font-normal mt-8">
-        Technology is evolving rapidly, and diversity is key to building smarter, more inclusive solutions. Women bring unique perspectives that enrich the tech world and their contributions are vital.
-        <br/><br/>
-        <br>
-        <div class="max-w-3xl mx-auto flex flex-col justify-start items-center gap-6">
-          <h1 class="text-indigo-950/95 text-4xl font-black">Why Women in Tech Matter:</h1>
-        </div>
-      </div>
-    </section>
-
-    <section class="text-center mt-16 mb-10 px-4">
-      <div class="grid">      
-        <div class="diamond">
-            <div class="text">
-                <h3>💡 Fresh Ideas & Innovation</h3>
-                <br>
-                <p>Different backgrounds spark creativity. Women contribute new ways of thinking that lead to smarter, more user-friendly technology</p>
+    <!--  Site Footer Begins Here -->
+<footer class="mt-auto bg-naleko-dark-blue text-white py-8 px-4"> <!-- Need five columns-->
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                 <div class="flex items-center mb-4">
+                <!-- Cloud Icon -->
+                <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
+                </svg>
+                <h3 class="text-4xl header">Naleko</h3>
             </div>
+                <p class="text-sm text-gray-300 mb-4">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+                <div class="flex space-x-4">
+                   <!-- LinkedIn -->
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
+                    </svg>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="TikTok">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
+                    </svg>
+                    </a>
+
+                     <!-- Instagram -->
+                    <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.25 2.415.415a4.9 4.9 0 0 1 1.695 1.06 4.9 4.9 0 0 1 1.06 1.695c.165.455.361 1.244.415 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.25 1.96-.415 2.415a4.9 4.9 0 0 1-1.06 1.695 4.9 4.9 0 0 1-1.695 1.06c-.455.165-1.244.361-2.415.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.25-2.415-.415a4.9 4.9 0 0 1-1.695-1.06 4.9 4.9 0 0 1-1.06-1.695c-.165-.455-.361-1.244-.415-2.415-.058-1.266-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.25-1.96.415-2.415a4.9 4.9 0 0 1 1.06-1.695 4.9 4.9 0 0 1 1.695-1.06c.455-.165 1.244-.361 2.415-.415 1.266-.058 1.65-.07 4.85-.07zm0 1.8c-3.153 0-3.515.012-4.757.068-.987.046-1.518.205-1.87.342a3.1 3.1 0 0 0-1.136.736 3.1 3.1 0 0 0-.736 1.136c-.137.352-.296.883-.342 1.87-.056 1.242-.068 1.604-.068 4.757s.012 3.515.068 4.757c.046.987.205 1.518.342 1.87.17.44.42.83.736 1.136.306.316.696.566 1.136.736.352.137.883.296 1.87.342 1.242.056 1.604.068 4.757.068s3.515-.012 4.757-.068c.987-.046 1.518-.205 1.87-.342a3.1 3.1 0 0 0 1.136-.736 3.1 3.1 0 0 0 .736-1.136c.137-.352.296-.883.342-1.87.056-1.242.068-1.604.068-4.757s-.012-3.515-.068-4.757c-.046-.987-.205-1.518-.342-1.87a3.1 3.1 0 0 0-.736-1.136 3.1 3.1 0 0 0-1.136-.736c-.352-.137-.883-.296-1.87-.342-1.242-.056-1.604-.068-4.757-.068zm0 3.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 1.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8zm6.4-.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
+                    </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 hover:text-white transition duration-300" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
+                    </svg>
+                    </a>
+
+                   
+
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="WhoWeAre.html" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+        <!--Cannot Scroll to a Different Page -->            <li><a href="#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4">Flagship Programs</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                </ul>
+            </div>
+
+            
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <p class="text-gray-300">admin@naleko.com</p>
+                </div>
+              <div class="flex items-center mb-2">
+                <!-- Phone Icon -->
+                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
+                </svg>
+                <p class="text-gray-300">+27 11 100 7632</p>
+            </div>
+                <div class="flex items-center mb-2">
+                <!-- Location Icon -->
+                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                </svg>
+                <p class="text-gray-300">191 Bekker RD, Midrand, 1686</p>
+            </div>
+            </div>
+
+                   <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder" class="w-13 h-18 scale-75 ">
+                   </div> 
         </div>
-        <div class="diamond">
-  <div class="text">
-    <h3>⚖️Closing the Gender Gap</h3>
-    <br>
-    <p>Tech has long been male dominated. Increasing female participation promotes equality, fair pay, and balanced opportunities.</p>
-  </div>
-</div>
+       
+        <div class="container mx-auto text-center text-gray-400 text-sm mt-8 pt-4 border-t border-gray-700">
+            COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
+        </div>
+    </footer>
 
- <div class="diamond">
-  <div class="text">
-    <h3>📈Stronger Business Outcomes</h3>
-    <br>
-    <p>Diverse teams perform better. Women in technical and leadership roles drive better decisions, innovation, and results.</p>
-  </div>
-</div>
-
- <div class="diamond">
-  <div class="text">
-    <h3>👩‍💻Role Models for the Future</h3>
-    <br>
-    <p>When girls see women thriving in tech, they believe they can do it too. Representation inspires the next generation of innovators.</p>
-  </div>
-</div>
-
- <div class="diamond">
-  <div class="text">
-    <h3>🛍Designing for Everyone</h3>
-    <br>
-    <p>Women make up half the world. Their input ensures technology is inclusive and meets the needs of all users.</p>
-  </div>
-</div>
-
- <div class="diamond">
-  <div class="text">
-    <h3>🌍Driving Positive Change</h3>
-    <br>
-    <p>Women advocate for equality, inclusion, and work-life balance, building a tech culture that supports everyone.</p>
-  </div>
-</div>
-    </section>
-<br>
-   
-    <section class="container mx-auto py-16 px-4 text-center">
-      <h1 id="GirlinTech" class="text-3xl md:text-4xl font-black text-naleko-dark-blue mb-4">The Bottom Line</h1>
-      <p class="text-base font-normal text-gray-800 mb-10 max-w-6xl mx-auto">
-        Encouraging women in tech isn't just the right thing to do, it's the smart thing to do.
-        Their ideas lead to better products, more successful businesses, and a tech industry that reflects the world we live in.
-      </p>
-      <a href="ContactUs.html" class="inline-flex items-center justify-center py-2.5 px-10 bg-naleko-dark-blue rounded-lg text-white text-2xl font-semibold hover:bg-indigo-700 transition duration-300">
-        Get Started in Salesforce 
-      </a>
-    </section>
-
-  </main>
+                <!--  Site footer Ends Here -->
 
 
  
+</body>
+</html>
+
+                 

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
@@ -58,92 +59,97 @@
  <!-- HERO SECTION STARTS HERE -->
 
 
+
 <div x-data="carousel()" x-init="init()" class="relative w-full md:h-[700px] overflow-hidden">
-  <!-- Slides -->
-  <template x-for="(slide, index) in slides" :key="index">
-    <div 
-      x-show="activeSlide === index" 
-      x-transition:enter="transition-opacity duration-1000" 
-      x-transition:leave="transition-opacity duration-1000"
-      class="absolute inset-0 bg-cover bg-center" 
-      :style="`background-image: url(${slide.image})`"
-    >
-      <div class="bg-black bg-opacity-50 w-full h-full flex items-center justify-center px-6">
-        <div class="text-white text-center max-w-3xl">
-          <!-- Shared Heading -->
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">Empowering Collaborative Cloud Solutions</h1>
-
-
-           <!-- CTA Button -->
-            <div>
-              <a href="Web-Pages/WhatWeDo.html" class="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition mb-8 mt-8">
-                  Discover Our Solutions
-              </a>
-            </div>
-          
-          <!-- Subtext (slide-specific) -->
-          <p class="text-lg md:text-xl mb-6" x-text="slide.subtext"></p>
-
-         
-        </div>
-      </div>
-    </div>
-  </template>
-
-  <!-- Prev/Next Controls -->
-  <button @click="prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
-    &#10094;
-  </button>
-  <button @click="next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75">
-    &#10095;
-  </button>
-
-  <!-- Indicators -->
-  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
     <template x-for="(slide, index) in slides" :key="index">
-      <div 
-        @click="goToSlide(index)" 
-        class="w-3 h-3 rounded-full cursor-pointer"
-        :class="activeSlide === index ? 'bg-white' : 'bg-gray-500'">
-      </div>
+        <div
+            x-show="activeSlide === index"
+            x-transition:enter="transition-opacity duration-1000 ease-in-out"
+            x-transition:leave="transition-opacity duration-1000 ease-in-out"
+            class="absolute inset-0 bg-cover bg-center"
+            :style="`background-image: url(${slide.image})`"
+        >
+            <div class="bg-black bg-opacity-50 w-full h-full flex items-center justify-center px-6">
+                <div class="text-white text-center max-w-3xl">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Empowering Collaborative Cloud Solutions</h1>
+
+                    <div>
+                        <a href="Web-Pages/WhatWeDo.html" class="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition mb-8 mt-8">
+                            Discover Our Solutions
+                        </a>
+                    </div>
+
+                    <p
+                        class="text-lg md:text-xl mb-6"
+                        x-text="slide.subtext"
+                        x-show="activeSlide === index"
+                        x-transition:enter="transition-opacity duration-700 ease-in-out delay-1000"
+                        x-transition:leave="transition-opacity duration-700 ease-in-out"
+                    ></p>
+                </div>
+            </div>
+        </div>
     </template>
-  </div>
+
+    <button @click="prev()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
+        &#10094;
+    </button>
+    <button @click="next()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
+        &#10095;
+    </button>
+
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        <template x-for="(slide, index) in slides" :key="index">
+            <div
+                @click="goToSlide(index)"
+                class="w-3 h-3 rounded-full cursor-pointer"
+                :class="activeSlide === index ? 'bg-white' : 'bg-gray-500'">
+            </div>
+        </template>
+    </div>
 </div>
 
 <script>
-  function carousel() {
-    return {
-      activeSlide: 0,
-      slides: [
-        {
-          image: '/src/Images/slide1.jpg',
-          subtext: "Unlock Efficiency, Security and Innovation in the cloud"
-        },
-        {
-          image: '/src/Images/slide2.jpg',
-          subtext: "Elevate your cloud potential with expert solutions for seamless growth"
-        },
-        {
-          image: '/src/Images/slide3.jpg',
-          subtext: "Where innovation meets excellence in the world of Cloud"
-        }
-      ],
-      next() {
-        this.activeSlide = (this.activeSlide + 1) % this.slides.length;
-      },
-      prev() {
-        this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
-      },
-      goToSlide(index) {
-        this.activeSlide = index;
-      },
-      init() {
-        setInterval(() => {
-          this.next();
-        }, 8000); // Auto slide every 3 seconds
-      }
-    };
-  }
+    function carousel() {
+        return {
+            activeSlide: 0,
+            slides: [
+                {
+                    image: '/src/Images/slide1.jpg',
+                    subtext: "Unlock Efficiency, Security, and Innovation in the Cloud"
+                },
+                {
+                    image: '/src/Images/slide2.jpg',
+                    subtext: "Elevate your cloud potential with expert solutions for seamless growth"
+                },
+                {
+                    image: '/src/Images/slide3.jpg',
+                    subtext: "Where innovation meets excellence in the world of Cloud"
+                }
+            ],
+            next() {
+                this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+            },
+            prev() {
+                this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
+            },
+            goToSlide(index) {
+                this.activeSlide = index;
+            },
+            init() {
+                // Adjust interval to account for transition duration
+                // Total time for each slide = (Transition duration) + (Display time)
+                // If transition is 1s in and 1s out (total 2s for active fade, but visually seamless)
+                // Let's aim for the content to be fully visible for about 5 seconds after transition completes.
+                // So, 1s (fade out old) + 1s (fade in new) + 5s (display) = 7 seconds total interval.
+                // Or simply, if you want 8 seconds *between starts* of transitions:
+                // If transition is 1 second, then after 7 seconds, the new transition starts.
+                setInterval(() => {
+                    this.next();
+                }, 7000); // Changed from 8000 to 7000ms for tighter feel, accounting for 1s transition
+            }
+        };
+    }
 </script>
 
     <!-- HERO SECTION ENDS HERE -->

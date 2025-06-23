@@ -15,52 +15,39 @@
   <link href="/src/StylesFinal.css" rel="stylesheet">
 
   <style>
-    
-    /* Marquee */
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background-color: white;
-      margin: 0;
-    }
-    
-    /* Scrolling container */
-    .scrolling-logos-wrapper {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
 
-    .scrolling-logos {
-      display: flex;
-      gap: 30px; /* Space between logos */
-      align-items: center;
-      white-space: nowrap;
-      animation: scroll-left 40s linear infinite;
-    }
+.scrolling-logos {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 
-    /* Keyframe for scrolling left */
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
+.logo-track {
+  display: flex;
+  animation: scrollLeft 20s linear infinite;
+  width: max-content;
+}
 
-    /* Individual logo item */
-    .logo-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-shrink: 0;
-    }
+.logo-item {
+  flex-shrink: 0;
+}
 
-    /* Logo image styling */
-    .logo-item img {
-      max-height: 80px;
-      object-fit: contain;
-    }
+.logo-item img {
+  height: 50px;
+  margin-right: 0; /* no gap between logos */
+  display: block;
+}
+
+/* Continuous infinite scroll */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
    /* The six service boxes */ 
     body {
@@ -166,47 +153,29 @@
    
 
 <!-- Scrolling Partner Logos Marquee -->
-  <section class="w-full overflow-hidden mb-8 mt-2" >
-    <div class="scrolling-logos">
-      <div class="logo-item">
-        <img src="/src/Icons/Partnership/Salesforce Partners.png" alt="Salesforce Logo">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/Icon last.png" alt="AWS Logo">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/Microsoft-Partner.png" alt="Microsoft Logo">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/Google Partners.png" alt="SAP Logo">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/SAP.png" alt="">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/oracle-small-size.png" alt="AWS Logo">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/Partnership/Salesforce Partners.png" alt="Salesforce Logo">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/Icon last.png" alt="AWS Logo">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/Microsoft-Partner.png" alt="Microsoft Logo">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/Google Partners.png" alt="SAP Logo">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/SAP.png" alt="">
-      </div>
-      <div class="logo-item">
-        <img src="/src/Icons/oracle-small-size.png" alt="AWS Logo">
-      </div>
-    
-    
-  </section>
+
+<section class="w-full overflow-hidden mb-8 mt-2 bg-white">
+  <div class="scrolling-logos">
+    <div class="logo-track">
+      <!-- One full set of logos -->
+      <div class="logo-item"><img src="/src/Icons/Partnership/Salesforce Partners.png" alt="Salesforce Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/Icon last.png" alt="AWS Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/Microsoft-Partner.png" alt="Microsoft Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/Google Partners.png" alt="Google Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/SAP.png" alt="SAP Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/oracle-small-size.png" alt="Oracle Logo"></div>
+
+      <!-- Duplicate set for seamless infinite loop -->
+      <div class="logo-item"><img src="/src/Icons/Partnership/Salesforce Partners.png" alt="Salesforce Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/Icon last.png" alt="AWS Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/Microsoft-Partner.png" alt="Microsoft Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/Google Partners.png" alt="Google Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/SAP.png" alt="SAP Logo"></div>
+      <div class="logo-item"><img src="/src/Icons/oracle-small-size.png" alt="Oracle Logo"></div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Service-box -->
     <section id="what-we-do" class="services-container mt-4 mb-8">

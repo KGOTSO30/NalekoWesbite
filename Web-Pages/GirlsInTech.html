@@ -10,14 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    body {
-      padding: 0;
-      background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+    
 
     .grid {
       display: grid;
@@ -128,14 +121,47 @@
     </header>
                 <!--  Navigation Bar ENDS Here-->
 
+   
+    
+  <body class="flex flex-col min-h-screen">
+      <!--  Navigation Bar Begins Here-->
+      <header class="bg-naleko-dark-blue text-white py-6 px-4 shadow-md">
+        <div class="container ">
+            <div class="text-4xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+            <nav class="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2 text-sm md:text-base header">
+                <a href="WhoWeAre.html" class="hover:text-blue-300 transition duration-300">Who we are</a>
+                <a href="WhatWeDo.html" class="hover:text-blue-300 transition duration-300">What we do</a>
+                <a href="WhoWeServe.html" class="hover:text-blue-300 transition duration-300">Who we serve</a>
+                <a href="ContactUs.html" class="hover:text-blue-300 transition duration-300">Contact Us</a>
+                <a href="CorpTraining.html" class="hover:text-blue-300 transition duration-300">Corp Training</a>
+                <a href="Academy.html" class="hover:text-blue-300 transition duration-300">Academy</a>
+                <a href="#girls" class="hover:text-blue-300 transition duration-300">Girls in Tech</a>
+                <div class="flex space-x-2 ml-4">
+                    <!-- LinkedIn -->
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"/>
+                        </svg>
+                    </a>
 
-  <!-- Main -->
-   <br>
-   <body>
-  <main class="flex-grow p-4 container mx-auto">
-    <section class="mb-12 text-center">
-      <div class="max-w-3xl mx-auto flex flex-col justify-start items-center gap-6">
-        <h1 class="text-indigo-950/95 text-4xl font-black">Empowering Women. Inspiring Innovation</h1>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+                <!--  Navigation Bar ENDS Here-->
+
+  <main class="flex-grow">
+    <section class="mb-12  py-16 text-center">
+      <div class="max-w-6xl mx-auto flex flex-col justify-start items-center gap-6">
+        <h1 id="girls" class="text-indigo-950/95 text-4xl font-black">Empowering Women. Inspiring Innovation</h1>
         <h2 class="max-w-6xl mx-auto text-black text-base font-normal mt-8 text-indigo-950/95 text-2xl font-black">At Naleko Digital Solutions, we champion the advancement of women in technology because innovation thrives when everyone has a seat at the table.</h2>
       </div>
       <div class="max-w-6xl mx-auto text-black text-base font-normal mt-8">
@@ -200,7 +226,7 @@
 <br>
 
  <section class="relative mb-12">
-    <div class="carousel-container relative w-full overflow-hidden">
+    <div class="carousel-container relative w-full mx-auto overflow-hidden">
         <div class="carousel-track flex">
 
             <div class="carousel-slide flex-none w-1/3 p-4">
@@ -265,14 +291,16 @@
     Get Started in Salesforce 
       </a>
     </section>
-    
-    <img src="/src/images/TwoLadiesTeaching.jpg" alt="Hero Banner" class="w-full h-[400px] object-cover">
+      <!-- Page break using an image provided by Lerato -->
+
+     <div class=" w-full h-[750px] Two-Ladies-background mx-auto"></div> 
   </main>
+
 
                   <!--  Site Footer Begins Here -->
 
     
-    <footer class=" bg-naleko-dark-blue text-white py-8 px-4 p-4"> <!-- Need five columns-->
+    <footer class=" bg-naleko-dark-blue text-white py-8 px-4"> <!-- Need five columns-->
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                  <div class="flex items-center mb-4">
@@ -282,7 +310,7 @@
                 </svg>
                 <h3 class="text-4xl header">Naleko</h3>
             </div>
-                <p class="text-sm text-gray-300 mb-4">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+                <p class="text-sm text-gray-300 mb-4 py-2">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
                 <div class="flex space-x-4">
                    <!-- LinkedIn -->
                     <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 hover:text-white transition duration-300" aria-label="LinkedIn">
@@ -318,7 +346,7 @@
             </div>
 
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
                 <ul class="space-y-2">
                     <li><a href="#WhoWeAre" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
                     <li><a href="#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
@@ -328,7 +356,7 @@
             </div>
 
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 class="text-xl font-semibold mb-4">Flagship Programs</h3>
+                <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
                 <ul class="space-y-2">
                     <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
                     <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
@@ -338,7 +366,7 @@
 
             
                     <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                <h3 class="text-xl font-semibold mb-4 py-2">Contact Us</h3>
                 <div class="flex items-center mb-2">
                     <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     <p class="text-gray-300">admin@naleko.com</p>
@@ -359,57 +387,82 @@
             </div>
                  
             </div>
-            <div class="flex flex-col items-center md:items-start text-center md:text-right">
+            
+
+             <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                 <div class="flex items-center">
+                   <h3 class="text-xl font-semibold py-2 md:mx-12">Scan Me</h3>
+                    
+                </div>
+                <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder" class="mt-0 w-13 h-18 scale-75">
+
                 
-                    <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder" class="mt-0 w-13 h-18 scale-75">
-                
+               
             </div>
-      
+            
+            
+            
+            
         </div>
         <div class="container mx-auto text-center text-gray-400 text-sm mt-8 pt-4 border-t border-gray-700">
-            COPYRIGHT 2025| ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
+            COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
         </div>
     </footer>
 
                 <!--  Site footer Ends Here -->
+    
+
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
+
+    // Make sure slideWidth is calculated after images are loaded or layout is stable
+    // It's safer to calculate it inside updateCarousel or on window resize if needed
+    let slideWidth = slides[0].offsetWidth; 
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        // Recalculate slideWidth in case of dynamic resizing (e.g., responsive design)
+        // This is a good practice if your layout might change.
+        slideWidth = slides[0].offsetWidth; 
+        carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth * 3}px)`; // Move by 3 slides
+    }
+
+    // Initial update to ensure correct positioning on load
+    updateCarousel(); 
+
+    prevButton.addEventListener('click', () => {
+        // Calculate total number of "pages" of 3 slides
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalPages - 1;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    // Auto-advance carousel (optional)
+    setInterval(() => {
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    }, 5000); // Change slide every 5 seconds
+
+    // Optional: Add a resize listener to re-calculate slideWidth
+    window.addEventListener('resize', updateCarousel);
+});
+</script>
+
 
 </body>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const track = document.querySelector(".carousel-track");
-        const slides = document.querySelectorAll(".carousel-slide");
-        const prevButton = document.querySelector(".carousel-prev");
-        const nextButton = document.querySelector(".carousel-next");
-
-        let currentIndex = 0;
-        const slidesToShow = 3;
-        const totalSlides = slides.length;
-
-        function updateCarousel() {
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            const newTransform = -slideWidth * currentIndex;
-            track.style.transform = `translateX(${newTransform}px)`;
-        }
-
-        nextButton.addEventListener("click", () => {
-            if (currentIndex < totalSlides - slidesToShow) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
-
-        prevButton.addEventListener("click", () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
-
-        // Optional: Resize handling
-        window.addEventListener("resize", updateCarousel);
-    });
-</script>
 
 </html>
 

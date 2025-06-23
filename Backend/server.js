@@ -29,7 +29,7 @@ app.use(express.json()); // For parsing application/json
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 10 * 1024 * 1024 // 10 MB file size limit (adjust as needed)
+    fileSize: 20 * 1024 * 1024 // 10 MB file size limit (adjust as needed)
   },
   fileFilter: (req, file, cb) => {
     // Optional: Filter file types to only allow common document/resume formats

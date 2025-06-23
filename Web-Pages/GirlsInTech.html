@@ -14,8 +14,8 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, auto);
-      gap: 80px;
+      grid-template-columns: repeat(3, auto);
+      gap: 100px;
       justify-content: center;
     }
 
@@ -23,10 +23,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 170px;
-      height: 170px;
+      width: 200px;
+      height: 200px;
       background: white;
-      border: 3px solid navy;
+      border: 3px solid; 
       transform: rotate(45deg);
     }
 
@@ -34,7 +34,6 @@
       transform: rotate(-45deg);
       color: black;
       font-size: 14px;
-      font-weight: bold;
       text-align: center;
       line-height: 1.2;
       max-width: 120px;
@@ -91,7 +90,7 @@
     
   <body class="flex flex-col min-h-screen">
       <!--  Navigation Bar Begins Here-->
-      <header class="bg-naleko-dark-blue text-white py-6 px-4 shadow-md">
+      <header class="header-background-girls bg-naleko-dark-blue text-white py-6 px-4 shadow-md">
         <div class="container ">
             <div class="text-4xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
             <nav class="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2 text-sm md:text-base header">
@@ -125,65 +124,77 @@
                 <!--  Navigation Bar ENDS Here-->
 
   <main class="flex-grow">
-    <section class="mb-12  py-16 text-center">
-      <div class="max-w-6xl mx-auto flex flex-col justify-start items-center gap-6">
-        <h1 id="girls" class="text-indigo-950/95 text-4xl font-black">Empowering Women. Inspiring Innovation</h1>
-        <h2 class="max-w-6xl mx-auto text-black text-base font-normal mt-8 text-indigo-950/95 text-2xl font-black">At Naleko Digital Solutions, we champion the advancement of women in technology because innovation thrives when everyone has a seat at the table.</h2>
-      </div>
-      <div class="max-w-6xl mx-auto text-black text-base font-normal mt-8">
+    <section class="py-16 text-center">
+      <div class="max-w-6xl mx-auto flex flex-col justify-start items-center mb-2 gap-6">
+        <h1 id="girls" class="text-indigo-950/95 text-4xl font-black">Why Women in Tech Matter?</h1>
+         <p class="text-lg md:text-xl font-black text-naleko-dark-blue mb-2 max-w-2xl mx-auto">Empowering Women. Inspiring Innovation</p>
+             </div>
+      <div class="max-w-6xl mx-auto text-black text-base font-normal">
+        <h2 class="max-w-6xl mx-auto text-black text-base font-normal  text-2xl font-black">At Naleko Digital Solutions, we champion the advancement of women in technology because innovation thrives when everyone has a seat at the table.</h2>
+    <br/>
         Technology is evolving rapidly, and diversity is key to building smarter, more inclusive solutions. Women bring unique perspectives that enrich the tech world and their contributions are vital.
-        <br/><br/>
-        <br>
-        <div class="max-w-3xl mx-auto flex flex-col justify-start items-center gap-6">
-          <h1 class="text-indigo-950/95 text-4xl font-black">Why Women in Tech Matter:</h1>
-        </div>
+       <br>
+       
       </div>
     </section>
 
-    <section class="text-center mt-16 mb-10 px-4">
+<section class="text-center mt-10 mb-20 px-4">
       <div class="grid">      
-        <div class="diamond">
+        <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
             <div class="text">
-                <h3>💡 Fresh Ideas & Innovation</h3>
+                <h3 class="icon-girls">💡</h3>
+                <br>
+                <h3 class="text-naleko-dark-blue"> Fresh Ideas & Innovation</h3>
                 <br>
                 <p>Different backgrounds spark creativity. Women contribute new ways of thinking that lead to smarter, more user-friendly technology</p>
             </div>
         </div>
-        <div class="diamond">
+        <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
   <div class="text">
-    <h3>⚖️Closing the Gender Gap</h3>
+    <h3 class="icon-girls">⚖️</h3>
+    <br>
+    <h3 class="text-naleko-dark-blue">Closing the Gender Gap</h3>
     <br>
     <p>Tech has long been male dominated. Increasing female participation promotes equality, fair pay, and balanced opportunities.</p>
   </div>
 </div>
 
- <div class="diamond">
+ <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
   <div class="text">
-    <h3>📈Stronger Business Outcomes</h3>
+     <h3 class="icon-girls">📈</h3>
+     <br>
+    <h3 class="text-naleko-dark-blue">Stronger Business Outcomes</h3>
     <br>
     <p>Diverse teams perform better. Women in technical and leadership roles drive better decisions, innovation, and results.</p>
   </div>
 </div>
 
- <div class="diamond">
+ <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
   <div class="text">
-    <h3>👩‍💻Role Models for the Future</h3>
+    <h3 class="icon-girls">👩‍💻</h3>
+    <br>
+    <h3 class="text-naleko-dark-blue">Role Models for the Future</h3>
     <br>
     <p>When girls see women thriving in tech, they believe they can do it too. Representation inspires the next generation of innovators.</p>
   </div>
 </div>
 
- <div class="diamond">
+ <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
   <div class="text">
-    <h3>🛍Designing for Everyone</h3>
+    <h3 class="icon-girls icon-pink">🛍</h3>
+    <br>
+    <h3 class="text-naleko-dark-blue">Designing for Everyone</h3>
+    <br>
     <br>
     <p>Women make up half the world. Their input ensures technology is inclusive and meets the needs of all users.</p>
   </div>
 </div>
 
- <div class="diamond">
+ <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
   <div class="text">
-    <h3>🌍Driving Positive Change</h3>
+    <h3 class="icon-girls">🌍</h3>
+    <br>
+    <h3 class="text-naleko-dark-blue">Driving Positive Change</h3>
     <br>
     <p>Women advocate for equality, inclusion, and work-life balance, building a tech culture that supports everyone.</p>
   </div>

@@ -6,7 +6,7 @@ const statusMessage = document.getElementById('status-message');
 const submitButton = document.getElementById('submit-button');
 
 // The URL of your Google Apps Script Web App
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyZqYT02qzeci5nIwddMFNQbRn-QmZREEOWbZCJqN4qzxZ-I1bDlDSJAzBoRLXoCLff/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyK2m_0BfMKXvKoDixP0DeZMlOq5jVSmiFCMAZ8HybZi5LLebMV_mn0u5QW2IbJj8vr/exec';
 
 form.addEventListener('submit', e => {
     // Prevent the default form submission behavior (which reloads the page)

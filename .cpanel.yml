@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/aavpa4h5g7m2/public_html/
+    - /bin/cp -R * $DEPLOYPATH
+    # Example of copying specific folders/files (adjust as needed):
+    # - /bin/cp -R css $DEPLOYPATH
+    # - /bin/cp -R js $DEPLOYPATH
+    # - /bin/cp index.html $DEPLOYPATH
+    # - /bin/cp about.html $DEPLOYPATH

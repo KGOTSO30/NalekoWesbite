@@ -23,44 +23,7 @@
       margin: 0;
     }
     
-    /* Scrolling container */
-    .scrolling-logos-wrapper {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .scrolling-logos {
-      display: flex;
-      gap: 30px; /* Space between logos */
-      align-items: center;
-      white-space: nowrap;
-      animation: scroll-left 40s linear infinite;
-    }
-
-    /* Keyframe for scrolling left */
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-
-    /* Individual logo item */
-    .logo-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    /* Logo image styling */
-    .logo-item img {
-      max-height: 80px;
-      object-fit: contain;
-    }
+   
 
    /* The six service boxes */ 
     body {
@@ -400,8 +363,6 @@
         <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Cloud Security & Compliance Details</h2>
 
         <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
-            This is where you can place more detailed information about Cloud Security & Compliance.
-            You could include service specifics, FAQs, a mini-form, or a call to action.
             <br><br>
             For example:
         </p>

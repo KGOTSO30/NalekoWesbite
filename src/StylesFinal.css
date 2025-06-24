@@ -71,7 +71,7 @@
 }
 
 .header-background-girls {
-    background-image: url('/src/Images/GirlsIntech.jpeg'); /* **CHANGE THIS PATH** to your image */
+    background-image: url('/src/Icons/outdoor-photo-south-african-high-260nw-2626901043\ 2.jpg'); /* **CHANGE THIS PATH** to your image */
     background-size: cover; /* This makes sure the image covers the entire header */
     background-position: center; /* This centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -309,6 +309,19 @@
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
+.Two-Ladies-background {
+    background-image: url('/src/Images/TwoLadiesTeaching.jpg'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: cover; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.Two-Ladies-background {
+    background-image: url('/src/Images/TwoLadiesTeaching.jpg'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: cover; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
 
  /* Custom styles for the carousel */
         .carousel-container {
@@ -437,3 +450,70 @@
       font-size: 16;
       color: navy;
     }
+
+
+    /* Container for the marquee effect */
+.scrolling-logos {
+  display: flex; /* Makes the logos line up horizontally */
+  white-space: nowrap; /* Prevents logos from wrapping to the next line */
+  animation: scrollLogos 30s linear infinite; /* Apply the animation */
+  will-change: transform; /* Optimize for animation performance */
+}
+
+/* Individual logo items */
+.logo-item {
+  flex-shrink: 0; /* Prevents logos from shrinking to fit */
+  margin: 0 40px; /* Adjust spacing between logos */
+  display: flex;
+  align-items: center; /* Vertically center images if they have different heights */
+  justify-content: center; /* Horizontally center images */
+  height: 80px; /* Set a consistent height for logo items */
+}
+
+.logo-item img {
+  max-height: 100%; /* Ensure images don't exceed the logo-item height */
+  width: auto; /* Maintain aspect ratio */
+  filter: grayscale(100%); /* Optional: Make logos grayscale */
+  opacity: 0.7; /* Optional: Make logos slightly faded */
+  transition: all 0.3s ease; /* Optional: Smooth transition for hover effect */
+}
+
+.logo-item img:hover {
+    filter: grayscale(0%); /* Optional: Color on hover */
+    opacity: 1; /* Optional: Full opacity on hover */
+    transform: scale(1.05); /* Optional: Slight zoom on hover */
+}
+
+.icon-girls {
+    transform: scale(2); /* Optional: Slight zoom on hover */
+
+}
+
+.icon-pink {
+     color: rgb(218, 65, 91);
+
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0%); /* Start at the original position */
+  }
+  100% {
+    /*
+      Translate X by -50% to move the first set of logos completely out of view,
+      revealing the duplicated set. Since the duplicated set is identical,
+      it creates a seamless infinite loop.
+    */
+    transform: translateX(-50%);
+  }
+}
+
+/* To ensure the section doesn't expand beyond the viewport and hides overflow */
+.w-full { /* Assuming w-full sets width to 100% or similar */
+    width: 100%;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+

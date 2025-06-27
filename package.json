@@ -4,7 +4,7 @@
   "main": "Backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node Backend/server.js",
     "tailwind-init": "tailwindcss init -p",
     "build:css": "tailwindcss -i ./input.css -o ./dist/output.css --minify",
     "watch:css": "tailwindcss -i ./input.css -o ./dist/output.css --watch"

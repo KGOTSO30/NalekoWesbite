@@ -10,7 +10,7 @@
     <!-- Swiper.js for the carousel functionality -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
@@ -342,24 +342,25 @@
         <!-- Contact Us form starts here-->
       <div class="container mx-auto px-4">
          <h2 class="text-4xl md:text-5xl text-center text-naleko-dark-blue font-black mb-2 mt-8">Connect With Us</h2>
-      <form id="Form-N" class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-6 sm:p-8 rounded-xl shadow-lg mb-40">
+      <div class="container mx-auto px-4  rounded-xl shadow-lg">
+      <form id="Form-N" class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-6 sm:p-8 ">
         <div>
           <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
+          <input type="text" id="firstName" name="FirstName" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
         </div>
         <div>
           <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
+          <input type="text" id="lastName" name="LastName" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" placeholder="you@example.com">
+          <input type="email" id="email" name="Email" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" placeholder="you@example.com">
         </div>
         
         
         <div>
           <label for="nonProfit">Are you a Non-Profit?</label>
-          <select id="nonProfit" name="nonProfit" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
+          <select id="nonProfit" name="Non-profit?" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
             <option value="">Select Option</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
@@ -367,7 +368,7 @@
         </div>
         <div class="md:col-span-2">
           <label for="technology">Technology Or Service</label>
-          <select id="technology" name="technology" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
+          <select id="technology" name="TechnologyorService" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
             <option value="">Select Option</option>
             <option value="Salesforce">Salesforce – CRM and cloud solutions tailored for business success.</option>
             <option value="AWS">AWS – Scalable and secure cloud computing services.</option>
@@ -388,25 +389,19 @@
 
         <div>
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" placeholder="e.g. 082 123 4567">
+          <input type="tel" id="phone" name="PhoneNumber" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" placeholder="e.g. 082 123 4567">
         </div>
 
         <div>
           <label for="city">Company</label>
-          <select id="city" name="city" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
-            <option value="">Select Option</option>
-            <option value="Johannesburg">Johannesburg</option>
-            <option value="Cape Town">Cape Town</option>
-            <option value="Durban">Durban</option>
-            <option value="Pretoria">Pretoria</option>
-            <option value="Port Elizabeth">Port Elizabeth</option>
-          </select>
+           <input type="text" id="lastName" name="City" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
+       
         </div>
 
 
         <div>
           <label for="source">Where did you get this Link?</label>
-          <select id="source" name="source" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
+          <select id="source" name="SourceOfLink" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
             <option value="">Select Option</option>
             <option value="Website">Website</option>
             <option value="Naleko Email">Naleko Email</option>
@@ -421,30 +416,47 @@
         
         
         <div class="md:col-span-2">
-          <label for="comments">Comments</label>
-          <textarea id="comments" name="comments" rows="5" class="w-full px-4 py-2 border border-black rounded-lg shadow-md" placeholder="Add your message or notes here..."></textarea>
+          <label for="Comments">Comments</label>
+          <textarea id="Comments" name="Comments" rows="5" class="w-full px-4 py-2 border border-black rounded-lg shadow-md" placeholder="Add your message or notes here..."></textarea>
         </div>
         <div class="text-center mt-20">
-          <button type="submit" class="w-52 h-11 bg-[#120C4E] text-white rounded-lg shadow text-base font-semibold">Send Message</button>
+          <button type="submit" id="submit-button" class="w-52 h-11 bg-[#120C4E] text-white rounded-lg shadow text-base font-semibold">Send Message</button>
         </div>
+        <p id="status-message" class="text-center font-medium"></p>
+
+       
       </form>
-       <div>
+      
+        <div>
             <p class="text-lg font-black text-center text-naleko-dark-blue max-w-6xl mx-auto">
         Connect with Naleko Digital Solutions Campaigns.
               </p>
               <br>
-        <section class="container mx-auto mt-2 mb-2  text-center items-center justify-center">
-            <a href="/src/AuxFiles/Naleko Salesforce Campaign.pdf" download="Naleko Salesforce Campaign.pdf"  class="inline-flex items-center justify-center py-2.5  bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">#NalekoTribeSalesforce</a>
-            <a href="/src/AuxFiles/Naleko Salesforce Campaign.pdf" download="Naleko Salesforce Campaign.pdf"  class="inline-flex items-center justify-center py-2.5  bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">#NalekoTribeAWS</a>
-            <a href="/src/AuxFiles/Naleko Salesforce Campaign.pdf" download="Naleko Salesforce Campaign.pdf"  class="inline-flex items-center justify-center py-2.5  bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">#NalekoFreeConsult</a>
-     
-   
-        </section>
+   <section class="container flex items-center mt-2 mb-2 justify-center">
+    <div class="flex flex-row items-center gap-4 w-full justify-center"> 
+        <a href="/src/AuxFiles/Naleko Salesforce Campaign.pdf" download="Naleko Salesforce Campaign.pdf" 
+           class="flex-1 inline-flex items-center justify-center py-2.5 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">
+            #NalekoTribeSalesforce
+        </a>
+        <a href="/src/AuxFiles/Naleko Salesforce Campaign.pdf" download="Naleko Salesforce Campaign.pdf" 
+           class="flex-1 inline-flex items-center justify-center py-2.5 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">
+            #NalekoTribeAWS
+        </a>
+        <a href="/src/AuxFiles/Naleko Salesforce Campaign.pdf" download="Naleko Salesforce Campaign.pdf" 
+           class="flex-1 inline-flex items-center justify-center py-2.5 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">
+            #NalekoFreeConsultation
+        </a>
+    </div>
+</section>
    
         
         
         </div>
     </div>
+
+
+    <script src="form-handler.js"></script>
+
     
 <!-- Contact Us Body Ends Here-->
 

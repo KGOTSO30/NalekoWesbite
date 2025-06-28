@@ -14,29 +14,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Utility for a smooth transition on height/width properties */
+        .transition-height {
+            transition: height 0.5s ease-in-out;
+        }
+    </style>
 </head>
 <body class="flex flex-col min-h-screen">
-    <header x-data="{ scrolled: false, open: false }"
+    <header x-data="{ scrolled: false, open: false}"
         x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 100 }"
         :class="{
-            'bg-naleko-dark-blue shadow-md': scrolled || open, /* Apply background and shadow when scrolled OR menu is open */
-            'bg-transparent': !scrolled && !open /* Transparent background when not scrolled and menu is closed */
+            'bg-naleko-dark-blue shadow-md': scrolled,
+            'bg-transparent': !scrolled
         }"
         class="fixed w-full top-0 left-0 z-50 transition-all duration-300 ease-in-out">
 
-        <div class="container mx-auto px-4 py-6 text-white flex justify-between items-center">
-            <div :class="{ 'text-6xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
-                class="text-4xl md:text-5xl header mb-[31px] md:mb-0">Naleko Digital Solutions</div>
+        <div class="container mx-auto px-4 py-6 text-white relative"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+                class="text-4xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
             
-            <button @click="open = !open" class="md:hidden text-white focus:outline-none z-50">
+            <button @click="open = !open" class="md:hidden absolute top-6 right-4 text-white focus:outline-none z-50">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
-
-            <nav :class="{'hidden': !open, 'flex': open}" 
-                 class="md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+            <nav :class="{'hidden': !open, 'flex': open}"
+                class="md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
                         gap-x-6 gap-y-2 text-sm md:text-base header 
                         absolute md:static top-full left-0 w-full md:w-auto 
                         bg-naleko-dark-blue md:bg-transparent p-4 md:p-0">
@@ -47,45 +52,52 @@
                 <a href="Web-Pages/CorpTraining.html" class="block py-2 px-4 hover:text-blue-300 transition duration-300">Corp Training</a>
                 <a href="Web-Pages/Academy.html" class="block py-2 px-4 hover:text-blue-300 transition duration-300">Academy</a>
                 <a href="Web-Pages/GirlsInTech.html" class="block py-2 px-4 hover:text-blue-300 transition duration-300">Girls in Tech</a>
-                
-                <div class="flex space-x-2 mt-4 md:mt-0 md:ml-4">
-                    <a href="https://za.linkedin.com/company/nalekodigital"
+                <div class="flex space-x-2 ml-4 mt-2 md:mt-0"> <a href="https://za.linkedin.com/company/nalekodigital"
                         class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z" />
+                            <path
+                                d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z" />
                         </svg>
                     </a>
                     <a href="https://www.tiktok.com/@nalekodigital/"
                         class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z" />
+                            <path
+                                d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z" />
                         </svg>
                     </a>
                 </div>
             </nav>
         </div>
     </header>
-    <main class="flex-grow">
 
-        <div x-data="carousel()" x-init="init()" class="relative w-full md:h-[700px] overflow-hidden">
+    <main class="flex-grow">
+        <div x-data="carousel()" x-init="init()" class="relative w-full h-[60vh] md:h-[700px] lg:h-[800px] overflow-hidden">
             <template x-for="(slide, index) in slides" :key="index">
-                <div x-show="activeSlide === index" x-transition:enter="transition-opacity duration-1000 ease-in-out"
-                    x-transition:leave="transition-opacity duration-1000 ease-in-out"
-                    class="absolute inset-0 bg-cover bg-center" :style="`background-image: url(${slide.image})`">
+                <div x-show="activeSlide === index" 
+                     x-transition:enter="transition-opacity duration-1000 ease-in-out"
+                     x-transition:leave="transition-opacity duration-1000 ease-in-out"
+                     class="absolute inset-0 bg-cover bg-center" :style="`background-image: url(${slide.image})`">
                     <div class="bg-black bg-opacity-50 w-full h-full flex items-center justify-center px-6">
                         <div class="text-white text-center max-w-3xl">
-                            <h1 class="text-4xl md:text-5xl font-bold mb-4">Empowering Collaborative Cloud Solutions</h1>
+                            <h1 x-show="activeSlide === index" 
+                                x-transition:enter="transition-opacity duration-700 ease-in-out delay-500"
+                                x-transition:leave="transition-opacity duration-300 ease-in-out"
+                                class="text-4xl flex md:text-5xl font-bold mb-4">Empowering Collaborative Cloud Solutions</h1>
 
-                            <div>
+                            <div x-show="activeSlide === index"
+                                 x-transition:enter="transition-opacity duration-700 ease-in-out delay-700"
+                                 x-transition:leave="transition-opacity duration-300 ease-in-out">
                                 <a href="Web-Pages/WhatWeDo.html"
                                     class="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition mb-8 mt-8">
                                     Discover Our Solutions
                                 </a>
                             </div>
 
-                            <p class="text-lg md:text-xl mb-6" x-text="slide.subtext" x-show="activeSlide === index"
-                                x-transition:enter="transition-opacity duration-700 ease-in-out delay-1000"
-                                x-transition:leave="transition-opacity duration-700 ease-in-out"></p>
+                            <p x-show="activeSlide === index"
+                               x-transition:enter="transition-opacity duration-700 ease-in-out delay-900"
+                               x-transition:leave="transition-opacity duration-300 ease-in-out"
+                               class="text-lg md:text-xl mb-6" x-text="slide.subtext"></p>
                         </div>
                     </div>
                 </div>
@@ -109,79 +121,50 @@
             </div>
         </div>
 
-        <script>
-            function carousel() {
-                return {
-                    activeSlide: 0,
-                    slides: [
-                        {
-                            image: '/src/Images/slide1.jpg',
-                            subtext: "Unlock Efficiency, Security, and Innovation in the Cloud"
-                        },
-                        {
-                            image: '/src/Images/slide2.jpg',
-                            subtext: "Elevate your cloud potential with expert solutions for seamless growth"
-                        },
-                        {
-                            image: '/src/Images/slide3.jpg',
-                            subtext: "Where innovation meets excellence in the world of Cloud"
-                        }
-                    ],
-                    next() {
-                        this.activeSlide = (this.activeSlide + 1) % this.slides.length;
-                    },
-                    prev() {
-                        this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
-                    },
-                    goToSlide(index) {
-                        this.activeSlide = index;
-                    },
-                    init() {
-                        setInterval(() => {
-                            this.next();
-                        }, 7000);
-                    }
-                };
-            }
-        </script>
-
-    <h2 class="text-4xl md:text-5xl text-center text-naleko-dark-blue font-black mb-8 mt-20">Our Cloud Services</h2>
-
-    <section id="what-we-do" class="services-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-8 max-w-6xl mx-auto">
-
-        <div id="cloudSecurityCard" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] hover:bg-blue-50 transition-all duration-300 ease-in-out text-center flex flex-col items-center cursor-pointer">
-            <img src="/src/Icons/Cloud/1.png" alt="Cloud Security" class="mb-4 w-12 h-12"/>
-            <h3 class="text-[#120C4E] text-xl font-bold font-['Inter'] mb-3">Cloud Security & Compliance</h3>
-            <p class="text-black text-base font-normal font-['Inter'] leading-relaxed">
-                <span class="font-bold">Protect operations</span> with robust security and regulatory compliance.
-            </p>
-        </div>
-
-        <div id="infraOptimizationCard" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] hover:bg-blue-50 transition-all duration-300 ease-in-out text-center flex flex-col items-center cursor-pointer">
-            <img src="/src/Icons/Cloud/2.png" alt="Infrastructure Optimization Icon" class="mb-4 w-12 h-12"/>
-            <h3 class="text-[#120C4E] text-xl font-bold font-['Inter'] mb-3">Infrastructure Optimisation</h3>
-            <p class="text-black text-base font-normal font-['Inter'] leading-relaxed">
-                <span class="font-bold">Enhance performance</span> while reducing costs.
-            </p>
-        </div>
-
-        <div id="enterpriseIntegrationCard" class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.02] hover:bg-blue-50 transition-all duration-300 ease-in-out text-center flex flex-col items-center cursor-pointer">
-            <img src="/src/Icons/Cloud/3.png" alt="Enterprise Integration Icon" class="mb-4 w-12 h-12"/>
-            <h3 class="text-[#120C4E] text-xl font-bold font-['Inter'] mb-3">Enterprise Cloud Integration</h3>
-            <p class="text-black text-base font-normal font-['Inter'] leading-relaxed">
-                <span class="font-bold">Unify on-premises and cloud systems</span> for smooth operations.
-            </p>
-        </div>
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Our Core Values</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Innovation</h3>
+                        <p class="text-gray-600">We constantly seek new and better ways to solve challenges and create value.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Collaboration</h3>
+                        <p class="text-gray-600">Working together is key to achieving exceptional results for our clients.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Excellence</h3>
+                        <p class="text-gray-600">We are committed to delivering the highest quality in all our endeavors.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-    <div class="max-w-6xl mx-auto flex justify-end mt-4 mb-20 md:mt-8">
-        <a href="Web-Pages/WhatWeDo.html" class="flex items-center text-right text-[#120C4E] hover:text-blue-700 transition-colors duration-300 ease-in-out group">
-            <span class="text-lg md:text-xl font-bold font-['Inter'] mr-3">Explore All Services</span>
-            <svg class="w-8 h-8 transform group-hover:scale-110 transition-transform duration-300 ease-in-out" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-        </a>
-    </div>
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                        <svg class="w-12 h-12 text-naleko-dark-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h4l2-2m0-6V9a4 4 0 10-8 0v4l3 3m6-3l-3-3m0 0l3-3m0 0l3 3m0 0l-3 3"></path></svg>
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Cloud Migration</h3>
+                        <p class="text-gray-600">Seamlessly move your infrastructure to the cloud with minimal disruption.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                        <svg class="w-12 h-12 text-naleko-dark-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">DevOps Consulting</h3>
+                        <p class="text-gray-600">Automate and streamline your development and operations workflows.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                        <svg class="w-12 h-12 text-naleko-dark-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"></path></svg>
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Cloud Security</h3>
+                        <p class="text-gray-600">Protect your cloud assets with robust security strategies and solutions.</p>
+                    </div>
+                </div>
+                <a href="Web-Pages/WhatWeDo.html" class="inline-block bg-naleko-dark-blue text-white font-semibold px-8 py-3 rounded-lg hover:bg-naleko-dark-blue/90 transition mt-10">View All Services</a>
+            </div>
+        </section>
+
 
     <div id="cloudSecurityModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
         <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
@@ -482,6 +465,42 @@
             &copy; 2025 Naleko Digital Solutions. All rights reserved.
         </div>
     </footer>
+
+    <script>
+        function carousel() {
+            return {
+                activeSlide: 0,
+                slides: [
+                    {
+                        image: '/src/Images/slide1.jpg',
+                        subtext: "Unlock Efficiency, Security, and Innovation in the Cloud"
+                    },
+                    {
+                        image: '/src/Images/slide2.jpg',
+                        subtext: "Elevate your cloud potential with expert solutions for seamless growth"
+                    },
+                    {
+                        image: '/src/Images/slide3.jpg',
+                        subtext: "Where innovation meets excellence in the world of Cloud"
+                    }
+                ],
+                next() {
+                    this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+                },
+                prev() {
+                    this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
+                },
+                goToSlide(index) {
+                    this.activeSlide = index;
+                },
+                init() {
+                    setInterval(() => {
+                        this.next();
+                    }, 1000);
+                }
+            };
+        }
+    </script>
 
 </body>
 </html>

@@ -10,39 +10,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+<style>
+  [id] {
+  scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
+}
+</style>
 </head>
 <body class="flex flex-col min-h-screen">
 
 
              <!--  Navigation Bar Begins Here-->
-  <header x-data="{ scrolled: false, open: false}"
+  <header x-data="{ open: false}"
         x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
-        :class="{
-            'bg-naleko-dark-blue shadow-md text-4xl md:text-5xl header': scrolled,
-            'bg-naleko-dark-blue shadow-md text-4xl md:text-5xl header: !scrolled
-        }"
+       
         class="fixed w-full top-0 left-0 z-50 bg-naleko-dark-blue text-white py-6 px-4 transition-all duration-300 ease-in-out">
     <div class="container mx-auto relative bg-naleko-dark-blue text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
                 class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
 
-        <button id="menu-btn" class="md:hidden block text-white focus:outline-none">
+        <button id="menu-btn" class="md:hidden block text-white absolute top-4 right-4 focus:outline-none">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </button>
         
         <nav id="menu" :class="{'hidden': !open, 'flex': open}"
-                class="md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                class="hidden md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
                         gap-x-6 gap-y-2 text-sm md:text-base header 
                         absolute md:static top-full left-0 w-full md:w-auto 
                         bg-naleko-dark-blue  p-4 md:p-0 text-white">
-            <a href="WhoWeAre.html" class="hover:text-blue-300 transition duration-300">Who we are</a>
-            <a href="#WhatWeDo" class="hover:text-blue-300 transition duration-300">What we do</a>
-            <a href="WhoWeServe.html" class="hover:text-blue-300 transition duration-300">Who we serve</a>
-            <a href="ContactUs.html" class="hover:text-blue-300 transition duration-300">Contact Us</a>
-            <a href="CorpTraining.html" class="hover:text-blue-300 transition duration-300">Corp Training</a>
-            <a href="Academy.html" class="hover:text-blue-300 transition duration-300">Academy</a>
-            <a href="GirlsInTech.html" class="hover:text-blue-300 transition duration-300">Girls in Tech</a>
+            <a href="WhoWeAre.html" class=" block hover:text-blue-300 transition duration-300">Who we are</a>
+            <a href="WhatWeDo.html" class="block hover:text-blue-300 transition duration-300">What we do</a>
+            <a href="WhoWeServe.html" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
+            <a href="ContactUs.html" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
+            <a href="CorpTraining.html" class="block hover:text-blue-300 transition duration-300">Corp Training</a>
+            <a href="Academy.html" class="block hover:text-blue-300 transition duration-300">Academy</a>
+            <a href="GirlsInTech.html" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
             <div class="flex space-x-2 ml-4">
                 <a href="https://za.linkedin.com/company/nalekodigital"
                    class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
@@ -71,7 +74,7 @@
         <h2 id="WhoWeAre" class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue mb-4">Our Origin Story</h2>
         <p class="text-naleko-dark-blue text-lg md:text-xl font-extrabold text-center mb-8">Cloud experts driving smart, scalable solutions for a digital-first world.</p>
         <div class="max-w-7xl mx-auto text-base text-gray-800 leading-relaxed text-justify">
-            <p class="mb-4"><span class="font-bold">Our company is driven by a <span class="font-bold">love</span> for innovation, striving to <span class="font-bold">make good</span> on every opportunity <span class="font-bold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</span></p>
+            <p class="mb-4">Our company is driven by a <span class="font-bold">love</span> for innovation, striving to <span class="font-bold">make good</span> on every opportunity <span class="font-bold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</span></p>
             <p class="mb-4">Naleko Digital Solutions was born out of <span class="font-bold">collaboration, resilience, and a shared passion for technology.</span> In 2020, during the height of remote work adaptation, a Software Developer, a Software Engineer, and a Business Analyst created a WhatsApp group to support one another. What started as casual peer support quickly blossomed into something far greater, <span class="font-bold">a vision to transform the digital landscape</span>. And so, Naleko Digital Solutions was founded.</p>
             <p class="mb-4">Today, we are a fast-growing IT software company with <span class="font-bold">a strong focus on cloud computing, CRM transformation, and intelligent application development.</span> We empower businesses across healthcare, finance, retail, banking, and insurance to elevate customer experiences and streamline operations through scalable, cloud-first strategies.</p>
             <p>At the heart of our services lies Salesforce, enabling smarter customer management, AI-powered insights, and stronger relationships. <span class="font-bold">We’ve since expanded our technology stack to include a range of cloud platforms</span>, broadening our impact and adapting to the ever-evolving needs of modern enterprises.</p>
@@ -177,8 +180,8 @@
 
             <!-- Flagship Programs -->
 
-    <section class="container mx-auto py-16 px-4">
-        <h2 class="text-3xl md:text-4xl font-semibold text-center mb-12 text-naleko-dark-blue">Our Flagship Programs</h2>
+    <section id="flags" class="container mx-auto py-16 px-4">
+        <h2 id="flags" class="text-3xl md:text-4xl font-semibold text-center mb-12 text-naleko-dark-blue">Our Flagship Programs</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div class="bg-white-alpha p-6 rounded-2xl shadow-custom-dark flex flex-col items-center text-center">
                 <img src="/src/Icons/CorpTraining.png" alt="Corp Training Icon" class="mb-4 w-20 h-20">
@@ -261,22 +264,22 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+              <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#WhoWeAre" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
-                    <li><a href="#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
-                    <li><a href="#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#flags" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
                 </ul>
             </div>
 
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                    <li><a href="/Web-Pages/CorpTraining.html" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                    <li><a href="/Web-Pages/Academy.html" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                    <li><a href="/Web-Pages/GirlsInTech.html" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
                 </ul>
             </div>
 

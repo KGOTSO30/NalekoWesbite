@@ -6,8 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node Backend/server.js",
     "tailwind-init": "tailwindcss init -p",
-    "build:css": "tailwindcss -i ./input.css -o ./dist/output.css --minify",
-    "watch:css": "tailwindcss -i ./input.css -o ./dist/output.css --watch"
+    "build:css": "tailwindcss -i ./src/output.css -o ./src/StylesFinal.css --minify",
+    "watch:css": "tailwindcss -i ./src/output.css -o ./src/StylesFinal.css --watch"
   },
   "keywords": [],
   "author": "",

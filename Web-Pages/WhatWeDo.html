@@ -15,6 +15,8 @@
   <link href="/src/StylesFinal.css" rel="stylesheet">
 
   <style>
+    /* On your destination page's stylesheet */
+
     
     /* Marquee */
     body {
@@ -33,12 +35,13 @@
     }
 
     .services-container {
-      width: 90%;
+      width: 100%;
       max-width: 900px;
       margin: 40px auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 40px;
+      align-items: center;
     }
 
     .service-box {
@@ -78,17 +81,32 @@
 <body class="text-black">
 
   <!-- Navigation Bar -->
-  <header class="bg-naleko-dark-blue text-white py-6 px-4 shadow-md">
-    <div class="container mx-auto">
-        <div class="text-4xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
-        <nav class="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2 text-sm md:text-base header">
-            <a href="WhoWeAre.html" class="hover:text-blue-300 transition duration-300">Who we are</a>
-            <a href="#WhatWeDo" class="hover:text-blue-300 transition duration-300">What we do</a>
-            <a href="WhoWeServe.html" class="hover:text-blue-300 transition duration-300">Who we serve</a>
-            <a href="ContactUs.html" class="hover:text-blue-300 transition duration-300">Contact Us</a>
-            <a href="CorpTraining.html" class="hover:text-blue-300 transition duration-300">Corp Training</a>
-            <a href="Academy.html" class="hover:text-blue-300 transition duration-300">Academy</a>
-            <a href="GirlsInTech.html" class="hover:text-blue-300 transition duration-300">Girls in Tech</a>
+              <!--  Navigation Bar Begins Here-->
+  <header x-data="{ open: false}"
+        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+       
+        class="fixed w-full top-0 left-0 z-50 bg-naleko-dark-blue text-white py-6 px-4 transition-all duration-300 ease-in-out">
+    <div class="container mx-auto relative bg-naleko-dark-blue text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+                class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+
+        <button id="menu-btn" class="md:hidden block text-white absolute top-4 right-4 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        
+        <nav id="menu" :class="{'hidden': !open, 'flex': open}"
+                class="hidden md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                        gap-x-6 gap-y-2 text-sm md:text-base header 
+                        absolute md:static top-full left-0 w-full md:w-auto 
+                        bg-naleko-dark-blue  p-4 md:p-0 text-white">
+            <a href="WhoWeAre.html" class=" block hover:text-blue-300 transition duration-300">Who we are</a>
+            <a href="#WhatWeDo" class="block hover:text-blue-300 transition duration-300">What we do</a>
+            <a href="WhoWeServe.html" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
+            <a href="ContactUs.html" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
+            <a href="CorpTraining.html" class="block hover:text-blue-300 transition duration-300">Corp Training</a>
+            <a href="Academy.html" class="block hover:text-blue-300 transition duration-300">Academy</a>
+            <a href="GirlsInTech.html" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
             <div class="flex space-x-2 ml-4">
                 <a href="https://za.linkedin.com/company/nalekodigital"
                    class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
@@ -106,17 +124,19 @@
         </nav>
     </div>
 </header>
-    
-
+                <!--  Navigation Bar ENDS Here-->
 <!-- Main Content -->
-  <main class="flex-grow p-4">
+     
+<main class="flex-grow p-4 mt-40">
+<div class="mt-40 mb-40">
+     </div>
 
       <section class="container mx-auto py-16 px-4 mb-2">
          <h2 id="#WhatWeDo" class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue mb-4">Cloud Engineering Experts.</h2>
-          <p class="text-naleko-dark-blue text-lg md:text-xl font-extrabold text-center mb-2"s>
+          <p class="text-naleko-dark-blue text-lg md:text-xl font-extrabold text-center mb-8">
             Empowering your business with tailored cloud solutions and expert support.
           </p>
-          <div class="max-w-7xl mx-auto text-base text-gray-800 leading-relaxed mb-4">
+          <div class="max-w-7xl mx-auto text-base text-gray-800 leading-relaxed mb-8">
              <p class="">
               We offer complete <span class="font-bold">cloud solutions</span> to help your business run better.</b> This includes <b>planning, strategic advice, system development, deployment,</b> and <b>ongoing support.</b> We work with <b>top platforms like Salesforce, AWS, Microsoft, Google, Oracle, and SAP</b> to design cloud systems, <b>optimize IT infrastructure, and securely migrate data.We also provide <b>DevOps</b> and <b>DevSecOps</b> services, and can support your team with <b>highly skilled staff augmentation</b> when needed. Our team excels in <b>API development, agile delivery</b>, and <b>modernizing legacy systems</b> helping you boost efficiency and <b>reduce costs.</b> Our team excels in <b>API development, agile delivery</b>, and <b>modernizing legacy systems</b> helping you boost efficiency and <b>reduce costs.</b>
              </p>     
@@ -125,13 +145,14 @@
       </section>
 
       
-    <section class="w-full overflow-hidden mb-8" >
-           <section class="container w-full overflow-hidden  px-4 mb-2">
-           <p class="text-naleko-dark-blue text-lg md:text-xl font-extrabold text-center"s>
+    <section class="w-full mx-auto overflow-hidden mb-40" >
+           <section class="container w-full overflow-hidden  px-4 mb-8">
+           <p class="mx-auto text-naleko-dark-blue text-lg md:text-3xl font-extrabold text-center">
            Expert Cloud Engineering Partnerships:
-           <p class="text-naleko-dark-blue text-lg md:text-s text-center">
+           
+           </p>
+            <p class=" mx-auto text-naleko-dark-blue  font-extralight text-center mb-4">
             Unlock efficiency, security, and innovation in the cloud!
-           </p> 
            </p>
    
   
@@ -175,6 +196,8 @@
         <img src="/src/Icons/oracle-small-size.png" alt="AWS Logo">
       </div>
     
+    </div>
+    
     
   </section>          
    
@@ -185,10 +208,10 @@
                   
 
   <!-- Service-box -->
-   <section class="container w-full overflow-hidden  px-4 mb-2">
-           <p class="text-naleko-dark-blue text-lg md:text-xl font-extrabold text-center"s>
+   <section class="container w-full mx-auto overflow-hidden text-center px-4 mb-2">
+           <p class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue mb-4">
            Expert Cloud Engineering Services: 
-           <p class="text-naleko-dark-blue text-lg md:text-s text-center">
+           <p class="text-naleko-dark-blue text-lg md:text-xl font-extrabold text-center mb-8">
             Elevate your cloud potential with expert solutions for seamless growth.
            </p> 
            </p>
@@ -221,7 +244,7 @@
     </p>
 </div>
 
-<div id="cloudMigrationCard" class="bg-white p-6 rounded-lg shadow-md hover:bg-blue-50 shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out text-center flex flex-col items-center cursor-pointer">
+<div id="cloudMigrationCard" class="bg-white p-6 rounded-lg shadow-md hover:bg-white-50 shadow-lg hover:scale-[1.02] transition-all duration-300 ease-in-out text-center flex flex-col items-center cursor-pointer">
     <img src="/src/Icons/Cloud/4.png" alt="Cloud Migration Icon" class="mb-4 w-12 h-12"/>
     <h3 class="text-[#120C4E] text-xl font-bold font-['Inter'] mb-3">Cloud Migration</h3>
     <p class="text-black text-base font-normal font-['Inter'] leading-relaxed">
@@ -313,19 +336,19 @@
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#WhoWeAre" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
-                    <li><a href="#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
-                    <li><a href="#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#flags" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
                 </ul>
             </div>
 
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                    <li><a href="/Web-Pages/CorpTraining.html" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                    <li><a href="/Web-Pages/Academy.html" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                    <li><a href="/Web-Pages/GirlsInTech.html" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
                 </ul>
             </div>
 
@@ -381,25 +404,36 @@
 <!-- Footer ends here -->
  <!-- We need to split the javascript, Our technical Debt might be a little too much by the 27th-->
 
-<div id="cloudSecurityModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+ <div id="cloudSecurityModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
     <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
         <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">&times;</button>
 
-        <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Cloud Security & Compliance Details</h2>
+        <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Cloud Security & Compliance </h2>
 
         <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
-            <br><br>
-            For example:
+           
+           Security is at the core of everything we do. Our Cloud Security &amp; Compliance services are
+            designed to protect your operations, data, and users while aligning with the latest regulatory
+            standards. We help organizations proactively manage risks, enforce identity protection, and
+            automate compliance using cloud-native tools.
         </p>
+
+        <h3 class="text-[#120C4E] text-xl text-center font-bold font-['Inter'] mb-4">Services Include:</h3>
+       
+        <br>
         <ul class="list-disc list-inside text-black text-base font-normal font-['Inter']">
-            <li>Comprehensive risk assessments</li>
-            <li>Data encryption and access controls</li>
-            <li>Compliance with industry standards (e.g., GDPR, HIPAA)</li>
-            <li>Ongoing monitoring and threat detection</li>
+            <li>Security assessments &amp; compliance audits</li>
+            <li>IAM (Identity &amp; Access Management) implementation</li>
+            <li>Data encryption (in transit &amp; at rest)</li>
+            <li>SIEM integration &amp; threat detection</li>
+            <li>Vulnerability scanning &amp; incident response</li>
+            <li>Regulatory compliance enablement (HIPAA, GDPR, ISO 27001, SOC 2)</li>
+            <li>Cloud-native firewalls, IDS/IPS</li>
+            <li> Policy-as-code &amp; automated compliance (e.g. AWS Config, Azure Policy)</li>
         </ul>
 
         <div class="mt-6 text-center">
-            <a href="ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Contact Us for a Quote</a>
+            <a href="/Web-Pages/ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Contact Us for a Quote</a>
         </div>
     </div>
 </div>
@@ -407,12 +441,31 @@
 <div id="infraOptimizationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
     <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
         <button id="closeInfraModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">&times;</button>
-        <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Infrastructure Optimisation Details</h2>
-        <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
-            Optimize your IT infrastructure for peak performance and cost efficiency. This service includes detailed resource scaling, workload balancing, and proactive cost management strategies. We help you achieve maximum output from your cloud investments.
+        <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Infrastructure Optimisation</h2>
+         <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
+           
+           We help organizations optimize their cloud infrastructure for maximum efficiency,
+            performance, and cost-effectiveness. By leveraging modern tools and strategies, we enable
+            your systems to scale dynamically while maintaining high availability and speed.
         </p>
+
+        <h3 class="text-[#120C4E] text-xl text-center font-bold font-['Inter'] mb-4">Services Include:</h3>
+       
+        <br>
+        
+     <ul class="list-disc list-inside text-black text-base font-normal font-['Inter']">
+            <li>Cost optimization &amp; usage analysis</li>
+            <li>Performance tuning &amp; load balancing</li>
+            <li>Auto-scaling and elasticity</li>
+            <li>Infrastructure as Code (IaC) with Terraform, CloudFormation, ARM</li>
+            <li>Monitoring &amp; alerting (CloudWatch, Azure Monitor)</li>
+            <li>Kubernetes optimization</li>
+            <li> Storage lifecycle &amp; tiering strategies</li>
+           
+        </ul>
+
         <div class="mt-6 text-center">
-            <a href="/Web-Pages/ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Get an Infrastructure Assessment</a>
+            <a href="/Web-Pages/ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Contact Us for a Quote</a>
         </div>
     </div>
 </div>
@@ -421,14 +474,36 @@
     <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
         <button id="closeEnterpriseModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">&times;</button>
         <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Enterprise Cloud Integration Details</h2>
-        <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
-            Seamlessly connect your existing on-premises systems with new cloud solutions. Our integration services ensure unified data flow, automated processes, and a holistic view of your entire operational landscape.
+          <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
+           
+         To drive digital transformation, we integrate cloud and on-premises systems into a seamless
+        hybrid architecture. Our integration services ensure secure connectivity, unified identity
+        management, and system interoperability for enterprise-grade environments.
         </p>
+
+        <h3 class="text-[#120C4E] text-xl text-center font-bold font-['Inter'] mb-4">Services Include:</h3>
+       
+        <br>
+       
+
+        
+     <ul class="list-disc list-inside text-black text-base font-normal font-['Inter']">
+            <li> Hybrid architecture (e.g. Azure Arc, AWS Outposts)</li>
+            <li>VPN and private connectivity (Direct Connect, ExpressRoute)</li>
+            <li>Active Directory &amp; SSO integrations</li>
+            <li>Data replication &amp; synchronization</li>
+            <li> ERP/CRM &amp; enterprise app integrations</li>
+            <li>API management and middleware setup</li>
+            <li> Secure network infrastructure design</li>
+           
+        </ul>
+
         <div class="mt-6 text-center">
-            <a href="/Web-Pages/ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Discuss Your Integration Needs</a>
+            <a href="/Web-Pages/ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Contact Us for a Quote</a>
         </div>
     </div>
 </div>
+
 
 <div id="cloudMigrationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
     <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
@@ -532,6 +607,15 @@
         }
     });
 </script>
+
+<script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>

@@ -319,8 +319,8 @@
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
-.Two-Ladies-background {
-    background-image: url('/src/Images/TwoLadiesTeaching.jpg'); /* **CHANGE THIS PATH** to your image */
+.Bear-background {
+    background-image: url('/src/Images/v1173_1041.png'); /* **CHANGE THIS PATH** to your image */
     background-size: cover; /* This makes sure the image covers the entire header */
     background-position: cover; /* This centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */

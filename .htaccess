@@ -1,0 +1,31 @@
+# Always use capital "On" for RewriteEngine for best compatibility
+RewriteEngine On
+
+# ----------------------------------------------------------------------
+# SECTION 1: Force HTTPS and canonical domain (naleko.com)
+# ----------------------------------------------------------------------
+# If the host starts with "www." OR if HTTPS is "off"
+RewriteCond %{HTTP_HOST} ^www\.naleko\.com [NC,OR]
+RewriteCond %{HTTPS} off
+# Then redirect everything to the correct, secure, non-www version
+RewriteRule ^(.*)$ https://naleko.com/$1 [L,R=301]
+
+
+
+
+# ----------------------------------------------------------------------
+# SECTION 2: Internal Clean URL Rewrites
+# ----------------------------------------------------------------------
+# This section only runs if the rules in Section 1 did not apply.
+# It rewrites pretty URLs to the actual files internally.
+RewriteRule ^contact-us/$ /Web-Pages/ContactUs.html [L]
+RewriteRule ^about-us/$ /Web-Pages/WhoWeAre.html [L]
+RewriteRule ^what-we-do/$ /Web-Pages/WhatWeDo.html [L]
+RewriteRule ^who-we-serve/$ /Web-Pages/WhoWeServe.html [L]
+RewriteRule ^corporate-training/$ /Web-Pages/CorpTraining.html [L]
+RewriteRule ^naleko-academy/$ /Web-Pages/Academy.html [L]
+RewriteRule ^girls-in-tech/$ /Web-Pages/GirlsInTech.html [L]
+RewriteRule ^what-we-know/?$ /index.html [L]
+RewriteRule ^naleko-campaigns/$ /Web-Pages/CampaignDraft.html [L]
+RewriteRule ^flagship/$ /Web-Pages/WhoWeAre.html#flags [L,NE]
+

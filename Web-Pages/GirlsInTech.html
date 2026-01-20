@@ -6,7 +6,7 @@
   <title>Naleko Digital Solutions - Girls in Tech</title>
   <link href="/src/StylesFinal.css" rel="stylesheet" />
   <link href="/src/output.css" rel="stylesheet"> 
-  <script src="/Web-Pages/url-rewrite.js" defer></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -14,41 +14,77 @@
     
 
     .grid-diamond {
-      display: grid;
-      grid-template-columns: repeat(3, auto);
-      gap: 100px;
-      justify-content: center;
-    }
-
-    .diamond {
-      display: flex;
-      justify-content: center;
+      display: flex; 
+      justify-content: center; 
       align-items: center;
-      width: 200px;
-      height: 200px;
-      background: white;
-      
-      transform: rotate(45deg);
     }
 
-    .diamond .text {
-      transform: rotate(-45deg);
-      color: black;
-      font-size: 14px;
-      text-align: center;
-      line-height: 1.2;
-      max-width: 120px;
-    }
+  /* Your existing CSS (as provided) */
+.diamond {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 200px; /* Default for mobile */
+    height: 200px; /* Default for mobile */
+    background: white;
+    transform: rotate(45deg);
+}
 
-    .diamond .text h3 {
-  font-size: 12px;      /* adjust heading size */
-  font-weight: bold;
-  margin: 0;
+.diamond .text {
+    transform: rotate(-45deg);
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 120px;
+}
+
+.diamond .text h3 {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
 }
 
 .diamond .text p {
-  font-size: 10px;      /* adjust paragraph size */
-  margin: 0;
+    font-size: 10px;
+    margin: 0;
+}
+
+/* Apply responsiveness using media queries for smaller sizes */
+@media (max-width: 767px) { /* Tailwind's 'md' breakpoint is 768px, so this targets below that */
+    .diamond {
+        /* Make diamonds smaller on very small screens to prevent overflow */
+        width: 150px; /* Adjust as needed */
+        height: 150px; /* Adjust as needed */
+    }
+    .diamond .text {
+        font-size: 12px; /* Make text slightly smaller */
+        max-width: 90px; /* Adjust text width to fit smaller diamond */
+    }
+    .diamond .text h3 {
+        font-size: 10px;
+    }
+    .diamond .text p {
+        font-size: 9px;
+    }
+}
+
+/* And if you want them bigger on very large screens (optional) */
+@media (min-width: 1280px) { /* Tailwind's 'xl' breakpoint */
+    .diamond {
+        width: 220px;
+        height: 220px;
+    }
+    .diamond .text {
+        font-size: 16px;
+        max-width: 140px;
+    }
+    .diamond .text h3 {
+        font-size: 14px;
+    }
+    .diamond .text p {
+        font-size: 11px;
+    }
 }
 
     .diamond.orange { background: white; }
@@ -106,12 +142,13 @@
         </button>
         
         <nav id="menu" :class="{'hidden': !open, 'flex': open}"
-                class="hidden md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                class="hidden   bg-black md:bg-transparent md:flex  flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
                         gap-x-6 gap-y-2 text-sm md:text-base header 
-                        absolute md:static top-full left-0 w-full md:w-auto 
+                        absolute md:static top-full left-0 w-50%  md:w-auto 
                          p-4 md:p-0 text-white">
-           <a href="/about-us/" class=" block hover:text-blue-300 transition duration-300">Who we are</a>
+            <a href="/about-us/" class=" block hover:text-blue-300 transition duration-300">Who we are</a>
             <a href="/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
+            
             <a href="/who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
             <a href="/contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
             <a href="/corporate-training/" class="block hover:text-blue-300 transition duration-300">Corp Training</a>
@@ -138,7 +175,7 @@
                 <!--  Navigation Bar ENDS Here-->
 
     
-<main id="content" class="flex-grow p-4 mt-40">
+<main class="flex-grow p-4 mt-40">
 <div class="mt-40 mb-40">
     </div>
     <section class="py-16 text-center">
@@ -147,7 +184,7 @@
          <p class="text-lg md:text-xl font-black text-naleko-dark-blue mb-2 max-w-2xl mx-auto">Empowering Women. Inspiring Innovation</p>
              </div>
       <div class="max-w-6xl mx-auto text-black text-base font-normal">
-        <h2 class="max-w-6xl mx-auto text-black text-base font-normal">At Naleko Digital Solutions, we champion the advancement of women in technology because innovation thrives when everyone has a seat at the table.</h2>
+        <h2 class="max-w-6xl mx-auto text-black text-base font-normal  text-2xl font-black">At Naleko Digital Solutions, we champion the advancement of women in technology because innovation thrives when everyone has a seat at the table.</h2>
     <br/>
         Technology is evolving rapidly, and diversity is key to building smarter, more inclusive solutions. Women bring unique perspectives that enrich the tech world and their contributions are vital.
        <br>
@@ -155,68 +192,85 @@
       </div>
     </section>
 
-<section class="text-center mt-10 mb-20 px-4">
-      <div class="grid-diamond">      
-        <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
-            <div class="text">
-                <h3 class="icon-girls">💡</h3>
-                <br>
-                <h3 class="text-naleko-dark-blue"> Fresh Ideas & Innovation</h3>
-                <br>
-                <p>Different backgrounds spark creativity. Women contribute new ways of thinking that lead to smarter, more user-friendly technology</p>
-            </div>
+<section >
+    <div class="grid 
+                grid-cols-1        <!-- Default (mobile-first): 1 column -->
+                sm:grid-cols-2     <!-- From small screens (sm) and up: 2 columns -->
+                lg:grid-cols-3     <!-- From large screens (lg) and up: 3 columns -->
+                
+                gap-8              <!-- Mobile: smaller gap (32px) -->
+                md:gap-16          <!-- Medium screens: moderate gap (64px) -->
+                lg:gap-24          <!-- Large screens: larger gap (96px) -->
+                
+                container mx-auto
+                justify-center text-center items-center mt-10 mb-20 ">
+       
+        
+        <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card border-white justify-self-center">
+        <div class="text">
+            <h3 class="icon-girls">💡</h3>
+            <br>
+            <h3 class="text-naleko-dark-blue"> Fresh Ideas & Innovation</h3>
+            <br>
+            <p>Different backgrounds spark creativity. Women contribute new ways of thinking that lead to smarter, more user-friendly technology</p>
         </div>
-        <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
-  <div class="text">
-    <h3 class="icon-girls">⚖️</h3>
-    <br>
-    <h3 class="text-naleko-dark-blue">Closing the Gender Gap</h3>
-    <br>
-    <p>Tech has long been male dominated. Increasing female participation promotes equality, fair pay, and balanced opportunities.</p>
-  </div>
-</div>
+    </div>
 
- <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
-  <div class="text">
-     <h3 class="icon-girls">📈</h3>
-     <br>
-    <h3 class="text-naleko-dark-blue">Stronger Business Outcomes</h3>
-    <br>
-    <p>Diverse teams perform better. Women in technical and leadership roles drive better decisions, innovation, and results.</p>
-  </div>
-</div>
+    <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card  border border-white justify-self-center">
+        <div class="text">
+            <h3 class="icon-girls">⚖️</h3>
+            <br>
+            <h3 class="text-naleko-dark-blue">Closing the Gender Gap</h3>
+            <br>
+            <p>Tech has long been male dominated. Increasing female participation promotes equality, fair pay, and balanced opportunities.</p>
+        </div>
+    </div>
 
- <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
-  <div class="text">
-    <h3 class="icon-girls">👩‍💻</h3>
-    <br>
-    <h3 class="text-naleko-dark-blue">Role Models for the Future</h3>
-    <br>
-    <p>When girls see women thriving in tech, they believe they can do it too. Representation inspires the next generation of innovators.</p>
-  </div>
-</div>
+    <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card  border border-white justify-self-center">
+        <div class="text">
+            <h3 class="icon-girls">📈</h3>
+            <br>
+            <h3 class="text-naleko-dark-blue">Stronger Business Outcomes</h3>
+            <br>
+            <p>Diverse teams perform better. Women in technical and leadership roles drive better decisions, innovation, and results.</p>
+        </div>
+    </div>
 
- <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
-  <div class="text">
-    <h3 class="icon-girls icon-pink">🛍</h3>
-    <br>
-    <h3 class="text-naleko-dark-blue">Designing for Everyone</h3>
-    <br>
-    <br>
-    <p>Women make up half the world. Their input ensures technology is inclusive and meets the needs of all users.</p>
-  </div>
-</div>
+    <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card  border border-white justify-self-center">
+        <div class="text">
+            <h3 class="icon-girls">👩‍💻</h3>
+            <br>
+            <h3 class="text-naleko-dark-blue">Role Models for the Future</h3>
+            <br>
+            <p>When girls see women thriving in tech, they believe they can do it too. Representation inspires the next generation of innovators.</p>
+        </div>
+    </div>
 
- <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
-  <div class="text">
-    <h3 class="icon-girls">🌍</h3>
-    <br>
-    <h3 class="text-naleko-dark-blue">Driving Positive Change</h3>
-    <br>
-    <p>Women advocate for equality, inclusion, and work-life balance, building a tech culture that supports everyone.</p>
-  </div>
-</div>
-    </section>
+    <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card  border border-white justify-self-center">
+        <div class="text">
+            <h3 class="icon-girls icon-pink">🛍</h3>
+            <br>
+            <h3 class="text-naleko-dark-blue">Designing for Everyone</h3>
+            <br>
+            <br>
+            <p>Women make up half the world. Their input ensures technology is inclusive and meets the needs of all users.</p>
+        </div>
+    </div>
+
+    <div class="diamond bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden  border border-white justify-self-center">
+        <div class="text">
+            <h3 class="icon-girls">🌍</h3>
+            <br>
+            <h3 class="text-naleko-dark-blue">Driving Positive Change</h3>
+            <br>
+            <p>Women advocate for equality, inclusion, and work-life balance, building a tech culture that supports everyone.</p>
+        </div>
+    </div>
+        
+    </div>
+    
+    
+</section>
 <br>
 
  <section class="relative mb-12">
@@ -229,6 +283,14 @@
                          alt="Carousel Image of Lawrence"/>
                 </div>
             </div>
+            
+             <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Project.jpg"
+                         alt="Carousel Image of Juniors as Interns"/>
+                </div>
+            </div>
+
 
             <div class="carousel-slide flex-none w-1/3 p-4">
                 <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
@@ -237,17 +299,18 @@
                 </div>
             </div>
 
-             <div class="carousel-slide flex-none w-1/3 p-4">
-                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                    <img class="w-full h-60 object-cover" src="/src/Images/Project.jpg"
-                         alt="Carousel Image of Juniors as Interns"/>
-                </div>
-            </div>
-
+            
             <div class="carousel-slide flex-none w-1/3 p-4">
                 <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
                     <img class="w-full h-60 object-cover" src="/src/Images/Awards.jpg"
                          alt="Carousel Image of Intern Girls"/>
+                </div>
+            </div>
+            
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Girl.jpg"
+                         alt="Carousel Image of Gents"/>
                 </div>
             </div>
 
@@ -258,12 +321,7 @@
                 </div>
             </div>
 
-            <div class="carousel-slide flex-none w-1/3 p-4">
-                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                    <img class="w-full h-60 object-cover" src="/src/Images/Girl.jpg"
-                         alt="Carousel Image of Gents"/>
-                </div>
-            </div>
+            
            
            
 

@@ -16,8 +16,8 @@ const port = process.env.PORT || 3000; // Use port from .env or default to 3000
 // If you're using Live Server, it's typically http://127.0.0.1:5500 or http://localhost:5500.
 // Add all possible origins your frontend might run on.
 const corsOptions = {
-  origin: ['http://127.0.0.1:5500', 'http://localhost:5500',  'https://naleko.com',
-    'https://www.naleko.com' , 'https://nalekowesbite-v2.onrender.com' , 'https://nalekowesbite.onrender.com'],
+  origin: ['http://127.0.0.1:5500', 'http://localhost:5500',  'https://naleko.com','https://nalekowesbite-v2.onrender.com',
+    'https://www.naleko.com' ],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Allow cookies to be sent (though not strictly necessary for this upload)
   optionsSuccessStatus: 204 // For pre-flight requests

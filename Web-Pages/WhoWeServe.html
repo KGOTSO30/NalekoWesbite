@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who We Serve</title>
      <link href="/src/StylesFinal.css" rel="stylesheet">
+      <link href="/src/output.css" rel="stylesheet"> 
       <!-- Swiper.js for the carousel functionality -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/Web-Pages/url-rewrite.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,41 +18,57 @@
 </head>
 <body>
              <!--  Navigation Bar Begins Here-->
-      <header class="bg-naleko-dark-blue text-white py-6 px-4 shadow-md">
-        <div class="container ">
-            <div class="text-4xl md:text-5xl header mb-[31px] header">Naleko Digital Solutions</div>
-            <nav class="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2 text-sm md:text-base header">
-               <a href="WhoWeAre.html" class="hover:text-blue-300 transition duration-300">Who we are</a>
-                <a href="WhatWeDo.html" class="hover:text-blue-300 transition duration-300">What we do</a>
-                <a href="#StartPoint" class="hover:text-blue-300 transition duration-300">Who we serve</a>
-                <a href="ContactUs.html" class="hover:text-blue-300 transition duration-300">Contact Us</a>
-                 <a href="CorpTraining.html" class="hover:text-blue-300 transition duration-300">Corp Training</a>
-                <a href="Academy.html" class="hover:text-blue-300 transition duration-300">Academy</a>
-                <a href="GirlsInTech.html" class="hover:text-blue-300 transition duration-300">Girls in Tech</a>
-                <div class="flex space-x-2 ml-4">
-                    <!-- LinkedIn -->
-                    <a href="https://za.linkedin.com/company/nalekodigital." class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"/>
-                        </svg>
-                    </a>
+                 <!--  Navigation Bar Begins Here-->
+  <header x-data="{ open: false}"
+        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+       
+        class="fixed w-full top-0 left-0 z-50 bg-naleko-dark-blue text-white py-6 px-4 transition-all duration-300 ease-in-out">
+    <div class="container mx-auto relative bg-naleko-dark-blue text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+                class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
 
-
-                    <!-- TikTok -->
-                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z"/>
-                        </svg>
-                    </a>
-                </div>
-
-            </nav>
-        </div>
-    </header>
+        <button id="menu-btn" class="md:hidden block text-white absolute top-4 right-4 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        
+        <nav id="menu" :class="{'hidden': !open, 'flex': open}"
+                class="hidden md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                        gap-x-6 gap-y-2 text-sm md:text-base header 
+                        absolute md:static top-full left-0 w-full md:w-auto 
+                        bg-naleko-dark-blue  p-4 md:p-0 text-white">
+            <a href="/about-us/" class=" block hover:text-blue-300 transition duration-300">Who we are</a>
+            <a href="/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
+            <a href="/who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
+            <a href="/contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
+            <a href="/corporate-training/" class="block hover:text-blue-300 transition duration-300">Corp Training</a>
+            <a href="/naleko-academy/" class="block hover:text-blue-300 transition duration-300">Academy</a>
+            <a href="/girls-in-tech/" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
+            <div class="flex space-x-2 ml-4">
+                <a href="https://za.linkedin.com/company/nalekodigital"
+                   class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@nalekodigital/"
+                   class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+                <!--  Navigation Bar ENDS Here-->
                 <!--  Navigation Bar ENDS Here-->
 
 
-<main class="flex-grow p-4">
+    
+<main id="content" class="flex-grow p-4 mt-40">
+<div class="mt-40 mb-40">
+     </div>
 
                     <section class="text-center py-16 px-4 mb-4">
                     
@@ -213,7 +231,7 @@
                     <div class="card-content">
                         <!-- Logo Heading -->
                         <div class="flex-shrink-0">
-                            <img class="h-16 mx-auto object-contain" src="/src/Images/StithiansCollege.png" alt="Partner Logo">
+                            <img class="h-16 mx-auto object-contain" src="/src/Images/images.png" alt="Partner Logo">
                         </div>
                         <!-- Testimonial Text -->
                         <blockquote class="flex-grow my-6 text-gray-700 leading-relaxed">
@@ -237,41 +255,7 @@
 
 </div>
 
-    <script>
-        // Initialize Swiper.js
-        const swiper = new Swiper('.testimonial-carousel', {
-            // This is the 'coverflow' effect you wanted
-            effect: 'coverflow',
-            grabCursor: true,      // Shows a "grab" cursor on hover
-            centeredSlides: true,  // Keeps one slide in the absolute center
-            slidesPerView: 'auto', // Automatically calculates how many slides to show
-            loop: true,            // Enables continuous looping
-            spaceBetween: 30,
-            
-            // Autoplay configuration
-            autoplay: {
-                delay: 3000,                 // 7 seconds
-                disableOnInteraction: false, // Autoplay will not be disabled after user interactions
-                pauseOnMouseEnter: true,     // Pauses autoplay on mouse enter
-            },
-            
-            // Configuration for the coverflow effect
-            coverflowEffect: {
-                rotate: 30,        // Rotation of the side slides
-                stretch: 1,        // How much to stretch the slides
-                depth: 50,        // The depth of the 3D effect
-                modifier: 2,       // A multiplier for all effects
-                slideShadows: true,// Adds shadows to the sides of the slides
-            },
-            
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
-
+    
 
             <section class="flex flex-col items-center justify-center text-center px-4 py-10 bg-white">
                 <!-- Heading -->
@@ -342,27 +326,26 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+              <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="#WhoWeAre" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
-                    <li><a href="#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
-                    <li><a href="#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#flags" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
                 </ul>
             </div>
 
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                    <li><a href="/Web-Pages/CorpTraining.html" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                    <li><a href="/Web-Pages/Academy.html" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                    <li><a href="/Web-Pages/GirlsInTech.html" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
                 </ul>
             </div>
-
             
-                    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <h3 class="text-xl font-semibold mb-4 py-2">Contact Us</h3>
                 <div class="flex items-center mb-2">
                     <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
@@ -387,12 +370,14 @@
             
 
              <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                 <div class="flex items-center">
+                   <div class="flex items-center">
                    <h3 class="text-xl font-semibold py-2 md:mx-12">Scan Me</h3>
                     
                 </div>
-                <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder" class="mt-0 w-13 h-18 scale-75">
-
+                <div class="flex items-center mt-6 px-14">
+                    <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder"  style="width: 80px; height: 80px;">
+                    
+                </div>
                 
                
             </div>
@@ -407,8 +392,50 @@
     </footer>
 
                 <!--  Site footer Ends Here -->
+        <script>
+        // Initialize Swiper.js
+        const swiper = new Swiper('.testimonial-carousel', {
+            // This is the 'coverflow' effect you wanted
+            effect: 'coverflow',
+            grabCursor: true,      // Shows a "grab" cursor on hover
+            centeredSlides: true,  // Keeps one slide in the absolute center
+            slidesPerView: 'auto', // Automatically calculates how many slides to show
+            loop: true,            // Enables continuous looping
+            spaceBetween: 30,
+            
+            // Autoplay configuration
+            autoplay: {
+                delay: 3000,                 // 7 seconds
+                disableOnInteraction: false, // Autoplay will not be disabled after user interactions
+                pauseOnMouseEnter: true,     // Pauses autoplay on mouse enter
+            },
+            
+            // Configuration for the coverflow effect
+            coverflowEffect: {
+                rotate: 30,        // Rotation of the side slides
+                stretch: 1,        // How much to stretch the slides
+                depth: 50,        // The depth of the 3D effect
+                modifier: 2,       // A multiplier for all effects
+                slideShadows: true,// Adds shadows to the sides of the slides
+            },
+            
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
     
 
-                
+        <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>     
 </body>
 </html>

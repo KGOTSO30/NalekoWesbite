@@ -1,3 +1,6 @@
+
+@import "tailwindcss";
+
 /* src/index.css (or your main CSS file) */
   @font-face {
     font-family: "Spaced";
@@ -322,6 +325,9 @@
     background-position: cover; /* This centers the image within the header */
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
+[id] {
+  scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
+}
 
  /* Custom styles for the carousel */
         .carousel-container {
@@ -411,14 +417,6 @@
       margin: 0;
     }
 
-    .services-container {
-      width: 90%;
-      max-width: 900px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
 
     .service-box {
       background-color: white;
@@ -476,6 +474,18 @@
   filter: grayscale(100%); /* Optional: Make logos grayscale */
   opacity: 0.7; /* Optional: Make logos slightly faded */
   transition: all 0.3s ease; /* Optional: Smooth transition for hover effect */
+}
+.logo-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:  #120C4E 10%; /* <-- YOUR NALEKO BLUE COLOR */
+  mix-blend-mode: multiply;  /* Blends the blue color with the grayscale image */
+  pointer-events: none;      /* Allows clicks to go through to the image/link */
+  transition: all 0.3s ease;
 }
 
 .logo-item img:hover {

@@ -16,8 +16,8 @@
   <header x-data="{ open: false}"
         x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
        
-        class="fixed w-full top-0 left-0 z-50 header-background-event text-white py-6 px-4 transition-all duration-300 ease-in-out">
-    <div class="container mx-auto relative  text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+        class="fixed w-full top-0 left-0 z-50 bg-naleko-dark-blue text-white py-6 px-4 transition-all duration-300 ease-in-out">
+    <div class="container mx-auto relative bg-naleko-dark-blue text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
                 class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
 
         <button id="menu-btn" class="md:hidden block text-white absolute top-7 right-4 focus:outline-none">
@@ -30,7 +30,7 @@
                 class="hidden md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
                         gap-x-6 gap-y-2 text-sm md:text-base header 
                         absolute md:static top-full left-0 w-full md:w-auto 
-                        md:bg-transparent  p-4 md:p-0 text-white">
+                        bg-naleko-dark-blue  p-4 md:p-0 text-white">
             <a href="/about-us/" class=" block hover:text-blue-300 transition duration-300">Who we are</a>
             <a href="/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
             <a href="/what-we-know/" class="block  hover:text-blue-300 transition duration-300">What we know</a>
@@ -189,50 +189,7 @@
 
 <!-- Scrolling Sponsorship Logos Marquee -->
  <section class="w-full overflow-hidden mb-8 mt-2" >
-    <div class="scrolling-sponsors">
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/AnalyticHive Logo.png" alt="Salesforce Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/Icebolethu Logo.png" alt="AWS Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/Marula Escapes Logo.png" alt="Microsoft Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/Lavo.png" alt="SAP Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/Brace Holdings.png" alt="">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/Moiponi Morgan Logo.png" alt="AWS Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/Randela Wine Logo.png" alt="Salesforce Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/I-Travel Logo.png" alt="AWS Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/Coconut Wellness Spa Logo.png" alt="Microsoft Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/House of Azari Logo.png" alt="SAP Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/Manana Wines Logo.png" alt="">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/ETS Innovations Logo.png" alt="AWS Logo">
-      </div>
-      <div class="sponsor-item">
-        <img src="/src/Icons/SponsorshipLogo/INITD Logo.png" alt="AWS Logo">
-      </div>
-
-
-
-
+    <div class="scrolling-sponsor-logos">
       <div class="sponsor-item">
         <img src="/src/Icons/SponsorshipLogo/AnalyticHive Logo.png" alt="Salesforce Logo">
       </div>
@@ -274,147 +231,43 @@
       </div>
 </section>
 
-     <!--Sponsor Carousel Ends Here-->
-
-<section class="container mx-auto mt-10 py-2 px-4 text-center">
-  <!-- Become a Sponsor Button -->
-  <button
-    onclick="openSponsorModal()"
-    class="inline-block bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition duration-300"
-  >
-    Become a Sponsor
-  </button>
-
-  <!-- Modal Overlay -->
-  <div
-    id="sponsorModal"
-    class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
-  >
-    <!-- Modal Content -->
-    <div class="bg-white rounded-2xl w-full max-w-md p-6 shadow-2xl relative">
-      <!-- Close Button -->
-      <button
-        onclick="closeSponsorModal()"
-        class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl"
-      >
-        &times;
-      </button>
-
-      <!-- Salesforce Web-to-Lead Form (Production) -->
-<form id="sponsorForm"
-  action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX"
-  method="POST"
-  target="hidden_iframe"
-  onsubmit="showThankYou()"
-  class="space-y-4"
->
-  <!-- Required Salesforce Hidden Fields -->
-  <input type="hidden" name="oid" value="00D07000000ZYWX">
-  <input type="hidden" name="retURL" value="http://">
-
-  <!-- Optional Debug (uncomment if needed) -->
-  <!--
-  <input type="hidden" name="debug" value="1">
-  <input type="hidden" name="debugEmail" value="admin@naleko.com">
-  -->
-
-  <!-- First Name -->
-  <input type="text" name="first_name" id="first_name" placeholder="First Name"
-    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required />
-
-  <!-- Last Name -->
-  <input type="text" name="last_name" id="last_name" placeholder="Last Name"
-    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required />
-
-  <!-- Email -->
-  <input type="email" name="email" id="email" placeholder="Email"
-    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required />
-
-  <!-- Phone -->
-  <input type="tel" name="phone" id="phone" placeholder="Phone"
-    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required />
-
-  <!-- Company -->
-  <input type="text" name="company" id="company" placeholder="Company"
-    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
-
-  <!-- Area of Sponsorship (Custom Field) -->
-  <select name="00NTt00000GibaX" id="00NTt00000GibaX" title="Select Area of Sponsorship"
-    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required>
-    <option value="">--Select Area of Sponsorship--</option>
-    <option value="Hole Sponsor">Hole Sponsor</option>
-    <option value="Cart Sponsor">Cart Sponsor</option>
-    <option value="Branding">Branding</option>
-    <option value="Prize Sponsor">Prize Sponsor</option>
-  </select>
-
-  <!-- Interested Checkbox (Custom Field) -->
-  <label class="flex items-center space-x-2 text-sm">
-    <input type="checkbox" id="00NTt00000GibnR" name="00NTt00000GibnR" value="1" class="accent-green-600" />
-    <span>I am interested in becoming a sponsor</span>
-  </label>
-
-  <!-- Submit Button -->
-  <button type="submit"
-    class="w-full bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition">
-    Submit
-  </button>
-</form>
-
-<!-- Thank You Message -->
-<div id="thankYouMessage" class="hidden text-center mt-4">
-  <h2 class="text-3xl text-naleko-dark-blue font-bold">Thank You!</h2>
-  <p>We've received your submission and will contact you soon.</p>
-</div>
-
-<!-- Hidden iframe to prevent page reload -->
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-<!-- JavaScript -->
 <script>
-  const sponsorModal = document.getElementById("sponsorModal");
+ document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".scrolling-sponsor-logos");
 
-  function openSponsorModal() {
-    sponsorModal.classList.remove("hidden");
-    sponsorModal.classList.add("flex");
-  }
+  if (!track) return;
 
-  function closeSponsorModal() {
-    sponsorModal.classList.add("hidden");
-    sponsorModal.classList.remove("flex");
+  // Duplicate logos
+  track.innerHTML += track.innerHTML;
 
-    // Reset form and thank you message when closing
-    document.getElementById('sponsorForm').classList.remove('hidden');
-    document.getElementById('thankYouMessage').classList.add('hidden');
-    document.getElementById('sponsorForm').reset();
-  }
+  let position = 0;
+  const speed = 0.5; // smaller = slower, bigger = faster
 
-  sponsorModal.addEventListener("click", function(e) {
-    if(e.target === sponsorModal) closeSponsorModal();
-  });
+  function animate() {
+    position -= speed;
 
-  document.addEventListener("keydown", function(e) {
-    if(e.key === "Escape" && !sponsorModal.classList.contains("hidden")) {
-      closeSponsorModal();
+    const halfWidth = track.scrollWidth / 2;
+
+    if (Math.abs(position) >= halfWidth) {
+      position = 0; // seamless reset
     }
-  });
 
-  function showThankYou() {
-    document.getElementById('sponsorForm').classList.add('hidden');
-    document.getElementById('thankYouMessage').classList.remove('hidden');
+   // track.style.transform = `translateX(${position}px)`;
+   requestAnimationFrame(animate);
   }
+
+  animate();
+});
+
 </script>
 
+  <section class="container mx-auto py-10 px-4 text-center">
+        <a href="/contact-us/" class="inline-block bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition duration-300">Become a Sponsor</a>
 
-  <!-- Scoped CSS -->
-  <style>
-    /* Only affects inputs inside the sponsor modal */
-    #sponsorModal .sponsor-input {
-      border-radius: 0.5rem;
-      padding: 0.5rem 1rem;
-    }
-  </style>
 </section>
+     <!--Sponsor Carousel Ends Here-->
+
+
     
 
 <!--TESTING-->
@@ -485,234 +338,10 @@
 </section>
 
 
-   <section class="container mx-auto py-16 px-4 text-center">
+    <section class="container mx-auto py-16 px-4 text-center">
         <p class="text-lg text-gray-800 mb-8">Our sponsorship packages deliver premier visibility and direct engagement with key stakeholders across all phases of the event.</p>
-        
-       <!-- Button -->
-<a href="#" onclick="openFaqModal()" class="inline-block bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition duration-300">
-  Enquire About Sponsorship
-</a>
-
-<!-- FAQ Modal -->
-<div id="faqModal" class="fixed inset-0 hidden bg-black/60 z-50 overflow-auto">
-  <div class="relative mx-auto my-8 bg-white rounded-3xl max-w-xl w-full p-6 shadow-lg max-h-[90vh] overflow-y-auto">
-    <!-- Close button -->
-    <button onclick="closeFaqModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 font-bold text-xl">&times;</button>
-
-    <h2 class="text-2xl font-bold text-naleko-dark-blue mb-4">Frequently Asked Questions</h2>
-
-    <div class="space-y-3">
-
-      <!-- 1 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          1. What is the Naleko Golf Day about?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>The Naleko Golf Day is a purpose-led business and networking event designed to bring together leaders, partners, and change-makers to build meaningful relationships while supporting economic empowerment, innovation, and sustainable growth. It is where business, values, and impact meet.</p>
-        </div>
-      </div>
-
-      <!-- 2 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          2. Why does Naleko host a Golf Day?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>Golf creates a unique environment for authentic connection and trust-building. Naleko leverages this platform to foster collaboration, open doors to opportunity, and mobilise resources toward initiatives that create long-term value for businesses and communities.</p>
-        </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          3. Who typically attends the Naleko Golf Day?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>Attendees include:</p>
-          <ul class="list-disc pl-6 mt-1 text-black-700">
-            <li>Business executives and entrepreneurs</li>
-            <li>Industry and government stakeholders</li>
-            <li>Investors, partners, and professionals</li>
-          </ul>
-          <p class="mt-2">All participants share a common desire to build responsibly, lead with purpose, and contribute to sustainable economic progress.</p>
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          4. How does sponsorship create real impact?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>Sponsorship directly supports Naleko’s mission by enabling:</p>
-          <ul class="list-disc pl-6 mt-1 text-gray-700">
-            <li>Enterprise and skills development initiatives</li>
-            <li>Innovation-driven projects</li>
-            <li>Platforms that connect opportunity to capability</li>
-          </ul>
-          <p class="mt-2">Partners are not just sponsors - they become contributors to meaningful outcomes and measurable impact.</p>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          5. What makes the Naleko Golf Day different from other golf events?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>Unlike traditional corporate golf days, Naleko’s event is:</p>
-          <ul class="list-disc pl-6 mt-1 text-gray-700">
-            <li>Purpose-driven rather than transactional</li>
-            <li>Relationship-focused rather than purely promotional</li>
-            <li>Anchored in values, integrity, and long-term impact</li>
-          </ul>
-          <p class="mt-2">Every partnership is intentional and aligned to Naleko’s broader vision.</p>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          6. How are sponsors recognised?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>Sponsors receive visibility through:</p>
-          <ul class="list-disc pl-6 mt-1 text-gray-700">
-            <li>Branded on-course and event materials</li>
-            <li>Digital and post-event communication</li>
-            <li>Opportunities for authentic engagement rather than passive advertising</li>
-          </ul>
-          <p class="mt-2">Recognition is designed to honour contribution while maintaining the integrity of the event.</p>
-        </div>
-      </div>
-
-      <!-- 7 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          7. Can sponsorships be tailored to our organisation’s values?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>Yes. Naleko offers bespoke sponsorship packages that align with each partner’s strategic goals, ESG priorities, and transformation objectives, ensuring alignment between purpose and business outcomes.</p>
-        </div>
-      </div>
-
-      <!-- 8 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          8. What legacy does the Naleko Golf Day aim to create?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>The Golf Day aims to build a legacy of:</p>
-          <ul class="list-disc pl-6 mt-1 text-gray-700">
-            <li>Empowered entrepreneurs and enterprises</li>
-            <li>Strong, values-led partnerships</li>
-            <li>Sustainable economic participation</li>
-          </ul>
-          <p class="mt-2">It is about planting seeds that grow far beyond the day itself.</p>
-        </div>
-      </div>
-
-      <!-- 9 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          9. How does Naleko ensure accountability and integrity?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>Naleko is committed to ethical leadership, transparency, and responsible stewardship of resources. Partnerships are built on trust, shared values, and a mutual commitment to doing business with purpose.</p>
-        </div>
-      </div>
-
-      <!-- 10 -->
-      <div class="border rounded-lg">
-        <button onclick="toggleFaq(this)" class="faq-btn">
-          10. How can our organisation get involved?
-          <span class="arrow">⌄</span>
-        </button>
-        <div class="faq-content">
-          <p>Organisations can participate as sponsors, partners, or players. Each engagement is designed to create value, foster connection, and contribute to Naleko’s mission of building purposeful, sustainable growth.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- CSS -->
-<style>
-.faq-btn {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px;
-  font-weight: 600;
-  background: white;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.faq-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding: 0 18px;
-  color: #555;
-}
-
-.faq-content p {
-  padding: 12px 0 18px 0;
-  margin: 0;
-}
-
-.arrow {
-  transition: 0.3s ease;
-  display: inline-block;
-}
-
-.rotate {
-  transform: rotate(180deg);
-}
-
-.list-disc {
-  list-style-type: disc;
-}
-</style>
-
-<!-- JS -->
-<script>
-function openFaqModal() {
-  document.getElementById('faqModal').classList.remove('hidden');
-}
-
-function closeFaqModal() {
-  document.getElementById('faqModal').classList.add('hidden');
-}
-
-function toggleFaq(button) {
-  const content = button.nextElementSibling;
-  const arrow = button.querySelector('.arrow');
-
-  if (content.style.maxHeight && content.style.maxHeight !== "0px") {
-    content.style.maxHeight = "0px";
-    arrow.classList.remove('rotate');
-  } else {
-    content.style.maxHeight = content.scrollHeight + "px";
-    arrow.classList.add('rotate');
-  }
-}
-</script>
-        <a href="/contact-us/" class="inline-block bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition duration-300">Sponsorship Packages</a>
+        <a href="/contact-us/" class="inline-block bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition duration-300">Enquire About Sponsorship</a>
+        <a href="/contact-us/" class="inline-block bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition duration-300">Download Sponsorship Packages</a>
     </section>
 
 </main>

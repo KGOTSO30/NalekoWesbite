@@ -477,7 +477,7 @@
 .scrolling-sponsors {
   display: flex;
   width: max-content; /* Critical: allows the div to be as wide as all logos combined */
-  animation: scrollSponsorLogos 50s linear infinite; /* Adjusted speed for smoothness */
+  animation: scrollSponsorLogos 45s linear infinite; /* Adjusted speed for smoothness */
   will-change: transform;
 }
 

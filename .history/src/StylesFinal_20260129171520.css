@@ -80,13 +80,6 @@
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
-.header-background-event {
-    background-image: url('/src/GolfDayPictures/_MG_7667\ copy\ Header.JPG'); /* **CHANGE THIS PATH** to your image */
-    background-size: cover; /* This makes sure the image covers the entire header */
-    background-position: center; /* This centers the image within the header */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-}
-
 /* Optional: Add an overlay for better text readability if your image is busy */
 .header-overlay {
     position: relative; /* Needed for the pseudo-element overlay */
@@ -465,45 +458,14 @@
   will-change: transform; /* Optimize for animation performance */
 }
 
-@keyframes scrollSponsorLogos {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%); /* Moves exactly half the width (one full set of logos) */
-  }
-}
-
-.scrolling-sponsors {
-  display: flex;
-  width: max-content; /* Critical: allows the div to be as wide as all logos combined */
-  animation: scrollSponsorLogos 50s linear infinite; /* Adjusted speed for smoothness */
-  will-change: transform;
-}
-
 .sponsor-item {
-  flex-shrink: 0;
-  margin: 0 40px;
-  position: relative; /* Added because your ::before overlay needs a relative parent */
-  height: fit-content; /* Set a consistent height for sponsor items */
-
+  flex-shrink: 0; /* Prevents logos from shrinking to fit */
+  margin: 0 40px; /* Adjust spacing between logos */
+  display: flex;
+  align-items: center; /* Vertically center images if they have different heights */
+  justify-content: center; /* Horizontally center images */
+  height: 80px; /* Set a consistent height for logo items */
 }
-
-/* Fix for your Blue Overlay */
-.sponsor-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Fixed your color syntax: hex doesn't take percentages like that */
-  background-color: rgba(18, 12, 78, 0.1); 
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
 /* Individual logo items */
 .logo-item {
   flex-shrink: 0; /* Prevents logos from shrinking to fit */

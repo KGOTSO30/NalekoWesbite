@@ -80,13 +80,6 @@
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
-.header-background-event {
-    background-image: url('/src/GolfDayPictures/_MG_7667\ copy\ Header.JPG'); /* **CHANGE THIS PATH** to your image */
-    background-size: cover; /* This makes sure the image covers the entire header */
-    background-position: center; /* This centers the image within the header */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-}
-
 /* Optional: Add an overlay for better text readability if your image is busy */
 .header-overlay {
     position: relative; /* Needed for the pseudo-element overlay */
@@ -477,7 +470,7 @@
 .scrolling-sponsors {
   display: flex;
   width: max-content; /* Critical: allows the div to be as wide as all logos combined */
-  animation: scrollSponsorLogos 50s linear infinite; /* Adjusted speed for smoothness */
+  animation: scrollLogos 30s linear infinite; /* Adjusted speed for smoothness */
   will-change: transform;
 }
 
@@ -485,8 +478,6 @@
   flex-shrink: 0;
   margin: 0 40px;
   position: relative; /* Added because your ::before overlay needs a relative parent */
-  height: fit-content; /* Set a consistent height for sponsor items */
-
 }
 
 /* Fix for your Blue Overlay */

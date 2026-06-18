@@ -60,43 +60,40 @@
     </header>
 
     <main class="flex-grow p-4 mt-36 mb-8">
-        <div class="mt-40 mb-40"></div>
+        
         <div id="view-landing" class="partner-view">
             <section class="container mx-auto py-12 px-4 text-center">
                 <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase tracking-tight">Partner With Naleko Digital Solutions</h1>
                 <p class="text-lg md:text-xl font-medium text-gray-600 mb-12 max-w-4xl mx-auto">Together, we empower people, accelerate digital transformation, build a future driven by AI, technology and innovation.</p>
                 
-               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20">
-                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between aspect-square">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20">
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between">
                         <div>
                             <h3 class="text-xl font-bold text-naleko-dark-blue mb-3">Corporate Partnerships</h3>
                             <p class="text-sm font-normal text-gray-600 leading-relaxed">Upskill your workforce with AI and digital solutions tailored for business growth.</p>
                         </div>
-                        <button onclick="navigateToView('view-form')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition text-left">Get Started &rarr;</button>
+                        <button onclick="navigateToView('view-form')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition">Get Started &rarr;</button>
                     </div>
-                    
-                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between aspect-square">
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between">
                         <div>
                             <h3 class="text-xl font-bold text-naleko-dark-blue mb-3">Education Partnership</h3>
                             <p class="text-sm font-normal text-gray-600 leading-relaxed">Empower students with future ready digital skills and AI literacy.</p>
                         </div>
-                        <button onclick="navigateToView('view-form')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition text-left">Get Started &rarr;</button>
+                        <button onclick="navigateToView('view-form')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition">Get Started &rarr;</button>
                     </div>
-                    
-                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between aspect-square">
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between">
                         <div>
                             <h3 class="text-xl font-bold text-naleko-dark-blue mb-3">Technology Partnerships</h3>
                             <p class="text-sm font-normal text-gray-600 leading-relaxed">Co-innovate with AI, cloud and digital platforms to build the future together.</p>
                         </div>
-                        <button onclick="navigateToView('view-form')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition text-left">Get Started &rarr;</button>
+                        <button onclick="navigateToView('view-form')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition">Get Started &rarr;</button>
                     </div>
-                    
-                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between aspect-square">
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between">
                         <div>
                             <h3 class="text-xl font-bold text-naleko-dark-blue mb-3">Event Partnerships</h3>
                             <p class="text-sm font-normal text-gray-600 leading-relaxed">Partner on events, and initiatives that inspire and create impact.</p>
                         </div>
-                        <button onclick="navigateToView('view-form')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition text-left">Get Started &rarr;</button>
+                        <button onclick="navigateToView('view-form')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition">Get Started &rarr;</button>
                     </div>
                 </div>
 
@@ -701,7 +698,7 @@
 
             // === PAYSTACK SANDBOX DEPENDENCY: Configure your keys here ===
             const paymentHandler = PaystackPop.setup({
-                key: 'pk_test_a88d333b68020523121a9feec05958086f36115e', // <-- DEV: Insert Test API Key 
+                key: 'pk_test_your_sandbox_public_key_here', // <-- DEV: Insert Test API Key 
                 email: payerEmail,
                 amount: checkoutState.cohortCost * 100, // Converts to cents automatically
                 currency: 'ZAR',

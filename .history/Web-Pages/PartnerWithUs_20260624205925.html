@@ -265,7 +265,7 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
-                    <button id="btn-funding-breakdown" onclick="navigateToView('view-breakdown')" class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 text-center transition">View Programme Costing</button>
+                    <button onclick="navigateToView('view-breakdown')" class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 text-center transition">View Programme Costing</button>
                     <button onclick="navigateToView('view-funder-form')" class="py-3 px-6 border-2 border-naleko-dark-blue text-naleko-dark-blue rounded-lg font-semibold hover:bg-gray-50 text-center transition">Schedule A Call</button>
                 </div>
             </section>
@@ -1298,9 +1298,6 @@
     function openProgrammeDetails(programmeName) {
 
     const programme = programmeDetails[programmeName];
-            document.getElementById('btn-funding-breakdown').onclick = () => {
-            openFundingBreakdown(programmeName);
-        };
 
     if (!programme) return;
 
@@ -1321,8 +1318,6 @@
 
     const timelineContainer =
         document.getElementById('programme-timeline');
-
-
 
     timelineContainer.innerHTML = '';
 

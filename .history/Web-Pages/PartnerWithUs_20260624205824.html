@@ -265,7 +265,7 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
-                    <button id="btn-funding-breakdown" onclick="navigateToView('view-breakdown')" class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 text-center transition">View Programme Costing</button>
+                    <button onclick="navigateToView('view-breakdown')" class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 text-center transition">View Programme Costing</button>
                     <button onclick="navigateToView('view-funder-form')" class="py-3 px-6 border-2 border-naleko-dark-blue text-naleko-dark-blue rounded-lg font-semibold hover:bg-gray-50 text-center transition">Schedule A Call</button>
                 </div>
             </section>
@@ -369,9 +369,6 @@
                             <span class="text-naleko-dark-blue">Total Per Learner</span>
                             <span id="funding-total-learner" class="text-blue-600">R4,500</span>
                         </div>
-                                <span id="funding-cohort-label">
-                                    Cohort Total (25 learners)
-                                </span>
                         <div class="flex justify-between items-center pt-4 pb-2 text-xl font-black">
                             <span class="text-naleko-dark-blue">Cohort Total (25 learners)</span>
                             <span id="funding-cohort-total" class="text-emerald-600">R112,800</span>
@@ -1298,9 +1295,6 @@
     function openProgrammeDetails(programmeName) {
 
     const programme = programmeDetails[programmeName];
-            document.getElementById('btn-funding-breakdown').onclick = () => {
-            openFundingBreakdown(programmeName);
-        };
 
     if (!programme) return;
 
@@ -1321,8 +1315,6 @@
 
     const timelineContainer =
         document.getElementById('programme-timeline');
-
-
 
     timelineContainer.innerHTML = '';
 

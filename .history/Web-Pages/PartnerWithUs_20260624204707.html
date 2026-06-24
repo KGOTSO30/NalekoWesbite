@@ -265,7 +265,7 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
-                    <button id="btn-funding-breakdown" onclick="navigateToView('view-breakdown')" class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 text-center transition">View Programme Costing</button>
+                    <button onclick="navigateToView('view-breakdown')" class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 text-center transition">View Programme Costing</button>
                     <button onclick="navigateToView('view-funder-form')" class="py-3 px-6 border-2 border-naleko-dark-blue text-naleko-dark-blue rounded-lg font-semibold hover:bg-gray-50 text-center transition">Schedule A Call</button>
                 </div>
             </section>
@@ -343,7 +343,7 @@
         <div id="view-breakdown" class="partner-view hidden">
             <section class="container mx-auto py-12 px-4">
                 <div class="text-center mb-12">
-                    <h1 id="funding-programme-title" class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Funding Breakdown</h1>
+                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Funding Breakdown</h1>
                     <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Support AI and digital skills programmes that equip learners with industry-recognised certifications, practical experience, and pathways to employment.</p>
                 </div>
 
@@ -351,30 +351,27 @@
                     <div class="space-y-4 divide-y divide-gray-100">
                         <div class="flex justify-between items-center py-2">
                             <span class="text-gray-600 font-medium">Training and Facilitation</span>
-                            <span id="funding-training" class="text-naleko-dark-blue font-bold">R2,800</span>
+                            <span class="text-naleko-dark-blue font-bold">R2,800</span>
                         </div>
                         <div class="flex justify-between items-center pt-4 py-2">
                             <span class="text-gray-600 font-medium">Learning Materials</span>
-                            <span id="funding-materials" class="text-naleko-dark-blue font-bold">R800</span>
+                            <span class="text-naleko-dark-blue font-bold">R800</span>
                         </div>
                         <div class="flex justify-between items-center pt-4 py-2">
                             <span class="text-gray-600 font-medium">Assessment and Certification</span>
-                            <span id="funding-certification" class="text-naleko-dark-blue font-bold">R400</span>
+                            <span class="text-naleko-dark-blue font-bold">R400</span>
                         </div>
                         <div class="flex justify-between items-center pt-4 py-2">
                             <span class="text-gray-600 font-medium">Placement Support</span>
-                            <span id="funding-placement" class="text-naleko-dark-blue font-bold">R300</span>
+                            <span class="text-naleko-dark-blue font-bold">R300</span>
                         </div>
                         <div class="flex justify-between items-center pt-6 pb-2 text-lg font-black border-t-2 border-gray-200">
                             <span class="text-naleko-dark-blue">Total Per Learner</span>
-                            <span id="funding-total-learner" class="text-blue-600">R4,500</span>
+                            <span class="text-blue-600">R4,500</span>
                         </div>
-                                <span id="funding-cohort-label">
-                                    Cohort Total (25 learners)
-                                </span>
                         <div class="flex justify-between items-center pt-4 pb-2 text-xl font-black">
                             <span class="text-naleko-dark-blue">Cohort Total (25 learners)</span>
-                            <span id="funding-cohort-total" class="text-emerald-600">R112,800</span>
+                            <span class="text-emerald-600">R112,800</span>
                         </div>
                     </div>
                 </div>
@@ -831,56 +828,6 @@
 <script>
 
 
-            const programmeFunding = {
-                "AI Fundamentals for Youth": {
-                    learners: 25,
-                    training: 2800,
-                    materials: 800,
-                    certification: 400,
-                    placement: 500
-                },
-
-                "AI for Business": {
-                    learners: 20,
-                    training: 3500,
-                    materials: 1000,
-                    certification: 500,
-                    placement: 500
-                },
-
-                "Salesforce Administration": {
-                    learners: 20,
-                    training: 4500,
-                    materials: 1200,
-                    certification: 700,
-                    placement: 400
-                },
-
-                "Digital Skills Learnerships": {
-                    learners: 30,
-                    training: 2200,
-                    materials: 600,
-                    certification: 300,
-                    placement: 100
-                },
-
-                "AWS Cloud Fundamentals": {
-                    learners: 25,
-                    training: 4200,
-                    materials: 900,
-                    certification: 300,
-                    placement: 100
-                },
-
-                "Prompt Engineering": {
-                    learners: 25,
-                    training: 1800,
-                    materials: 500,
-                    certification: 300,
-                    placement: 200
-                }
-            };
-
             const programmeDetails = {
             "AI Fundamentals for Youth": {
                 modules: 4,
@@ -1298,9 +1245,6 @@
     function openProgrammeDetails(programmeName) {
 
     const programme = programmeDetails[programmeName];
-            document.getElementById('btn-funding-breakdown').onclick = () => {
-            openFundingBreakdown(programmeName);
-        };
 
     if (!programme) return;
 
@@ -1321,8 +1265,6 @@
 
     const timelineContainer =
         document.getElementById('programme-timeline');
-
-
 
     timelineContainer.innerHTML = '';
 
@@ -1346,52 +1288,6 @@
     });
 
     navigateToView('view-outcomes');
-}
-
-
-function openFundingBreakdown(programmeName) {
-
-    const programme = programmeFunding[programmeName];
-
-    if (!programme) return;
-
-    const totalPerLearner =
-        programme.training +
-        programme.materials +
-        programme.certification +
-        programme.placement;
-
-    const cohortTotal =
-        totalPerLearner * programme.learners;
-
-    const formatMoney = amount =>
-        `R${amount.toLocaleString('en-ZA')}`;
-
-    document.getElementById('funding-programme-title').innerText =
-        `${programmeName} Funding Breakdown`;
-
-    document.getElementById('funding-training').innerText =
-        formatMoney(programme.training);
-
-    document.getElementById('funding-materials').innerText =
-        formatMoney(programme.materials);
-
-    document.getElementById('funding-certification').innerText =
-        formatMoney(programme.certification);
-
-    document.getElementById('funding-placement').innerText =
-        formatMoney(programme.placement);
-
-    document.getElementById('funding-total-learner').innerText =
-        formatMoney(totalPerLearner);
-
-    document.getElementById('funding-cohort-label').innerText =
-        `Cohort Total (${programme.learners} learners)`;
-
-    document.getElementById('funding-cohort-total').innerText =
-        formatMoney(cohortTotal);
-
-    navigateToView('view-breakdown');
 }
 </script>
 

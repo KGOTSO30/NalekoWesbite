@@ -18,7 +18,7 @@
     
     <header x-data="{ open: false }"
             x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
-            class="fixed w-full top-0 left-0 z-50 bg-naleko-dark-blue text-white py-6 px-4 transition-all duration-300 ease-in-out">
+            class="fixed w-full top-0 left-0 z-50 header-background-corp text-white py-6 px-4 transition-all duration-300 ease-in-out">
         <div class="container mx-auto relative text-white"> 
             <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
                  class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
@@ -42,7 +42,7 @@
                 <a href="/naleko-academy/" class="block hover:text-blue-300 transition duration-300">Academy</a>
                 <a href="/girls-in-tech/" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
                 <a href="/events/" class="block hover:text-blue-300 transition duration-300">Events</a>
-                <a href="/partner-with-us/" class="block text-blue-300 border-b-2 border-blue-300 pb-1 transition duration-300">Partner With Us</a>
+                <a href="/partner-with-us/" class="block text-blue-300 font-semibold border-b-2 border-blue-300 pb-1 transition duration-300">Partner With Us</a>
                 <div class="flex space-x-2 ml-4">
                     <a href="https://za.linkedin.com/company/nalekodigital" class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -539,79 +539,6 @@
                         <div class="md:col-span-2 text-center mt-4">
                             <button type="submit" name="submit" class="w-full sm:w-auto py-3.5 px-12 bg-naleko-dark-blue text-white rounded-lg font-bold hover:bg-indigo-950 transition shadow-md">Submit Partnership Request</button>
                             <p class="text-xs text-gray-400 mt-3">We respect your privacy. Your information is safe with us.</p>
-                        </div>
-                    </form>
-                </div>
-            </section>
-        </div>
-
-        <div id="funder-form" class="funder-view hidden">
-            <section class="container mx-auto py-12 px-4">
-                <div class="text-center mb-12">
-                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Schedule a Funder Call</h1>
-                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Move interested stakeholders from information gathering to direct engagement with Naleko.</p>
-                </div>
-
-                <div class="bg-white rounded-2xl shadow-custom-card border border-gray-100 p-8 max-w-3xl mx-auto">
-                    <!-- Dummy Form: Update action and names once fields are ready -->
-                    <form id="funder-scheduling-form" action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        
-                        <!-- Full Name (Split for Salesforce) -->
-                        <div>
-                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">First Name *</label>
-                            <input type="text" name="first_name" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Last Name *</label>
-                            <input type="text" name="last_name" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
-                        </div>
-
-                        <!-- Organisation & Contact -->
-                        <div>
-                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Organisation Name *</label>
-                            <input type="text" name="company" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Contact Number *</label>
-                            <input type="tel" name="phone" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div class="md:col-span-2">
-                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Email Address *</label>
-                            <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
-                        </div>
-
-                        <!-- Scheduling -->
-                        <div>
-                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Preferred Date *</label>
-                            <input type="date" name="preferred_date" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Preferred Time *</label>
-                            <select name="preferred_time" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 bg-white">
-                                <option value="">Select Time</option>
-                                <option value="Morning">Morning (08:00 - 12:00)</option>
-                                <option value="Afternoon">Afternoon (12:00 - 17:00)</option>
-                                <option value="Evening">Evening (17:00+)</option>
-                            </select>
-                        </div>
-
-                        <!-- Areas of Interest -->
-                        <div class="md:col-span-2">
-                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Areas of Interest *</label>
-                            <select name="areas_of_interest" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 bg-white">
-                                <option value="">Select Interest</option>
-                                <option value="AI Education">AI Education & Training</option>
-                                <option value="Workforce Upskilling">Workforce Upskilling</option>
-                                <option value="CSI">Corporate Social Investment (CSI)</option>
-                                <option value="Tech Infrastructure">Technology & Cloud Infrastructure</option>
-                                <option value="Strategic Partnership">Strategic Partnership Opportunities</option>
-                                <option value="Sponsorship">Event & Program Sponsorship</option>
-                            </select>
-                        </div>
-
-                        <!-- Submit -->
-                        <div class="md:col-span-2 text-center mt-4">
-                            <button type="submit" class="w-full sm:w-auto py-3.5 px-12 bg-naleko-dark-blue text-white rounded-lg font-bold hover:bg-indigo-950 transition shadow-md">Request Funder Call</button>
                         </div>
                     </form>
                 </div>

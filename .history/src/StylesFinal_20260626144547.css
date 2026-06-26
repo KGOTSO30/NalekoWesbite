@@ -1,0 +1,580 @@
+
+@import "tailwindcss";
+
+/* src/index.css (or your main CSS file) */
+  @font-face {
+    font-family: "Spaced";
+    src: url('Fonts/spaced-otf.otf') format("opentype");
+    }
+        /* Custom CSS for specific colors and shadows not directly in Tailwind's default palette */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .header {
+            font-family: 'Spaced';
+        }
+        .bg-naleko-dark-blue {
+            background-color: #120C4E;
+        }
+        .text-naleko-dark-blue {
+            color: #120C4E;
+        }
+        .bg-light-blue-alpha {
+            background-color: rgba(132, 181, 232, 0.38);
+        }
+        .shadow-custom-light {
+            box-shadow: 7px 7px 7px #D9D9D9;
+        }
+        .shadow-custom-dark {
+            box-shadow: 1.8px 3.6px 3.6px rgba(0, 0, 0, 0.25);
+        }
+        .outline-white-1px {
+            outline: 1px white solid;
+            outline-offset: -1px;
+        }
+        .outline-naleko-blue-0_54px {
+            outline: 0.54px #120C4E solid;
+            outline-offset: -0.54px;
+        }
+        .border-white-1_5px {
+            border: 1.5px white solid;
+        }
+        .text-naleko-blue-alpha {
+            color: rgba(17.74, 12.26, 78.05, 0.95);
+        }
+
+
+        /* Page Container - Equivalent to w-[1284px] h-[2485px] relative bg-white overflow-hidden */
+.page-container {
+    width: 1284px; /* You might want to make this responsive with max-width and percentages */
+    height: 2485px; /* Consider using min-height and letting content dictate height */
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    margin: 0 auto; /* Center the container if it has a fixed width */
+}
+
+
+/* StylesFinal.css */
+
+/* ... (your existing custom styles) ... */
+
+.header-background-corp {
+    background-image: url('/src/Images/GirlsIntech.jpeg'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: center; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.header-background-academy {
+    background-image: url('/src/Images/headerGradImage.jpg'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: center; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.header-background-girls {
+    background-image: url('/src/Icons/outdoor-photo-south-african-high-260nw-2626901043\ 2.jpg'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: center; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.header-background-event {
+    background-image: url('/src/GolfDayPictures/_MG_7667\ copy\ Header.JPG'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: center; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+/* Optional: Add an overlay for better text readability if your image is busy */
+.header-overlay {
+    position: relative; /* Needed for the pseudo-element overlay */
+}
+
+.header-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 0; /* Ensures the overlay is behind the content */
+}
+
+/* To make sure your header content is above the overlay */
+.header-overlay > div {
+    position: relative;
+    z-index: 1;
+}
+
+.call-to-action-button {
+    display: inline-flex;
+    padding: 10px 20px; /* p-2.5 */
+    background-color: rgba(49, 46, 129, 0.95); /* bg-indigo-950/95 */
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* gap-2.5 */
+    color: white;
+    font-size: 24px; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+    text-decoration: none;
+    cursor: pointer;
+    left: 518px;
+    top: 238px; /* Relative to hero-section top */
+    position: absolute;
+}
+
+
+/* What We Offer Section */
+.offer-section {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 593px; /* Adjust based on your layout */
+    padding: 20px;
+}
+
+.offer-section .section-title {
+    color: #312E81;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    width: 655px;
+    left: 326px;
+    top: 0;
+    position: absolute;
+}
+
+.offer-section .section-tagline {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    width: 224px;
+    left: 541px;
+    top: 55px;
+    position: absolute;
+}
+
+.offer-cards-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 80px; /* gap-20 is 80px */
+    width: 1202px;
+    left: 46px;
+    top: 97px; /* Relative to offer-section top */
+    position: absolute;
+}
+
+.offer-card {
+    width: 320px; /* w-80 is 320px */
+    height: 256px; /* h-64 is 256px */
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative; /* For absolute positioning of inner elements */
+    outline: 1px solid white; /* Some cards had this */
+    outline-offset: -1px; /* Some cards had this */
+}
+
+.offer-card .card-title {
+    color: rgba(49, 46, 129, 0.95);
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    width: 288px; /* w-72 */
+    margin: 0 auto;
+}
+
+.offer-card .card-description {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    position: absolute;
+    top: 111px;
+    left: 0;
+    right: 0;
+    width: 288px; /* w-72 */
+    margin: 0 auto;
+}
+
+/* Adjustments for specific card descriptions based on Figma's generated positions */
+.offer-card:nth-child(2) .card-description {
+    width: 320px; /* w-80 */
+    left: 4px;
+}
+
+.offer-card:nth-child(3) .card-description {
+    width: 384px; /* w-96 */
+    left: -4px;
+}
+
+.offer-card:nth-child(4) .card-title {
+    width: 320px; /* w-80 */
+    left: 19.5px;
+}
+
+.offer-card:nth-child(4) .card-description {
+    width: 320px; /* w-80 */
+    left: 4.5px;
+    top: 130px;
+}
+
+.offer-card:nth-child(5) .card-title {
+    width: 320px; /* w-80 */
+    left: 18.5px;
+}
+
+.offer-card:nth-child(5) .card-description {
+    width: 320px; /* w-80 */
+    height: 96px; /* h-24 */
+    left: 0.5px;
+    top: 130px;
+}
+
+/* The Result Section */
+.result-section {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 1325px; /* Adjust based on your layout */
+    padding: 20px;
+}
+
+.result-section .section-title {
+    color: #312E81;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 530px;
+    top: 0;
+}
+
+.result-section .section-subtitle {
+    color: #312E81;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    width: 686px;
+    left: 279px;
+    top: 72px;
+    position: absolute;
+}
+
+.result-section .section-description {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    width: 1098px;
+    left: 74px;
+    top: 142px;
+    position: absolute;
+}
+
+/* Adjust the call-to-action button for this section */
+.result-section .call-to-action-button {
+    left: 517px;
+    top: 233px;
+    position: absolute;
+}
+
+
+/* StylesFinal.css */
+
+/* ... other styles ... */
+
+.shadow-custom-card {
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Your specific custom shadow */
+}
+
+.shadow-custom-dark {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* This is actually Tailwind's default shadow-md */
+    /* If you have a different "custom dark" shadow, specify it here. */
+}
+
+.shadow-custom-light {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* This is Tailwind's default shadow-sm */
+    /* If you have a different "custom light" shadow, specify it here. */
+}
+
+
+.Picture-background {
+    background-image: url('/src/Images/adobestock_305758760\ \(2\).webp'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: cover; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.Two-Ladies-background {
+    background-image: url('/src/Images/TwoLadiesTeaching.jpg'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: cover; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.Bear-background {
+    background-image: url('/src/Images/v1173_1041.png'); /* **CHANGE THIS PATH** to your image */
+    background-size: cover; /* This makes sure the image covers the entire header */
+    background-position: cover; /* This centers the image within the header */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+[id] {
+  scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
+}
+
+ /* Custom styles for the carousel */
+        .carousel-container {
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 33.33%; /* Show three slides at a time */
+            box-sizing: border-box;
+            padding: 1rem;
+        }
+
+        /* Hide scrollbar for carousel */
+        .carousel-container {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+
+
+ /* Our Values the Cards */
+
+.flip-card {
+  background-color: transparent;
+  width: 100%; /* Or a fixed width if not in a grid */
+  height: 250px; /* Adjust height as needed to fit content */
+  perspective: 1000px; /* 3D effect perspective */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s; /* Animation duration */
+  transform-style: preserve-3d; /* Key for 3D flip */
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg); /* Flip when 'flipped' class is active */
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Hide back of element when facing away */
+  backface-visibility: hidden; /* Hide back of element when facing away */
+  display: flex; /* Ensure content is centered */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  padding: 1.5rem; /* Equivalent to p-6 */
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+}
+
+.flip-card-front {
+  z-index: 2; /* Ensures front is on top when not flipped */
+}
+
+.flip-card-back {
+  transform: rotateY(180deg); /* Start rotated for the back face */
+  z-index: 1; /* Ensures back is behind when not flipped */
+}
+
+/* You might need to adjust shadow-custom-light or bg-white-alpha if they are custom Tailwind classes */
+/* If bg-white-alpha is not defined in your tailwind.config.js, change it to bg-white or a color of choice. */
+/* If shadow-custom-light is not defined, change it to a standard shadow like shadow-md or shadow-lg */
+
+
+
+
+   /* The six service boxes */ 
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: white;
+      margin: 0;
+    }
+
+
+    .service-box {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 25px 25px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-box h3 {
+      margin: 10px 0 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: black;
+    }
+
+    .service-box p {
+      font-size: 0.875rem;
+      color: black;
+    }
+
+    .button h3 {
+      font-size: 16;
+      color: navy;
+    }
+
+
+    /* Container for the marquee effect */
+.scrolling-logos {
+  display: flex; /* Makes the logos line up horizontally */
+  white-space: nowrap; /* Prevents logos from wrapping to the next line */
+  animation: scrollLogos 30s linear infinite; /* Apply the animation */
+  will-change: transform; /* Optimize for animation performance */
+}
+
+@keyframes scrollSponsorLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* Moves exactly half the width (one full set of logos) */
+  }
+}
+
+.scrolling-sponsors {
+  display: flex;
+  width: max-content; /* Critical: allows the div to be as wide as all logos combined */
+  animation: scrollSponsorLogos 50s linear infinite; /* Adjusted speed for smoothness */
+  will-change: transform;
+}
+
+.sponsor-item {
+  flex-shrink: 0;
+  margin: 0 40px;
+  position: relative; /* Added because your ::before overlay needs a relative parent */
+  height: fit-content; /* Set a consistent height for sponsor items */
+
+}
+
+/* Fix for your Blue Overlay */
+.sponsor-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Fixed your color syntax: hex doesn't take percentages like that */
+  background-color: rgba(18, 12, 78, 0.1); 
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Individual logo items */
+.logo-item {
+  flex-shrink: 0; /* Prevents logos from shrinking to fit */
+  margin: 0 40px; /* Adjust spacing between logos */
+  display: flex;
+  align-items: center; /* Vertically center images if they have different heights */
+  justify-content: center; /* Horizontally center images */
+  height: 80px; /* Set a consistent height for logo items */
+}
+
+.logo-item img {
+  max-height: 100%; /* Ensure images don't exceed the logo-item height */
+  width: auto; /* Maintain aspect ratio */
+  filter: grayscale(100%); /* Optional: Make logos grayscale */
+  opacity: 0.7; /* Optional: Make logos slightly faded */
+  transition: all 0.3s ease; /* Optional: Smooth transition for hover effect */
+}
+.logo-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:  #120C4E 10%; /* <-- YOUR NALEKO BLUE COLOR */
+  mix-blend-mode: multiply;  /* Blends the blue color with the grayscale image */
+  pointer-events: none;      /* Allows clicks to go through to the image/link */
+  transition: all 0.3s ease;
+}
+
+.logo-item img:hover {
+    filter: grayscale(0%); /* Optional: Color on hover */
+    opacity: 1; /* Optional: Full opacity on hover */
+    transform: scale(1.05); /* Optional: Slight zoom on hover */
+}
+
+.icon-girls {
+    transform: scale(2); /* Optional: Slight zoom on hover */
+
+}
+
+.icon-pink {
+     color: rgb(218, 65, 91);
+
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0%); /* Start at the original position */
+  }
+  100% {
+    /*
+      Translate X by -50% to move the first set of logos completely out of view,
+      revealing the duplicated set. Since the duplicated set is identical,
+      it creates a seamless infinite loop.
+    */
+    transform: translateX(-50%);
+  }
+}
+
+/* To ensure the section doesn't expand beyond the viewport and hides overflow */
+.w-full { /* Assuming w-full sets width to 100% or similar */
+    width: 100%;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Shared styles for the book demo page */
+.shadow-custom-card {
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+

@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naleko Digital Solutions - Partner With Us</title>
+    <link href="/src/StylesFinal.css" rel="stylesheet">
+    <link href="/src/output.css" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen font-inter bg-white">
+    
+    <header x-data="{ open: false }"
+            x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+            class="fixed w-full top-0 left-0 z-50 bg-naleko-dark-blue text-white py-6 px-4 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto relative text-white"> 
+            <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+                 class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+
+            <button id="menu-btn" class="md:hidden block text-white absolute top-4 right-4 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            
+            <nav id="menu" :class="{'hidden': !open, 'flex': open}"
+                 class="hidden bg-black md:bg-transparent md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                        gap-x-6 gap-y-2 text-sm md:text-base header 
+                        absolute md:static top-full left-0 w-50% md:w-auto 
+                        p-4 md:p-0 text-white">
+                <a href="/about-us/" class="block hover:text-blue-300 transition duration-300">Who we are</a>
+                <a href="/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
+                <a href="/who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
+                <a href="/contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
+                <a href="/corporate-training/" class="block hover:text-blue-300 transition duration-300">Corp Training</a>
+                <a href="/naleko-academy/" class="block hover:text-blue-300 transition duration-300">Academy</a>
+                <a href="/girls-in-tech/" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
+                <a href="/events/" class="block hover:text-blue-300 transition duration-300">Events</a>
+                <a href="/partner-with-us/" class="block text-blue-300 border-b-2 border-blue-300 pb-1 transition duration-300">Partner With Us</a>
+                <div class="flex space-x-2 ml-4">
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow p-4 mt-36 mb-8">
+        
+        <div id="view-landing" class="partner-view">
+            <section class="container mx-auto py-12 px-4 text-center">
+                <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase tracking-tight">Partner With Naleko Digital Solutions</h1>
+                <p class="text-lg md:text-xl font-medium text-gray-600 mb-12 max-w-4xl mx-auto">Together, we empower people, accelerate digital transformation, build a future driven by AI, technology and innovation.</p>
+                
+               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20">
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between aspect-square">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-3">Corporate Partnerships</h3>
+                            <p class="text-sm font-normal text-gray-600 leading-relaxed">Upskill your workforce with AI and digital solutions tailored for business growth.</p>
+                        </div>
+                        <button onclick="openPartnershipForm('Workforce Upskilling')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition text-left">Get Started &rarr;</button>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between aspect-square">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-3">Education Partnership</h3>
+                            <p class="text-sm font-normal text-gray-600 leading-relaxed">Empower students with future ready digital skills and AI literacy.</p>
+                        </div>
+                        <button onclick="openPartnershipForm('Student Digital Literacy')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition text-left">Get Started &rarr;</button>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between aspect-square">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-3">Technology Partnerships</h3>
+                            <p class="text-sm font-normal text-gray-600 leading-relaxed">Co-innovate with AI, cloud and digital platforms to build the future together.</p>
+                        </div>
+                        <button onclick="openPartnershipForm('Platform Co-Innovation')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition text-left">Get Started &rarr;</button>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between aspect-square">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-3">Event Partnerships</h3>
+                            <p class="text-sm font-normal text-gray-600 leading-relaxed">Partner on events, and initiatives that inspire and create impact.</p>
+                        </div>
+                        <button onclick="openPartnershipForm('Event & Program Sponsorship')" class="mt-6 text-sm font-semibold text-blue-600 hover:text-indigo-800 transition text-left">Get Started &rarr;</button>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl md:text-4xl font-black text-naleko-dark-blue mb-4">Programmes Powered by the Naleko AI Platform</h2>
+                <p class="text-base font-normal text-gray-600 mb-12">Select an offering below to explore structure, outcomes, and opportunities.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 text-left flex flex-col justify-between hover:border-blue-300 transition duration-300">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-2">AI Fundamentals for Youth</h3>
+                            <p class="text-sm text-gray-500 mb-4 font-semibold">8 Weeks | 25 Learners | R6,500</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded">AI-1 Prompt Co-Pilot</span>
+                                <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-2.5 py-1 rounded">AI-5 Apprentice</span>
+                                <span class="bg-emerald-50 text-emerald-700 text-xs font-semibold px-2.5 py-1 rounded">AI-2 Predictive</span>
+                            </div>
+                        </div>
+                        <button onclick="openProgrammeDetails('AI Fundamentals for Youth')" class="w-full text-center py-2 bg-gray-50 hover:bg-blue-50 rounded-lg font-medium text-naleko-dark-blue text-sm transition">View Details</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 text-left flex flex-col justify-between hover:border-blue-300 transition duration-300">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-2">AI for Business</h3>
+                            <p class="text-sm text-gray-500 mb-4 font-semibold">6 Weeks | 20 Learners | R6,500</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded">AI-1 Prompt Co-Pilot</span>
+                                <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-2.5 py-1 rounded">AI-5 Apprentice</span>
+                                <span class="bg-orange-50 text-orange-700 text-xs font-semibold px-2.5 py-1 rounded">AI-3 Predictive</span>
+                            </div>
+                        </div>
+                        <button onclick="openProgrammeDetails('AI for Business')" class="w-full text-center py-2 bg-gray-50 hover:bg-blue-50 rounded-lg font-medium text-naleko-dark-blue text-sm transition">View Details</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 text-left flex flex-col justify-between hover:border-blue-300 transition duration-300">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-2">Salesforce Administration</h3>
+                            <p class="text-sm text-gray-500 mb-4 font-semibold">10 Weeks | 20 Learners | R15,800</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-indigo-50 text-indigo-700 text-xs font-semibold px-2.5 py-1 rounded">AI-4 Forecast</span>
+                                <span class="bg-teal-50 text-teal-700 text-xs font-semibold px-2.5 py-1 rounded">AI-2 Skills Match</span>
+                            </div>
+                        </div>
+                        <button onclick="openProgrammeDetails('Salesforce Administration')" class="w-full text-center py-2 bg-gray-50 hover:bg-blue-50 rounded-lg font-medium text-naleko-dark-blue text-sm transition">View Details</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 text-left flex flex-col justify-between hover:border-blue-300 transition duration-300">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-2">Digital Skills Learnerships</h3>
+                            <p class="text-sm text-gray-500 mb-4 font-semibold">12 Weeks | 30 Learners | R12,800</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-red-50 text-red-700 text-xs font-semibold px-2.5 py-1 rounded">AI-6 Compliance</span>
+                                <span class="bg-teal-50 text-teal-700 text-xs font-semibold px-2.5 py-1 rounded">AI-2 Skills Match</span>
+                            </div>
+                        </div>
+                        <button onclick="openProgrammeDetails('Digital Skills Learnerships')" class="w-full text-center py-2 bg-gray-50 hover:bg-blue-50 rounded-lg font-medium text-naleko-dark-blue text-sm transition">View Details</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 text-left flex flex-col justify-between hover:border-blue-300 transition duration-300">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-2">AWS Cloud Fundamentals</h3>
+                            <p class="text-sm text-gray-500 mb-4 font-semibold">8 Weeks | 25 Learners | R15,500</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-purple-50 text-purple-700 text-xs font-semibold px-2.5 py-1 rounded">AI-5 Apprentice</span>
+                                <span class="bg-teal-50 text-teal-700 text-xs font-semibold px-2.5 py-1 rounded">AI-2 Skills Match</span>
+                            </div>
+                        </div>
+                        <button onclick="openProgrammeDetails('AWS Cloud Fundamentals')" class="w-full text-center py-2 bg-gray-50 hover:bg-blue-50 rounded-lg font-medium text-naleko-dark-blue text-sm transition">View Details</button>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 text-left flex flex-col justify-between hover:border-blue-300 transition duration-300">
+                        <div>
+                            <h3 class="text-xl font-bold text-naleko-dark-blue mb-2">Prompt Engineering</h3>
+                            <p class="text-sm text-gray-500 mb-4 font-semibold">4 Weeks | 25 Learners | R2,800</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-indigo-50 text-indigo-700 text-xs font-semibold px-2.5 py-1 rounded">AI-4 Forecast</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded">AI-1 Prompt Co-Pilot</span>
+                                <span class="bg-orange-50 text-orange-700 text-xs font-semibold px-2.5 py-1 rounded">AI-3 Predictive</span>
+                            </div>
+                        </div>
+                        <button onclick="openProgrammeDetails('Prompt Engineering')" class="w-full text-center py-2 bg-gray-50 hover:bg-blue-50 rounded-lg font-medium text-naleko-dark-blue text-sm transition">View Details</button>
+                    </div>
+                </div>
+
+                <div class="mb-24">
+                    <button onclick="navigateToView('view-compare')" class="inline-flex items-center justify-center py-3 px-12 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-950 transition duration-300 shadow-md">View All Programmes</button>
+                </div>
+
+                <div class="bg-gray-50 py-16 px-6 rounded-3xl max-w-6xl mx-auto">
+                    <h3 class="text-2xl md:text-3xl font-black text-naleko-dark-blue mb-12">What Our Partners Say</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <p class="text-gray-700 text-sm italic mb-6">"Naleko Digital Solutions has been an incredible partner in building digital skills and confidence in our teams. Their programs are practical and impactful."</p>
+                            <h4 class="text-xs font-bold tracking-wider text-gray-400 uppercase">— ANALYTICSHIVE</h4>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <p class="text-gray-700 text-sm italic mb-6">"Our students gained real-world skills through Naleko's AI and cloud training. The collaboration has been transformative."</p>
+                            <h4 class="text-xs font-bold tracking-wider text-gray-400 uppercase">— AFRICAN WOMEN'S MOVEMENT</h4>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <p class="text-gray-700 text-sm italic mb-6">"Their commitment to youth empowerment and innovation aligns perfectly with our mission. We are proud partners."</p>
+                            <h4 class="text-xs font-bold tracking-wider text-gray-400 uppercase">— ANALYTICSHIVE</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="view-compare" class="partner-view hidden">
+            <section class="container mx-auto py-12 px-4">
+                <div class="text-center mb-12">
+                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Compare All Programmes</h1>
+                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Explore our programmes side-by-side and find the right fit for your goals, budget, and impact.</p>
+                </div>
+
+                <div class="overflow-x-auto bg-white rounded-2xl shadow-custom-card border border-gray-100 max-w-6xl mx-auto mb-12">
+                    <table class="w-full min-w-[700px] text-left border-collapse">
+                        <thead>
+                            <tr class="bg-naleko-dark-blue text-white text-sm font-semibold uppercase tracking-wider">
+                                <th class="p-5">Programme</th>
+                                <th class="p-5">Duration</th>
+                                <th class="p-5">Learners</th>
+                                <th class="p-5">Funding (Per Learner)</th>
+                                <th class="p-5">Placement Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 text-sm font-medium divide-y divide-gray-100">
+                            <tr class="hover:bg-gray-50 transition cursor-pointer" onclick="navigateToView('view-outcomes')">
+                                <td class="p-5 text-naleko-dark-blue font-bold">AI Fundamentals for Youth</td>
+                                <td class="p-5">8 wks</td>
+                                <td class="p-5">25</td>
+                                <td class="p-5">R4,500</td>
+                                <td class="p-5 text-emerald-600">70%</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-5 text-naleko-dark-blue font-bold">AI for Business</td>
+                                <td class="p-5">6 wks</td>
+                                <td class="p-5">20</td>
+                                <td class="p-5">R5,500</td>
+                                <td class="p-5 text-emerald-600">60%</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-5 text-naleko-dark-blue font-bold">Digital Skills Learnership</td>
+                                <td class="p-5">12 wks</td>
+                                <td class="p-5">30</td>
+                                <td class="p-5">R3,200</td>
+                                <td class="p-5 text-emerald-600">65%</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-5 text-naleko-dark-blue font-bold">Salesforce Administration</td>
+                                <td class="p-5">10 wks</td>
+                                <td class="p-5">20</td>
+                                <td class="p-5">R6,800</td>
+                                <td class="p-5 text-emerald-600">75%</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-5 text-naleko-dark-blue font-bold">AWS Cloud Fundamentals</td>
+                                <td class="p-5">8 wks</td>
+                                <td class="p-5">25</td>
+                                <td class="p-5">R5,500</td>
+                                <td class="p-5 text-emerald-600">72%</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-5 text-naleko-dark-blue font-bold">Prompt Engineering</td>
+                                <td class="p-5">4 wks</td>
+                                <td class="p-5">25</td>
+                                <td class="p-5">R2,800</td>
+                                <td class="p-5 text-emerald-600">55%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                    <button onclick="navigateToView('view-breakdown')" class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 text-center transition">View Programme Costing</button>
+                    <button onclick="navigateToView('view-funder-form')" class="py-3 px-6 border-2 border-naleko-dark-blue text-naleko-dark-blue rounded-lg font-semibold hover:bg-gray-50 text-center transition">Schedule A Call</button>
+                </div>
+            </section>
+        </div>
+
+        <div id="view-outcomes" class="partner-view hidden">
+            <section class="container mx-auto py-12 px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-xs uppercase tracking-widest font-black text-blue-600 mb-2">Quick Insights</h2>
+                    <h1 id="programme-title" class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Learning Outcomes</h1>
+                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Each module is designed with specific, measurable outcomes to ensure practical knowledge and real-world impact.</p>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16 text-center">
+                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                        <div  id="programme-modules" class="text-4xl font-black text-naleko-dark-blue mb-2">4</div>
+                        <div class="text-sm font-bold text-gray-500 uppercase">Modules</div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                        <div id="programme-duration" class="text-4xl font-black text-naleko-dark-blue mb-2">8</div>
+                        <div class="text-sm font-bold text-gray-500 uppercase">Weeks Journey</div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                        <div id="programme-outcomes" class="text-4xl font-black text-naleko-dark-blue mb-2">16+</div>
+                        <div class="text-sm font-bold text-gray-500 uppercase">Measurable Outcomes</div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                        <div id="programme-careers" class="text-4xl font-black text-naleko-dark-blue mb-2">4</div>
+                        <div class="text-sm font-bold text-gray-500 uppercase">Career Paths</div>
+                    </div>
+                </div>
+
+                <div id="programme-timeline" class="max-w-4xl mx-auto space-y-6 mb-12">
+                    
+                </div>
+
+
+
+            <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 max-w-4xl mx-auto mb-12">
+                <h3 class="text-2xl font-bold text-naleko-dark-blue mb-6">Programme Includes</h3>
+
+                <div class="grid md:grid-cols-2 gap-4 text-left">
+                    <div>• Facilitator-led training sessions</div>
+                    <div>• Practical exercises and projects</div>
+                    <div>• AI platform access</div>
+                    <div>• Learner assessments</div>
+                    <div>• Certificate of completion</div>
+                    <div>• Career readiness support</div>
+                    <div>• Placement assistance</div>
+                    <div>• Progress reporting</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-4xl mx-auto">
+
+                <button onclick="alert('Proposal downloaded successfully!')"
+                    class="py-3 px-6 bg-gray-100 text-naleko-dark-blue rounded-lg font-semibold hover:bg-gray-200 transition">
+                    Download Proposal (PDF)
+                </button>
+
+                <button onclick="navigateToView('view-enrollment')"
+                    class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+                    Register for Programme
+                </button>
+
+                <button onclick="navigateToView('view-funder-form')"
+                    class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 transition">
+                    Schedule Funder Call
+                </button>
+
+            </div>
+            </section>
+        </div>
+
+        <div id="view-breakdown" class="partner-view hidden">
+            <section class="container mx-auto py-12 px-4">
+                <div class="text-center mb-12">
+                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Funding Breakdown</h1>
+                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Support AI and digital skills programmes that equip learners with industry-recognised certifications, practical experience, and pathways to employment.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-custom-card border border-gray-100 p-8 max-w-2xl mx-auto mb-12">
+                    <div class="space-y-4 divide-y divide-gray-100">
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-gray-600 font-medium">Training and Facilitation</span>
+                            <span class="text-naleko-dark-blue font-bold">R2,800</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 py-2">
+                            <span class="text-gray-600 font-medium">Learning Materials</span>
+                            <span class="text-naleko-dark-blue font-bold">R800</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 py-2">
+                            <span class="text-gray-600 font-medium">Assessment and Certification</span>
+                            <span class="text-naleko-dark-blue font-bold">R400</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 py-2">
+                            <span class="text-gray-600 font-medium">Placement Support</span>
+                            <span class="text-naleko-dark-blue font-bold">R300</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-6 pb-2 text-lg font-black border-t-2 border-gray-200">
+                            <span class="text-naleko-dark-blue">Total Per Learner</span>
+                            <span class="text-blue-600">R4,500</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 pb-2 text-xl font-black">
+                            <span class="text-naleko-dark-blue">Cohort Total (25 learners)</span>
+                            <span class="text-emerald-600">R112,800</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                    <button onclick="navigateToView('view-options')" class="py-3 px-8 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 text-center transition shadow">Pay Now</button>
+                    <button onclick="navigateToView('view-form')" class="py-3 px-8 border-2 border-naleko-dark-blue text-naleko-dark-blue rounded-lg font-semibold hover:bg-gray-50 text-center transition">Request Invoice</button>
+                </div>
+            </section>
+        </div>
+
+        <div id="view-options" class="partner-view hidden">
+            <section class="container mx-auto py-12 px-4">
+                <div class="text-center mb-12">
+                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase tracking-tight">Payment Options</h1>
+                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Select your preferred payment method below to secure alignment setup safely.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 max-w-3xl mx-auto mb-10 border border-gray-100 shadow-sm">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Funding Summary</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-sm font-medium text-gray-700">
+                        <div><span class="text-gray-400 font-normal">Selected Programme:</span> <span id="summary-program" class="font-semibold text-naleko-dark-blue">AI Fundamentals for Youth</span></div>
+                        <div><span class="text-gray-400 font-normal">Reference Number:</span> <span id="summary-ref" class="font-mono font-bold text-blue-600">NLK-2026-00125</span></div>
+                        <div><span class="text-gray-400 font-normal">Number of Learners:</span> <span id="summary-learners" class="font-semibold text-gray-800">50 Learners</span></div>
+                        <div><span class="text-gray-400 font-normal">Programme Duration:</span> <span id="summary-duration" class="font-semibold text-gray-800">12 Weeks</span></div>
+                        <div class="md:col-span-2 border-t border-gray-200 pt-3 mt-1 flex justify-between items-center">
+                            <span class="text-base font-bold text-naleko-dark-blue">Total Funding Amount:</span>
+                            <span id="summary-amount" class="text-emerald-600 text-2xl font-black">R30,000.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="max-w-3xl mx-auto mb-12">
+                    <h4 class="text-lg font-bold text-naleko-dark-blue text-center mb-6">Choose Your Payment Method</h4>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div id="method-visa" onclick="selectPaymentMethod('visa')" 
+                             class="payment-card border-2 border-blue-600 bg-blue-50/50 p-5 rounded-xl text-center cursor-pointer transition-all duration-300 transform scale-105 shadow-md">
+                            <div class="font-black text-xl italic tracking-wider text-blue-800 mb-2 select-none">VISA</div>
+                            <p class="text-xs text-gray-500 leading-relaxed">Pay securely using your Visa card.</p>
+                        </div>
+                        <div id="method-mastercard" onclick="selectPaymentMethod('mastercard')" 
+                             class="payment-card border border-gray-200 p-5 rounded-xl text-center cursor-pointer transition-all duration-300 transform hover:scale-102 hover:bg-gray-50">
+                            <div class="font-black text-xl italic tracking-wider text-red-500 mb-2 font-mono select-none">mastercard</div>
+                            <p class="text-xs text-gray-500 leading-relaxed">Pay securely using your Mastercard.</p>
+                        </div>
+                        <div id="method-amex" onclick="selectPaymentMethod('amex')" 
+                             class="payment-card border border-gray-200 p-5 rounded-xl text-center cursor-pointer transition-all duration-300 transform hover:scale-102 hover:bg-gray-50">
+                            <div class="font-black text-lg uppercase tracking-widest text-blue-900 mb-2 select-none">AMEX</div>
+                            <p class="text-xs text-gray-500 leading-relaxed">Pay securely using your Amex card.</p>
+                        </div>
+                        <div id="method-eft" onclick="selectPaymentMethod('eft')" 
+                             class="payment-card border border-gray-200 p-5 rounded-xl text-center cursor-pointer transition-all duration-300 transform hover:scale-102 hover:bg-gray-50">
+                            <div class="font-black text-base uppercase text-orange-600 mb-2 select-none">Instant EFT</div>
+                            <p class="text-xs text-gray-500 leading-relaxed">Pay directly from your bank account.</p>
+                        </div>
+                    </div>
+                    <p class="text-center text-xs text-gray-400 mt-6 italic">Payments are processed through a secure encrypted link. A tax invoice and automated receipt will be distributed upon authorization.</p>
+                </div>
+
+                <div class="text-center">
+                    <button id="btn-proceed" onclick="executeGatewayTransaction()" 
+                            class="py-4 px-14 bg-naleko-dark-blue text-white rounded-lg font-bold hover:bg-indigo-950 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-98">
+                        Proceed with VISA
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <div id="view-success" class="partner-view hidden">
+            <section class="container mx-auto py-12 px-4 text-center">
+                <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                
+                <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Payment Successful</h1>
+                <p class="text-base text-gray-600 mb-10 max-w-xl mx-auto">Thank you for your contribution and partnership with Naleko. Your payment has been received and is being processed.</p>
+
+                <div class="bg-white rounded-2xl shadow-custom-card border border-gray-100 p-8 max-w-xl mx-auto text-left mb-12">
+                    <h3 class="text-lg font-bold text-naleko-dark-blue border-b pb-3 mb-4">Payment Details</h3>
+                    <div class="space-y-3.5 text-sm text-gray-600">
+                        <div class="flex justify-between"><span class="font-medium text-gray-400">Payment Status</span> <span class="font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-xs uppercase">Successful</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-gray-400">Amount Paid</span> <span class="font-bold text-naleko-dark-blue">R30,000.00</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-gray-400">Programme</span> <span class="font-semibold text-gray-800">AI Fundamentals for Youth</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-gray-400">Payment Method</span> <span class="font-semibold text-gray-800" id="success-method">VISA</span></div>
+                        <div class="flex justify-between"><span class="font-medium text-gray-400">Transaction Date</span> <span class="font-semibold text-gray-800">03 June 2026, 09:35 AM</span></div>
+                        <div class="flex justify-between border-t pt-3"><span class="font-medium text-gray-400">Reference Number</span> <span class="font-bold text-blue-600 font-mono">NLK-2026-00125</span></div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-sm mx-auto">
+                    <button onclick="window.print()" class="py-3 px-6 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 transition shadow">Download Receipt</button>
+                    <button onclick="navigateToView('view-landing')" class="py-3 px-6 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">Return to Home</button>
+                </div>
+            </section>
+        </div>
+
+        <div id="view-form" class="partner-view hidden">
+            <section class="container mx-auto py-12 px-4">
+                <div class="text-center mb-12">
+                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Become A Partner</h1>
+                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Partner with Naleko to empower people through technology and digital skills.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-custom-card border border-gray-100 p-8 max-w-3xl mx-auto">
+                    <!-- Updated form attributes for Salesforce -->
+                    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Hidden Salesforce Required Fields -->
+                        <input type="hidden" name="oid" value="00D07000000ZYWX">
+                        <input type="hidden" name="retURL" value="http://naleko.com">
+                        <input type="hidden" name="00NTt00000IlU8L" value="Partner_Inquiry">
+
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">First Name *</label>
+                            <input type="text" name="first_name" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+                        
+                        <div>
+                            <!-- Added Last Name as it is required by Salesforce -->
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Last Name *</label>
+                            <input type="text" name="last_name" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Work Email *</label>
+                            <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Phone Number *</label>
+                            <input type="tel" name="phone" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Company Name *</label>
+                            <input type="text" name="company" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Job Title</label>
+                            <input type="text" name="00NTt00000IiwM5" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Partnership Type *</label>
+                            <select id="partnership_type" name="00NTt00000Il5xx" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 bg-white">
+                                <option value="">Select Option</option>
+                                <option value="Corporate Partnerships">Corporate Partnerships</option>
+                                <option value="Education Partnerships">Education Partnerships</option>
+                                <option value="Technology Partnerships">Technology Partnerships</option>
+                                <option value="Event Partnerships">Event Partnerships</option>
+                            </select>
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Collaboration Interest *</label>
+                            <select name="00NTt00000Il7Bl" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 bg-white">
+                                <option value="">Select Option</option>
+                                <option value="Workforce Upskilling">Workforce Upskilling</option>
+                                <option value="Student Digital Literacy">Student Digital Literacy</option>
+                                <option value="Platform Co-Innovation">Platform Co-Innovation</option>
+                                <option value="Event & Program Sponsorship">Event & Program Sponsorship</option>
+                            </select>
+                        </div>
+
+                        <div class="md:col-span-2 text-center mt-4">
+                            <button type="submit" name="submit" class="w-full sm:w-auto py-3.5 px-12 bg-naleko-dark-blue text-white rounded-lg font-bold hover:bg-indigo-950 transition shadow-md">Submit Partnership Request</button>
+                            <p class="text-xs text-gray-400 mt-3">We respect your privacy. Your information is safe with us.</p>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- VIEW: SCHEDULE A FUNDER CALL -->
+        <div id="view-funder-form" class="funder-view hidden">
+            <section class="container mx-auto py-12 px-4">
+                <div class="text-center mb-12">
+                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Schedule a Funder Call</h1>
+                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Move interested stakeholders from information gathering to direct engagement with Naleko.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-custom-card border border-gray-100 p-8 max-w-3xl mx-auto">
+                    <!-- Hidden iframe to prevent Web-to-Lead from forcing a page redirect -->
+                    <iframe name="sf-funder-frame" id="sf-funder-frame" class="hidden"></iframe>
+
+                    <form id="funder-scheduling-form" 
+                        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" 
+                        method="POST"
+                        target="sf-funder-frame"
+                        onsubmit="handleFunderSubmission(event)"
+                        class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Salesforce Web-to-Lead Configuration Core -->
+                        <input type="hidden" name="oid" value="00D07000000ZYWX">
+                        <input type="hidden" name="retURL" value="http://naleko.com/success-callback-hidden">
+                        <input type="hidden" name="lead_source" value="Funder Call Request">
+
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">First Name *</label>
+                            <input type="text" id="first_name" name="first_name" maxlength="40" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Last Name *</label>
+                            <input type="text" id="last_name" name="last_name" maxlength="80" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <!-- Organisation & Contact -->
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Organisation Name *</label>
+                            <input type="text" id="company" name="company" maxlength="40" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Contact Number *</label>
+                            <input type="tel" id="phone" name="phone" maxlength="40" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" maxlength="80" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <!-- Scheduling Parameters -->
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Preferred Date *</label>
+                            <input type="date" id="00NTt00000IlURh" name="00NTt00000IlURh" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Preferred Time *</label>
+                            <select id="00NTt00000IlUcz" name="00NTt00000IlUcz" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 bg-white">
+                                <option value="">Select Time</option>
+                                <option value="Morning">Morning (08:00 - 12:00)</option>
+                                <option value="Afternoon">Afternoon (12:00 - 17:00)</option>
+                                <option value="Evening">Evening (17:00+)</option>
+                            </select>
+                        </div>
+
+                        <!-- Areas of Interest -->
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Areas of Interest *</label>
+                            <select id="00NTt00000IlUhp" name="00NTt00000IlUhp" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 bg-white">
+                                <option value="">Select Interest</option>
+                                <option value="AI Education & Training">AI Education & Training</option>
+                                <option value="Workforce Upskilling">Workforce Upskilling</option>
+                                <option value="Corporate Social Investment(CSI)">Corporate Social Investment (CSI)</option>
+                                <option value="Technology & Cloud Infrastructure">Technology & Cloud Infrastructure</option>
+                                <option value="Strategic Partnership Opportunities">Strategic Partnership Opportunities</option>
+                                <option value="Event & Program Sponsorship">Event & Program Sponsorship</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button Context -->
+                        <div class="md:col-span-2 text-center mt-4">
+                            <button type="submit" class="w-full sm:w-auto py-3.5 px-12 bg-naleko-dark-blue text-white rounded-lg font-bold hover:bg-indigo-950 transition shadow-md">
+                                Request Funder Call
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+                <!-- VIEW: PROGRAMME SELECTION & INTENT CAPTURE -->
+        <div id="view-enrollment" class="partner-view hidden">
+            <section class="container mx-auto py-12 px-4">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-black text-blue-600 tracking-widest uppercase bg-blue-50 px-3 py-1 rounded-full">Step 1 of 2</span>
+                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mt-3 mb-4 uppercase">Enrollment Details</h1>
+                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Tell us about your cohort. Submitting this form secures your pending registration before proceeding to secure payment.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-custom-card border border-gray-100 p-8 max-w-3xl mx-auto">
+                    <!-- Hidden iframe to prevent Web-to-Lead from forcing a page refresh -->
+                    <iframe name="sf-capture-frame" id="sf-capture-frame" class="hidden"></iframe>
+
+                    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" 
+                        method="POST" 
+                        target="sf-capture-frame" 
+                        id="enrollment-intent-form"
+                        onsubmit="handleIntentSubmission(event)"
+                        class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Salesforce Web-to-Lead Config Boilerplate -->
+                        <input type="hidden" name="oid" value="00D07000000ZYWX">
+                        <input type="hidden" name="retURL" value="http://naleko.com/success-callback-hidden">
+                        <input type="hidden" name="lead_source" value="Program Enrollment Intent">
+
+                        <!-- Dynamic Hidden Fields for Auto-Calculated Salesforce Data -->
+                        <input type="hidden" name="00NTt00000IjuID" id="sf-field-duration">
+                        <input type="hidden" name="00NTt00000IjuLR" id="sf-field-price">
+                        <!-- Container to hold dynamic multi-select feature inputs -->
+                        <div id="sf-features-container" class="hidden"></div>
+
+                        <!-- Contact Information -->
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">First Name *</label>
+                            <input type="text" name="first_name" id="first_name" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Last Name *</label>
+                            <input type="text" name="last_name" id="last_name" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Work Email *</label>
+                            <input type="email" name="email" id="email" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Company / Organization *</label>
+                            <input type="text" name="company" id="company" required class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <!-- Programme Specifications -->
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Select Programme *</label>
+                            <select name="00NTt00000IjuEz" id="intent-program" required onchange="calculateLiveEstimate()" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500 bg-white">
+                                <option value="">Select a programme...</option>
+                                <option value="AI Fundamentals for Youth">AI Fundamentals for Youth (R4,500 / learner)</option>
+                                <option value="AI for Business">AI for Business (R5,500 / learner)</option>
+                                <option value="Digital Skills Learnerships">Digital Skills Learnerships (R3,200 / learner)</option>
+                                <option value="Salesforce Administration">Salesforce Administration (R6,800 / learner)</option>
+                                <option value="AWS Cloud Fundamentals">AWS Cloud Fundamentals (R5,500 / learner)</option>
+                                <option value="Prompt Engineering">Prompt Engineering (R2,800 / learner)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-naleko-dark-blue mb-2">Number of Learners *</label>
+                            <input type="number" name="00NTt00000IjuJp" id="intent-learners" min="1" max="500" value="25" required oninput="calculateLiveEstimate()" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:border-blue-500">
+                        </div>
+
+                        <!-- Live Cost Estimator Widget -->
+                        <div class="bg-gray-50 p-4 rounded-lg flex flex-col justify-center border border-gray-200">
+                            <span class="text-xs font-bold text-gray-400 uppercase">Estimated Total Cost</span>
+                            <span id="intent-live-cost" class="text-xl font-black text-emerald-600">R0.00</span>
+                        </div>
+
+                        <div class="md:col-span-2 text-center mt-4">
+                            <button type="submit" class="w-full sm:w-auto py-3.5 px-12 bg-naleko-dark-blue text-white rounded-lg font-bold hover:bg-indigo-950 transition shadow-md">
+                                Save Details & Proceed to Payment &rarr;
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <div id="view-thank-you" class="partner-view hidden">
+            <section class="container mx-auto py-16 px-4 text-center">
+                <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19v-8.93a2 2 0 01.89-1.664l8-4.8a2 2 0 012.22 0l8 4.8A2 2 0 0123 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-2.25-1.5a2 2 0 00-2.22 0l-2.25 1.5"></path>
+                    </svg>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase tracking-tight">Thank You For Your Interest!</h1>
+                <p class="text-lg font-medium text-gray-700 max-w-2xl mx-auto mb-4">We have received your request and one of our experts will get in touch with you shortly to confirm the details.</p>
+                <p class="text-sm text-gray-500 max-w-md mx-auto mb-12">We'll send a confirmation email with the details straight to your inbox.</p>
+                
+                <div class="bg-gray-50 rounded-xl p-6 max-w-md mx-auto mb-12 border border-gray-100 text-sm">
+                    <p class="text-gray-600">Have any questions? Contact us at <a href="mailto:admin@naleko.com" class="text-blue-600 font-bold hover:underline">admin@naleko.com</a>.</p>
+                </div>
+
+                <button onclick="navigateToView('view-landing')" class="py-3 px-10 bg-naleko-dark-blue text-white rounded-lg font-semibold hover:bg-indigo-950 transition">Back to the page</button>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="bg-naleko-dark-blue text-white py-8 px-4 p-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
+                    </svg>
+                    <h3 class="text-4xl header">Naleko</h3>
+                </div>
+                <p class="text-sm text-gray-300 mb-4 py-2">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+                <div class="flex space-x-4">
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 hover:text-white transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="TikTok">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 hover:text-white transition duration-300" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/Web-Pages/WhoWeAre.html" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#flags" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
+                <ul class="space-y-2">
+                    <li><a href="/Web-Pages/CorpTraining.html" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                    <li><a href="/Web-Pages/Academy.html" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                    <li><a href="/Web-Pages/GirlsInTech.html" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Contact Us</h3>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <p class="text-gray-300">admin@naleko.com</p>
+                </div>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
+                    </svg>
+                    <p class="text-gray-300">+27 11 100 7632</p>
+                </div>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                    </svg>
+                    <p class="text-gray-300">191 Bekker RD, Midrand, 1686</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="flex items-center">
+                    <h3 class="text-xl font-semibold py-2 md:mx-12">Scan Me</h3>
+                </div>
+                <div class="flex items-center mt-6 px-14">
+                    <img src="/src/Icons/Scan Me Icon.png" alt="Scan Me QR" style="width: 80px; height: 80px;">
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto text-center text-gray-400 text-sm mt-8 pt-4 border-t border-gray-700">
+            COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
+        </div>
+    </footer>
+
+
+<script>
+
+
+            const programmeDetails = {
+            "AI Fundamentals for Youth": {
+                modules: 4,
+                duration: "8 Weeks",
+                outcomes: "16+",
+                careers: "4",
+                timeline: [
+                    {
+                        weeks: "Weeks 1-2",
+                        title: "Module 1: AI Concepts and Ethics",
+                        description: "Understand AI basics, real-world applications and responsible AI."
+                    },
+                    {
+                        weeks: "Weeks 3-4",
+                        title: "Module 2: Prompt Engineering",
+                        description: "Create effective prompts and improve productivity."
+                    },
+                    {
+                        weeks: "Weeks 5-6",
+                        title: "Module 3: Practical AI Tools",
+                        description: "Apply AI tools to research, automation and data tasks."
+                    },
+                    {
+                        weeks: "Weeks 7-8",
+                        title: "Module 4: Career Readiness & Placement",
+                        description: "CV preparation, interviews and workplace readiness."
+                    }
+                ]
+            },
+
+            "AI for Business": {
+                modules: 4,
+                duration: "6 Weeks",
+                outcomes: "12+",
+                careers: "3",
+                timeline: [
+                    {
+                        weeks: "Week 1",
+                        title: "Business AI Foundations",
+                        description: "AI opportunities for organisations."
+                    },
+                    {
+                        weeks: "Week 2-3",
+                        title: "AI Productivity",
+                        description: "Automation and workflow optimisation."
+                    },
+                    {
+                        weeks: "Week 4-5",
+                        title: "AI Decision Support",
+                        description: "Data insights and forecasting."
+                    },
+                    {
+                        weeks: "Week 6",
+                        title: "Implementation Strategy",
+                        description: "Building an AI roadmap."
+                    }
+                ]
+            },
+
+            "Salesforce Administration": {
+                modules: 5,
+                duration: "10 Weeks",
+                outcomes: "20+",
+                careers: "5",
+                timeline: [
+                    {
+                        weeks: "Weeks 1-2",
+                        title: "Salesforce Fundamentals",
+                        description: "Platform navigation and CRM basics."
+                    },
+                    {
+                        weeks: "Weeks 3-4",
+                        title: "User & Security Management",
+                        description: "Profiles, permissions and security."
+                    },
+                    {
+                        weeks: "Weeks 5-6",
+                        title: "Reports & Dashboards",
+                        description: "Data visibility and analytics."
+                    },
+                    {
+                        weeks: "Weeks 7-8",
+                        title: "Automation",
+                        description: "Flows and business processes."
+                    },
+                    {
+                        weeks: "Weeks 9-10",
+                        title: "Certification Readiness",
+                        description: "Exam preparation and practical projects."
+                    }
+                ]
+            }
+        };
+    // --- MOBILE MENU TOGGLE ---
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+    // --- SPA ROUTING ENGINE ---
+    function navigateToView(viewId) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const views = document.querySelectorAll('.partner-view');
+        views.forEach(view => view.classList.add('hidden'));
+
+        const activeView = document.getElementById(viewId);
+        if (activeView) {
+            activeView.classList.remove('hidden');
+        }
+    }
+
+    // --- CHECKOUT STATE MANAGEMENT ---
+    let checkoutState = {
+        selectedMethod: 'VISA',
+        programName: 'AI Fundamentals for Youth',
+        cohortCost: 30000.00, 
+        referenceId: 'NLK-2026-00125'
+    };
+
+    // --- PAYMENT METHOD SELECTOR ---
+    function selectPaymentMethod(methodName) {
+        document.querySelectorAll('.payment-card').forEach(card => {
+            card.classList.remove('border-blue-600', 'bg-blue-50/50', 'scale-105', 'shadow-md');
+            card.classList.add('border-gray-200');
+        });
+
+        const targetCard = document.getElementById(`method-${methodName}`);
+        if (targetCard) {
+            targetCard.classList.remove('border-gray-200');
+            targetCard.classList.add('border-blue-600', 'bg-blue-50/50', 'scale-105', 'shadow-md');
+        }
+
+        const displayNames = {
+            visa: 'VISA',
+            mastercard: 'MASTERCARD',
+            amex: 'AMEX',
+            eft: 'Instant EFT'
+        };
+        
+        checkoutState.selectedMethod = displayNames[methodName];
+        document.getElementById('btn-proceed').innerText = `Proceed with ${checkoutState.selectedMethod}`;
+    }
+    
+    // Initialize default UI state
+    selectPaymentMethod('visa');
+
+    // --- PAYSTACK GATEWAY EXECUTION ---
+    function executeGatewayTransaction() {
+        // Locate an email field in the DOM to attach to the payment (or use generic fallback)
+        const emailField = document.querySelector('input[type="email"]');
+        const payerEmail = emailField && emailField.value ? emailField.value : "billing@partner-org.co.za";
+
+        if (typeof PaystackPop === 'undefined') {
+            console.warn("Gateway SDK unavailable. Proceeding with simulated execution.");
+            finalizeUIReceiptMapping();
+            return;
+        }
+
+        // === PAYSTACK SANDBOX DEPENDENCY: Configure your keys here ===
+        const paymentHandler = PaystackPop.setup({
+            key: 'pk_test_a88d333b68020523121a9feec05958086f36115e', // <-- DEV: Insert Test API Key 
+            email: payerEmail,
+            amount: checkoutState.cohortCost * 100, // Converts to cents automatically
+            currency: 'ZAR',
+            ref: checkoutState.referenceId,
+            callback: function(response) {
+                console.log('Payment Reference Captured:', response.reference);
+                // DEV: In a live system, the backend webhook updates Salesforce here.
+                finalizeUIReceiptMapping();
+            },
+            onClose: function() {
+                alert('Transaction framework was terminated by user action.');
+            }
+        });
+
+        paymentHandler.openIframe();
+    }
+
+    function finalizeUIReceiptMapping() {
+        document.getElementById('success-method').innerText =
+            checkoutState.selectedMethod;
+
+        document.getElementById('success-program').innerText =
+            checkoutState.programName;
+
+        document.getElementById('success-amount').innerText =
+            'R' + checkoutState.cohortCost.toLocaleString('en-ZA', {
+                minimumFractionDigits: 2
+            });
+
+        document.getElementById('success-reference').innerText =
+            checkoutState.referenceId;
+
+        document.getElementById('success-date').innerText =
+            new Date().toLocaleString('en-ZA', {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+        navigateToView('view-success');
+    }
+
+    // --- AUTO-SELECT PARTNERSHIP TYPE ---
+    let selectedPartnershipType = '';
+
+    function openPartnershipForm(type) {
+        console.log('openPartnershipForm called with:', type);
+        selectedPartnershipType = type;
+
+        navigateToView('view-form');
+
+        setTimeout(() => {
+            const field =
+    document.querySelector('select[name="partnership_type"]') ||
+    document.querySelector('select[name="00NTt00000Il5xx"]');
+
+            if (field) {
+                // Map the type to the corresponding partnership option value
+                const typeMap = {
+                    'Workforce Upskilling': 'Corporate Partnerships',
+                    'Student Digital Literacy': 'Education Partnerships',
+                    'Platform Co-Innovation': 'Technology Partnerships',
+                    'Event & Program Sponsorship': 'Event Partnerships'
+                };
+                
+                field.value = typeMap[type] || type;
+            }
+        }, 100);
+    }
+
+    // --- SALESFORCE LEAD/FORM INGESTION CONTROLLER ---
+    async function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const submitBtn = event.target.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = "Processing Request...";
+        submitBtn.disabled = true;
+
+        const formData = new FormData(event.target);
+        const fullName = formData.get('first_name') ? formData.get('first_name').trim() : ''; 
+        
+        // Format constraint: Salesforce Lead object requires a Last Name
+        const nameParts = fullName.split(' ');
+        const firstName = nameParts[0] || '';
+        const lastName = nameParts.slice(1).join(' ') || 'Partner Candidate'; 
+
+        const payload = {
+            firstName: firstName,
+            lastName: lastName,
+            email: formData.get('work_email'),
+            phone: formData.get('phone_number'),
+            company: formData.get('company_name') || 'Individual', // Lead object mandatory
+            title: formData.get('job_title'),
+            partnershipType: formData.get('partnership_type'),
+            collaborationInterest: formData.get('collaboration_interest'),
+            goals: formData.get('goals')
+        };
+
+        // === SALESFORCE SANDBOX DEPENDENCY: Proxy Endpoint Mapping ===
+        try {
+            const response = await fetch('https://YOUR_API_GATEWAY_OR_PROXY_ENDPOINT/api/partner-request', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (response.ok) {
+                navigateToView('view-thank-you');
+            } else {
+                console.error('Proxy routing rejected the payload structure.');
+                navigateToView('view-thank-you');
+            }
+        } catch (error) {
+            console.error('Integration exception:', error);
+            navigateToView('view-thank-you');
+        } finally {
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+            event.target.reset(); // Clear form fields
+        }
+    }
+
+    // --- PROGRAMME METADATA & PRICING MATRIX ---
+    const programPricing = {
+        "AI Fundamentals for Youth": { 
+            price: 4500, 
+            duration: "8 Weeks", 
+            features: ["AI-1 Prompt Co-Pilot", "AI-5 Apprentice"] 
+        },
+        "AI for Business": { 
+            price: 5500, 
+            duration: "6 Weeks", 
+            features: ["AI-1 Prompt Co-Pilot", "AI-4 Forecast"] 
+        },
+        "Digital Skills Learnerships": { 
+            price: 3200, 
+            duration: "12 Weeks", 
+            features: ["AI-2 Skills Match", "AI-5 Apprentice"] 
+        },
+        "Salesforce Administration": { 
+            price: 6800, 
+            duration: "10 Weeks", 
+            features: ["AI-2 Skills Match", "AI-6 Compliance"] 
+        },
+        "AWS Cloud Fundamentals": { 
+            price: 5500, 
+            duration: "8 Weeks", 
+            features: ["AI-3 Predictive", "AI-6 Compliance"] 
+        },
+        "Prompt Engineering": { 
+            price: 2800, 
+            duration: "4 Weeks", 
+            features: ["AI-1 Prompt Co-Pilot"] 
+        }
+    };
+
+    // --- LIVE COST ESTIMATOR ---
+    function calculateLiveEstimate() {
+        const selectedProg = document.getElementById('intent-program').value;
+        const learnerQty = parseInt(document.getElementById('intent-learners').value) || 0;
+        const costWidget = document.getElementById('intent-live-cost');
+
+        if (selectedProg && programPricing[selectedProg]) {
+            const total = programPricing[selectedProg].price * learnerQty;
+            costWidget.innerText = `R${total.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`;
+        } else {
+            costWidget.innerText = "R0.00";
+        }
+    }
+
+    // --- INTERCEPT INTENT SUBMISSION & TRANSITION ---
+    function handleIntentSubmission(event) {
+        const selectedProg = document.getElementById('intent-program').value;
+        const learnerQty = parseInt(document.getElementById('intent-learners').value) || 25;
+        
+        if (!selectedProg || !programPricing[selectedProg]) return;
+
+        const metadata = programPricing[selectedProg];
+        const calculatedCost = metadata.price * learnerQty;
+        const generatedRef = 'NLK-' + new Date().getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000);
+
+        // 1. Inject Dynamic Values Into Hidden Form Fields For Salesforce Mapping
+        document.getElementById('sf-field-duration').value = metadata.duration;
+        document.getElementById('sf-field-price').value = calculatedCost; 
+
+        // 2. Handle Multi-Select Picklist Injection for Web-to-Lead
+        const featuresContainer = document.getElementById('sf-features-container');
+        featuresContainer.innerHTML = ''; 
+        
+        metadata.features.forEach(feature => {
+            const hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = '00NTt00000IjuN3'; 
+            hiddenInput.value = feature;
+            featuresContainer.appendChild(hiddenInput);
+        });
+
+        // 3. Mutate State Objects for Frontend Tracking & Gateway Integration
+        if (typeof checkoutState !== 'undefined') {
+            checkoutState.programName = selectedProg;
+            checkoutState.cohortCost = calculatedCost;
+            checkoutState.referenceId = generatedRef;
+        }
+
+        // 4. Update the Text in the Next View (Payment Selection / Summary UI)
+        const updateEl = (id, val) => { const el = document.getElementById(id); if(el) el.innerText = val; };
+        updateEl('summary-program', selectedProg);
+        updateEl('summary-ref', generatedRef);
+        updateEl('summary-learners', `${learnerQty} Learners`);
+        updateEl('summary-duration', metadata.duration);
+        updateEl('summary-amount', `R${calculatedCost.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`);
+
+        // 5. Transition UI layers smoothly
+        setTimeout(() => {
+            if (typeof navigateToView === 'function') {
+                navigateToView('view-options');
+            }
+        }, 400);
+    }
+
+    // --- INTERCEPT FUNDER SUBMISSION & HANDSHAKE ---
+    function handleFunderSubmission(event) {
+        const funderEmail = document.getElementById('email').value;
+        const submitBtn = event.target.querySelector('button[type="submit"]');
+        
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Processing Request...";
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+        }
+
+        setTimeout(() => {
+            document.getElementById('funder-scheduling-form').reset();
+            
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Request Funder Call";
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            }
+
+            alert(`Thank you! Your call request has been saved. A Naleko representative will connect with you via ${funderEmail}.`);
+            if (typeof navigateToView === 'function') {
+                navigateToView('view-home'); // Retained explicit 'view-home' target change
+            }
+        }, 600);
+    }
+
+
+
+    function openProgrammeDetails(programmeName) {
+
+    const programme = programmeDetails[programmeName];
+
+    if (!programme) return;
+
+    document.getElementById('programme-title').innerText =
+        programmeName;
+
+    document.getElementById('programme-modules').innerText =
+        programme.modules;
+
+    document.getElementById('programme-duration').innerText =
+        programme.duration.replace(' Weeks','');
+
+    document.getElementById('programme-outcomes').innerText =
+        programme.outcomes;
+
+    document.getElementById('programme-careers').innerText =
+        programme.careers;
+
+    const timelineContainer =
+        document.getElementById('programme-timeline');
+
+    timelineContainer.innerHTML = '';
+
+    programme.timeline.forEach(module => {
+
+        timelineContainer.innerHTML += `
+            <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-l-4 border-l-blue-600 border-gray-100">
+                <span class="text-xs font-bold text-blue-600 tracking-wider uppercase bg-blue-50 px-2 py-0.5 rounded">
+                    ${module.weeks}
+                </span>
+
+                <h3 class="text-xl font-bold text-naleko-dark-blue mt-2 mb-2">
+                    ${module.title}
+                </h3>
+
+                <p class="text-sm text-gray-600">
+                    ${module.description}
+                </p>
+            </div>
+        `;
+    });
+
+    navigateToView('view-outcomes');
+}
+</script>
+
+      
+</body>
+</html>

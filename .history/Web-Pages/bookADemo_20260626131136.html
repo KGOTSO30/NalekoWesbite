@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naleko AI Platform</title>
+    <style>
+        :root {
+            --primary-blue: #0A2540;
+            --accent-blue: #0066cc;
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --bg-light: #f8f9fa;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            --card-shadow-active: 0 8px 25px rgba(0, 102, 204, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+
+
+
+.infrastructure {
+    text-align: center;
+    padding: 50px 20px;
+    font-family: sans-serif;
+}
+
+.infrastructure h2 {
+    color: #0b1354;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+}
+
+.logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5rem; 
+    flex-wrap: wrap; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.logo-row a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo-row img {
+    max-width: 100%; 
+    height: auto;
+    max-height: 100px; 
+    object-fit: contain;
+    
+    /* Base State */
+    opacity: 0.8; /* Dimmed slightly so the highlight is obvious */
+    filter: grayscale(20%); /* Adds a subtle muted look initially */
+    
+    /* Smooth transition for the "pop-up" and "highlight" physics */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                opacity 0.3s ease, 
+                filter 0.3s ease,
+                filter 0.3s ease; 
+    cursor: pointer; 
+}
+
+/* --- THE INTERACTIVE REQUIREMENTS --- */
+.logo-row a:hover img {
+    /* 1. Visually Highlighted: Restores full color and full brightness */
+    opacity: 1;               
+    filter: grayscale(0%) drop-shadow(0px 10px 12px rgba(0, 0, 0, 0.12)); 
+
+    /* 2 & 3. Enlarges Slightly + Subtle Pop-Up Animation:
+       scale(1.08) grows it by 8%, translateY(-8px) physically lifts it up */
+    transform: scale(1.08) translateY(-8px); 
+}
+
+@media (max-width: 768px) {
+    .logo-row {
+        gap: 3rem; 
+    }
+}
+
+@media (max-width: 600px) {
+    .infrastructure h2 {
+        font-size: 1.2rem;
+    }
+    .logo-row {
+        gap: 2rem; 
+    }
+    .logo-row img {
+        max-height: 65px; 
+    }
+    /* Less extreme movement on small mobile touch devices */
+    .logo-row a:hover img {
+        transform: scale(1.05) translateY(-4px);
+    }
+}
+
+
+        
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header Navigation --- */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        .btn-header-demo {
+            background-color: var(--accent-blue);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+    /* Constraining the width to ~650px matches the exact text wrapping from image_13dd3a.png */
+    max-width: 650px; 
+    margin: 60px auto 40px auto;
+    text-align: center;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.hero-section h1 {
+    /* Exact dark navy color from the image */
+    color: #0b1354; 
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.hero-section p {
+    /* Crisp dark tone for maximum readability */
+    color: #111111; 
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .hero-section h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .hero-section p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+        /* --- Applications Section Header --- */
+       .apps-header {
+    text-align: center;
+    /* max-width: 650px; gives the paragraph text that exact compact 2-line structure from image_13e805.png */
+    max-width: 650px; 
+    margin: 60px auto 35px auto;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.apps-header h2 {
+    /* Matching the exact dark navy tone from the project identity */
+    color: #0b1354; 
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.apps-header p {
+    /* True dark tone and size matching the image snippet */
+    color: #111111; 
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* --- Interactive Cards Grid (Kept clean and ready for your grid items) --- */
+.apps-grid {
+    max-width: 1100px;
+    margin: 0 auto 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .apps-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .apps-header h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    .apps-grid { grid-template-columns: 1fr; }
+}
+
+        /* Card Styling exactly matching image layout */
+        .app-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Interactive feedback when clicked / hovered */
+        .app-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--card-shadow-active);
+        }
+
+        .app-card:active {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 10px rgba(0, 102, 204, 0.15);
+        }
+
+        .card-icon {
+            background-color: var(--primary-blue);
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* Simulated icon shapes using basic CSS graphics */
+        .icon-shape {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #fff;
+            border-radius: 3px;
+        }
+
+        .app-card h3 {
+            color: var(--primary-blue);
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .app-card p {
+            color: var(--text-dark);
+            font-size: 14px;
+            margin-bottom: 12px;
+            min-height: 65px; /* Keeps text fields structurally aligned */
+        }
+
+        .app-card .tag-pill {
+            background-color: #f0f4f8;
+            color: var(--text-muted);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .app-card .demo-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: auto;
+            border-bottom: 1px solid transparent;
+            transition: border 0.2s;
+        }
+
+        .app-card:hover .demo-link {
+            border-bottom: 1px solid var(--accent-blue);
+        }
+
+        /* --- Infrastructure Section --- */
+        .infrastructure {
+            text-align: center;
+            margin: 70px auto;
+            padding: 0 20px;
+        }
+
+        .infrastructure h4 {
+            color: var(--text-muted);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .logo-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .infra-logo {
+            font-weight: 700;
+            font-size: 24px;
+            color: #94a3b8;
+            letter-spacing: -0.5px;
+        }
+
+        /* --- Responsive Modal (Form Dialog) --- */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .modal-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* --- Footer Styling --- */
+        footer {
+            background-color: #0b0f19;
+            color: #ffffff;
+            padding: 60px 20px 30px 20px;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .footer-container { grid-template-columns: 1fr; }
+        }
+
+        .footer-col h5 {
+            color: #38bdf8;
+            font-size: 15px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+        }
+
+        .qr-box {
+            background-color: #1e293b;
+            border: 1px dashed #475569;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        .copyright-bar {
+            max-width: 1100px;
+            margin: 40px auto 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+            text-align: center;
+            color: #64748b;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Naleko Digital Solutions</a>
+            <nav>
+                <ul>
+                    <li><a href="#">Who we are</a></li>
+                    <li><a href="#">What we know</a></li>
+                    <li><a href="#">What we do</a></li>
+                    <li><a href="#">Who we serve</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Naleko Academy</a></li>
+                    <li><a href="#">Girls in Tech</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#" class="btn-header-demo" onclick="openDemoModal('General Platform')">Book A Demo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <a href="#" class="partner-link"></a>
+            <h1>NALEKO AI PLATFORM</h1>
+            <p>The Naleko AI-HCM Stack is an integrated, intelligent system designed to power the entire talent lifecycle from recruitment to retirement. Built on a bedrock of unified talent data and real-time analytics, the platform seamlessly connects core human capital management with advanced agentic AI to manage, deploy, and measure organizational talent automatically.</p>
+        </section>
+
+        <section class="apps-header">
+            <h2>AI APPLICATIONS WE BUILT</h2>
+            <p>Each application is trained on real Naleko programme data and deployed inside our HCM platform. Click any application to request a specialized live demo.</p>
+        </section>
+
+         <section class="apps-grid">
+            
+            <div class="app-card" onclick="openDemoModal('Agentforce Screening')">
+                <div class="card-icon">
+                    <img src="images/agent.png" alt="Icon Description" >
+                </div>
+                <h3>Agentforce Screening</h3>
+                <p>Auto-screens 1000+ CVs against programme criteria in under 2 min<br><strong>95% accuracy</strong></p>
+                <div class="tag-pill">Used in AI Programmes</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Skills Match Engine')">
+                <div class="card-icon">
+                  <img src="images/skills.png" alt="Icon Description" >
+                </div>
+                <h3>Skills Match Engine</h3>
+                <p>Maps learner competencies to employer job specs in real time<br><strong>92% match rate</strong></p>
+                <div class="tag-pill">Used in Placements</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Predictive Dropout')">
+                <div class="card-icon">
+                    <img src="images/pred.png" alt="Icon Description" >
+                </div>
+                <h3>Predictive Dropout</h3>
+                <p>Identifies at-risk learners 3 weeks before disengagement<br><strong>78% early detection</strong></p>
+                <div class="tag-pill">Used in Learnerships</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Compliance Automation')">
+                <div class="card-icon">
+                    <img src="images/com.png" alt="Icon Description" >
+                </div>
+                <h3>Compliance Automation</h3>
+                <p>Auto-generates & refreshes reports from live programme data.<br><strong>100% audit-ready</strong></p>
+                <div class="tag-pill">Used in Reporting</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Prompt Co-Pilot')">
+                <div class="card-icon">
+                    <img src="images/agent.png" alt="Icon Description" >
+                </div>
+                <h3>Prompt Co-Pilot</h3>
+                <p>Trains learners with intelligent AI tutor on inside the LMS<br><strong>40% faster mastery</strong></p>
+                <div class="tag-pill">Used in AI Fundamentals</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Workforce Forecast')">
+                <div class="card-icon">
+                    <img src="images/work.png" alt="Icon Description" >
+                </div>
+                <h3>Workforce Forecast</h3>
+                <p>Predict employer hiring needs 6 months ahead for pipeline planning.<br><strong>75% accuracy</strong></p>
+                <div class="tag-pill">Used in Strategy</div>
+                <span class="demo-link">Demo</span>
+            </div>
+<!--<div style="display: flex !important; justify-content: center !important; width: 100% !important; margin: 0 auto !important; clear: both !important;">
+  <a href="#" class="btn-header-demo" onclick="openDemoModal('General Platform')" style="
+    background-color: #0d124b; /* Exact deep blue */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Removes underline */
+    padding: 12px 28px; /* Adds space inside the button */
+    border-radius: 12px; /* Rounded corners */
+    font-family: Arial, sans-serif; /* Clean font style */
+    font-size: 20px; /* Font size */
+    font-weight: bold; /* Bold text for impact */
+    display: inline-block; /* Makes the element a solid block */
+    margin: 0 auto !important; /* Forces the button to center inside the flexbox container */
+  ">Request Application Demo</a>
+</div>-->
+
+            
+        </section>
+
+
+<div style="display: flex; justify-content: center; width: 100%;">
+  <a href="#" class="btn-header-demo" onclick="openDemoModal('General Platform')" style="
+    background-color: #0d124b; /* Exact deep blue from image_0.png */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Removes underline */
+    padding: 12px 28px; /* Adds space inside the button */
+    border-radius: 12px; /* Rounded corners matching image_0.png */
+    font-family: Arial, sans-serif; /* Clean font style */
+    font-size: 20px; /* Font size matching image_0.png */
+    font-weight: bold; /* Bold text for impact */
+    display: inline-block; /* Makes the element a solid block for shape and padding */
+  ">Request Application Demo</a>
+</div>
+
+       <section class="infrastructure">
+    <h2>BUILT ON ENTERPRISE-GRADE INFRASTRUCTURE</h2>
+    <div class="logo-row">
+        <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/sales.png" alt="Salesforce logo">
+        </a>
+       <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/aws.png" alt="Amazon Web Services logo">
+        </a>
+        <a href="https://moodle.org" target="_blank" rel="noopener noreferrer">
+            <img src="images/moodle.png" alt="Moodle logo">
+        </a>
+      <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/dash.png" alt="Microsoft Power BI logo">
+        </a>
+    </div>
+</section>
+    </main>
+    <!-- Interactive Request Demo Modal (Hidden by Default) -->
+
+    <div class="modal-backdrop" id="demoModal" onclick="closeDemoModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="document.getElementById('demoModal').style.display='none'">&times;</button>
+            <h3 id="modalTitle">Request Application Demo</h3>
+            
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST"onsubmit="return validateBusinessEmail(event)">
+                
+              <input type="hidden" name="oid" value="00D07000000ZYWX">
+                <input type="hidden" name="retURL" value="https://wiseman-2312.github.io/thankyoupagenaleko">
+                <input type="hidden" name="lead_source" value="Web">
+
+              <!--  <input type="hidden" name="debug" value=1>                              
+                <input type="hidden" name="debugEmail"                                  
+                         value="wisemanwork060@gmail.com"> -->
+
+                <div class="form-group">
+                    <label for="modalAppInput">Selected Application</label>
+                    <input type="text" id="modalAppInput" name="00NTt00000IiwIr" readonly style="background:#f0f4f8; font-weight:bold; color:var(--accent-blue)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" maxlength="40" required placeholder="Enter your first name">
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" maxlength="80" required placeholder="Enter your last name">
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="email">Work Email</label>
+                    <input type="email" id="email" name="email" maxlength="80" required placeholder="name@company.com">-->
+
+                  <!-- <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>-->
+                <label for="email">Email</label>
+    <input id="email" maxlength="80" name="email" size="20" type="text" required style="padding: 5px; margin-bottom: 5px;"placeholder="name@company.com" />
+    
+
+    
+                </div>
+
+                <div class="form-group">
+ 
+                    <label for="phone">Phone</label>
+                    <input  id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="e.g. +27 11 123 4567"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" maxlength="40" placeholder="Your company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwM5">Job Title</label>
+                    <input type="text" id="00NTt00000IiwM5" name="00NTt00000IiwM5" maxlength="250" placeholder="Your job title">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwNh">Preferred Date & Time (Time available)</label>
+                    <input type="datetime-local" id="00NTt00000IiwNh" name="00NTt00000IiwNh" required>
+                </div>
+
+                <div class="form-group full-width">
+                   <!-- <label for="description">How can we help you?</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Optional comments or requests..."></textarea>-->
+                     <label for="00NTt00000IiwKTMAZ">How can we help you?</label>
+            <textarea id="00NTt00000IiwKTMAZ" name="00NTt00000IiwKTMAZ" wrap="soft"></textarea>
+                </div>
+
+                <button type="submit" name="submit" class="submit-btn">Request Live Demo Connection</button>
+            </form>
+     
+         
+        </div>
+    </div>
+
+
+
+    <script>
+        function openDemoModal(appName) {
+            document.getElementById('modalAppInput').value = appName;
+            document.getElementById('demoModal').style.display = 'flex';
+        }
+        function closeDemoModal(event) {
+            document.getElementById('demoModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

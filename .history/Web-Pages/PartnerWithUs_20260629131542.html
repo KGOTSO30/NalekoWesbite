@@ -41,8 +41,8 @@
                 <a href="/naleko-academy/" class="block hover:text-blue-300 transition duration-300">Academy</a>
                 <a href="/girls-in-tech/" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
                 <a href="/events/" class="block hover:text-blue-300 transition duration-300">Events</a>
-                <a href="/partner-with-us/" class="block text-blue-300 border-b-2 border-blue-300  transition duration-300">Partner With Us</a>
-                <a href="/book-a-demo/" class="block text-blue-300 border-b-2 border-blue-300 transition duration-300">Book a demo</a>
+                <a href="/partner-with-us/" class="block text-blue-300 border-b-2 border-blue-300 pb-1 transition duration-300">Partner With Us</a>
+                <a href="/book-a-demo/" class="block text-blue-300 border-b-2 border-blue-300 pb-1 transition duration-300">Book a demo</a>
                 <div class="flex space-x-2 ml-4">
                     <a href="https://za.linkedin.com/company/nalekodigital" class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -60,12 +60,7 @@
     </header>
 
     <main class="flex-grow p-4 mt-36 mb-8">
-     <button id="back-btn" onclick="goBack()" class="hidden fixed bottom-6 left-6 md:top-32 md:bottom-auto md:left-8 z-40 bg-white border border-gray-200 text-naleko-dark-blue shadow-custom-card hover:bg-blue-50 rounded-full px-4 py-2 flex items-center gap-2 font-semibold text-sm transition-all duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-        </svg>
-        Back
-    </button>   
+        
         <div id="view-landing" class="partner-view">
             <section class="container mx-auto py-12 px-4 text-center">
                 <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase tracking-tight">Partner With Naleko Digital Solutions</h1>
@@ -1216,50 +1211,6 @@
             document.getElementById('funding-cohort-total').innerText = formatMoney(cohortTotal);
 
             navigateToView('view-breakdown');
-        }
-        
-        
-        // 1. Create a history stack starting with the landing page
-        let viewHistory = ['view-landing']; 
-
-        // 2. Update your existing navigation function
-        function navigateToView(viewId, isBackAction = false) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            
-            const views = document.querySelectorAll('.partner-view');
-            views.forEach(view => view.classList.add('hidden'));
-                        const views2 = document.querySelectorAll('.funder-view');
-            views.forEach(view => view.classList.add('hidden'));
-            
-            const activeView = document.getElementById(viewId);
-            if (activeView) { 
-                activeView.classList.remove('hidden'); 
-            }
-
-            // Add the new view to our history stack (unless we are clicking 'Back')
-            if (!isBackAction && viewHistory[viewHistory.length - 1] !== viewId) {
-                viewHistory.push(viewId);
-            }
-
-            // Show or hide the back button
-            const backBtn = document.getElementById('back-btn');
-            if (backBtn) {
-                // Hide if we are on the landing page OR if there is no history to go back to
-                if (viewId === 'view-landing' || viewHistory.length <= 1) {
-                    backBtn.classList.add('hidden');
-                } else {
-                    backBtn.classList.remove('hidden');
-                }
-            }
-        }
-
-        // 3. Add the logic for the Back button
-        function goBack() {
-            if (viewHistory.length > 1) {
-                viewHistory.pop(); // Remove the current view from the end of the array
-                const previousView = viewHistory[viewHistory.length - 1]; // Find the previous view
-                navigateToView(previousView, true); // Navigate to it, flagging it as a back action
-            }
         }
     </script>
 </body>

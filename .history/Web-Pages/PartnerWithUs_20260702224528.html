@@ -131,7 +131,7 @@
                     <div onclick="openPartnershipForm('Event & Program Sponsorship')" class="bg-white p-6 rounded-2xl shadow-custom-card border border-gray-100 flex flex-col justify-between aspect-square transition-transform hover:-translate-y-1 hover:shadow-lg">
                         <div class="flex flex-col gap-4">
                             <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex items-center justify-center w-6 h-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
                                 </svg>
                             </div>
@@ -226,84 +226,23 @@
                     <button onclick="navigateToView('view-compare')" class="inline-flex items-center justify-center py-3 px-12 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-950 transition duration-300 shadow-md">View All Programmes</button>
                 </div>
 
-<!-- What Our Partners Say Section -->
-<section id="partner-testimonials" class="flex items-center mx-auto py-16">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Header and Navigation Arrows -->
-    <div class="flex flex-col items-center justify-center mb-12 gap-6">
-    
-        <!-- Centered Text -->
-        <div class="text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">What Our Partners Say</h2>
-            <p class="mt-4 text-xl text-gray-500">Empowering youth and driving innovation together.</p>
-        </div>
-
-    </div>
-
-    <!-- Snap Scrolling Container -->
-    <div id="testimonial-slider" class="flex overflow-x-auto gap-6 pb-4 pt-4 snap-x snap-mandatory hide-scrollbar scroll-smooth">
-      
-      <!-- Card 1: Analyticshive -->
-      <div class="snap-start shrink-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(50%-0.75rem] bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between transition-transform hover:-translate-y-1">
-        <div class="mb-6">
-          <svg class="h-8 w-8 text-indigo-400 mb-4 opacity-50" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L9.352 4zm16.512 0c-4.896 3.456-8.352 9.12-8.352 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" /></svg>
-          <blockquote class="text-gray-700 italic">"The partnership has been instrumental in building digital skills and confidence in our teams. The practical and impactful programs have made a real difference."</blockquote>
-        </div>
-        <div>
-          <p class="font-bold text-gray-900">Analyticshive</p>
-          <p class="text-sm font-medium text-indigo-600">Digital Programs Partner</p>
-        </div>
-      </div>
-
-      <!-- Card 2: African Women's Movement -->
-      <div class="snap-start shrink-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(50%-0.75rem] bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between transition-transform hover:-translate-y-1">
-        <div class="mb-6">
-          <svg class="h-8 w-8 text-indigo-400 mb-4 opacity-50" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L9.352 4zm16.512 0c-4.896 3.456-8.352 9.12-8.352 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" /></svg>
-          <blockquote class="text-gray-700 italic">"The collaboration on AI and cloud training provided our students with transformative real-world skills. The commitment to youth empowerment aligns perfectly with our organizational mission."</blockquote>
-        </div>
-        <div>
-          <p class="font-bold text-gray-900">African Women's Movement</p>
-          <p class="text-sm font-medium text-indigo-600">Training Collaboration Partner</p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="snap-start shrink-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(50%-0.75rem] bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between transition-transform hover:-translate-y-1">
-        <div class="mb-6">
-            <svg class="h-8 w-8 text-indigo-400 mb-4 opacity-50" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L9.352 4zm16.512 0c-4.896 3.456-8.352 9.12-8.352 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" /></svg>
-            <blockquote class="text-gray-700 italic">"Their commitment to youth empowerment and innovation aligns perfectly with our mission. We are proud partners."</blockquote>
-        </div>
-        <div>
-          <p class="font-bold text-gray-900">Analyticshive</p>
-          <p class="text-sm font-medium text-indigo-600">Digital Programs Partner</p>
-        </div>
-      </div>
-
-  
-     
-    </div>
-
-    <!-- Pagination Dots Container -->
-    <div id="pagination-dots" class="flex justify-center items-center gap-3 mt-6">
-      <!-- JavaScript will dynamically inject the dots here based on how many cards exist -->
-    </div>
-          <!-- Arrows -->
-      <div class="flex items-center justify-center gap-3">
-        <button id="prev-testimonial" class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-100 hover:text-indigo-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" aria-label="Previous testimonial">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
-        </button>
-        <button id="next-testimonial" class="flex items-center justify-center w-12 h-12 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-100 hover:text-indigo-600 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600" aria-label="Next testimonial">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-          </svg>
-        </button>
-      </div>
-
-  </div>
-</section>
+                <div class=" px-6 rounded-3xl max-w-6xl mx-auto">
+                    <h3 class="text-2xl md:text-3xl font-black text-naleko-dark-blue mb-12">What Our Partners Say</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <p class="text-gray-700 text-sm italic mb-6">"Naleko Digital Solutions has been an incredible partner in building digital skills and confidence in our teams. Their programs are practical and impactful."</p>
+                            <h4 class="text-xs font-bold tracking-wider text-gray-400 uppercase">— ANALYTICSHIVE</h4>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <p class="text-gray-700 text-sm italic mb-6">"Our students gained real-world skills through Naleko's AI and cloud training. The collaboration has been transformative."</p>
+                            <h4 class="text-xs font-bold tracking-wider text-gray-400 uppercase">— AFRICAN WOMEN'S MOVEMENT</h4>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                            <p class="text-gray-700 text-sm italic mb-6">"Their commitment to youth empowerment and innovation aligns perfectly with our mission. We are proud partners."</p>
+                            <h4 class="text-xs font-bold tracking-wider text-gray-400 uppercase">— ANALYTICSHIVE</h4>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
 
@@ -323,7 +262,7 @@
                                 <th class="p-5">Programme</th>
                                 <th class="p-5">Duration</th>
                                 <th class="p-5">Learners</th>
-                                <th class="p-5">Total (Per Learner)</th>
+                                <th class="p-5">Funding (Per Learner)</th>
                                 <th class="p-5">Placement Rate</th>
                             </tr>
                         </thead>
@@ -447,13 +386,10 @@
             <section class="container mx-auto py-12 px-4">
                 <div class="text-center mb-16">
                     <h1 id="programme-title" class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Learning Outcomes</h1>
-                     
-                </div>
+                    <h2 class="text-xs uppercase tracking-widest font-black text-blue-600 mb-2">Quick Insights</h2>
                     
-                <div class="text-center mb-2">
-                    <h2 class="text-2xl uppercase tracking-widest md:text-3xl font-black text-blue-600 mb-2">Quick Insights</h2>
+                    
                 </div>
-
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16 text-center">
                     <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
                         <div id="programme-modules" class="text-4xl font-black text-naleko-dark-blue mb-2">4</div>
@@ -475,10 +411,10 @@
 
                 
 
-                <section class="container mx-auto  py-16 px-4">
-                    <h1 class="text-center text-3xl max-w-4xl mx-auto md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Learning Outcomes</h1>
-                    <p class="text-lg font-black text-center text-naleko-dark-blue  mx-auto">Each module is designed with specific, measurable outcomes to ensure practical knowledge and real-world impact.</p>
-                    
+                <section class="container mx-auto max-w-8xl py-16 px-4">
+                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Learning Outcomes</h1>
+                <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Each module is designed with specific, measurable outcomes to ensure practical knowledge and real-world impact.</p>
+                
                 </section>
                 
                 <div id="programme-timeline" class="max-w-4xl mx-auto space-y-6 mb-12"></div>
@@ -487,13 +423,14 @@
                     <h2 class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue ">
                         Ready To Make An Impact Together?
                     </h2>
-                       <br>
                     <p class="text-lg font-black text-center text-naleko-dark-blue  mx-auto">
                         Connect with Naleko Digital Solutions to start your journey towards innovation and efficiency.
                     </p>
                     
-                 
-                 
+                    <br>
+                    <p class="text-sm text-center max-w-9xl">
+                        Whether you're an individual ready to upskill or an organization 
+                    </p>
                 </section>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-4xl mx-auto">
@@ -718,8 +655,8 @@
         <div id="view-funder-form" class="funder-view hidden">
             <section class="container mx-auto py-12 px-4">
                 <div class="text-center mb-12">
-                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Schedule A Call</h1>
-                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Interested? Connect with our team to discuss how we can support your goals.</p>
+                    <h1 class="text-3xl md:text-5xl font-black text-naleko-dark-blue mb-4 uppercase">Schedule a Funder Call</h1>
+                    <p class="text-base font-normal text-gray-600 max-w-2xl mx-auto">Move interested stakeholders from information gathering to direct engagement with Naleko.</p>
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-custom-card border border-gray-100 p-8 max-w-3xl mx-auto">
@@ -783,7 +720,7 @@
                         </div>
                         <div class="md:col-span-2 text-center mt-4">
                             <button type="submit" class="w-full sm:w-auto py-3.5 px-12 bg-naleko-dark-blue text-white rounded-lg font-bold hover:bg-indigo-950 transition shadow-md">
-                                Request A Call
+                                Request Funder Call
                             </button>
                         </div>
                     </form>
@@ -1333,76 +1270,5 @@
             }
         }
     </script>
-
-    <!-- Interaction Logic for Arrows and Pagination Dots -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.getElementById('testimonial-slider');
-    const prevBtn = document.getElementById('prev-testimonial');
-    const nextBtn = document.getElementById('next-testimonial');
-    const dotsContainer = document.getElementById('pagination-dots');
-    
-    // Find all the individual cards
-    const cards = Array.from(slider.children);
-    let dots = [];
-
-    // 1. Generate the Pagination Dots
-    cards.forEach((card, index) => {
-      const dot = document.createElement('button');
-      // Base styling for the dots
-      dot.className = 'w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 bg-gray-300';
-      dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
-      
-      // Click event to scroll to the specific card
-      dot.addEventListener('click', () => {
-        // Calculate exact scroll position for the clicked card
-        const scrollPosition = card.offsetLeft - slider.offsetLeft;
-        slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
-      });
-
-      dotsContainer.appendChild(dot);
-      dots.push(dot);
-    });
-
-    // 2. Logic to Highlight the Active Dot
-    const updateActiveDot = () => {
-      // Calculate which card is currently at the left edge of the slider
-      const scrollPosition = slider.scrollLeft;
-      const cardWidth = cards[0].offsetWidth + 24; // Width + 24px gap
-      const activeIndex = Math.round(scrollPosition / cardWidth);
-
-      dots.forEach((dot, index) => {
-        if (index === activeIndex) {
-          // Active dot styling (wider and indigo color)
-          dot.classList.remove('bg-gray-300', 'w-3');
-          dot.classList.add('bg-indigo-600', 'w-6');
-        } else {
-          // Inactive dot styling (standard circle and gray color)
-          dot.classList.remove('bg-indigo-600', 'w-6');
-          dot.classList.add('bg-gray-300', 'w-3');
-        }
-      });
-    };
-
-    // 3. Arrow Click Logic
-    const getScrollAmount = () => {
-      return cards[0].offsetWidth + 24; 
-    };
-
-    prevBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-    });
-
-    nextBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-    });
-
-    // 4. Event Listeners for Scrolling
-    slider.addEventListener('scroll', updateActiveDot);
-    
-    // Set the initial active dot on page load
-    updateActiveDot();
-  });
-</script>
 </body>
 </html>

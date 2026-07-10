@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaigns</title>
+     <link href="/src/StylesFinal.css" rel="stylesheet">
+     <link href="/src/output.css" rel="stylesheet"> 
+     
+      <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
+     <script src="/Web-Pages/url-rewrite.js" defer></script>
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+ [id] {
+  scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
+}
+</style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+
+     <header x-data="{ open: false}"
+         x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+        
+         class="fixed w-full top-0 left-0 z-50 bg-naleko-dark-blue text-white py-6 px-4 transition-all duration-300 ease-in-out">
+    <div class="container mx-auto relative bg-naleko-dark-blue text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+                 class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+
+         <button id="menu-btn" class="md:hidden block text-white absolute top-4 right-4 focus:outline-none">
+             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+             </svg>
+         </button>
+         
+         <nav id="menu" :class="{'hidden': !open, 'flex': open}"
+                 class="hidden md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                         gap-x-6 gap-y-2 text-sm md:text-base header 
+                         absolute md:static top-full left-0 w-full md:w-auto 
+                         bg-naleko-dark-blue  p-4 md:p-0 text-white">
+            <a href="/about-us/" class=" block hover:text-blue-300 transition duration-300">Who we are</a>
+             <a href="/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
+             <a href="/who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
+             <a href="/contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
+             <a href="/corporate-training/" class="block hover:text-blue-300 transition duration-300">Corp Training</a>
+             <a href="/naleko-academy/" class="block hover:text-blue-300 transition duration-300">Academy</a>
+             <a href="/girls-in-tech/" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
+             <div class="flex space-x-2 ml-4">
+                 <a href="https://za.linkedin.com/company/nalekodigital"
+                    class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                     <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                         <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"></path>
+                     </svg>
+                 </a>
+                 <a href="https://www.tiktok.com/@nalekodigital/"
+                    class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                         <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z"></path>
+                     </svg>
+                 </a>
+             </div>
+         </nav>
+    </div>
+</header>
+     <main id="content" class="flex-grow p-4 mt-40">
+<div class="mt-40 mb-40">
+
+</div>
+<section id="campaigns-section" class="container mx-auto py-16 px-4">
+    <div class="text-center mb-10">
+            <h2 class="text-4xl md:text-5xl font-black text-naleko-dark-blue mb-4">
+                Free <span class="text-naleko-blue">Lead Management</span> Consultation
+            </h2>
+            <p class="text-naleko-dark-blue text-xl md:text-2xl font-extrabold max-w-3xl mx-auto leading-tight">
+                Lead Smarter, <span class="text-naleko-blue">Grow Faster</span>
+            </p>
+            <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
+                Transform how you capture and convert leads with expert guidance
+            </p>
+        </div>
+    <div class="relative rounded-2xl p-4 sm:p-6 lg:p-8 Bear-background bg-center">
+
+        
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white p-6 rounded-2xl shadow-custom-dark flex flex-col">
+            <h3 class="text-2xl text-left font-semibold mb-4 text-naleko-dark-blue">
+                Discovery Consultation (30-60 Minutes)
+            </h3>
+        
+            <div class="flex justify-center">
+                <ul class="text-left text-base text-gray-800 space-y-2 list-disc list-inside">
+                    <li>Understand your business goals and lead management challenges</li>
+                    <li>Review your current tools and processes (if any)</li>
+                    <li>Identify growth opportunities</li>
+                </ul>
+            </div>
+        </div>
+
+           <div class="bg-white p-6 rounded-2xl shadow-custom-dark flex flex-col">
+                <h3 class="text-2xl text-left font-semibold mb-4 text-naleko-dark-blue">
+                    Feedback, Design & Next Steps (30-60 Minutes)
+                </h3>
+            
+                <div class="flex justify-center">
+                    <ul class="text-left text-base text-gray-800 space-y-2 list-disc list-inside">
+                        <li>A basic lead capture web page or simple site layout mock-up</li>
+                        <li>A summary of key insights from the consultation</li>
+                        <li>Actionable next steps tailored to your business</li>
+                        <li>Demo snippet of CRM lead management features</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-12">
+             <a href="https://outlook.office.com/bookwithme/user/b5a70a9ef2734a1583f16282871474c5@naleko.com/meetingtype/Z_OoBRJNDUK5UYZJUcZxiw2?anonymous&ismsaljsauthenabled&ep=mlink" class="inline-block bg-naleko-dark-blue text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition duration-300">
+                Book Free Consultation
+            </a>
+        </div>
+
+          <div class="bg-naleko-dark-blue p-8 rounded-2xl shadow-custom-dark w-full text-white text-center mb-8">
+            <h3 class="text-2xl font-semibold mb-2">
+                Certified Agentforce Specialist Campaign
+            </h3>
+            <p class="text-lg leading-relaxed mb-4 max-w-4xl mx-auto">
+                Building a smarter Salesforce ecosystem by empowering professionals with the tools, knowledge, and credentials to lead in the era of AI-powered CRM.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 text-left max-w-4xl mx-auto">
+                
+                <div x-data="{ open: false }" class="space-y-3">
+                    <button @click="open = !open" class="flex justify-between items-center w-full text-left font-bold text-lg py-4 px-6 bg-gradient-to-r from-naleko-blue to-blue-800 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transform transition-all duration-300">
+                        <span>Official Exam Information</span>
+                        <svg :class="{'rotate-180': open}" class="w-6 h-6 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition class="bg-white/10 p-4 rounded-lg">
+                        <ul class="space-y-3 text-base">
+                            <li><strong>Sign up for Trailhead:</strong> <a href="https://trailhead.salesforce.com/" class="underline hover:text-gray-300">Create your free account</a></li>
+                            <li><strong>Official Exam:</strong> <a href="https://trailhead.salesforce.com/en/credentials/agentforcespecialist" class="underline hover:text-gray-300"> Agentforce Specialist</a></li>
+                            <li><strong>Exam Registration:</strong> <a href="https://trailheadacademy.salesforce.com/" class="underline hover:text-gray-300">Trailhead Academy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div x-data="{ open: false }" class="space-y-3">
+                     <button @click="open = !open" class="flex justify-between items-center w-full text-left font-bold text-lg py-4 px-6 bg-gradient-to-r from-naleko-blue to-blue-800 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transform transition-all duration-300">
+                        <span>Study Resources</span>
+                        <svg :class="{'rotate-180': open}" class="w-6 h-6 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition class="bg-white/10 p-4 rounded-lg">
+                        <ul class="space-y-3 list-disc list-inside text-base">
+                            <li><a href="https://trailhead.salesforce.com/agentblazer" class="hover:underline">Trailhead Study Module (AgentBlazer)</a></li>
+                            <li><a href="https://trailhead.salesforce.com/content/learn/modules/cert-prep-agentforce-specialist" class="hover:underline">Certification Prep Module</a></li>
+                            <li><a href="https://trailhead.salesforce.com/content/learn/superbadges/superbadge-agentforce-service-sbu" class="hover:underline">Agentforce Superbadge</a></li>
+                            <li><a href="https://www.salesforce.com/eu/form/agentforce/demo/?d=pb&utm_medium=email&d=701ed00000Rkclu" class="hover:underline">Live Demo Access</a></li>
+                            <li><a href="https://www.salesforceexams.com/Agentforce-Specialist-Practice-Questions" class="hover:underline">Practice Exams</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-naleko-blue p-6 rounded-2xl text-white text-center">
+            <h3 class="text-2xl font-semibold mb-4">Ready to Transform Your Business?</h3>
+            <p class="text-lg mb-4">Book your free consultation today and start your journey toward certified expertise.</p>
+            <a href="https://trailhead.salesforce.com/agentblazer" class="inline-block bg-naleko-dark-blue text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition duration-300">
+                Get Started Now
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Unlock AWS Certificate Section -->
+<section class="unlock-aws" style="background: #f9fbff; padding: 60px 20px;">
+  <div class="container" style="max-width: 700px; margin: 20px auto;"></div>
+ <!-- Section Title -->
+      
+    <!-- Dark Blue Frame -->
+    <div style="background: hsl(248, 86%, 20%); color: white;padding: 40px; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); text-align: center;">
+ 
+     <h2 class="section-title" style="margin-bottom: 30px; font-size: 22px; font-weight: bold;">UNLOCK YOUR 100% FREE AWS CERTIFICATE TODAY</h2>
+
+      <!-- Three Columns -->
+      <div class="feature-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: left;">
+
+        <!-- Column 1 -->
+        <div class="feature-card">
+          <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold;">Why AWS Certification Cloud</h3>
+          <ul style="margin: 0; padding-left: 20px; list-style: disc;">
+            <li>Cloud, DevOps &amp; AI roles</li>
+            <li>Verified cloud skills &amp; global AWS</li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="feature-card">
+          <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold;">AWS Educate</h3>
+          <ul style="margin: 0; padding-left: 20px; list-style: disc;">
+            <li>Hands-on labs &amp; simulations</li>
+            <li>Access to ETC community</li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="feature-card">
+          <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold;">To Join Emerging Talent Community</h3>
+          <ul style="margin: 0; padding-left: 20px; list-style: disc;">
+            <li>18+ years old</li>
+            <li>Complete at least one badge</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Final Call-to-Action -->
+      <div style="margin-top: 40px;">
+  <a href="https://aws.amazon.com/education/awseducate/" 
+     style="display: inline-block; padding: 15px 35px; font-size: 16px; font-weight: bold; background: hsl(250, 9%, 87%); color: rgb(10, 9, 9); border-radius: 8px; text-decoration: none; cursor: pointer;">
+    Sign Up for Free
+  </a>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+ 
+      <footer class=" bg-naleko-dark-blue text-white py-8 px-4 p-4"> <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                  <div class="flex items-center mb-4">
+                 <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
+                 </svg>
+                 <h3 class="text-4xl header">Naleko</h3>
+             </div>
+                 <p class="text-sm text-gray-300 mb-4 py-2">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+                 <div class="flex space-x-4">
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 hover:text-white transition duration-300" aria-label="LinkedIn">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                         <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
+                     </svg>
+                     </a>
+
+                     <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="TikTok">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                         <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
+                     </svg>
+                     </a>
+
+                      <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="Instagram">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                         <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.25 2.415.415a4.9 4.9 0 0 1 1.695 1.06 4.9 4.9 0 0 1 1.06 1.695c.165.455.361 1.244.415 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.25 1.96-.415 2.415a4.9 4.9 0 0 1-1.06 1.695 4.9 4.9 0 0 1-1.695 1.06c-.455.165-1.244.361-2.415.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.25-2.415-.415a4.9 4.9 0 0 1-1.695-1.06 4.9 4.9 0 0 1-1.06-1.695c-.165-.455-.361-1.244-.415-2.415-.058-1.266-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.25-1.96.415-2.415a4.9 4.9 0 0 1 1.06-1.695 4.9 4.9 0 0 1 1.695-1.06c.455-.165 1.244-.361 2.415-.415 1.266-.058 1.65-.07 4.85-.07zm0 1.8c-3.153 0-3.515.012-4.757.068-.987.046-1.518.205-1.87.342a3.1 3.1 0 0 0-1.136.736 3.1 3.1 0 0 0-.736 1.136c-.137.352-.296.883-.342 1.87-.056 1.242-.068 1.604-.068 4.757s.012 3.515.068 4.757c.046.987.205 1.518.342 1.87.17.44.42.83.736 1.136.306.316.696.566 1.136.736.352.137.883.296 1.87.342 1.242.056 1.604.068 4.757.068s3.515-.012 4.757-.068c.987-.046 1.518-.205 1.87-.342a3.1 3.1 0 0 0 1.136-.736 3.1 3.1 0 0 0 .736-1.136c.137-.352.296-.883.342-1.87.056-1.242.068-1.604.068-4.757s-.012-3.515-.068-4.757c-.046-.987-.205-1.518-.342-1.87a3.1 3.1 0 0 0-.736-1.136 3.1 3.1 0 0 0-1.136-.736c-.352-.137-.883-.296-1.87-.342-1.242-.056-1.604-.068-4.757-.068zm0 3.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 1.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8zm6.4-.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
+                     </svg>
+                     </a>
+
+                     <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 hover:text-white transition duration-300" aria-label="Facebook">
+                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                         <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
+                     </svg>
+                     </a>
+
+                     
+
+                 </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                 <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
+                 <ul class="space-y-2">
+                     <li><a href="/Web-Pages/WhoWeAre.html" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                     <li><a href="/Web-Pages/WhoWeAre.html#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                     <li><a href="/Web-Pages/WhoWeAre.html#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                     <li><a href="/Web-Pages/WhoWeAre.html#flags" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                 </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                 <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
+                 <ul class="space-y-2">
+                     <li><a href="/Web-Pages/CorpTraining.html" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                     <li><a href="/Web-Pages/Academy.html" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                     <li><a href="/Web-Pages/GirlsInTech.html" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                 </ul>
+            </div>
+
+            
+                 <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                 <h3 class="text-xl font-semibold mb-4 py-2">Contact Us</h3>
+                 <div class="flex items-center mb-2">
+                     <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                     <p class="text-gray-300">admin@naleko.com</p>
+                 </div>
+               <div class="flex items-center mb-2">
+                 <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
+                 </svg>
+                 <p class="text-gray-300">+27 11 100 7632</p>
+             </div>
+                 <div class="flex items-center mb-2">
+                 <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                 </svg>
+                 <p class="text-gray-300">191 Bekker RD, Midrand, 1686</p>
+             </div>
+                  
+             </div>
+             
+
+              <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                  <div class="flex items-center">
+                    <h3 class="text-xl font-semibold py-2 md:mx-12">Scan Me</h3>
+                    
+                 </div>
+                 <div class="flex items-center mt-6 px-14">
+                     <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder"  style="width: 80px; height: 80px;">
+                     
+                 </div>
+                 
+             </div>
+             
+             
+             
+             
+         </div>
+         <div class="container mx-auto text-center text-gray-400 text-sm mt-8 pt-4 border-t border-gray-700">
+             COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
+         </div>
+    </footer>
+
+     <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all elements with the class 'flip-card'
+        const flipCards = document.querySelectorAll('.flip-card');
+
+        // Loop through each flip card and add a click event listener
+        flipCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Toggle the 'flipped' class on the card
+                card.classList.toggle('flipped');
+            });
+        });
+    });
+</script>
+<script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>

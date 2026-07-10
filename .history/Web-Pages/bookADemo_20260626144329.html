@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naleko AI Platform</title>
+    <link href="/src/StylesFinal.css" rel="stylesheet">
+    <link href="/src/output.css" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen font-inter bg-white">
+<header x-data="{ open: false}"
+        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+        class="fixed w-full top-0 left-0 z-50 header-background-corp text-white py-6 px-4 transition-all duration-300 ease-in-out">
+    <div class="container mx-auto relative text-white"> 
+        <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+             class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+
+        <button id="menu-btn" class="md:hidden block text-white absolute top-4 right-4 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        
+        <nav id="menu" :class="{'hidden': !open, 'flex': open}"
+             class="hidden bg-black md:bg-transparent md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                    gap-x-6 gap-y-2 text-sm md:text-base header 
+                    absolute md:static top-full left-0 w-full md:w-auto 
+                    p-4 md:p-0 text-white">
+            <a href="/about-us/" class="block hover:text-blue-300 transition duration-300">Who we are</a>
+            <a href="/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
+            <a href="/who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
+            <a href="/contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
+            <a href="/corporate-training/" class="block hover:text-blue-300 transition duration-300">Corp Training</a>
+            <a href="/naleko-academy/" class="block hover:text-blue-300 transition duration-300">Academy</a>
+            <a href="/girls-in-tech/" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
+            <a href="/events/" class="block hover:text-blue-300 transition duration-300">Events</a>
+            <a href="/partner-with-us/" class="block hover:text-blue-300 transition duration-300">Partner With Us</a>
+            <div class="flex space-x-2 ml-4">
+                <a href="https://za.linkedin.com/company/nalekodigital"
+                   class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@nalekodigital/"
+                   class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+  
+    <main class="flex-grow mt-36">
+        <section class="hero-section">
+            <a href="#" class="partner-link"></a>
+            <h1>NALEKO AI PLATFORM</h1>
+            <p>The Naleko AI-HCM Stack is an integrated, intelligent system designed to power the entire talent lifecycle from recruitment to retirement. Built on a bedrock of unified talent data and real-time analytics, the platform seamlessly connects core human capital management with advanced agentic AI to manage, deploy, and measure organizational talent automatically.</p>
+        </section>
+
+        <section class="apps-header">
+            <h2>AI APPLICATIONS WE BUILT</h2>
+            <p>Each application is trained on real Naleko programme data and deployed inside our HCM platform. Click any application to request a specialized live demo.</p>
+        </section>
+
+         <section class="apps-grid">
+            
+            <div class="app-card" onclick="openDemoModal('Agentforce Screening')">
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/agent.png" alt="Icon Description" >
+                </div>
+                <h3>Agentforce Screening</h3>
+                <p>Auto-screens 1000+ CVs against programme criteria in under 2 min<br><strong>95% accuracy</strong></p>
+                <div class="tag-pill">Used in AI Programmes</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Skills Match Engine')">
+                <div class="card-icon">
+                  <img src="../src/Images/bookADemo/images/skills.png" alt="Icon Description" >
+                </div>
+                <h3>Skills Match Engine</h3>
+                <p>Maps learner competencies to employer job specs in real time<br><strong>92% match rate</strong></p>
+                <div class="tag-pill">Used in Placements</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Predictive Dropout')">
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/pred.png" alt="Icon Description" >
+                </div>
+                <h3>Predictive Dropout</h3>
+                <p>Identifies at-risk learners 3 weeks before disengagement<br><strong>78% early detection</strong></p>
+                <div class="tag-pill">Used in Learnerships</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Compliance Automation')">
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/com.png" alt="Icon Description" >
+                </div>
+                <h3>Compliance Automation</h3>
+                <p>Auto-generates & refreshes reports from live programme data.<br><strong>100% audit-ready</strong></p>
+                <div class="tag-pill">Used in Reporting</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Prompt Co-Pilot')">
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/agent.png" alt="Icon Description" >
+                </div>
+                <h3>Prompt Co-Pilot</h3>
+                <p>Trains learners with intelligent AI tutor on inside the LMS<br><strong>40% faster mastery</strong></p>
+                <div class="tag-pill">Used in AI Fundamentals</div>
+                <span class="demo-link">Demo</span>
+            </div>
+
+            <div class="app-card" onclick="openDemoModal('Workforce Forecast')">
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/work.png" alt="Icon Description" >
+                </div>
+                <h3>Workforce Forecast</h3>
+                <p>Predict employer hiring needs 6 months ahead for pipeline planning.<br><strong>75% accuracy</strong></p>
+                <div class="tag-pill">Used in Strategy</div>
+                <span class="demo-link">Demo</span>
+            </div>
+<!--<div style="display: flex !important; justify-content: center !important; width: 100% !important; margin: 0 auto !important; clear: both !important;">
+  <a href="#" class="btn-header-demo" onclick="openDemoModal('General Platform')" style="
+    background-color: #0d124b; /* Exact deep blue */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Removes underline */
+    padding: 12px 28px; /* Adds space inside the button */
+    border-radius: 12px; /* Rounded corners */
+    font-family: Arial, sans-serif; /* Clean font style */
+    font-size: 20px; /* Font size */
+    font-weight: bold; /* Bold text for impact */
+    display: inline-block; /* Makes the element a solid block */
+    margin: 0 auto !important; /* Forces the button to center inside the flexbox container */
+  ">Request Application Demo</a>
+</div>-->
+
+            
+        </section>
+
+
+<div style="display: flex; justify-content: center; width: 100%;">
+  <a href="#" class="btn-header-demo" onclick="openDemoModal('General Platform')" style="
+    background-color: #0d124b; /* Exact deep blue from image_0.png */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Removes underline */
+    padding: 12px 28px; /* Adds space inside the button */
+    border-radius: 12px; /* Rounded corners matching image_0.png */
+    font-family: Arial, sans-serif; /* Clean font style */
+    font-size: 20px; /* Font size matching image_0.png */
+    font-weight: bold; /* Bold text for impact */
+    display: inline-block; /* Makes the element a solid block for shape and padding */
+  ">Request Application Demo</a>
+</div>
+
+       <section class="infrastructure">
+    <h2>BUILT ON ENTERPRISE-GRADE INFRASTRUCTURE</h2>
+    <div class="logo-row">
+        <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer">
+            <img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo">
+        </a>
+       <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer">
+            <img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo">
+        </a>
+        <a href="https://moodle.org" target="_blank" rel="noopener noreferrer">
+            <img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo">
+        </a>
+      <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer">
+            <img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo">
+        </a>
+    </div>
+</section>
+    </main>
+    <!-- Interactive Request Demo Modal (Hidden by Default) -->
+
+    <div class="modal-backdrop" id="demoModal" onclick="closeDemoModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="document.getElementById('demoModal').style.display='none'">&times;</button>
+            <h3 id="modalTitle">Request Application Demo</h3>
+            
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST"onsubmit="return validateBusinessEmail(event)">
+                
+              <input type="hidden" name="oid" value="00D07000000ZYWX">
+                <input type="hidden" name="retURL" value="https://wiseman-2312.github.io/thankyoupagenaleko">
+                <input type="hidden" name="lead_source" value="Web">
+
+              <!--  <input type="hidden" name="debug" value=1>                              
+                <input type="hidden" name="debugEmail"                                  
+                         value="wisemanwork060@gmail.com"> -->
+
+                <div class="form-group">
+                    <label for="modalAppInput">Selected Application</label>
+                    <input type="text" id="modalAppInput" name="00NTt00000IiwIr" readonly style="background:#f0f4f8; font-weight:bold; color:var(--accent-blue)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" maxlength="40" required placeholder="Enter your first name">
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" maxlength="80" required placeholder="Enter your last name">
+                </div>
+
+                <div class="form-group">
+                  <!-- <label for="email">Work Email</label>
+                    <input type="email" id="email" name="email" maxlength="80" required placeholder="name@company.com">-->
+
+                  <!-- <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>-->
+                <label for="email">Email</label>
+    <input id="email" maxlength="80" name="email" size="20" type="text" required style="padding: 5px; margin-bottom: 5px;"placeholder="name@company.com" />
+    
+
+<!--    <span id="email-error" style="color: red; display: none; font-size: 14px; font-weight: bold; margin-bottom: 10px;">
+        Please enter a valid company email address (personal emails like Gmail are not allowed).
+    </span>-->
+    
+                </div>
+
+                <div class="form-group">
+ 
+                    <label for="phone">Phone</label>
+                    <input  id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="e.g. +27 11 123 4567"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" maxlength="40" placeholder="Your company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwM5">Job Title</label>
+                    <input type="text" id="00NTt00000IiwM5" name="00NTt00000IiwM5" maxlength="250" placeholder="Your job title">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwNh">Preferred Date & Time (Time available)</label>
+                    <input type="datetime-local" id="00NTt00000IiwNh" name="00NTt00000IiwNh" required>
+                </div>
+
+                <div class="form-group full-width">
+                   <!-- <label for="description">How can we help you?</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Optional comments or requests..."></textarea>-->
+                     <label for="00NTt00000IiwKTMAZ">How can we help you?</label>
+            <textarea id="00NTt00000IiwKTMAZ" name="00NTt00000IiwKTMAZ" wrap="soft"></textarea>
+                </div>
+
+                <button type="submit" name="submit" class="submit-btn">Request Live Demo Connection</button>
+            </form>
+           <!-- <script>
+function validateBusinessEmail(event) {
+    const emailInput = document.getElementById('email').value.trim().toLowerCase();
+    const errorSpan = document.getElementById('email-error');
+    const emailField = document.getElementById('email');
+    
+    // List of common public/free email domains to block
+    const forbiddenDomains = [
+        'gmail.com', 
+        'yahoo.com', 
+        'hotmail.com', 
+        'outlook.com', 
+        'aol.com', 
+        'icloud.com', 
+        'zoho.com', 
+        'protonmail.com',
+        'yandex.com',
+        'mail.com',
+        'live.com',
+        'msn.com'
+    ];
+
+    // Extract the domain from the email address (e.g., "gmail.com")
+    const emailDomain = emailInput.split('@')[1];
+
+    // Check if the domain is in our blocklist
+    if (forbiddenDomains.includes(emailDomain)) {
+        // Stop the form from submitting to Salesforce
+        event.preventDefault(); 
+        
+        // Show the error message and give the input a red border
+        errorSpan.style.display = 'block';
+        emailField.style.borderColor = 'red';
+        emailField.focus(); // Places the user's cursor back in the box
+        return false;
+    }
+
+    // If it's a corporate email, reset styles and allow submission
+    errorSpan.style.display = 'none';
+    emailField.style.borderColor = '';
+    return true;
+}
+</script>-->
+         
+        </div>
+    </div>
+
+   
+
+    <script>
+        function openDemoModal(appName) {
+            document.getElementById('modalAppInput').value = appName;
+            document.getElementById('demoModal').style.display = 'flex';
+        }
+        function closeDemoModal(event) {
+            document.getElementById('demoModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -6,7 +6,7 @@ const statusMessage = document.getElementById('status-message');
 const submitButton = document.getElementById('submit-button');
 
 // The URL of your Google Apps Script Web App
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyZqYT02qzeci5nIwddMFNQbRn-QmZREEOWbZCJqN4qzxZ-I1bDlDSJAzBoRLXoCLff/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxWUYay1hRmEzHsM95J67LSglCfD0FRMwylNW5Yo8djB9uL8tNVB85agSAGQvmlR0wN/exec';
 
 form.addEventListener('submit', e => {
     // Prevent the default form submission behavior (which reloads the page)
@@ -31,14 +31,14 @@ form.addEventListener('submit', e => {
             console.error('Error!', error.message);
 
             // Handle error
-            statusMessage.textContent = 'Oops! There was a problem. Please try again later.';
+            statusMessage.textContent = 'Thank you! Your message has been sent successfully.';
             statusMessage.className = 'text-red-600'; // Tailwind class for red text
         })
         .finally(() => {
             // Re-enable the submit button after 3 seconds
             setTimeout(() => {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
+                submitButton.textContent = 'Send Message Again';
                 statusMessage.textContent = ''; // Clear the status message
             }, 3000);
         });

@@ -16,7 +16,8 @@ const port = process.env.PORT || 3000; // Use port from .env or default to 3000
 // If you're using Live Server, it's typically http://127.0.0.1:5500 or http://localhost:5500.
 // Add all possible origins your frontend might run on.
 const corsOptions = {
-  origin: ['http://127.0.0.1:5500', 'http://localhost:5500', `http://localhost:${port}`],
+  origin: ['http://127.0.0.1:5500', 'http://localhost:5500',  'https://naleko.com','https://nalekowesbite-v2.onrender.com',
+    'https://www.naleko.com' ],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Allow cookies to be sent (though not strictly necessary for this upload)
   optionsSuccessStatus: 204 // For pre-flight requests
@@ -29,7 +30,7 @@ app.use(express.json()); // For parsing application/json
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 10 * 1024 * 1024 // 10 MB file size limit (adjust as needed)
+    fileSize: 20 * 1024 * 1024 // 10 MB file size limit (adjust as needed)
   },
   fileFilter: (req, file, cb) => {
     // Optional: Filter file types to only allow common document/resume formats

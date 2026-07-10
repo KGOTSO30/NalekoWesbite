@@ -1,85 +1,120 @@
-/* src/index.css (or your main CSS file) */
-  @font-face {
+@import "tailwindcss";
+
+/* =========================================
+   VARIABLES & BASE SETUP
+   ========================================= */
+:root {
+    --primary-blue: #0A2540;
+    --accent-blue: #0066cc;
+    --text-dark: #333333;
+    --text-muted: #666666;
+    --bg-light: #f8f9fa;
+    --card-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --card-shadow-active: 0 8px 25px rgba(0, 102, 204, 0.2);
+}
+
+@font-face {
     font-family: "Spaced";
     src: url('Fonts/spaced-otf.otf') format("opentype");
-    }
-        /* Custom CSS for specific colors and shadows not directly in Tailwind's default palette */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .header {
-            font-family: 'Spaced';
-        }
-        .bg-naleko-dark-blue {
-            background-color: #120C4E;
-        }
-        .text-naleko-dark-blue {
-            color: #120C4E;
-        }
-        .bg-light-blue-alpha {
-            background-color: rgba(132, 181, 232, 0.38);
-        }
-        .shadow-custom-light {
-            box-shadow: 7px 7px 7px #D9D9D9;
-        }
-        .shadow-custom-dark {
-            box-shadow: 1.8px 3.6px 3.6px rgba(0, 0, 0, 0.25);
-        }
-        .outline-white-1px {
-            outline: 1px white solid;
-            outline-offset: -1px;
-        }
-        .outline-naleko-blue-0_54px {
-            outline: 0.54px #120C4E solid;
-            outline-offset: -0.54px;
-        }
-        .border-white-1_5px {
-            border: 1.5px white solid;
-        }
-        .text-naleko-blue-alpha {
-            color: rgba(17.74, 12.26, 78.05, 0.95);
-        }
+}
 
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
 
-        /* Page Container - Equivalent to w-[1284px] h-[2485px] relative bg-white overflow-hidden */
+/* =========================================
+   NALEKO GLOBAL UTILITIES
+   ========================================= */
+.header {
+    font-family: 'Spaced', sans-serif;
+}
+
+.bg-naleko-dark-blue {
+    background-color: #120C4E;
+}
+
+.text-naleko-dark-blue {
+    color: #120C4E;
+}
+
+.bg-light-blue-alpha {
+    background-color: rgba(132, 181, 232, 0.38);
+}
+
+.text-naleko-blue-alpha {
+    color: rgba(17.74, 12.26, 78.05, 0.95);
+}
+
+/* Custom Outlines & Borders */
+.outline-white-1px {
+    outline: 1px white solid;
+    outline-offset: -1px;
+}
+.outline-naleko-blue-0_54px {
+    outline: 0.54px #120C4E solid;
+    outline-offset: -0.54px;
+}
+.border-white-1_5px {
+    border: 1.5px white solid;
+}
+
+/* Custom Shadows */
+.shadow-custom-light {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.shadow-custom-dark {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.shadow-custom-card {
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Page Container */
 .page-container {
-    width: 1284px; /* You might want to make this responsive with max-width and percentages */
-    height: 2485px; /* Consider using min-height and letting content dictate height */
+    width: 1284px; 
+    height: 2485px; 
     position: relative;
     background-color: white;
     overflow: hidden;
-    margin: 0 auto; /* Center the container if it has a fixed width */
+    margin: 0 auto; 
 }
 
-
-/* StylesFinal.css */
-
-/* ... (your existing custom styles) ... */
-
+/* =========================================
+   HEADER BACKGROUNDS (EXISTING LIVE SITE)
+   ========================================= */
 .header-background-corp {
-    background-image: url('/src/Images/GirlsIntech.jpeg'); /* **CHANGE THIS PATH** to your image */
-    background-size: cover; /* This makes sure the image covers the entire header */
-    background-position: center; /* This centers the image within the header */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-image: url('/src/Images/GirlsIntech.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 .header-background-academy {
-    background-image: url('/src/Images/headerGradImage.jpg'); /* **CHANGE THIS PATH** to your image */
-    background-size: cover; /* This makes sure the image covers the entire header */
-    background-position: center; /* This centers the image within the header */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-image: url('/src/Images/headerGradImage.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 .header-background-girls {
-    background-image: url('/src/Images/GirlsIntech.jpeg'); /* **CHANGE THIS PATH** to your image */
-    background-size: cover; /* This makes sure the image covers the entire header */
-    background-position: center; /* This centers the image within the header */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-image: url('/src/Icons/outdoor-photo-south-african-high-260nw-2626901043 2.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
-/* Optional: Add an overlay for better text readability if your image is busy */
+.header-background-event {
+    background-image: url('/src/GolfDayPictures/_MG_7667 copy Header.JPG'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
 .header-overlay {
-    position: relative; /* Needed for the pseudo-element overlay */
+    position: relative; 
 }
 
 .header-overlay::before {
@@ -89,42 +124,341 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    z-index: 0; /* Ensures the overlay is behind the content */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 0; 
 }
 
-/* To make sure your header content is above the overlay */
 .header-overlay > div {
     position: relative;
     z-index: 1;
 }
 
+/* =========================================
+   COMPONENTS: BOOK A DEMO PAGE
+   ========================================= */
+
+/* Hero Section */
+.hero-section {
+    max-width: 650px; 
+    margin: 60px auto 40px auto;
+    text-align: center;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.hero-section h1 {
+    color: #0b1354; 
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.hero-section p {
+    color: #111111; 
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .hero-section h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .hero-section p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* Applications Grid & Header */
+.apps-header {
+    text-align: center;
+    max-width: 650px; 
+    margin: 60px auto 35px auto;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.apps-header h2 {
+    color: #0b1354; 
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.apps-header p {
+    color: #111111; 
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    margin: 0;
+}
+
+.apps-grid {
+    max-width: 1100px;
+    margin: 0 auto 50px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0 20px;
+}
+
+@media (max-width: 900px) {
+    .apps-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .apps-header h2 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    .apps-grid { grid-template-columns: 1fr; }
+}
+
+.app-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-blue);
+    box-shadow: var(--card-shadow-active);
+}
+
+.app-card:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(0, 102, 204, 0.15);
+}
+
+.card-icon {
+    background-color: var(--primary-blue);
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.app-card h3 {
+    color: var(--primary-blue);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.app-card p {
+    color: var(--text-dark);
+    font-size: 14px;
+    margin-bottom: 12px;
+    min-height: 65px; 
+}
+
+.app-card .tag-pill {
+    background-color: #f0f4f8;
+    color: var(--text-muted);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.app-card .demo-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: auto;
+    border-bottom: 1px solid transparent;
+    transition: border 0.2s;
+}
+
+.app-card:hover .demo-link {
+    border-bottom: 1px solid var(--accent-blue);
+}
+
+/* Primary Demo Button extracted from inline styles */
+.btn-primary-demo {
+    background-color: #0d124b; 
+    color: #ffffff; 
+    text-decoration: none; 
+    padding: 12px 28px; 
+    border-radius: 12px; 
+    font-family: Arial, sans-serif; 
+    font-size: 20px; 
+    font-weight: bold; 
+    display: inline-block; 
+    transition: background-color 0.3s ease;
+}
+.btn-primary-demo:hover {
+    background-color: #1a237e;
+    color: #ffffff;
+}
+
+/* Infrastructure */
+.infrastructure {
+    text-align: center;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.infrastructure h2 {
+   /* color: var(--text-muted);*/
+   
+     color: #0b1354;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.logo-row img {
+    max-height: 40px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.logo-row img:hover {
+    opacity: 1;
+}
+
+/* =========================================
+   MODAL / FORMS
+   ========================================= */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-btn {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #005bb5;
+}
+
+/* =========================================
+   COMPONENTS: EXISTING LIVE SITE
+   ========================================= */
 .call-to-action-button {
     display: inline-flex;
-    padding: 10px 20px; /* p-2.5 */
-    background-color: rgba(49, 46, 129, 0.95); /* bg-indigo-950/95 */
+    padding: 10px 20px; 
+    background-color: rgba(49, 46, 129, 0.95); 
     border-radius: 10px;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* gap-2.5 */
+    gap: 10px; 
     color: white;
-    font-size: 24px; /* text-2xl */
-    font-weight: 600; /* font-semibold */
+    font-size: 24px; 
+    font-weight: 600; 
     text-decoration: none;
     cursor: pointer;
     left: 518px;
-    top: 238px; /* Relative to hero-section top */
+    top: 238px; 
     position: absolute;
 }
 
-
-/* What We Offer Section */
 .offer-section {
     position: absolute;
     left: 0;
     right: 0;
     text-align: center;
-    top: 593px; /* Adjust based on your layout */
+    top: 593px; 
     padding: 20px;
 }
 
@@ -155,23 +489,23 @@
     align-items: center;
     flex-wrap: wrap;
     align-content: center;
-    gap: 80px; /* gap-20 is 80px */
+    gap: 80px; 
     width: 1202px;
     left: 46px;
-    top: 97px; /* Relative to offer-section top */
+    top: 97px; 
     position: absolute;
 }
 
 .offer-card {
-    width: 320px; /* w-80 is 320px */
-    height: 256px; /* h-64 is 256px */
+    width: 320px; 
+    height: 256px; 
     background-color: white;
     border-radius: 20px;
     box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
-    position: relative; /* For absolute positioning of inner elements */
-    outline: 1px solid white; /* Some cards had this */
-    outline-offset: -1px; /* Some cards had this */
+    position: relative; 
+    outline: 1px solid white; 
+    outline-offset: -1px; 
 }
 
 .offer-card .card-title {
@@ -183,7 +517,7 @@
     top: 25px;
     left: 0;
     right: 0;
-    width: 288px; /* w-72 */
+    width: 288px; 
     margin: 0 auto;
 }
 
@@ -196,43 +530,17 @@
     top: 111px;
     left: 0;
     right: 0;
-    width: 288px; /* w-72 */
+    width: 288px; 
     margin: 0 auto;
 }
 
-/* Adjustments for specific card descriptions based on Figma's generated positions */
-.offer-card:nth-child(2) .card-description {
-    width: 320px; /* w-80 */
-    left: 4px;
-}
-
-.offer-card:nth-child(3) .card-description {
-    width: 384px; /* w-96 */
-    left: -4px;
-}
-
-.offer-card:nth-child(4) .card-title {
-    width: 320px; /* w-80 */
-    left: 19.5px;
-}
-
-.offer-card:nth-child(4) .card-description {
-    width: 320px; /* w-80 */
-    left: 4.5px;
-    top: 130px;
-}
-
-.offer-card:nth-child(5) .card-title {
-    width: 320px; /* w-80 */
-    left: 18.5px;
-}
-
-.offer-card:nth-child(5) .card-description {
-    width: 320px; /* w-80 */
-    height: 96px; /* h-24 */
-    left: 0.5px;
-    top: 130px;
-}
+/* Adjustments for specific card descriptions */
+.offer-card:nth-child(2) .card-description { width: 320px; left: 4px; }
+.offer-card:nth-child(3) .card-description { width: 384px; left: -4px; }
+.offer-card:nth-child(4) .card-title { width: 320px; left: 19.5px; }
+.offer-card:nth-child(4) .card-description { width: 320px; left: 4.5px; top: 130px; }
+.offer-card:nth-child(5) .card-title { width: 320px; left: 18.5px; }
+.offer-card:nth-child(5) .card-description { width: 320px; height: 96px; left: 0.5px; top: 130px; }
 
 /* The Result Section */
 .result-section {
@@ -240,7 +548,7 @@
     left: 0;
     right: 0;
     text-align: center;
-    top: 1325px; /* Adjust based on your layout */
+    top: 1325px; 
     padding: 20px;
 }
 
@@ -275,83 +583,65 @@
     position: absolute;
 }
 
-/* Adjust the call-to-action button for this section */
 .result-section .call-to-action-button {
     left: 517px;
     top: 233px;
     position: absolute;
 }
 
-
-/* StylesFinal.css */
-
-/* ... other styles ... */
-
-.shadow-custom-card {
-    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25); /* Your specific custom shadow */
-}
-
-.shadow-custom-dark {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* This is actually Tailwind's default shadow-md */
-    /* If you have a different "custom dark" shadow, specify it here. */
-}
-
-.shadow-custom-light {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* This is Tailwind's default shadow-sm */
-    /* If you have a different "custom light" shadow, specify it here. */
-}
-
-
+/* Image Backgrounds */
 .Picture-background {
-    background-image: url('/src/Images/adobestock_305758760\ \(2\).webp'); /* **CHANGE THIS PATH** to your image */
-    background-size: cover; /* This makes sure the image covers the entire header */
-    background-position: cover; /* This centers the image within the header */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-image: url('/src/Images/adobestock_305758760 (2).webp'); 
+    background-size: cover; 
+    background-position: cover; 
+    background-repeat: no-repeat; 
 }
 
 .Two-Ladies-background {
-    background-image: url('/src/Images/TwoLadiesTeaching.jpg'); /* **CHANGE THIS PATH** to your image */
-    background-size: cover; /* This makes sure the image covers the entire header */
-    background-position: cover; /* This centers the image within the header */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-image: url('/src/Images/TwoLadiesTeaching.jpg'); 
+    background-size: cover; 
+    background-position: cover; 
+    background-repeat: no-repeat; 
 }
 
+.Bear-background {
+    background-image: url('/src/Images/v1173_1041.png'); 
+    background-size: cover; 
+    background-position: cover; 
+    background-repeat: no-repeat; 
+}
 
- /* Custom styles for the carousel */
-        .carousel-container {
-            overflow: hidden;
-        }
+[id] {
+  scroll-margin-top: 120px; 
+}
 
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
+/* Carousel */
+.carousel-container {
+    overflow: hidden;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+.carousel-container::-webkit-scrollbar {
+    display: none; 
+}
 
-        .carousel-slide {
-            flex: 0 0 33.33%; /* Show three slides at a time */
-            box-sizing: border-box;
-            padding: 1rem;
-        }
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-        /* Hide scrollbar for carousel */
-        .carousel-container {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
+.carousel-slide {
+    flex: 0 0 33.33%; 
+    box-sizing: border-box;
+    padding: 1rem;
+}
 
-        .carousel-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-
-
-
- /* Our Values the Cards */
-
+/* Flip Cards */
 .flip-card {
   background-color: transparent;
-  width: 100%; /* Or a fixed width if not in a grid */
-  height: 250px; /* Adjust height as needed to fit content */
-  perspective: 1000px; /* 3D effect perspective */
+  width: 100%; 
+  height: 250px; 
+  perspective: 1000px; 
 }
 
 .flip-card-inner {
@@ -359,12 +649,12 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.6s; /* Animation duration */
-  transform-style: preserve-3d; /* Key for 3D flip */
+  transition: transform 0.6s; 
+  transform-style: preserve-3d; 
 }
 
 .flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg); /* Flip when 'flipped' class is active */
+  transform: rotateY(180deg); 
 }
 
 .flip-card-front,
@@ -372,75 +662,212 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Hide back of element when facing away */
-  backface-visibility: hidden; /* Hide back of element when facing away */
-  display: flex; /* Ensure content is centered */
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  padding: 1.5rem; /* Equivalent to p-6 */
-  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 1.5rem; 
+  border-radius: 0.75rem; 
 }
 
 .flip-card-front {
-  z-index: 2; /* Ensures front is on top when not flipped */
+  z-index: 2; 
 }
 
 .flip-card-back {
-  transform: rotateY(180deg); /* Start rotated for the back face */
-  z-index: 1; /* Ensures back is behind when not flipped */
+  transform: rotateY(180deg); 
+  z-index: 1; 
 }
 
-/* You might need to adjust shadow-custom-light or bg-white-alpha if they are custom Tailwind classes */
-/* If bg-white-alpha is not defined in your tailwind.config.js, change it to bg-white or a color of choice. */
-/* If shadow-custom-light is not defined, change it to a standard shadow like shadow-md or shadow-lg */
+/* Service Boxes */
+.service-box {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px 25px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.service-box h3 {
+  margin: 10px 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: black;
+}
+
+.service-box p {
+  font-size: 0.875rem;
+  color: black;
+}
+
+/* Scrolling Logos */
+.scrolling-logos {
+  display: flex; 
+  white-space: nowrap; 
+  animation: scrollLogos 30s linear infinite; 
+  will-change: transform; 
+}
+
+@keyframes scrollSponsorLogos {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.scrolling-sponsors {
+  display: flex;
+  width: max-content; 
+  animation: scrollSponsorLogos 50s linear infinite; 
+  will-change: transform;
+}
+
+.sponsor-item {
+  flex-shrink: 0;
+  margin: 0 40px;
+  position: relative; 
+  height: fit-content; 
+}
+
+.sponsor-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 12, 78, 0.1); 
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.logo-item {
+  flex-shrink: 0; 
+  margin: 0 40px; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  height: 80px; 
+}
+
+.logo-item img {
+  max-height: 100%; 
+  width: auto; 
+  filter: grayscale(100%); 
+  opacity: 0.7; 
+  transition: all 0.3s ease; 
+}
+
+.logo-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:  #120C4E 10%; 
+  mix-blend-mode: multiply;  
+  pointer-events: none;      
+  transition: all 0.3s ease;
+}
+
+.logo-item img:hover {
+    filter: grayscale(0%); 
+    opacity: 1; 
+    transform: scale(1.05); 
+}
+
+.icon-girls {
+    transform: scale(2); 
+}
+
+.icon-pink {
+     color: rgb(218, 65, 91);
+}
+
+@keyframes scrollLogos {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.w-full { width: 100%; }
+.overflow-hidden { overflow: hidden; }
 
 
+/* book a demo scrolling logos         */
 
 
-   /* The six service boxes */ 
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background-color: white;
-      margin: 0;
+.infrastructure {
+    text-align: center;
+    padding: 3rem 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.marquee-track {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 5rem; /* Large gap looks cleaner across wide screens */
+    animation: scroll-left 25s linear infinite;
+    /* This forces the content wrapper to be as wide as needed, pushing items off-screen */
+    width: max-content; 
+    padding: 1.5rem 0;
+}
+
+.marquee-content a {
+    flex-shrink: 0;
+}
+
+.marquee-content img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Pauses the slider when a user hovers over it */
+.marquee-track:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* FULL RIGHT-TO-LEFT INFINITE ANIMATION */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
     }
-
-    .services-container {
-      width: 90%;
-      max-width: 900px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    100% {
+        /* Loops cleanly by shifting back by exactly one-third of the total width 
+           (since we have 3 identical sets of logos now) */
+        transform: translateX(-33.3333%); 
     }
+}
+/*.infra h2 {
+    color: #0b1354;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+    text-transform: uppercase;
+}*/
+/*.infrastructure h2*/
 
-    .service-box {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 25px 25px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .service-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .service-box h3 {
-      margin: 10px 0 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: black;
-    }
-
-    .service-box p {
-      font-size: 0.875rem;
-      color: black;
-    }
-
-    .button h3 {
-      font-size: 16;
-      color: navy;
-    }
+/* {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}*/
+/* book a demo scrolling logos    end     */

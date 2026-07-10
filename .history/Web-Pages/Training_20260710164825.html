@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naleko Training</title>
+    <link href="/src/StylesFinal.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <style>
+        /* Custom styles for the carousel */
+        .carousel-container {
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            flex: 0 0 33.33%; /* Show three slides at a time */
+            box-sizing: border-box;
+            padding: 1rem;
+        }
+
+        /* Hide scrollbar for carousel */
+        .carousel-container {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<header class="header-background-academy text-white py-6 px-4 shadow-md">
+    <div class="container mx-auto">
+        <div class="text-4xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+        <nav class="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2 text-sm md:text-base header">
+            <a href="WhoWeAre.html" class="hover:text-blue-300 transition duration-300">Who we are</a>
+            <a href="WhatWeDo.html" class="hover:text-blue-300 transition duration-300">What we do</a>
+            <a href="WhoWeServe.html" class="hover:text-blue-300 transition duration-300">Who we serve</a>
+            <a href="ContactUs.html" class="hover:text-blue-300 transition duration-300">Contact Us</a>
+            <a href="#WhyJoin" class="hover:text-blue-300 transition duration-300">Training</a>
+            <a href="#WhyJoin" class="hover:text-blue-300 transition duration-300">Academy</a>
+            <a href="GirlsInTech.html" class="hover:text-blue-300 transition duration-300">Girls in Tech</a>
+            <div class="flex space-x-2 ml-4">
+                <a href="https://za.linkedin.com/company/nalekodigital"
+                   class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@nalekodigital/"
+                   class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z"></path>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="flex-grow p-4 container w-full mx-auto">
+    <section class="mb-12">
+        <section class="text-center mb-12">
+            <div class="max-w-3xl mx-auto flex flex-col justify-start items-center gap-6">
+                <h1 class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue mb-4">Welcome To Naleko Academy</h1>
+                <h2 class="text-indigo-950/95 text-2xl font-black font-['Inter']">Your path to tech success!</h2>
+            </div>
+            <div class="max-w-7xl mx-auto text-center text-black text-base font-normal font-['Inter'] mt-8">
+                Start your journey with Naleko Academy, where learning meets innovation. Whether you're a recent
+                graduate launching your career or a professional looking to sharpen your tech skills, we’re here to
+                support your growth.
+                <br/><br/>
+                At Naleko, we nurture talent, encourage curiosity, and build a space where everyone can thrive. Our
+                Academy is more than a learning platform, it’s a vibrant community of tech enthusiasts shaping the
+                future together.
+            </div>
+        </section>
+      <section class="relative mb-12">
+    <div class="carousel-container relative w-full overflow-hidden">
+        <div class="carousel-track flex">
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/WisemanNkarrLeGinza.jpg"
+                         alt="Carousel Image of Wiseman Nkar LeGinza"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/JuniorGroupWhite.jpg"
+                         alt="Carousel Image of Junior Group in White"/>
+                </div>
+            </div>
+
+             <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/JuniorsAsInterns.jpg"
+                         alt="Carousel Image of Juniors as Interns"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/InternGirls.jpg"
+                         alt="Carousel Image of Intern Girls"/>
+                </div>
+            </div>
+
+             <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/InternGroup.jpg"
+                         alt="Carousel Image of Intern Group"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/Gents.jpg"
+                         alt="Carousel Image of Gents"/>
+                </div>
+            </div>
+           
+           
+
+        </div>
+    </div>
+    <button class="carousel-prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 -ml-4">
+        &#10094;</button>
+    <button class="carousel-next absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 -mr-4">
+        &#10095;</button>
+</section>
+        <section class="mb-12">
+            <div class="max-w-3xl mx-auto flex flex-col justify-start items-center gap-3.5 mb-8">
+                <h2 id="WhyJoin" class="text-indigo-950/95 text-4xl font-black font-['Inter']">Why Join Naleko Academy?</h2>
+                <h3 class="text-indigo-950/95 text-2xl font-black font-['Inter']">What you’ll get from us</h3>
+            </div>
+
+            <div class="max-w-4xl mx-auto flex flex-col justify-start items-center gap-6 mb-8">
+                <h4 class="text-indigo-950/95 text-2xl font-semibold font-['Inter']">Inclusive Learning</h4>
+                <p class="text-center text-black text-base font-medium font-['Inter']">Everyone is welcome. We value
+                    every voice and foster a supportive, respectful environment. You’re not just a student; you’re part
+                    of our tech family.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto flex flex-col justify-start items-center gap-6 mb-8">
+                <h4 class="text-indigo-950/95 text-2xl font-semibold font-['Inter']">Modern Curriculum</h4>
+                <p class="text-center text-black text-base font-medium font-['Inter']">Learn from industry experts and
+                    stay ahead in the digital world. Our training covers in-demand technologies like Salesforce, AWS,
+                    Microsoft, Google, SAP, Oracle and more equipping you for real-world success.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto flex flex-col justify-start items-center gap-6 mb-8">
+                <h4 class="text-indigo-950/95 text-2xl font-semibold font-['Inter']">Hands-On Experience</h4>
+                <p class="text-center text-black text-base font-medium font-['Inter']">Work on real projects and build
+                    practical skills. From writing Apex code to building Lightning Components, you’ll gain experience
+                    that employers value.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto flex flex-col justify-start items-center gap-6 mb-12">
+                <h4 class="text-indigo-950/95 text-2xl font-semibold font-['Inter']">Supportive Community</h4>
+                <p class="text-center text-black text-base font-medium font-['Inter']">Connect with mentors, peers,
+                    and professionals. Our community empowers you to share ideas, grow together, and stay
+                    inspired.</p>
+            </div>
+
+            <div class="w-full h-[530px] bg-stone-400 overflow-hidden mb-12">
+                <img class="w-full h-full object-cover" src="/src/Images/Academy Images/GradPresentFromGogo2.jpg"
+                     alt="Granny Image"/>
+            </div>
+            <div class="text-center mb-12">
+                <h2 class="text-indigo-950 text-4xl font-black font-['Inter']">Exciting Opportunities at Naleko</h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto flex flex-col justify-start items-center gap-6 mb-8">
+                <h4 class="text-indigo-950/95 text-2xl font-semibold font-['Inter']">Graduate Program</h4>
+                <p class="text-center text-black text-base font-medium font-['Inter']">New to the tech world? Our
+                    2-year Graduate Program offers hands-on experience, structured learning, and mentorship to launch
+                    your career in IT.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto flex flex-col justify-start items-center gap-6 mb-8">
+                <h4 class="text-indigo-950/95 text-2xl font-semibold font-['Inter']">Internship</h4>
+                <p class="text-center text-black text-base font-medium font-['Inter']">Join as a Software Engineering
+                    Intern and contribute to real Salesforce projects. Learn from senior developers, enhance your
+                    coding skills, and make a real impact.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto flex flex-col justify-start items-center gap-6 mb-12">
+                <h4 class="text-indigo-950/95 text-2xl font-semibold font-['Inter']">Global Mindset, Local
+                    Impact</h4>
+                <p class="text-center text-black text-base font-medium font-['Inter']">At Naleko, we don’t just adapt
+                    to technology we drive it forward. Be part of a team that’s solving global challenges through
+                    smart, inclusive tech innovation.</p>
+            </div>
+             <div class="flex justify-center mb-12">
+                    <div class="flex justify-center mb-12">
+                        <a href="#" id="countMeInButton"
+                        class="p-4 bg-naleko-dark-blue text-white rounded-2xl outline outline-2 outline-offset-[-1.80px] outline-stone-50 inline-flex justify-center items-center gap-4 hover:bg-indigo-700 transition duration-300">
+                            <span id="buttonText" class="text-center text-white text-3xl font-medium font-['Inter']">Count Me In!</span>
+                        </a>
+                        <input type="file" id="resumeFileInput" name="resumeFile" accept=".pdf,.doc,.docx" class="hidden"/>
+                        
+                        <p id="uploadStatusMessage" class="mt-2 text-lg text-center"></p>
+                    </div>
+            </div>
+
+            <div class="w-full bg-slate-400/20 overflow-hidden flex justify-center items-center h-[450px] mb-12">
+    <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/vwgmBsMSwmo?si=QvwLQpjO9XzpJ3le" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+            <div class="max-w-4xl mx-auto flex flex-col justify-start items-center gap-6 mb-8">
+                <h2 class="text-indigo-950/95 text-2xl font-black font-['Inter']">Start Your Tech Journey Today</h2>
+                <p class="text-center text-black text-base font-medium font-['Inter']">Click below to explore our
+                    programs and take the first step toward a brighter, tech-driven future</p>
+                <a href="https://trailhead.salesforce.com/users/leratomatenzhe/trailmixes/naleko-academy" class="inline-flex items-center justify-center py-2.5 px-10 bg-naleko-dark-blue rounded-lg text-white text-2xl font-semibold hover:bg-naleko-dark-blue transition duration-300">Get Started With Salesforce</a>
+     
+            </div>
+
+          
+            </section>
+</main>
+
+
+                <!--  Site Footer Begins Here -->
+
+    
+    <footer class=" bg-naleko-dark-blue text-white py-8 px-4 p-4"> <!-- Need five columns-->
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                 <div class="flex items-center mb-4">
+                <!-- Cloud Icon -->
+                <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
+                </svg>
+                <h3 class="text-4xl header">Naleko</h3>
+            </div>
+                <p class="text-sm text-gray-300 mb-4 py-2">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+                <div class="flex space-x-4">
+                   <!-- LinkedIn -->
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
+                    </svg>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="TikTok">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
+                    </svg>
+                    </a>
+
+                     <!-- Instagram -->
+                    <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.25 2.415.415a4.9 4.9 0 0 1 1.695 1.06 4.9 4.9 0 0 1 1.06 1.695c.165.455.361 1.244.415 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.25 1.96-.415 2.415a4.9 4.9 0 0 1-1.06 1.695 4.9 4.9 0 0 1-1.695 1.06c-.455.165-1.244.361-2.415.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.25-2.415-.415a4.9 4.9 0 0 1-1.695-1.06 4.9 4.9 0 0 1-1.06-1.695c-.165-.455-.361-1.244-.415-2.415-.058-1.266-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.25-1.96.415-2.415a4.9 4.9 0 0 1 1.06-1.695 4.9 4.9 0 0 1 1.695-1.06c.455-.165 1.244-.361 2.415-.415 1.266-.058 1.65-.07 4.85-.07zm0 1.8c-3.153 0-3.515.012-4.757.068-.987.046-1.518.205-1.87.342a3.1 3.1 0 0 0-1.136.736 3.1 3.1 0 0 0-.736 1.136c-.137.352-.296.883-.342 1.87-.056 1.242-.068 1.604-.068 4.757s.012 3.515.068 4.757c.046.987.205 1.518.342 1.87.17.44.42.83.736 1.136.306.316.696.566 1.136.736.352.137.883.296 1.87.342 1.242.056 1.604.068 4.757.068s3.515-.012 4.757-.068c.987-.046 1.518-.205 1.87-.342a3.1 3.1 0 0 0 1.136-.736 3.1 3.1 0 0 0 .736-1.136c.137-.352.296-.883.342-1.87.056-1.242.068-1.604.068-4.757s-.012-3.515-.068-4.757c-.046-.987-.205-1.518-.342-1.87a3.1 3.1 0 0 0-.736-1.136 3.1 3.1 0 0 0-1.136-.736c-.352-.137-.883-.296-1.87-.342-1.242-.056-1.604-.068-4.757-.068zm0 3.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 1.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8zm6.4-.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
+                    </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 hover:text-white transition duration-300" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
+                    </svg>
+                    </a>
+
+                   
+
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#WhoWeAre" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                    <li><a href="#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                </ul>
+            </div>
+
+            
+                    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Contact Us</h3>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <p class="text-gray-300">admin@naleko.com</p>
+                </div>
+              <div class="flex items-center mb-2">
+                <!-- Phone Icon -->
+                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
+                </svg>
+                <p class="text-gray-300">+27 11 100 7632</p>
+            </div>
+                <div class="flex items-center mb-2">
+                <!-- Location Icon -->
+                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                </svg>
+                <p class="text-gray-300">191 Bekker RD, Midrand, 1686</p>
+            </div>
+                 
+            </div>
+            
+
+             <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                 <div class="flex items-center">
+                   <h3 class="text-xl font-semibold py-2 md:mx-12">Scan Me</h3>
+                    
+                </div>
+                <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder" class="mt-0 w-13 h-18 scale-75">
+
+                
+               
+            </div>
+            
+            
+            
+            
+        </div>
+        <div class="container mx-auto text-center text-gray-400 text-sm mt-8 pt-4 border-t border-gray-700">
+            COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
+        </div>
+    </footer>
+
+                <!--  Site footer Ends Here -->
+
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
+
+    // Make sure slideWidth is calculated after images are loaded or layout is stable
+    // It's safer to calculate it inside updateCarousel or on window resize if needed
+    let slideWidth = slides[0].offsetWidth; 
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        // Recalculate slideWidth in case of dynamic resizing (e.g., responsive design)
+        // This is a good practice if your layout might change.
+        slideWidth = slides[0].offsetWidth; 
+        carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth * 3}px)`; // Move by 3 slides
+    }
+
+    // Initial update to ensure correct positioning on load
+    updateCarousel(); 
+
+    prevButton.addEventListener('click', () => {
+        // Calculate total number of "pages" of 3 slides
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalPages - 1;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    // Auto-advance carousel (optional)
+    setInterval(() => {
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    }, 5000); // Change slide every 5 seconds
+
+    // Optional: Add a resize listener to re-calculate slideWidth
+    window.addEventListener('resize', updateCarousel);
+});
+</script>
+
+<script>
+ // --- Single Button Resume Upload Script ---
+const countMeInButton = document.getElementById('countMeInButton');
+const buttonText = document.getElementById('buttonText'); // Reference to the span inside the button
+const resumeFileInput = document.getElementById('resumeFileInput'); // Hidden file input
+const uploadStatusMessage = document.getElementById('uploadStatusMessage'); // Status display area
+
+// 1. When the "Count Me In!" button is clicked, trigger the hidden file input
+countMeInButton.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior (like jumping to top of page)
+    resumeFileInput.click(); // Programmatically "click" the hidden file input
+});
+
+// 2. When a file is selected via the hidden input (after the user chooses a file)
+resumeFileInput.addEventListener('change', async function() {
+    const file = this.files[0]; // Get the selected file
+
+    // If the user opened the dialog but didn't select a file (e.g., clicked cancel)
+    if (!file) {
+        uploadStatusMessage.textContent = 'No file selected. Please try again.';
+        uploadStatusMessage.className = 'mt-2 text-lg text-red-600'; // Set error style
+        // Reset button state if no file was chosen
+        buttonText.textContent = 'Count Me In!';
+        countMeInButton.classList.remove('pointer-events-none', 'opacity-50', 'bg-slate-700', 'bg-green-500', 'bg-red-500'); 
+        countMeInButton.classList.add('bg-slate-600'); // Restore original button style
+        return;
+    }
+
+    // Prepare for upload: Update UI and disable button
+    buttonText.textContent = 'Uploading...'; // Change button text
+    countMeInButton.classList.add('pointer-events-none', 'opacity-50'); // Visually disable the button
+    countMeInButton.classList.remove('bg-slate-600', 'hover:bg-slate-700'); // Remove hover effect and original color
+    countMeInButton.classList.add('bg-slate-700'); // Set a disabled color
+
+    uploadStatusMessage.textContent = `Uploading "${file.name}"...`; // Show file name being uploaded
+    uploadStatusMessage.className = 'mt-2 text-lg text-blue-600'; // Set info style
+
+    // Create FormData object to send the file to your backend
+    const formData = new FormData();
+    formData.append('resumeFile', file); // 'resumeFile' must match the name in your server.js upload.single('resumeFile')
+
+    try {
+        // Send the file via a POST request to your Node.js backend
+        const response = await fetch('http://localhost:3000/upload-resume', { // IMPORTANT: Verify your backend URL matches
+            method: 'POST',
+            body: formData,
+            // The browser automatically sets Content-Type for FormData
+        });
+
+        if (response.ok) {
+            // Upload successful
+            const result = await response.json();
+            uploadStatusMessage.textContent = `Success! Resume uploaded: ${result.fileName}`;
+            uploadStatusMessage.className = 'mt-2 text-lg text-green-600'; // Set success style
+            
+            buttonText.textContent = 'Uploaded!'; // Update button for success
+            countMeInButton.classList.remove('bg-slate-700'); // Remove disabled color
+            countMeInButton.classList.add('bg-green-600'); // Set success color
+
+        } else {
+            // Server responded with an error (e.g., 400, 500)
+            const errorData = await response.json();
+            const errorMessage = errorData.message || 'Unknown upload error.';
+            uploadStatusMessage.textContent = `Error: ${errorMessage}`;
+            uploadStatusMessage.className = 'mt-2 text-lg text-red-600'; // Set error style
+            
+            buttonText.textContent = 'Upload Failed!'; // Update button for failure
+            countMeInButton.classList.remove('bg-slate-700'); // Remove disabled color
+            countMeInButton.classList.add('bg-red-600'); // Set error color
+            console.error('Upload Error Details:', errorData);
+        }
+    } catch (error) {
+        // Network errors (e.g., server down, no internet)
+        console.error('Network or fetch error during upload:', error);
+        uploadStatusMessage.textContent = 'An unexpected network error occurred. Please check your connection.';
+        uploadStatusMessage.className = 'mt-2 text-lg text-red-600'; // Set error style
+        
+        buttonText.textContent = 'Try Again?'; // Update button for network error
+        countMeInButton.classList.remove('bg-slate-700'); // Remove disabled color
+        countMeInButton.classList.add('bg-red-600'); // Set error color
+    } finally {
+        
+        // You can uncomment and adjust this section to reset the button's state after a delay
+        setTimeout(() => {
+            buttonText.textContent = 'Count Me In!';
+            countMeInButton.classList.remove('pointer-events-none', 'opacity-50', 'bg-green-600', 'bg-red-600');
+            countMeInButton.classList.add('bg-slate-600', 'hover:bg-slate-700');
+            uploadStatusMessage.textContent = ''; // Clear status message
+        }, 3000); // Reset after 5 seconds
+        //
+        // Otherwise, it will stay in the "Uploaded!"/"Upload Failed!" state.
+    }
+});
+</script>
+</body>
+</html>

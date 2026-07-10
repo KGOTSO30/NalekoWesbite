@@ -115,6 +115,14 @@
                 </div>
             </template>
 
+            <button @click="handlePrev()"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
+                &#10094;
+            </button>
+            <button @click="handleNext()"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
+                &#10095;
+            </button>
 
             <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
                 <template x-for="(slide, index) in slides" :key="index">
@@ -134,7 +142,21 @@
                 </div>
             </template>
 
-         
+                <button @click="prev(true)"
+                        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
+                    &#10094;
+                </button>
+                <button @click="next(true)"
+                        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
+                    &#10095;
+                </button>
+
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        <template x-for="(slide, index) in slides" :key="index">
+            <div @click="goToSlide(index)" class="w-3 h-3 rounded-full cursor-pointer"
+                :class="activeSlide === index ? 'bg-white' : 'bg-gray-500'">
+            </div>
+        </template>
     </div>
 </div>
 
@@ -567,7 +589,6 @@
                 },
                 {
                     image: '/src/Images/slide2.jpg',
-                    with: "Elevate your cloud potential with expert solutions for seamless growth",
                     subtext: "Elevate your cloud potential with expert solutions for seamless growth"
                 },
                 {
@@ -577,47 +598,33 @@
             ],
             interval: null,
 
-            init() {
-                // Background Preloader: Safely caches all assets in browser storage without touching the DOM
-                this.slides.forEach(slide => {
-                    const img = new Image();
-                    img.src = slide.image;
-                });
-                this.startAutoPlay();
-            },
-
-            next() {
+            // manual parameter defaults to false when triggered automatically by the timer
+            next(manual = false) {
+                if (manual) this.stopAutoPlay();
                 this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+                if (manual) this.startAutoPlay();
             },
-            prev() {
+            prev(manual = false) {
+                if (manual) this.stopAutoPlay();
                 this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
-            },
-
-            // Click Handlers: Stop autoplay safely on user click, change slide, then resume smoothly
-            handleNext() {
-                this.stopAutoPlay();
-                this.next();
-                this.startAutoPlay();
-            },
-            handlePrev() {
-                this.stopAutoPlay();
-                this.prev();
-                this.startAutoPlay();
+                if (manual) this.startAutoPlay();
             },
             goToSlide(index) {
                 this.stopAutoPlay();
                 this.activeSlide = index;
                 this.startAutoPlay();
             },
-
             startAutoPlay() {
                 clearInterval(this.interval);
                 this.interval = setInterval(() => {
-                    this.next(); // Clean programmatic step
+                    this.next(false); // Clean automated tick without resetting the interval
                 }, 5000);
             },
             stopAutoPlay() {
                 clearInterval(this.interval);
+            },
+            init() {
+                this.startAutoPlay();
             }
         };
     }

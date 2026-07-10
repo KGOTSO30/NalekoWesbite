@@ -135,10 +135,103 @@
             <a href="#" class="btn-primary-demo" onclick="openDemoModal('')">Request Application Demo</a>
         </div>
 
+ <section class="infrastructure">
+    <h2 class="infra">BUILT ON ENTERPRISE-GRADE INFRASTRUCTURE</h2>
+    <div class="marquee-track">
+        <div class="marquee-content">
+            <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo"></a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo"></a>
+            <a href="https://moodle.org" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo"></a>
+            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo"></a>
+            
+            <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo"></a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo"></a>
+            <a href="https://moodle.org" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo"></a>
+            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo"></a>
 
-    </main
+              <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo"></a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo"></a>
+            <a href="https://moodle.org" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo"></a>
+            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo"></a>
 
-      <footer class="bg-naleko-dark-blue text-white py-8 px-4 p-4">
+        </div>
+    </div>
+</section>
+    </main>
+
+    
+
+
+   <div class="modal-backdrop" id="demoModal" onclick="closeDemoModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="document.getElementById('demoModal').style.display='none'">&times;</button>
+            <h3 id="modalTitle">Request Application Demo</h3>
+            
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST">
+                <input type="hidden" name="oid" value="00D07000000ZYWX">
+                <input type="hidden" name="retURL" value="https://wiseman-2312.github.io/thankyoupagenaleko">
+                <input type="hidden" name="lead_source" value="Web">
+
+                <div class="form-group">
+    <label for="modalAppInput">Selected Application</label>
+    <select id="modalAppInput" name="00NTt00000IiwIr" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-weight:bold; color:var(--accent-blue)">
+        <option value="" disabled selected>-- Please Select an Application --</option>
+    
+        <option value="Agentforce Screening">Agentforce Screening</option>
+         <option value="Skills Match Engine">Skills Match Engine</option>
+          <option value="Predictive Dropout">Predictive Dropout</option>
+           <option value="Compliance Automation">Compliance Automation</option>
+            <option value="Prompt Co-Pilot">Prompt Co-Pilot</option>
+             <option value="Workforce Forecast">Workforce Forecast</option>
+        </select>
+</div>
+                
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" maxlength="40" required placeholder="Enter your first name">
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" maxlength="80" required placeholder="Enter your last name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" maxlength="80" name="email" size="20" type="email" required placeholder="name@company.com" />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="e.g. +27 11 123 4567"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" maxlength="40" placeholder="Your company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwM5">Job Title</label>
+                    <input type="text" id="00NTt00000IiwM5" name="00NTt00000IiwM5" maxlength="250" placeholder="Your job title">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwNh">Preferred Date & Time (Time available)</label>
+                    <input type="datetime-local" id="00NTt00000IiwNh" name="00NTt00000IiwNh" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="00NTt00000IiwKTMAZ">How can we help you?</label>
+                    <textarea id="00NTt00000IiwKTMAZ" name="00NTt00000IiwKTMAZ" wrap="soft" rows="4"></textarea>
+                </div>
+
+                <button type="submit" name="submit" class="submit-btn">Request Live Demo Connection</button>
+            </form>
+        </div>
+    </div>
+
+     <footer class="bg-naleko-dark-blue text-white py-8 px-4 p-4">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div class="flex flex-col items-center md:items-start text-center md:text-left">
                 <div class="flex items-center mb-4">
@@ -219,76 +312,6 @@
             COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
         </div>
     </footer>
-
-
-    <div class="modal-backdrop" id="demoModal" onclick="closeDemoModal(event)">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="document.getElementById('demoModal').style.display='none'">&times;</button>
-            <h3 id="modalTitle">Request Application Demo</h3>
-            
-            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST">
-                <input type="hidden" name="oid" value="00D07000000ZYWX">
-                <input type="hidden" name="retURL" value="https://wiseman-2312.github.io/thankyoupagenaleko">
-                <input type="hidden" name="lead_source" value="Web">
-
-                <div class="form-group">
-    <label for="modalAppInput">Selected Application</label>
-    <select id="modalAppInput" name="00NTt00000IiwIr" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-weight:bold; color:var(--accent-blue)">
-        <option value="" disabled selected>-- Please Select an Application --</option>
-    
-        <option value="Agentforce Screening">Agentforce Screening</option>
-         <option value="Skills Match Engine">Skills Match Engine</option>
-          <option value="Predictive Dropout">Predictive Dropout</option>
-           <option value="Compliance Automation">Compliance Automation</option>
-            <option value="Prompt Co-Pilot">Prompt Co-Pilot</option>
-             <option value="Workforce Forecast">Workforce Forecast</option>
-        </select>
-</div>
-                
-                <div class="form-group">
-                    <label for="first_name">First Name</label>
-                    <input type="text" id="first_name" name="first_name" maxlength="40" required placeholder="Enter your first name">
-                </div>
-
-                <div class="form-group">
-                    <label for="last_name">Last Name</label>
-                    <input type="text" id="last_name" name="last_name" maxlength="80" required placeholder="Enter your last name">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" maxlength="80" name="email" size="20" type="email" required placeholder="name@company.com" />
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="e.g. +27 11 123 4567"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="company">Company Name</label>
-                    <input type="text" id="company" name="company" maxlength="40" placeholder="Your company name">
-                </div>
-
-                <div class="form-group">
-                    <label for="00NTt00000IiwM5">Job Title</label>
-                    <input type="text" id="00NTt00000IiwM5" name="00NTt00000IiwM5" maxlength="250" placeholder="Your job title">
-                </div>
-
-                <div class="form-group">
-                    <label for="00NTt00000IiwNh">Preferred Date & Time (Time available)</label>
-                    <input type="datetime-local" id="00NTt00000IiwNh" name="00NTt00000IiwNh" required>
-                </div>
-
-                <div class="form-group full-width">
-                    <label for="00NTt00000IiwKTMAZ">How can we help you?</label>
-                    <textarea id="00NTt00000IiwKTMAZ" name="00NTt00000IiwKTMAZ" wrap="soft" rows="4"></textarea>
-                </div>
-
-                <button type="submit" name="submit" class="submit-btn">Request Live Demo Connection</button>
-            </form>
-        </div>
-    </div>
 
 <script>
     function openDemoModal(appName) {

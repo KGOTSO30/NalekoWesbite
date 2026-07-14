@@ -324,10 +324,8 @@ body {
 }
 
 .infrastructure h2 {
-   /* color: var(--text-muted);*/
-   
-     color: #0b1354;
-    font-size: 1.5rem;
+    color: var(--text-muted);
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
@@ -802,75 +800,3 @@ body {
 
 .w-full { width: 100%; }
 .overflow-hidden { overflow: hidden; }
-
-
-/* book a demo scrolling logos         */
-
-
-.infrastructure {
-    text-align: center;
-    padding: 3rem 0;
-    overflow: hidden;
-    width: 100%;
-}
-
-.marquee-track {
-    overflow: hidden;
-    width: 100%;
-    display: flex;
-    position: relative;
-}
-
-.marquee-content {
-    display: flex;
-    gap: 5rem; /* Large gap looks cleaner across wide screens */
-    animation: scroll-left 25s linear infinite;
-    /* This forces the content wrapper to be as wide as needed, pushing items off-screen */
-    width: max-content; 
-    padding: 1.5rem 0;
-}
-
-.marquee-content a {
-    flex-shrink: 0;
-}
-
-.marquee-content img {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-}
-
-/* Pauses the slider when a user hovers over it */
-.marquee-track:hover .marquee-content {
-    animation-play-state: paused;
-}
-
-/* FULL RIGHT-TO-LEFT INFINITE ANIMATION */
-@keyframes scroll-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        /* Loops cleanly by shifting back by exactly one-third of the total width 
-           (since we have 3 identical sets of logos now) */
-        transform: translateX(-33.3333%); 
-    }
-}
-/*.infra h2 {
-    color: #0b1354;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    margin-bottom: 45px;
-    text-transform: uppercase;
-}*/
-/*.infrastructure h2*/
-
-/* {
-    color: var(--text-muted);
-    font-size: 1.5rem;
-    transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
-    font-weight: bold;
-}*/
-/* book a demo scrolling logos    end     */

@@ -651,7 +651,7 @@
                 <div class="bg-white rounded-2xl shadow-custom-card border border-gray-100 p-8 max-w-3xl mx-auto">
                     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <input type="hidden" name="oid" value="00D07000000ZYWX">
-                        <input type="hidden" name="retURL" value="http://naleko.com/success-callback-hidden">
+                        <input type="hidden" name="retURL" value="http://naleko.com">
                         <input type="hidden" name="00NTt00000IlU8L" value="Partner_Inquiry">
 
                         <div>
@@ -1403,69 +1403,6 @@
     // Set the initial active dot on page load
     updateActiveDot();
   });
-</script>
-
-<script>
-    // State flag to prevent the iframe load event from firing on page startup
-let funderFormSubmitted = false;
-
-/**
- * Triggered when the user submits the form.
- * We let the form submit naturally to the iframe, but we flag that the submission started.
- */
-function handleFunderSubmission(event) {
-    funderFormSubmitted = true;
-    
-    // Optional: Show a loading state on your button here if desired
-    const submitBtn = event.target.querySelector('button[type="submit"]');
-    if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Submitting...';
-    }
-}
-
-// Listen for the hidden iframe to load
-document.getElementById('sf-funder-frame').addEventListener('load', function() {
-    if (funderFormSubmitted) {
-        // Reset our submission flag
-        funderFormSubmitted = false;
-        
-        // 1. Switch to the thank-you view
-        navigateToView('view-thank-you');
-        
-        // 2. Reset the form and submit button for future submissions
-        const form = document.getElementById('funder-scheduling-form');
-        form.reset();
-        
-        const submitBtn = form.querySelector('button[type="submit"]');
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Request A Call';
-        }
-    }
-});
-
-/**
- * Standard SPA view switcher (adjust this if you have a different implementation)
- */
-function navigateToView(viewId) {
-    // Hide all views
-    const views = [
-        document.getElementById('view-funder-form'),
-        document.getElementById('view-thank-you'),
-        document.getElementById('view-landing') // Add any other view IDs here
-    ];
-    
-    views.forEach(view => {
-        if (view) view.classList.add('hidden');
-    });
-    
-    // Show the targeted view
-    const targetView = document.getElementById(viewId);
-    if (targetView) {
-        targetView.classList.remove('hidden');
-    }
-}
 </script>
 </body>
 </html>

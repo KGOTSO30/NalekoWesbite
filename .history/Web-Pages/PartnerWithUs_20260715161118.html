@@ -791,7 +791,7 @@
                             </select>
                         </div>
                         <div class="md:col-span-2 text-center mt-4">
-                            <button onclick="navigateToView('view-landing')" type="submit" class="w-full sm:w-auto py-3.5 px-12 bg-naleko-dark-blue text-white rounded-lg font-bold hover:bg-indigo-950 transition shadow-md">
+                            <button type="submit" class="w-full sm:w-auto py-3.5 px-12 bg-naleko-dark-blue text-white rounded-lg font-bold hover:bg-indigo-950 transition shadow-md">
                                 Request A Call
                             </button>
                         </div>
@@ -975,24 +975,22 @@
             COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
         </div>
     </footer>
-<script>
-    // =========================================================================
-    // SECTION 1: STATIC PROGRAM DATA
-    // =========================================================================
-    const programmeFunding = {
-        "AI Fundamentals for Youth": { learners: 25, training: 2800, materials: 800, certification: 400, placement: 500 },
-        "AI for Business": { learners: 20, training: 3500, materials: 1000, certification: 500, placement: 500 },
-        "Salesforce Administration": { learners: 20, training: 4500, materials: 1200, certification: 700, placement: 400 },
-        "Digital Skills Learnerships": { learners: 30, training: 2200, materials: 600, certification: 300, placement: 100 },
-        "AWS Cloud Fundamentals": { learners: 25, training: 4200, materials: 900, certification: 300, placement: 100 },
-        "Prompt Engineering": { learners: 25, training: 1800, materials: 500, certification: 300, placement: 200 }
-    };
 
-    const programmeDetails = {
-        "AI Fundamentals for Youth": { modules: 4, duration: "8 Weeks", outcomes: "16+", careers: "4", timeline: [ { weeks: "Weeks 1-2", title: "Module 1: AI Concepts and Ethics", description: "Understand AI basics, real-world applications and responsible AI." }, { weeks: "Weeks 3-4", title: "Module 2: Prompt Engineering", description: "Create effective prompts and improve productivity." }, { weeks: "Weeks 5-6", title: "Module 3: Practical AI Tools", description: "Apply AI tools to research, automation and data tasks." }, { weeks: "Weeks 7-8", title: "Module 4: Career Readiness & Placement", description: "CV preparation, interviews and workplace readiness." } ] },
-        "AI for Business": { modules: 4, duration: "6 Weeks", outcomes: "12+", careers: "3", timeline: [ { weeks: "Week 1", title: "Business AI Foundations", description: "AI opportunities for organisations." }, { weeks: "Week 2-3", title: "AI Productivity", description: "Automation and workflow optimisation." }, { weeks: "Week 4-5", title: "AI Decision Support", description: "Data insights and forecasting." }, { weeks: "Week 6", title: "Implementation Strategy", description: "Building an AI roadmap." } ] },
-        "Salesforce Administration": { modules: 5, duration: "10 Weeks", outcomes: "20+", careers: "5", timeline: [ { weeks: "Weeks 1-2", title: "Salesforce Fundamentals", description: "Platform navigation and CRM basics." }, { weeks: "Weeks 3-4", title: "User & Security Management", description: "Profiles, permissions and security." }, { weeks: "Weeks 5-6", title: "Reports & Dashboards", description: "Data visibility and analytics." }, { weeks: "Weeks 7-8", title: "Automation", description: "Flows and business processes." }, { weeks: "Weeks 9-10", title: "Certification Readiness", description: "Exam preparation and practical projects." } ] },
-        "Digital Skills Learnerships": {
+    <script>
+        const programmeFunding = {
+            "AI Fundamentals for Youth": { learners: 25, training: 2800, materials: 800, certification: 400, placement: 500 },
+            "AI for Business": { learners: 20, training: 3500, materials: 1000, certification: 500, placement: 500 },
+            "Salesforce Administration": { learners: 20, training: 4500, materials: 1200, certification: 700, placement: 400 },
+            "Digital Skills Learnerships": { learners: 30, training: 2200, materials: 600, certification: 300, placement: 100 },
+            "AWS Cloud Fundamentals": { learners: 25, training: 4200, materials: 900, certification: 300, placement: 100 },
+            "Prompt Engineering": { learners: 25, training: 1800, materials: 500, certification: 300, placement: 200 }
+        };
+
+        const programmeDetails = {
+            "AI Fundamentals for Youth": { modules: 4, duration: "8 Weeks", outcomes: "16+", careers: "4", timeline: [ { weeks: "Weeks 1-2", title: "Module 1: AI Concepts and Ethics", description: "Understand AI basics, real-world applications and responsible AI." }, { weeks: "Weeks 3-4", title: "Module 2: Prompt Engineering", description: "Create effective prompts and improve productivity." }, { weeks: "Weeks 5-6", title: "Module 3: Practical AI Tools", description: "Apply AI tools to research, automation and data tasks." }, { weeks: "Weeks 7-8", title: "Module 4: Career Readiness & Placement", description: "CV preparation, interviews and workplace readiness." } ] },
+            "AI for Business": { modules: 4, duration: "6 Weeks", outcomes: "12+", careers: "3", timeline: [ { weeks: "Week 1", title: "Business AI Foundations", description: "AI opportunities for organisations." }, { weeks: "Week 2-3", title: "AI Productivity", description: "Automation and workflow optimisation." }, { weeks: "Week 4-5", title: "AI Decision Support", description: "Data insights and forecasting." }, { weeks: "Week 6", title: "Implementation Strategy", description: "Building an AI roadmap." } ] },
+            "Salesforce Administration": { modules: 5, duration: "10 Weeks", outcomes: "20+", careers: "5", timeline: [ { weeks: "Weeks 1-2", title: "Salesforce Fundamentals", description: "Platform navigation and CRM basics." }, { weeks: "Weeks 3-4", title: "User & Security Management", description: "Profiles, permissions and security." }, { weeks: "Weeks 5-6", title: "Reports & Dashboards", description: "Data visibility and analytics." }, { weeks: "Weeks 7-8", title: "Automation", description: "Flows and business processes." }, { weeks: "Weeks 9-10", title: "Certification Readiness", description: "Exam preparation and practical projects." } ] },
+            "Digital Skills Learnerships": {
             modules: 6,
             duration: "12 Weeks",
             outcomes: "24+",
@@ -1006,7 +1004,7 @@
                 { weeks: "Weeks 11-12", title: "Capstone & Placement", description: "Final portfolio assembly and job market preparation." }
             ]
         },
-        "AWS Cloud Fundamentals": {
+            "AWS Cloud Fundamentals": {
             modules: 4,
             duration: "8 Weeks",
             outcomes: "15+",
@@ -1018,130 +1016,271 @@
                 { weeks: "Weeks 7-8", title: "Billing, Pricing & Certification", description: "Cost management tools and AWS Cloud Practitioner exam prep." }
             ]
         },
-        "Prompt Engineering": {
-            modules: 4,
-            duration: "4 Weeks",
-            outcomes: "10+",
-            careers: "2",
-            timeline: [
-                { weeks: "Week 1", title: "LLM Mechanics", description: "How large language models process and generate text." },
-                { weeks: "Week 2", title: "Advanced Prompting Techniques", description: "Few-shot prompting, chain-of-thought, and persona adoption." },
-                { weeks: "Week 3", title: "Context & Constraints", description: "Managing context windows, formatting outputs, and overcoming hallucinations." },
-                { weeks: "Week 4", title: "Industry Applications", description: "Building reusable prompt templates for real-world workflows." }
-            ]
-        }
-    };
-
-    const programPricing = {
-        "AI Fundamentals for Youth": { price: 4500, duration: "8 Weeks", features: ["AI-1 Prompt Co-Pilot", "AI-5 Apprentice"] },
-        "AI for Business": { price: 5500, duration: "6 Weeks", features: ["AI-1 Prompt Co-Pilot", "AI-4 Forecast"] },
-        "Digital Skills Learnerships": { price: 3200, duration: "12 Weeks", features: ["AI-2 Skills Match", "AI-5 Apprentice"] },
-        "Salesforce Administration": { price: 6800, duration: "10 Weeks", features: ["AI-2 Skills Match", "AI-6 Compliance"] },
-        "AWS Cloud Fundamentals": { price: 5500, duration: "8 Weeks", features: ["AI-3 Predictive", "AI-6 Compliance"] },
-        "Prompt Engineering": { price: 2800, duration: "4 Weeks", features: ["AI-1 Prompt Co-Pilot"] }
-    };
-
-    // =========================================================================
-    // SECTION 2: GLOBAL STATE DECLARATIONS
-    // =========================================================================
-    let viewHistory = ['view-landing'];
-    let selectedPartnershipType = '';
-    let funderFormSubmitted = false;
-    let partnerFormSubmitted = false;
-    
-    let checkoutState = { 
-        selectedMethod: 'VISA', 
-        programName: 'AI Fundamentals for Youth', 
-        cohortCost: 30000.00, 
-        referenceId: 'NLK-2026-00125' 
-    };
-
-    // =========================================================================
-    // SECTION 3: SPA VIEWS ROUTER
-    // =========================================================================
-    /**
-     * Navigates to a specific Single-Page App view wrapper.
-     * @param {string} viewId
-     * @param {boolean} isBackAction
-     */
-    function navigateToView(viewId, isBackAction = false) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+            "Prompt Engineering": {
+        modules: 4,
+        duration: "4 Weeks",
+        outcomes: "10+",
+        careers: "2",
+        timeline: [
+            { weeks: "Week 1", title: "LLM Mechanics", description: "How large language models process and generate text." },
+            { weeks: "Week 2", title: "Advanced Prompting Techniques", description: "Few-shot prompting, chain-of-thought, and persona adoption." },
+            { weeks: "Week 3", title: "Context & Constraints", description: "Managing context windows, formatting outputs, and overcoming hallucinations." },
+            { weeks: "Week 4", title: "Industry Applications", description: "Building reusable prompt templates for real-world workflows." }
+        ]
+    }
+        };
         
-        // Query and cleanly hide all view containers
-        const views = document.querySelectorAll('.partner-view, .funder-view');
-        views.forEach(view => {
-            if (view) {
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        menuBtn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
+        function navigateToView(viewId) {
+            // 1. Target all views (Ensure this matches the class on your wrappers, e.g., 'partner-view')
+            const views = document.querySelectorAll('.partner-view');
+            
+            views.forEach(view => {
+                // Force hide using BOTH methods so inline styles don't override your classes
                 view.classList.add('hidden');
-                view.style.display = 'none'; // Overrides any persistent inline-styles
-            }
-        });
-        
-        // Make targeted view container visible
-        const target = document.getElementById(viewId);
-        if (target) {
-            target.classList.remove('hidden');
-            target.style.display = ''; // Safely clear out temporary inline display settings
-        } else {
-            console.warn(`Routing failed: Element with ID "${viewId}" could not be found.`);
-        }
-
-        // Keep track of our step sequence history
-        if (!isBackAction && viewHistory[viewHistory.length - 1] !== viewId) {
-            viewHistory.push(viewId);
-        }
-
-        // Handle structural back navigation interface visibility
-        const backBtn = document.getElementById('back-btn');
-        if (backBtn) {
-            if (viewId === 'view-landing' || viewHistory.length <= 1) {
-                backBtn.classList.add('hidden');
+                view.style.display = 'none'; 
+            });
+            
+            // 2. Reveal the targeted view
+            const target = document.getElementById(viewId);
+            if (target) {
+                // Strip out the hidden utilities
+                target.classList.remove('hidden');
+                // Clear out any inline display overrides so the default stylesheet takes over
+                target.style.display = ''; 
+                
+                // Reset viewport scroll to the top
+                window.scrollTo({ top: 0, behavior: 'instant' });
             } else {
-                backBtn.classList.remove('hidden');
+                console.warn(`Routing failed: Element with ID "${viewId}" could not be found.`);
             }
         }
-    }
 
-    /**
-     * Rewinds our view state sequence timeline.
-     */
-    function goBack() {
-        if (viewHistory.length > 1) {
-            viewHistory.pop(); // Remove the current view
-            const previousView = viewHistory[viewHistory.length - 1];
-            navigateToView(previousView, true);
+        let checkoutState = { selectedMethod: 'VISA', programName: 'AI Fundamentals for Youth', cohortCost: 30000.00, referenceId: 'NLK-2026-00125' };
+
+        function selectPaymentMethod(methodName) {
+            document.querySelectorAll('.payment-card').forEach(card => {
+                card.classList.remove('border-blue-600', 'bg-blue-50/50', 'scale-105', 'shadow-md');
+                card.classList.add('border-gray-200');
+            });
+            const targetCard = document.getElementById(`method-${methodName}`);
+            if (targetCard) {
+                targetCard.classList.remove('border-gray-200');
+                targetCard.classList.add('border-blue-600', 'bg-blue-50/50', 'scale-105', 'shadow-md');
+            }
+            const displayNames = { visa: 'VISA', mastercard: 'MASTERCARD', amex: 'AMEX', eft: 'Instant EFT' };
+            checkoutState.selectedMethod = displayNames[methodName];
+            document.getElementById('btn-proceed').innerText = `Proceed with ${checkoutState.selectedMethod}`;
         }
-    }
+        
+        selectPaymentMethod('visa');
 
-    // =========================================================================
-    // SECTION 4: PROGRAMME OUTCOMES & ESTIMATOR
-    // =========================================================================
-    /**
-     * Details visualizer initializer.
-     * @param {string} programmeName
-     */
-    function openProgrammeDetails(programmeName) {
-        const programme = programmeDetails[programmeName];
-        if (!programme) {
-            console.warn(`No details found in programmeDetails for: ${programmeName}`);
-            return; 
+        function executeGatewayTransaction() {
+            const emailField = document.querySelector('input[type="email"]');
+            const payerEmail = emailField && emailField.value ? emailField.value : "billing@partner-org.co.za";
+
+            if (typeof PaystackPop === 'undefined') {
+                console.warn("Gateway SDK unavailable. Proceeding with simulated execution.");
+                finalizeUIReceiptMapping();
+                return;
+            }
+            const paymentHandler = PaystackPop.setup({
+                key: 'pk_test_a88d333b68020523121a9feec05958086f36115e',
+                email: payerEmail,
+                amount: checkoutState.cohortCost * 100, 
+                currency: 'ZAR',
+                ref: checkoutState.referenceId,
+                callback: function(response) {
+                    console.log('Payment Reference Captured:', response.reference);
+                    finalizeUIReceiptMapping();
+                },
+                onClose: function() { alert('Transaction framework was terminated by user action.'); }
+            });
+            paymentHandler.openIframe();
         }
 
-        const fundingBtn = document.getElementById('btn-funding-breakdown');
-        if (fundingBtn) {
-            fundingBtn.onclick = () => { openFundingBreakdown(programmeName); };
+        function finalizeUIReceiptMapping() {
+            document.getElementById('success-method').innerText = checkoutState.selectedMethod;
+            document.getElementById('success-program').innerText = checkoutState.programName;
+            document.getElementById('success-amount').innerText = 'R' + checkoutState.cohortCost.toLocaleString('en-ZA', { minimumFractionDigits: 2 });
+            document.getElementById('success-reference').innerText = checkoutState.referenceId;
+            document.getElementById('success-date').innerText = new Date().toLocaleString('en-ZA', { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+            navigateToView('view-success');
         }
 
-        // Update basic programmatic fields
-        document.getElementById('programme-title').innerText = programmeName;
-        document.getElementById('programme-modules').innerText = programme.modules;
-        document.getElementById('programme-duration').innerText = (programme.duration || '').replace(' Weeks', '');
-        document.getElementById('programme-outcomes').innerText = programme.outcomes;
-        document.getElementById('programme-careers').innerText = programme.careers;
+        let selectedPartnershipType = '';
 
-        // Render dynamic timeline UI modules safely
-        const timelineContainer = document.getElementById('programme-timeline');
-        if (timelineContainer) {
+        function openPartnershipForm(type) {
+            selectedPartnershipType = type;
+            navigateToView('view-form');
+            setTimeout(() => {
+                const field = document.querySelector('select[name="partnership_type"]') || document.querySelector('select[name="00NTt00000Il5xx"]');
+                if (field) {
+                    const typeMap = { 'Workforce Upskilling': 'Corporate Partnerships', 'Student Digital Literacy': 'Education Partnerships', 'Platform Co-Innovation': 'Technology Partnerships', 'Event & Program Sponsorship': 'Event Partnerships' };
+                    field.value = typeMap[type] || type;
+                }
+            }, 100);
+        }
+
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Processing Request...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(event.target);
+            const fullName = formData.get('first_name') ? formData.get('first_name').trim() : ''; 
+            const nameParts = fullName.split(' ');
+            const firstName = nameParts[0] || '';
+            const lastName = nameParts.slice(1).join(' ') || 'Partner Candidate'; 
+
+            const payload = {
+                firstName: firstName,
+                lastName: lastName,
+                email: formData.get('work_email'),
+                phone: formData.get('phone_number'),
+                company: formData.get('company_name') || 'Individual',
+                title: formData.get('job_title'),
+                partnershipType: formData.get('partnership_type'),
+                collaborationInterest: formData.get('collaboration_interest'),
+                goals: formData.get('goals')
+            };
+
+            try {
+                const response = await fetch('https://YOUR_API_GATEWAY_OR_PROXY_ENDPOINT/api/partner-request', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (response.ok) { navigateToView('view-thank-you'); } 
+                else { navigateToView('view-thank-you'); }
+            } catch (error) {
+                console.error('Integration exception:', error);
+                navigateToView('view-thank-you');
+            } finally {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+                event.target.reset(); 
+            }
+        }
+
+        const programPricing = {
+            "AI Fundamentals for Youth": { price: 4500, duration: "8 Weeks", features: ["AI-1 Prompt Co-Pilot", "AI-5 Apprentice"] },
+            "AI for Business": { price: 5500, duration: "6 Weeks", features: ["AI-1 Prompt Co-Pilot", "AI-4 Forecast"] },
+            "Digital Skills Learnerships": { price: 3200, duration: "12 Weeks", features: ["AI-2 Skills Match", "AI-5 Apprentice"] },
+            "Salesforce Administration": { price: 6800, duration: "10 Weeks", features: ["AI-2 Skills Match", "AI-6 Compliance"] },
+            "AWS Cloud Fundamentals": { price: 5500, duration: "8 Weeks", features: ["AI-3 Predictive", "AI-6 Compliance"] },
+            "Prompt Engineering": { price: 2800, duration: "4 Weeks", features: ["AI-1 Prompt Co-Pilot"] }
+        };
+
+        function calculateLiveEstimate() {
+            const selectedProg = document.getElementById('intent-program').value;
+            const learnerQty = parseInt(document.getElementById('intent-learners').value) || 0;
+            const costWidget = document.getElementById('intent-live-cost');
+
+            if (selectedProg && programPricing[selectedProg]) {
+                const total = programPricing[selectedProg].price * learnerQty;
+                costWidget.innerText = `R${total.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`;
+            } else {
+                costWidget.innerText = "R0.00";
+            }
+        }
+
+        function handleIntentSubmission(event) {
+            const selectedProg = document.getElementById('intent-program').value;
+            const learnerQty = parseInt(document.getElementById('intent-learners').value) || 25;
+            
+            if (!selectedProg || !programPricing[selectedProg]) return;
+
+            const metadata = programPricing[selectedProg];
+            const calculatedCost = metadata.price * learnerQty;
+            const generatedRef = 'NLK-' + new Date().getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000);
+
+            document.getElementById('sf-field-duration').value = metadata.duration;
+            document.getElementById('sf-field-price').value = calculatedCost; 
+
+            const featuresContainer = document.getElementById('sf-features-container');
+            featuresContainer.innerHTML = ''; 
+            
+            metadata.features.forEach(feature => {
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = '00NTt00000IjuN3'; 
+                hiddenInput.value = feature;
+                featuresContainer.appendChild(hiddenInput);
+            });
+
+            if (typeof checkoutState !== 'undefined') {
+                checkoutState.programName = selectedProg;
+                checkoutState.cohortCost = calculatedCost;
+                checkoutState.referenceId = generatedRef;
+            }
+
+            const updateEl = (id, val) => { const el = document.getElementById(id); if(el) el.innerText = val; };
+            updateEl('summary-program', selectedProg);
+            updateEl('summary-ref', generatedRef);
+            updateEl('summary-learners', `${learnerQty} Learners`);
+            updateEl('summary-duration', metadata.duration);
+            updateEl('summary-amount', `R${calculatedCost.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`);
+
+            setTimeout(() => {
+                if (typeof navigateToView === 'function') { navigateToView('view-options'); }
+            }, 400);
+        }
+
+        function handleFunderSubmission(event) {
+            const funderEmail = document.getElementById('email').value;
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Processing Request...";
+                submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            }
+
+            setTimeout(() => {
+                document.getElementById('funder-scheduling-form').reset();
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "Request Funder Call";
+                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                }
+                alert(`Thank you! Your call request has been saved. A Naleko representative will connect with you via ${funderEmail}.`);
+                if (typeof navigateToView === 'function') { navigateToView('view-landing'); }
+            }, 600);
+        }
+
+        function openProgrammeDetails(programmeName) {
+            const programme = programmeDetails[programmeName];
+
+            // 1. Check if the programme exists FIRST to avoid executing empty data
+            if (!programme) {
+                console.warn(`No details found in programmeDetails for: ${programmeName}`);
+                return; 
+            }
+
+            // 2. Check if the button exists before setting the onclick property
+            const fundingBtn = document.getElementById('btn-funding-breakdown');
+            if (fundingBtn) {
+                fundingBtn.onclick = () => { openFundingBreakdown(programmeName); };
+            } else {
+                console.warn("Element 'btn-funding-breakdown' is missing from the DOM.");
+            }
+
+            // Populate the DOM
+            document.getElementById('programme-title').innerText = programmeName;
+            document.getElementById('programme-modules').innerText = programme.modules;
+            document.getElementById('programme-duration').innerText = programme.duration.replace(' Weeks','');
+            document.getElementById('programme-outcomes').innerText = programme.outcomes;
+            document.getElementById('programme-careers').innerText = programme.careers;
+
+            const timelineContainer = document.getElementById('programme-timeline');
             timelineContainer.innerHTML = '';
+
             programme.timeline.forEach(module => {
                 timelineContainer.innerHTML += `
                     <div class="bg-white p-6 rounded-2xl shadow-custom-card border border-l-4 border-l-blue-600 border-gray-100">
@@ -1151,349 +1290,228 @@
                     </div>
                 `;
             });
-        }
-        
-        navigateToView('view-outcomes');
-    }
-
-    /**
-     * Funding breakdown visualizer.
-     * @param {string} programmeName
-     */
-    function openFundingBreakdown(programmeName) {
-        const programme = programmeFunding[programmeName];
-        if (!programme) return;
-
-        const totalPerLearner = programme.training + programme.materials + programme.certification + programme.placement;
-        const cohortTotal = totalPerLearner * programme.learners;
-        const formatMoney = amount => `R${amount.toLocaleString('en-ZA')}`;
-
-        document.getElementById('funding-programme-title').innerText = `${programmeName} Funding Breakdown`;
-        document.getElementById('funding-training').innerText = formatMoney(programme.training);
-        document.getElementById('funding-materials').innerText = formatMoney(programme.materials);
-        document.getElementById('funding-certification').innerText = formatMoney(programme.certification);
-        document.getElementById('funding-placement').innerText = formatMoney(programme.placement);
-        document.getElementById('funding-total-learner').innerText = formatMoney(totalPerLearner);
-        document.getElementById('funding-cohort-label').innerText = `Cohort Total (${programme.learners} learners)`;
-        document.getElementById('funding-cohort-total').innerText = formatMoney(cohortTotal);
-
-        navigateToView('view-breakdown');
-    }
-
-    /**
-     * Cohort dynamic cost estimator tracker.
-     */
-    function calculateLiveEstimate() {
-        const selectedProg = document.getElementById('intent-program').value;
-        const learnerQty = parseInt(document.getElementById('intent-learners').value) || 0;
-        const costWidget = document.getElementById('intent-live-cost');
-
-        if (costWidget) {
-            if (selectedProg && programPricing[selectedProg]) {
-                const total = programPricing[selectedProg].price * learnerQty;
-                costWidget.innerText = `R${total.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`;
-            } else {
-                costWidget.innerText = "R0.00";
-            }
-        }
-    }
-
-    /**
-     * Estimator submission processing logic.
-     * @param {Event} event
-     */
-    function handleIntentSubmission(event) {
-        const selectedProg = document.getElementById('intent-program').value;
-        const learnerQty = parseInt(document.getElementById('intent-learners').value) || 25;
-        
-        if (!selectedProg || !programPricing[selectedProg]) return;
-
-        const metadata = programPricing[selectedProg];
-        const calculatedCost = metadata.price * learnerQty;
-        const generatedRef = 'NLK-' + new Date().getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000);
-
-        // Map calculation properties directly into invisible lead fields
-        const durationField = document.getElementById('sf-field-duration');
-        const priceField = document.getElementById('sf-field-price');
-        if (durationField) durationField.value = metadata.duration;
-        if (priceField) priceField.value = calculatedCost; 
-
-        // Populate program feature maps
-        const featuresContainer = document.getElementById('sf-features-container');
-        if (featuresContainer) {
-            featuresContainer.innerHTML = ''; 
-            metadata.features.forEach(feature => {
-                const hiddenInput = document.createElement('input');
-                hiddenInput.type = 'hidden';
-                hiddenInput.name = '00NTt00000IjuN3'; 
-                hiddenInput.value = feature;
-                featuresContainer.appendChild(hiddenInput);
-            });
-        }
-
-        // Cache parameters to pass down to processing steps
-        checkoutState.programName = selectedProg;
-        checkoutState.cohortCost = calculatedCost;
-        checkoutState.referenceId = generatedRef;
-
-        const updateEl = (id, val) => { const el = document.getElementById(id); if(el) el.innerText = val; };
-        updateEl('summary-program', selectedProg);
-        updateEl('summary-ref', generatedRef);
-        updateEl('summary-learners', `${learnerQty} Learners`);
-        updateEl('summary-duration', metadata.duration);
-        updateEl('summary-amount', `R${calculatedCost.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`);
-
-        setTimeout(() => {
-            navigateToView('view-options');
-        }, 400);
-    }
-
-    // =========================================================================
-    // SECTION 5: INTEGRATED PAYMENT PROCESS (PAYSTACK)
-    // =========================================================================
-    /**
-     * Changes standard visual active flags across option items.
-     * @param {string} methodName
-     */
-    function selectPaymentMethod(methodName) {
-        document.querySelectorAll('.payment-card').forEach(card => {
-            card.classList.remove('border-blue-600', 'bg-blue-50/50', 'scale-105', 'shadow-md');
-            card.classList.add('border-gray-200');
-        });
-        const targetCard = document.getElementById(`method-${methodName}`);
-        if (targetCard) {
-            targetCard.classList.remove('border-gray-200');
-            targetCard.classList.add('border-blue-600', 'bg-blue-50/50', 'scale-105', 'shadow-md');
-        }
-        const displayNames = { visa: 'VISA', mastercard: 'MASTERCARD', amex: 'AMEX', eft: 'Instant EFT' };
-        checkoutState.selectedMethod = displayNames[methodName] || methodName.toUpperCase();
-        
-        const proceedBtn = document.getElementById('btn-proceed');
-        if (proceedBtn) {
-            proceedBtn.innerText = `Proceed with ${checkoutState.selectedMethod}`;
-        }
-    }
-
-    /**
-     * Triggers active Paystack setup.
-     */
-    function executeGatewayTransaction() {
-        const emailField = document.querySelector('input[type="email"]');
-        const payerEmail = emailField && emailField.value ? emailField.value : "billing@partner-org.co.za";
-
-        if (typeof PaystackPop === 'undefined') {
-            console.warn("Gateway SDK unavailable. Proceeding with simulated execution.");
-            finalizeUIReceiptMapping();
-            return;
-        }
-        
-        const paymentHandler = PaystackPop.setup({
-            key: 'pk_test_a88d333b68020523121a9feec05958086f36115e',
-            email: payerEmail,
-            amount: checkoutState.cohortCost * 100, 
-            currency: 'ZAR',
-            ref: checkoutState.referenceId,
-            callback: function(response) {
-                console.log('Payment Reference Captured:', response.reference);
-                finalizeUIReceiptMapping();
-            },
-            onClose: function() { 
-                alert('Transaction framework was terminated by user action.'); 
-            }
-        });
-        paymentHandler.openIframe();
-    }
-
-    /**
-     * Map payment receipts to dynamic visual receipt nodes.
-     */
-    function finalizeUIReceiptMapping() {
-        document.getElementById('success-method').innerText = checkoutState.selectedMethod;
-        document.getElementById('success-program').innerText = checkoutState.programName;
-        document.getElementById('success-amount').innerText = 'R' + checkoutState.cohortCost.toLocaleString('en-ZA', { minimumFractionDigits: 2 });
-        document.getElementById('success-reference').innerText = checkoutState.referenceId;
-        document.getElementById('success-date').innerText = new Date().toLocaleString('en-ZA', { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-        navigateToView('view-success');
-    }
-
-    // =========================================================================
-    // SECTION 6: WEB-TO-LEAD LIFECYCLES (IFRAME HANDLING)
-    // =========================================================================
-    /**
-     * Funder scheduling submittal trigger.
-     * @param {Event} event
-     */
-    function handleFunderSubmission(event) {
-        funderFormSubmitted = true;
-        const submitBtn = event.target.querySelector('button[type="submit"]');
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
-        }
-    }
-
-    /**
-     * Partner candidate submittal trigger.
-     * @param {Event} event
-     */
-    function handlePartnerSubmission(event) {
-        partnerFormSubmitted = true;
-        const submitBtn = event.target.querySelector('button[type="submit"]');
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
-        }
-    }
-
-    /**
-     * Map active selected values inside the partnership request drop-downs.
-     * @param {string} type
-     */
-    function openPartnershipForm(type) {
-        selectedPartnershipType = type;
-        navigateToView('view-form');
-        setTimeout(() => {
-            const field = document.querySelector('select[name="partnership_type"]') || document.querySelector('select[name="00NTt00000Il5xx"]');
-            if (field) {
-                const typeMap = { 
-                    'Workforce Upskilling': 'Corporate Partnerships', 
-                    'Student Digital Literacy': 'Education Partnerships', 
-                    'Platform Co-Innovation': 'Technology Partnerships', 
-                    'Event & Program Sponsorship': 'Event Partnerships' 
-                };
-                field.value = typeMap[type] || type;
-            }
-        }, 100);
-    }
-
-    // =========================================================================
-    // SECTION 7: DOM INITIALIZATION & IN-PAGE LIFECYCLES
-    // =========================================================================
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- 1. Navigation Menu ---
-        const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        if (menuBtn && menu) {
-            menuBtn.addEventListener('click', () => { 
-                menu.classList.toggle('hidden'); 
-            });
-        }
-
-        // --- 2. Initialize Selection Methods ---
-        selectPaymentMethod('visa');
-
-        // --- 3. Funder Form Submission Listener ---
-        const funderForm = document.getElementById('funder-scheduling-form');
-        if (funderForm) {
-            funderForm.addEventListener('submit', handleFunderSubmission);
-        }
-
-        // --- 4. Partner Form Submission Listener ---
-        const partnerForm = document.getElementById('partner-form');
-        if (partnerForm) {
-            partnerForm.addEventListener('submit', handlePartnerSubmission);
-        }
-
-        // --- 5. SF Funder Frame Native Success Listener ---
-        const funderIframe = document.getElementById('sf-funder-frame');
-        if (funderIframe) {
-            funderIframe.addEventListener('load', function() {
-                if (funderFormSubmitted) {
-                    funderFormSubmitted = false;
-                    
-                    navigateToView('view-thank-you');
-                    
-                    if (funderForm) {
-                        funderForm.reset();
-                        const submitBtn = funderForm.querySelector('button[type="submit"]');
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = 'Request A Call';
-                        }
-                    }
-                }
-            });
-        }
-
-        // --- 6. SF Partner Frame Native Success Listener ---
-        const partnerIframe = document.getElementById('partner-submit-iframe');
-        if (partnerIframe) {
-            partnerIframe.addEventListener('load', function() {
-                if (partnerFormSubmitted) {
-                    partnerFormSubmitted = false;
-                    
-                    navigateToView('view-thank-you');
-                    
-                    if (partnerForm) {
-                        partnerForm.reset();
-                        const submitBtn = partnerForm.querySelector('button[type="submit"]');
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = 'Submit Partnership Request';
-                        }
-                    }
-                }
-            });
-        }
-
-        // --- 7. Testimonial Slider / Carousel Logic ---
-        const slider = document.getElementById('testimonial-slider');
-        if (slider) {
-            const prevBtn = document.getElementById('prev-testimonial');
-            const nextBtn = document.getElementById('next-testimonial');
-            const dotsContainer = document.getElementById('pagination-dots');
             
-            if (prevBtn && nextBtn && dotsContainer) {
-                const cards = Array.from(slider.children);
-                let dots = [];
+            navigateToView('view-outcomes');
+        }
+          
 
-                // Render control dots
-                cards.forEach((card, index) => {
-                    const dot = document.createElement('button');
-                    dot.className = 'w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 bg-gray-300';
-                    dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
-                    
-                    dot.addEventListener('click', () => {
-                        const scrollPosition = card.offsetLeft - slider.offsetLeft;
-                        slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
-                    });
+        function openFundingBreakdown(programmeName) {
+            const programme = programmeFunding[programmeName];
+            if (!programme) return;
 
-                    dotsContainer.appendChild(dot);
-                    dots.push(dot);
-                });
+            const totalPerLearner = programme.training + programme.materials + programme.certification + programme.placement;
+            const cohortTotal = totalPerLearner * programme.learners;
+            const formatMoney = amount => `R${amount.toLocaleString('en-ZA')}`;
 
-                // Update active dots dynamically
-                const updateActiveDot = () => {
-                    const scrollPosition = slider.scrollLeft;
-                    const cardWidth = cards[0].offsetWidth + 24; 
-                    const activeIndex = Math.round(scrollPosition / cardWidth);
+            document.getElementById('funding-programme-title').innerText = `${programmeName} Funding Breakdown`;
+            document.getElementById('funding-training').innerText = formatMoney(programme.training);
+            document.getElementById('funding-materials').innerText = formatMoney(programme.materials);
+            document.getElementById('funding-certification').innerText = formatMoney(programme.certification);
+            document.getElementById('funding-placement').innerText = formatMoney(programme.placement);
+            document.getElementById('funding-total-learner').innerText = formatMoney(totalPerLearner);
+            document.getElementById('funding-cohort-label').innerText = `Cohort Total (${programme.learners} learners)`;
+            document.getElementById('funding-cohort-total').innerText = formatMoney(cohortTotal);
 
-                    dots.forEach((dot, index) => {
-                        if (index === activeIndex) {
-                            dot.classList.remove('bg-gray-300', 'w-3');
-                            dot.classList.add('bg-indigo-600', 'w-6');
-                        } else {
-                            dot.classList.remove('bg-indigo-600', 'w-6');
-                            dot.classList.add('bg-gray-300', 'w-3');
-                        }
-                    });
-                };
+            navigateToView('view-breakdown');
+        }
+        
+        
+        // 1. Create a history stack starting with the landing page
+        let viewHistory = ['view-landing']; 
 
-                const getScrollAmount = () => cards[0].offsetWidth + 24;
+        // 2. Update your existing navigation function
+        function navigateToView(viewId, isBackAction = false) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            const views = document.querySelectorAll('.partner-view');
+            views.forEach(view => view.classList.add('hidden'));
+                        const views2 = document.querySelectorAll('.funder-view');
+            views.forEach(view => view.classList.add('hidden'));
+            
+            const activeView = document.getElementById(viewId);
+            if (activeView) { 
+                activeView.classList.remove('hidden'); 
+            }
 
-                prevBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-                });
+            // Add the new view to our history stack (unless we are clicking 'Back')
+            if (!isBackAction && viewHistory[viewHistory.length - 1] !== viewId) {
+                viewHistory.push(viewId);
+            }
 
-                nextBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-                });
-
-                slider.addEventListener('scroll', updateActiveDot);
-                updateActiveDot(); // Trigger visual evaluation on load
+            // Show or hide the back button
+            const backBtn = document.getElementById('back-btn');
+            if (backBtn) {
+                // Hide if we are on the landing page OR if there is no history to go back to
+                if (viewId === 'view-landing' || viewHistory.length <= 1) {
+                    backBtn.classList.add('hidden');
+                } else {
+                    backBtn.classList.remove('hidden');
+                }
             }
         }
+
+        // 3. Add the logic for the Back button
+        function goBack() {
+            if (viewHistory.length > 1) {
+                viewHistory.pop(); // Remove the current view from the end of the array
+                const previousView = viewHistory[viewHistory.length - 1]; // Find the previous view
+                navigateToView(previousView, true); // Navigate to it, flagging it as a back action
+            }
+        }
+    </script>
+
+    <!-- Interaction Logic for Arrows and Pagination Dots -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('testimonial-slider');
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
+    const dotsContainer = document.getElementById('pagination-dots');
+    
+    // Find all the individual cards
+    const cards = Array.from(slider.children);
+    let dots = [];
+
+    // 1. Generate the Pagination Dots
+    cards.forEach((card, index) => {
+      const dot = document.createElement('button');
+      // Base styling for the dots
+      dot.className = 'w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 bg-gray-300';
+      dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+      
+      // Click event to scroll to the specific card
+      dot.addEventListener('click', () => {
+        // Calculate exact scroll position for the clicked card
+        const scrollPosition = card.offsetLeft - slider.offsetLeft;
+        slider.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+      });
+
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
     });
+
+    // 2. Logic to Highlight the Active Dot
+    const updateActiveDot = () => {
+      // Calculate which card is currently at the left edge of the slider
+      const scrollPosition = slider.scrollLeft;
+      const cardWidth = cards[0].offsetWidth + 24; // Width + 24px gap
+      const activeIndex = Math.round(scrollPosition / cardWidth);
+
+      dots.forEach((dot, index) => {
+        if (index === activeIndex) {
+          // Active dot styling (wider and indigo color)
+          dot.classList.remove('bg-gray-300', 'w-3');
+          dot.classList.add('bg-indigo-600', 'w-6');
+        } else {
+          // Inactive dot styling (standard circle and gray color)
+          dot.classList.remove('bg-indigo-600', 'w-6');
+          dot.classList.add('bg-gray-300', 'w-3');
+        }
+      });
+    };
+
+    // 3. Arrow Click Logic
+    const getScrollAmount = () => {
+      return cards[0].offsetWidth + 24; 
+    };
+
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+
+    // 4. Event Listeners for Scrolling
+    slider.addEventListener('scroll', updateActiveDot);
+    
+    // Set the initial active dot on page load
+    updateActiveDot();
+  });
+</script>
+
+<script>
+    // State flag to prevent the iframe load event from firing on page startup
+let funderFormSubmitted = false;
+
+/**
+ * Triggered when the user submits the form.
+ * We let the form submit naturally to the iframe, but we flag that the submission started.
+ */
+function handleFunderSubmission(event) {
+    funderFormSubmitted = true;
+    
+    // Optional: Show a loading state on your button here if desired
+    const submitBtn = event.target.querySelector('button[type="submit"]');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+    }
+}
+
+// Listen for the hidden iframe to load
+document.getElementById('sf-funder-frame').addEventListener('load', function() {
+    if (funderFormSubmitted) {
+        // Reset our submission flag
+        funderFormSubmitted = false;
+        
+        // 1. Switch to the thank-you view
+        navigateToView('view-thank-you');
+        
+        // 2. Reset the form and submit button for future submissions
+        const form = document.getElementById('funder-scheduling-form');
+        form.reset();
+        
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Request A Call';
+        }
+    }
+});
+
+/**
+ * Standard SPA view switcher (adjust this if you have a different implementation)
+ */
+function navigateToView(viewId) {
+    // Hide all views
+    const views = [
+        document.getElementById('view-funder-form'),
+        document.getElementById('view-thank-you'),
+        document.getElementById('view-landing') // Add any other view IDs here
+    ];
+    
+    views.forEach(view => {
+        if (view) view.classList.add('hidden');
+    });
+    
+    // Show the targeted view
+    const targetView = document.getElementById(viewId);
+    if (targetView) {
+        targetView.classList.remove('hidden');
+    }
+}
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const partnerForm = document.getElementById('partner-form');
+    
+    if (partnerForm) {
+        partnerForm.addEventListener('submit', function() {
+            // We do NOT use e.preventDefault() here. 
+            // We want the form to submit to Salesforce through the iframe.
+            
+            // Give the browser a tiny split-second to initiate the POST request,
+            // then smoothly route the user to the thank-you screen.
+            setTimeout(() => {
+                navigateToView('view-thank-you');
+                partnerForm.reset();
+            }, 150);
+        });
+    }
+});
 </script>
 </body>
 </html>

@@ -1476,25 +1476,5 @@ function navigateToView(viewId) {
     }
 }
 </script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const partnerForm = document.getElementById('partner-form');
-    
-    if (partnerForm) {
-        partnerForm.addEventListener('submit', function() {
-            // We do NOT use e.preventDefault() here. 
-            // We want the form to submit to Salesforce through the iframe.
-            
-            // Give the browser a tiny split-second to initiate the POST request,
-            // then smoothly route the user to the thank-you screen.
-            setTimeout(() => {
-                navigateToView('view-thank-you');
-                partnerForm.reset();
-            }, 150);
-        });
-    }
-});
-</script>
 </body>
 </html>

@@ -649,13 +649,7 @@
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-custom-card border border-gray-100 p-8 max-w-3xl mx-auto">
-                    <!-- 1. Added id="partner-form" and 2. Added target="partner-submit-iframe" -->
-                    <form id="partner-form" 
-                        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" 
-                        method="POST" 
-                        target="partner-submit-iframe" 
-                        class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        
+                    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <input type="hidden" name="oid" value="00D07000000ZYWX">
                         <input type="hidden" name="retURL" value="http://naleko.com/success-callback-hidden">
                         <input type="hidden" name="00NTt00000IlU8L" value="Partner_Inquiry">
@@ -719,9 +713,6 @@
                     </form>
                 </div>
             </section>
-
-            <!-- 3. Hidden iframe to intercept Salesforce redirect -->
-            <iframe name="partner-submit-iframe" id="partner-submit-iframe" class="hidden" style="display: none;"></iframe>
         </div>
 
         <div id="view-funder-form" class="partner-view hidden">
@@ -1475,26 +1466,6 @@ function navigateToView(viewId) {
         targetView.classList.remove('hidden');
     }
 }
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    const partnerForm = document.getElementById('partner-form');
-    
-    if (partnerForm) {
-        partnerForm.addEventListener('submit', function() {
-            // We do NOT use e.preventDefault() here. 
-            // We want the form to submit to Salesforce through the iframe.
-            
-            // Give the browser a tiny split-second to initiate the POST request,
-            // then smoothly route the user to the thank-you screen.
-            setTimeout(() => {
-                navigateToView('view-thank-you');
-                partnerForm.reset();
-            }, 150);
-        });
-    }
-});
 </script>
 </body>
 </html>

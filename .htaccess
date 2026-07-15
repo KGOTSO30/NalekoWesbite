@@ -32,7 +32,7 @@ RewriteRule ^success-callback-hidden/$ /Web-Pages/SuccessCallBack.html [L]
 RewriteRule ^what-we-know/?$ /index.html [L]
 RewriteRule ^naleko-campaigns/$ /Web-Pages/CampaignDraft.html [L]
 
-RewriteRule ^flagship/$ /Web-Pages/WhoWeAre.html#flags [L,NE]
+
 
 
 # ----------------------------------------------------------------------
@@ -52,3 +52,5 @@ RewriteRule ^testing/partner-with-us/$ /Web-Pages/Testing/PartnerWithUs-Test.htm
 RewriteRule ^testing/book-a-demo/$ /Web-Pages/Testing/BookADemo-Test.html [L]
 RewriteRule ^testing/success-callback-hidden/$ /Web-Pages/Testing/SuccessCallBack-Test.html [L]
 RewriteRule ^testing/naleko-campaigns/$ /Web-Pages/Testing/CampaignDraft-Test.html [L]
+
+RewriteRule ^flagship/$ /Web-Pages/WhoWeAre.html#flags [L,NE]

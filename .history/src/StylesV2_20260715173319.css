@@ -387,26 +387,3 @@ button.bg-naleko-dark-blue:hover{
 
     border-color:#FFFFFF !important;
 }
-
-
-/* Main section titles */
-
-h1,
-h2,
-.section-title,
-.page-title,
-.hero-title,
-.text-naleko-dark-blue {
-
-    background: linear-gradient(
-        90deg,
-        #6EC6F5 0%,
-        #A78BFA 35%,
-        #C450E8 65%,
-        #D020D0 100%
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}

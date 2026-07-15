@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+     <link href="/src/StylesFinal.css" rel="stylesheet">
+     <link href="/src/StylesV2.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen">
+                          <!--  Navigation Bar Begins Here-->
+  <header x-data="{ open: false}"
+        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+       
+        class="fixed w-full top-0 left-0 z-50 header-background-event text-white py-6 px-4 transition-all duration-300 ease-in-out">
+    <div class="container mx-auto relative  text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+                class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+
+        <button id="menu-btn" class="md:hidden block text-white absolute top-7 right-4 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        
+            <nav id="menu" :class="{'hidden': !open, 'flex': open}"
+                 class="hidden bg-black md:bg-transparent md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                        gap-x-6 gap-y-2 text-sm md:text-base header 
+                        absolute md:static top-full left-0 w-full md:w-auto 
+                        p-4 md:p-0 text-white">
+                <a href="/testing/about-us/" class="block hover:text-blue-300 transition duration-300">Who we are</a>
+                <a href="/testing/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
+                <a href="/testing/who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
+                <a href="/testing/contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
+                <a href="/testing/corporate-training/" class="block hover:text-blue-300 transition duration-300">Corp Training</a>
+                <a href="/testing/naleko-academy/" class="block hover:text-blue-300 transition duration-300">Academy</a>
+                <a href="/testing/girls-in-tech/" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
+                <a href="/testing/events/" class="block hover:text-blue-300 transition duration-300">Events</a>
+                <a href="/testing/partner-with-us/" class="block text-blue-300 border-b-2 border-blue-300  transition duration-300">Partner With Us</a>
+                <a href="/testing/book-a-demo/" class="block text-blue-300 border-b-2 border-blue-300 transition duration-300">Book a demo</a>
+                <div class="flex space-x-2 ml-4">
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+    </div>
+</header>
+                <!--  Navigation Bar ENDS Here-->
+
+    
+<main class="flex-grow p-4 mt-40">
+
+<section class="container mx-auto py-2 px-4 text-center " >
+        <h2 id="Events" class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue mb-4">Naleko Golf Day</h2>
+        <p class="text-lg md:text-xl font-black text-center text-naleko-dark-blue mb-4 max-w-2xl mx-auto">Where Business Meets Purpose.</p>
+        <p class="text-base font-normal text-gray-800 mb-16 text-center max-w-7xl mx-auto">Join us for a day of golf, meaningful connections, and shared values.</p>
+        <div class="max-w-7xl mx-auto text-base text-gray-800 leading-relaxed text-justify">
+        </div>
+</section>
+
+<!--Carousel Golf Images Starts Here-->
+
+    <section class="relative mb-12">
+    <div class="carousel-container relative w-full overflow-hidden">
+        <div class="carousel-track flex">
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-80 object-cover" src="/src/GolfDayPictures/_MG_7735 Copy.JPG"
+                         alt="Group golf photo Naleko close co"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-80 object-cover" src="/src/GolfDayPictures/_MG_7488.JPG"
+                         alt="Carousel Image of Junior Group in White"/>
+                </div>
+            </div>
+
+             <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-80 object-cover" src="/src/GolfDayPictures/_MG_7632.JPG"
+                         alt="Carousel Image of Lawrence Swinging"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-80 object-cover" src="/src/GolfDayPictures/_MG_7419 copy.JPG"
+                         alt="Carousel Image of Intern Girls"/>
+                </div>
+            </div>
+
+             <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-80 object-cover" src="/src/GolfDayPictures/_MG_7677.JPG"
+                         alt="Carousel Image of Intern Group"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-80 object-cover" src="/src/GolfDayPictures/_MG_7413.JPG"
+                         alt="Carousel Image of Gents"/>
+                </div>
+            </div>
+           
+           
+
+        </div>
+    </div>
+    <button class="carousel-prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 -ml-4">
+        &#10094;</button>
+    <button class="carousel-next absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 -mr-4">
+        &#10095;</button>
+</section>
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
+
+    // Make sure slideWidth is calculated after images are loaded or layout is stable
+    // It's safer to calculate it inside updateCarousel or on window resize if needed
+    let slideWidth = slides[0].offsetWidth; 
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        // Recalculate slideWidth in case of dynamic resizing (e.g., responsive design)
+        // This is a good practice if your layout might change.
+        slideWidth = slides[0].offsetWidth; 
+        carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth * 3}px)`; // Move by 3 slides
+    }
+
+    // Initial update to ensure correct positioning on load
+    updateCarousel(); 
+
+    prevButton.addEventListener('click', () => {
+        // Calculate total number of "pages" of 3 slides
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalPages - 1;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    });
+
+    // Auto-advance carousel (optional)
+    setInterval(() => {
+        const totalPages = Math.ceil(slides.length / 3);
+        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
+        updateCarousel();
+    }, 5000); // Change slide every 5 seconds
+
+    // Optional: Add a resize listener to re-calculate slideWidth
+    window.addEventListener('resize', updateCarousel);
+});
+</script>
+
+
+<!--Carousel Golf Images Ends Here-->
+
+
+<section class="container mx-auto py-2 px-4 text-center " >
+            <h2 id="Events" class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue mb-4">About the Golf Day</h2>
+            <p class="text-base font-normal text-gray-800 mb-2 text-center max-w-7xl mx-auto"><b>Naleko Golf Day</b> is a premier networking and impact-driven event that brings together business leaders, partners, and community builders for a day of meaningful connection through sport. Hosted by Naleko, this exclusive golf day is more than a game - it is a platform to build strategic relationships, celebrate excellence, and drive sustainable economic and social impact.</p>
+            <p class="text-base font-normal text-gray-800 mb-16 text-center max-w-7xl mx-auto">Whether you join us as a golfer, sponsor, or partner, the Naleko Golf Day invites you to be part of a vision where business, leadership, and impact come together.</p>
+
+            <body class="bg-white min-h-screen flex items-center justify-center">
+</section>
+
+<!-- Scrolling Sponsorship Logos Marquee -->
+ <section class="w-full overflow-hidden mb-8 mt-2" >
+    <div class="scrolling-sponsors">
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/AnalyticHive Logo.png" alt="Salesforce Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Icebolethu Logo.png" alt="AWS Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Marula Escapes Logo.png" alt="Microsoft Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/lavo (2).png" alt="SAP Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Brace Holdings.png" alt="">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Moiponi Morgan Logo.png" alt="AWS Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Randela Wine Logo.png" alt="Salesforce Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/I-Travel Logo.png" alt="AWS Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Coconut Wellness Spa Logo.png" alt="Microsoft Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/House of Azari Logo.png" alt="SAP Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Manana Wines Logo.png" alt="">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/ETS Innovations Logo.png" alt="AWS Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/INITD Logo.png" alt="AWS Logo">
+      </div>
+
+
+
+
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/AnalyticHive Logo.png" alt="Salesforce Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Icebolethu Logo.png" alt="AWS Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Marula Escapes Logo.png" alt="Microsoft Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/lavo (2).png" alt="SAP Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Brace Holdings.png" alt="">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Moiponi Morgan Logo.png" alt="AWS Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Randela Wine Logo.png" alt="Salesforce Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/I-Travel Logo.png" alt="AWS Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Coconut Wellness Spa Logo.png" alt="Microsoft Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/House of Azari Logo.png" alt="SAP Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/Manana Wines Logo.png" alt="">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/ETS Innovations Logo.png" alt="AWS Logo">
+      </div>
+      <div class="sponsor-item">
+        <img src="/src/Icons/SponsorshipLogo/INITD Logo.png" alt="AWS Logo">
+      </div>
+</section>
+
+     <!--Sponsor Carousel Ends Here-->
+
+<section class="container mx-auto mt-10 py-2 px-4 text-center">
+  <!-- Become a Sponsor Button -->
+  <button
+    onclick="openSponsorModal()"
+    class="inline-block bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition duration-300"
+  >
+    Become a Sponsor
+  </button>
+
+  <!-- Modal Overlay -->
+  <div
+    id="sponsorModal"
+    class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+  >
+    <!-- Modal Content -->
+    <div class="bg-white rounded-2xl w-full max-w-md p-6 shadow-2xl relative">
+      <!-- Close Button -->
+      <button
+        onclick="closeSponsorModal()"
+        class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl"
+      >
+        &times;
+      </button>
+
+      <!-- Salesforce Web-to-Lead Form (Production) -->
+<form id="sponsorForm"
+  action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX"
+  method="POST"
+  target="hidden_iframe"
+  onsubmit="showThankYou()"
+  class="space-y-4"
+>
+  <!-- Required Salesforce Hidden Fields -->
+  <input type="hidden" name="oid" value="00D07000000ZYWX">
+  <input type="hidden" name="retURL" value="http://">
+
+  <!-- Optional Debug (uncomment if needed) -->
+  <!--
+  <input type="hidden" name="debug" value="1">
+  <input type="hidden" name="debugEmail" value="admin@naleko.com">
+  -->
+
+  <!-- First Name -->
+  <input type="text" name="first_name" id="first_name" placeholder="First Name"
+    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required />
+
+  <!-- Last Name -->
+  <input type="text" name="last_name" id="last_name" placeholder="Last Name"
+    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required />
+
+  <!-- Email -->
+  <input type="email" name="email" id="email" placeholder="Email"
+    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required />
+
+  <!-- Phone -->
+  <input type="tel" name="phone" id="phone" placeholder="Phone"
+    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required />
+
+  <!-- Company -->
+  <input type="text" name="company" id="company" placeholder="Company"
+    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
+
+  <!-- Area of Sponsorship (Custom Field) -->
+  <select name="00NTt00000GibaX" id="00NTt00000GibaX" title="Select Area of Sponsorship"
+    class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+    <option value="">--Select Area of Sponsorship--</option>
+    <option value="Hole Sponsor">Hole Sponsor</option>
+    <option value="Cart Sponsor">Cart Sponsor</option>
+    <option value="Branding">Branding</option>
+    <option value="Prize Sponsor">Prize Sponsor</option>
+  </select>
+
+  <!-- Interested Checkbox (Custom Field) -->
+  <label class="flex items-center space-x-2 text-sm">
+    <input type="checkbox" id="00NTt00000GibnR" name="00NTt00000GibnR" value="1" class="accent-green-600" />
+    <span>I am interested in becoming a sponsor</span>
+  </label>
+
+  <!-- Submit Button -->
+  <button type="submit"
+    class="w-full bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition">
+    Submit
+  </button>
+</form>
+
+<!-- Thank You Message -->
+<div id="thankYouMessage" class="hidden text-center mt-4">
+  <h2 class="text-3xl text-naleko-dark-blue font-bold">Thank You!</h2>
+  <p>We've received your submission and will contact you soon.</p>
+</div>
+
+<!-- Hidden iframe to prevent page reload -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<!-- JavaScript -->
+<script>
+  const sponsorModal = document.getElementById("sponsorModal");
+
+  function openSponsorModal() {
+    sponsorModal.classList.remove("hidden");
+    sponsorModal.classList.add("flex");
+  }
+
+  function closeSponsorModal() {
+    sponsorModal.classList.add("hidden");
+    sponsorModal.classList.remove("flex");
+
+    // Reset form and thank you message when closing
+    document.getElementById('sponsorForm').classList.remove('hidden');
+    document.getElementById('thankYouMessage').classList.add('hidden');
+    document.getElementById('sponsorForm').reset();
+  }
+
+  sponsorModal.addEventListener("click", function(e) {
+    if(e.target === sponsorModal) closeSponsorModal();
+  });
+
+  document.addEventListener("keydown", function(e) {
+    if(e.key === "Escape" && !sponsorModal.classList.contains("hidden")) {
+      closeSponsorModal();
+    }
+  });
+
+  function showThankYou() {
+    document.getElementById('sponsorForm').classList.add('hidden');
+    document.getElementById('thankYouMessage').classList.remove('hidden');
+  }
+</script>
+
+
+  <!-- Scoped CSS -->
+  <style>
+    /* Only affects inputs inside the sponsor modal */
+    #sponsorModal .sponsor-input {
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+    }
+  </style>
+</section>
+    
+
+<!--TESTING-->
+
+
+  <!-- Why Attend-->
+<section id="vision" class="container mx-auto py-6 px-4">
+  <h2 id="Events"
+      class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue mb-4">
+    Why Attend
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-6xl mx-auto justify-items-center">
+
+    <div id="card-innovation" class="flip-card cursor-pointer w-full max-w-xs">
+      <div class="flip-card-inner">
+        <div class="flip-card-front bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center">
+          <img src="/src/Icons/WhyAttend/Screenshot 2026-01-15 130645.png" alt="Innovation Icon" class="mb-4 w-6 h-6">
+          <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">
+            High-level networking with decision-makers.
+          </h3>
+        </div>
+        <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+        </div>
+      </div>
+    </div>
+
+    <div id="card-empowerment" class="flip-card cursor-pointer w-full max-w-xs">
+      <div class="flip-card-inner">
+        <div class="flip-card-front bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center">
+          <img src="/src/Icons/WhyAttend/Screenshot 2026-01-15 130720.png" alt="Learning Icon" class="mb-4 w-6 h-6">
+          <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">
+            Brand exposure in a premium setting.
+          </h3>
+        </div>
+        <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+        </div>
+      </div>
+    </div>
+
+    <div id="card-diversity" class="flip-card cursor-pointer w-full max-w-xs">
+      <div class="flip-card-inner">
+        <div class="flip-card-front bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center">
+          <img src="/src/Icons/WhyAttend/Screenshot 2026-01-15 130735.png" alt="Diversity Icon" class="mb-4 w-6 h-6">
+          <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">
+            Relaxed business conversations on the course
+          </h3>
+        </div>
+        <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+        </div>
+      </div>
+    </div>
+
+    <div id="card-customer" class="flip-card cursor-pointer w-full max-w-xs">
+      <div class="flip-card-inner">
+        <div class="flip-card-front bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center">
+          <img src="/src/Icons/WhyAttend/Screenshot 2026-01-15 130746.png" alt="Customer Icon" class="mb-4 w-6 h-6">
+          <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">
+            Alignment with Naleko’s values-driven leadership
+          </h3>
+        </div>
+        <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+   <section class="container mx-auto py-16 px-4 text-center">
+        <p class="text-lg text-gray-800 mb-8">Our sponsorship packages deliver premier visibility and direct engagement with key stakeholders across all phases of the event.</p>
+        
+       <!-- Button -->
+<a href="#" onclick="openFaqModal()" class="inline-block bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition duration-300">
+  Enquire About Sponsorship
+</a>
+
+<!-- FAQ Modal -->
+<div id="faqModal" class="fixed inset-0 hidden bg-black/60 z-50 overflow-auto">
+  <div class="relative mx-auto my-8 bg-white rounded-3xl max-w-xl w-full p-6 shadow-lg max-h-[90vh] overflow-y-auto">
+    <!-- Close button -->
+    <button onclick="closeFaqModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 font-bold text-xl">&times;</button>
+
+    <h2 class="text-2xl font-bold text-naleko-dark-blue mb-4">Frequently Asked Questions</h2>
+
+    <div class="space-y-3">
+
+      <!-- 1 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          1. What is the Naleko Golf Day about?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>The Naleko Golf Day is a purpose-led business and networking event designed to bring together leaders, partners, and change-makers to build meaningful relationships while supporting economic empowerment, innovation, and sustainable growth. It is where business, values, and impact meet.</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          2. Why does Naleko host a Golf Day?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>Golf creates a unique environment for authentic connection and trust-building. Naleko leverages this platform to foster collaboration, open doors to opportunity, and mobilise resources toward initiatives that create long-term value for businesses and communities.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          3. Who typically attends the Naleko Golf Day?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>Attendees include:</p>
+          <ul class="list-disc pl-6 mt-1 text-black-700">
+            <li>Business executives and entrepreneurs</li>
+            <li>Industry and government stakeholders</li>
+            <li>Investors, partners, and professionals</li>
+          </ul>
+          <p class="mt-2">All participants share a common desire to build responsibly, lead with purpose, and contribute to sustainable economic progress.</p>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          4. How does sponsorship create real impact?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>Sponsorship directly supports Naleko’s mission by enabling:</p>
+          <ul class="list-disc pl-6 mt-1 text-gray-700">
+            <li>Enterprise and skills development initiatives</li>
+            <li>Innovation-driven projects</li>
+            <li>Platforms that connect opportunity to capability</li>
+          </ul>
+          <p class="mt-2">Partners are not just sponsors - they become contributors to meaningful outcomes and measurable impact.</p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          5. What makes the Naleko Golf Day different from other golf events?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>Unlike traditional corporate golf days, Naleko’s event is:</p>
+          <ul class="list-disc pl-6 mt-1 text-gray-700">
+            <li>Purpose-driven rather than transactional</li>
+            <li>Relationship-focused rather than purely promotional</li>
+            <li>Anchored in values, integrity, and long-term impact</li>
+          </ul>
+          <p class="mt-2">Every partnership is intentional and aligned to Naleko’s broader vision.</p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          6. How are sponsors recognised?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>Sponsors receive visibility through:</p>
+          <ul class="list-disc pl-6 mt-1 text-gray-700">
+            <li>Branded on-course and event materials</li>
+            <li>Digital and post-event communication</li>
+            <li>Opportunities for authentic engagement rather than passive advertising</li>
+          </ul>
+          <p class="mt-2">Recognition is designed to honour contribution while maintaining the integrity of the event.</p>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          7. Can sponsorships be tailored to our organisation’s values?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>Yes. Naleko offers bespoke sponsorship packages that align with each partner’s strategic goals, ESG priorities, and transformation objectives, ensuring alignment between purpose and business outcomes.</p>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          8. What legacy does the Naleko Golf Day aim to create?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>The Golf Day aims to build a legacy of:</p>
+          <ul class="list-disc pl-6 mt-1 text-gray-700">
+            <li>Empowered entrepreneurs and enterprises</li>
+            <li>Strong, values-led partnerships</li>
+            <li>Sustainable economic participation</li>
+          </ul>
+          <p class="mt-2">It is about planting seeds that grow far beyond the day itself.</p>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          9. How does Naleko ensure accountability and integrity?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>Naleko is committed to ethical leadership, transparency, and responsible stewardship of resources. Partnerships are built on trust, shared values, and a mutual commitment to doing business with purpose.</p>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="border rounded-lg">
+        <button onclick="toggleFaq(this)" class="faq-btn">
+          10. How can our organisation get involved?
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="faq-content">
+          <p>Organisations can participate as sponsors, partners, or players. Each engagement is designed to create value, foster connection, and contribute to Naleko’s mission of building purposeful, sustainable growth.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+.faq-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  font-weight: 600;
+  background: white;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 18px;
+  color: #555;
+}
+
+.faq-content p {
+  padding: 12px 0 18px 0;
+  margin: 0;
+}
+
+.arrow {
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+</style>
+
+<!-- JS -->
+<script>
+function openFaqModal() {
+  document.getElementById('faqModal').classList.remove('hidden');
+}
+
+function closeFaqModal() {
+  document.getElementById('faqModal').classList.add('hidden');
+}
+
+function toggleFaq(button) {
+  const content = button.nextElementSibling;
+  const arrow = button.querySelector('.arrow');
+
+  if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+    content.style.maxHeight = "0px";
+    arrow.classList.remove('rotate');
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    arrow.classList.add('rotate');
+  }
+}
+</script>
+        <a href="/contact-us/" class="inline-block bg-naleko-dark-blue text-white text-xl font-semibold px-8 py-3 rounded-xl hover:bg-indigo-700 transition duration-300">Sponsorship Packages</a>
+    </section>
+
+</main>
+
+
+                <!--  Site Footer Begins Here -->
+
+    
+    <footer class=" bg-naleko-dark-blue text-white py-8 px-4 p-4"> <!-- Need five columns-->
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                 <div class="flex items-center mb-4">
+                <!-- Cloud Icon -->
+                <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
+                </svg>
+                <h3 class="text-4xl header">Naleko</h3>
+            </div>
+                <p class="text-sm text-gray-300 mb-4 py-2">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+                <div class="flex space-x-4">
+                   <!-- LinkedIn -->
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
+                    </svg>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="TikTok">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
+                    </svg>
+                    </a>
+
+                     <!-- Instagram -->
+                    <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.25 2.415.415a4.9 4.9 0 0 1 1.695 1.06 4.9 4.9 0 0 1 1.06 1.695c.165.455.361 1.244.415 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.25 1.96-.415 2.415a4.9 4.9 0 0 1-1.06 1.695 4.9 4.9 0 0 1-1.695 1.06c-.455.165-1.244.361-2.415.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.25-2.415-.415a4.9 4.9 0 0 1-1.695-1.06 4.9 4.9 0 0 1-1.06-1.695c-.165-.455-.361-1.244-.415-2.415-.058-1.266-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.25-1.96.415-2.415a4.9 4.9 0 0 1 1.06-1.695 4.9 4.9 0 0 1 1.695-1.06c.455-.165 1.244-.361 2.415-.415 1.266-.058 1.65-.07 4.85-.07zm0 1.8c-3.153 0-3.515.012-4.757.068-.987.046-1.518.205-1.87.342a3.1 3.1 0 0 0-1.136.736 3.1 3.1 0 0 0-.736 1.136c-.137.352-.296.883-.342 1.87-.056 1.242-.068 1.604-.068 4.757s.012 3.515.068 4.757c.046.987.205 1.518.342 1.87.17.44.42.83.736 1.136.306.316.696.566 1.136.736.352.137.883.296 1.87.342 1.242.056 1.604.068 4.757.068s3.515-.012 4.757-.068c.987-.046 1.518-.205 1.87-.342a3.1 3.1 0 0 0 1.136-.736 3.1 3.1 0 0 0 .736-1.136c.137-.352.296-.883.342-1.87.056-1.242.068-1.604.068-4.757s-.012-3.515-.068-4.757c-.046-.987-.205-1.518-.342-1.87a3.1 3.1 0 0 0-.736-1.136 3.1 3.1 0 0 0-1.136-.736c-.352-.137-.883-.296-1.87-.342-1.242-.056-1.604-.068-4.757-.068zm0 3.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 1.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8zm6.4-.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
+                    </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 hover:text-white transition duration-300" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
+                    </svg>
+                    </a>
+
+                   
+
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#WhoWeAre" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                    <li><a href="#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                </ul>
+            </div>
+
+            
+                    <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Contact Us</h3>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <p class="text-gray-300">admin@naleko.com</p>
+                </div>
+              <div class="flex items-center mb-2">
+                <!-- Phone Icon -->
+                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
+                </svg>
+                <p class="text-gray-300">+27 11 100 7632</p>
+            </div>
+                <div class="flex items-center mb-2">
+                <!-- Location Icon -->
+                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                </svg>
+                <p class="text-gray-300">191 Bekker RD, Midrand, 1686</p>
+            </div>
+                 
+            </div>
+            
+
+             <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                 <div class="flex items-center">
+                   <h3 class="text-xl font-semibold py-2 md:mx-12">Scan Me</h3>
+                    
+                </div>
+                <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder" class="mt-0 w-13 h-18 scale-75">
+
+                
+               
+            </div>
+            
+            
+        </div>
+        <div class="container mx-auto text-center text-gray-400 text-sm mt-8 pt-4 border-t border-gray-700">
+            COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
+        </div>
+    </footer>
+
+                <!--  Site footer Ends Here -->
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all elements with the class 'flip-card'
+        const flipCards = document.querySelectorAll('.flip-card');
+
+        // Loop through each flip card and add a click event listener
+        flipCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Toggle the 'flipped' class on the card
+                card.classList.toggle('flipped');
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>

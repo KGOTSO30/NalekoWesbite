@@ -1,0 +1,29 @@
+name: Auto-Request Merge to Testing
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - Testing
+      - master
+      - Staging-Area
+
+jobs:
+  auto-pull-request:
+    name: Create PR to Testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Create Pull Request via GitHub CLI
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Uses the GitHub CLI to create a PR. 
+          # The '|| true' ensures the action doesn't fail if a PR already exists for this branch.
+          gh pr create \
+            --base Testing \
+            --head ${{ github.ref_name }} \
+            --title "QA Request: Merge ${{ github.ref_name }} into Testing" \
+            --body "Automated PR triggered by push to sandbox branch ${{ github.ref_name }}." || true

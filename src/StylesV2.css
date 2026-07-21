@@ -383,9 +383,11 @@ button.bg-naleko-dark-blue{
 a.bg-naleko-dark-blue:hover,
 button.bg-naleko-dark-blue:hover{
 
-    background:#B800B8 !important;
+    background: #6A006A !important;
 
     border-color:#FFFFFF !important;
+
+    color: white !important;
 }
 
 

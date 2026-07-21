@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naleko Training</title>
+    <title>Naleko Training - Design 3</title>
 
     <link href="/src/StylesFinal.css" rel="stylesheet">
     <link href="/src/output.css" rel="stylesheet"> 
@@ -539,11 +539,12 @@
                         gap-x-6 gap-y-2 text-sm md:text-base header 
                         absolute md:static top-full left-0 w-full md:w-auto 
                         p-4 md:p-0 text-white">
-                <a href="/about-us/" class="block hover:text-blue-300 transition duration-300">About Us</a>
+                <a href="/about-us/" class="block hover:text-blue-300 transition duration-300">Who we are</a>
                 <a href="/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
                 <a href="/who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
                 <a href="/contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
-                <a href="/training/" class="block hover:text-blue-300 transition duration-300">Training</a>
+                <a href="/corporate-training/" class="block hover:text-blue-300 transition duration-300">Corp Training</a>
+                <a href="/naleko-academy/" class="block hover:text-blue-300 transition duration-300">Academy</a>
                 <a href="/girls-in-tech/" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
                 <a href="/events/" class="block hover:text-blue-300 transition duration-300">Events</a>
                 <a href="/partner-with-us/" class="block text-blue-300 border-b-2 border-blue-300  transition duration-300">Partner With Us</a>
@@ -563,21 +564,15 @@
             </nav>
         </div>
     </header>
-<main class="flex-grow p-4 mt-40">
-       
+
+        <h1 class="main-title">Welcome To Naleko Training</h1>
+        <p class="subtitle">Your path to tech success!</p>
+        <div class="intro-text">
+            <p>Start your journey with Naleko Academy, where learning meets innovation. Whether you're a recent graduate launching your career or a professional looking to sharpen your tech skills, we're here to support your growth.</p>
+            <p>At Naleko, we nurture talent, encourage curiosity, and build a space where everyone can thrive. Our Academy is more than a learning platform; it's a vibrant community of tech enthusiasts shaping the future together.</p>
+        </div>
       
-               <section class="container mx-auto py-16 px-4 text-center">
-            <h1 id="CorpTrain" class="text-3xl md:text-4xl font-black text-naleko-dark-blue mb-4">Welcome To Naleko Training</h1>
-            <p class="text-lg md:text-xl font-black text-naleko-dark-blue mb-4 max-w-2xl mx-auto">Your path to tech success!</p>
-            <div class="max-w-7xl mx-auto text-center text-black text-base font-normal font-['Inter'] mt-8">
-                Start your journey with Naleko Academy, where learning meets innovation. Whether you're a recent graduate launching your career or a professional looking to sharpen your tech skills, we're here to support your growth.
-                <br/><br/>
-                At Naleko, we nurture talent, encourage curiosity, and build a space where everyone can thrive. Our Academy is more than a learning platform; it's a vibrant community of tech enthusiasts shaping the future together.
-            </div>
-            
-        </section>
-
-
+      
         <section class="relative mb-12">
     <div class="carousel-container relative w-full overflow-hidden">
         <div class="carousel-track flex">
@@ -702,7 +697,7 @@
 </div>
         </div>
     </section>
-</main>
+
     <!-- GLOBAL FOOTER -->
     <footer class="bg-naleko-dark-blue text-white py-8 px-4 p-4">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -846,53 +841,5 @@
 }
 
     </script>
-
-    <script>
- document.addEventListener('DOMContentLoaded', function () {
-    const carouselTrack = document.querySelector('.carousel-track');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.querySelector('.carousel-prev');
-    const nextButton = document.querySelector('.carousel-next');
-
-    // Make sure slideWidth is calculated after images are loaded or layout is stable
-    // It's safer to calculate it inside updateCarousel or on window resize if needed
-    let slideWidth = slides[0].offsetWidth; 
-
-    let currentIndex = 0;
-
-    function updateCarousel() {
-        // Recalculate slideWidth in case of dynamic resizing (e.g., responsive design)
-        // This is a good practice if your layout might change.
-        slideWidth = slides[0].offsetWidth; 
-        carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth * 3}px)`; // Move by 3 slides
-    }
-
-    // Initial update to ensure correct positioning on load
-    updateCarousel(); 
-
-    prevButton.addEventListener('click', () => {
-        // Calculate total number of "pages" of 3 slides
-        const totalPages = Math.ceil(slides.length / 3);
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalPages - 1;
-        updateCarousel();
-    });
-
-    nextButton.addEventListener('click', () => {
-        const totalPages = Math.ceil(slides.length / 3);
-        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
-        updateCarousel();
-    });
-
-    // Auto-advance carousel (optional)
-    setInterval(() => {
-        const totalPages = Math.ceil(slides.length / 3);
-        currentIndex = (currentIndex < totalPages - 1) ? currentIndex + 1 : 0;
-        updateCarousel();
-    }, 5000); // Change slide every 5 seconds
-
-    // Optional: Add a resize listener to re-calculate slideWidth
-    window.addEventListener('resize', updateCarousel);
-});
-</script>
 </body>
 </html>

@@ -53,4 +53,3 @@ RewriteRule ^testing/partner-with-us/$ /Web-Pages/Testing/PartnerWithUs-Test.htm
 RewriteRule ^testing/book-a-demo/$ /Web-Pages/Testing/BookADemo-Test.html [L]
 RewriteRule ^testing/success-callback-hidden/$ /Web-Pages/Testing/SuccessCallBack-Test.html [L]
 RewriteRule ^testing/naleko-campaigns/$ /Web-Pages/Testing/CampaignDraft-Test.html [L]
-RewriteRule ^testing/training/$ /Web-Pages/CorporateLearning.html [L]

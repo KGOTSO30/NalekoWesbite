@@ -41,18 +41,7 @@ RewriteRule ^training/$ /Web-Pages/CorporateLearning.html [L]
 # Not linked anywhere on the site.
 # ----------------------------------------------------------------------
 
-RewriteRule ^testing/about-us/$ /Web-Pages/Testing/WhoWeAre-Test.html [L]
-RewriteRule ^testing/what-we-do/$ /Web-Pages/Testing/WhatWeDo-Test.html [L]
-RewriteRule ^testing/who-we-serve/$ /Web-Pages/Testing/WhoWeServe-Test.html [L]
-RewriteRule ^testing/contact-us/$ /Web-Pages/Testing/ContactUs-Test.html [L]
-RewriteRule ^testing/corporate-training/$ /Web-Pages/Testing/CorpTraining-Test.html [L]
-RewriteRule ^testing/naleko-academy/$ /Web-Pages/Testing/Academy-Test.html [L]
-RewriteRule ^testing/girls-in-tech/$ /Web-Pages/Testing/GirlsInTech-Test.html [L]
-RewriteRule ^testing/events/$ /Web-Pages/Testing/Events-Test.html [L]
-RewriteRule ^testing/partner-with-us/$ /Web-Pages/Testing/PartnerWithUs-Test.html [L]
-RewriteRule ^testing/book-a-demo/$ /Web-Pages/Testing/BookADemo-Test.html [L]
-RewriteRule ^testing/success-callback-hidden/$ /Web-Pages/Testing/SuccessCallBack-Test.html [L]
-RewriteRule ^testing/naleko-campaigns/$ /Web-Pages/Testing/CampaignDraft-Test.html [L]
+
 RewriteRule ^testing/training/$ /Web-Pages/CorporateLearning.html [L]
 RewriteRule ^testing/about-us/$ /Web-Pages/Testing/Web-Pages/WhoWeAre-Test.html [L]
 RewriteRule ^testing/what-we-do/$ /Web-Pages/WhatWeDo-Test.html [L]

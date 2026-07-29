@@ -347,149 +347,73 @@
 
 
   <!-- STATE 4: EVENT HIGHLIGHTS (After 6 Nov 2026, 16:30) -->
-<!-- STATE 4: EVENT HIGHLIGHTS (After 6 Nov 2026, 16:30) -->
-<div id="state-highlights" class="relative p-6 overflow-hidden transition-opacity duration-500 bg-white border border-purple-100 shadow-xl md:p-10 event-state-card rounded-3xl">
-  
-  <div class="grid items-start grid-cols-1 gap-8 lg:grid-cols-12">
-    
-    <!-- Left Column: Content & Event Highlights Gallery -->
-    <div class="space-y-6 text-left lg:col-span-7">
-      
-      <!-- Event Highlights Badge -->
-      <span class="inline-flex items-center px-4 py-1.5 text-xs font-bold tracking-widest text-white uppercase rounded-full shadow-sm bg-gradient-to-r from-purple-600 to-indigo-600">
-        ⭐ Event Highlights
-      </span>
-
-      <!-- Title -->
-      <h1 class="text-4xl font-black leading-tight md:text-5xl text-naleko-dark-blue">
-        NALEKO GOLF DAY 2026
-      </h1>
-
-      <!-- Thank You Block with WHeart Icon -->
-      <div class="flex items-start pt-1 space-x-4">
-        <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 border border-purple-200 rounded-full bg-purple-100/70">
-          <img src="/src/Icons/WHeart.png" alt="Thank You Heart" class="object-contain w-6 h-6">
+  <div id="state-highlights" class="hidden p-6 overflow-hidden transition-opacity duration-500 bg-white border border-purple-100 shadow-xl md:p-10 event-state-card rounded-3xl">
+    <div class="grid items-center grid-cols-1 gap-8 lg:grid-cols-12">
+      <div class="space-y-6 text-left lg:col-span-7">
+        <span class="inline-block px-4 py-2 text-xs font-bold tracking-widest text-white uppercase bg-purple-700 rounded-full shadow-sm">
+          ⭐ Event Highlights
+        </span>
+        <h1 class="text-4xl font-black leading-tight md:text-5xl text-naleko-dark-blue">
+          NALEKO GOLF DAY 2026
+        </h1>
+        <div class="space-y-2">
+          <h3 class="text-2xl font-extrabold text-gray-800">Thank you!</h3>
+          <p class="text-gray-600">What an incredible day of golf, networking and celebration. We appreciate all our players, partners, and sponsors for making Naleko Golf Day 2026 a huge success.</p>
         </div>
-        <div class="space-y-1">
-          <h3 class="text-2xl font-black text-gray-900">Thank you!</h3>
-          <p class="text-sm font-extrabold text-indigo-900">
-            What an incredible day of golf, networking and celebration.
-          </p>
-          <p class="text-xs leading-relaxed text-gray-600">
-            We appreciate all our players, partners and sponsors for making Naleko Golf Day 2026 a huge success.
-          </p>
+
+        <div class="p-6 border border-purple-200 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl">
+          <p class="mb-1 text-xs font-extrabold tracking-widest text-purple-700 uppercase">What's Next?</p>
+          <h4 class="text-xl font-black text-naleko-dark-blue">Save the Date! Naleko Golf Day 2027</h4>
+          <div class="flex flex-wrap gap-4 mt-3 text-sm font-bold text-gray-700">
+            <span>🗓️ 5 November 2027</span>
+            <span>📍 The Els Club at Copperleaf Golf Estate</span>
+          </div>
         </div>
       </div>
 
-      <!-- Event Highlights Row (4 Thumbnails with Icons) -->
-      <div class="pt-4">
-        <p class="mb-3 text-[11px] font-black tracking-widest text-purple-600 uppercase">
-          Event Highlights
-        </p>
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div class="h-full lg:col-span-5">
+        <div class="relative w-full h-[360px] lg:h-full min-h-[380px] rounded-3xl overflow-hidden shadow-md">
+          <img src="/src/GolfDayPictures/_MG_7735 Copy.JPG" alt="Golf Day Group Highlights" class="absolute inset-0 object-cover w-full h-full">
           
-          <!-- Highlight 1 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight1.jpg" alt="Great Moments Captured" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/Camera.png" alt="Camera Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Great Moments Captured</span>
-            </div>
+          <div class="absolute inset-y-0 w-20 pointer-events-none -left-1 sm:w-28 lg:w-36">
+            <svg viewBox="0 0 120 400" class="w-full h-full" preserveAspectRatio="none">
+              <path d="M 0,0 C 110,120 110,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-1)" opacity="0.35"/>
+              <path d="M 0,0 C 90,120 90,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-2)"/>
+              <path d="M 0,0 C 65,120 65,280 0,400 L 0,400 L 0,0 Z" fill="#FFFFFF"/>
+            </svg>
           </div>
-
-          <!-- Highlight 2 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight2.jpg" alt="Connections That Matter" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/People.png" alt="Connections Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Connections That Matter</span>
-            </div>
-          </div>
-
-          <!-- Highlight 3 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight3.jpg" alt="Winners Celebrated" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/Trophy.png" alt="Trophy Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Winners Celebrated</span>
-            </div>
-          </div>
-
-          <!-- Highlight 4 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight4.jpg" alt="Memories Shared" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/Star.png" alt="Star Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Memories Shared</span>
-            </div>
-          </div>
-
         </div>
       </div>
-
     </div>
 
-    <!-- Right Column: Hero Image with Curved Frame + Floating Save the Date Card -->
-    <div class="relative lg:col-span-5 h-full min-h-[420px] flex flex-col justify-between">
-      
-      <!-- Golfer Hero Image Frame -->
-      <div class="relative w-full h-[320px] lg:h-[380px] rounded-3xl overflow-hidden shadow-md">
-        <img src="/src/GolfDayPictures/_MG_7632.JPG" alt="Naleko Golf Day Highlights" class="absolute inset-0 object-cover w-full h-full">
-        
-        <!-- Curved Gradient Overlay -->
-        <div class="absolute inset-y-0 w-20 pointer-events-none -left-1 sm:w-28 lg:w-36">
-          <svg viewBox="0 0 120 400" class="w-full h-full" preserveAspectRatio="none">
-            <path d="M 0,0 C 110,120 110,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-1)" opacity="0.35"/>
-            <path d="M 0,0 C 90,120 90,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-2)"/>
-            <path d="M 0,0 C 65,120 65,280 0,400 L 0,400 L 0,0 Z" fill="#FFFFFF"/>
-          </svg>
-        </div>
+    <!-- Integrated Bottom Icons Row -->
+    <div class="grid grid-cols-2 gap-2 pt-6 mt-8 border-t md:gap-4 border-purple-50 md:grid-cols-3 lg:grid-cols-6">
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Collab333.png" alt="Networking Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Corporate Networking</span>
       </div>
-
-      <!-- Floating Save the Date Card (Positioned Over Bottom Right) -->
-      <div class="relative z-10 p-5 mt-4 border border-purple-100 shadow-2xl lg:absolute lg:-bottom-4 lg:-left-12 lg:right-0 lg:mt-0 bg-white/95 backdrop-blur-md rounded-2xl">
-        <div class="flex items-start space-x-3">
-          <!-- Calendar Icon Badge -->
-          <div class="flex items-center justify-center flex-shrink-0 p-2.5 bg-blue-50 border border-blue-100 rounded-xl">
-            <img src="/src/Icons/Calender.png" alt="Calendar Icon" class="object-contain w-6 h-6">
-          </div>
-
-          <div class="w-full space-y-1">
-            <p class="text-[10px] font-black tracking-widest text-indigo-600 uppercase">
-              WHAT'S NEXT?
-            </p>
-            <h4 class="text-base font-black leading-tight text-gray-900">
-              Save the Date!
-            </h4>
-            <p class="text-sm font-black text-purple-600">
-              Naleko Golf Day 2027
-            </p>
-
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 text-[11px] font-bold text-gray-700">
-              <span class="flex items-center gap-1">🗓️ 5 November 2027</span>
-              <span class="flex items-center gap-1">📍 The Els Club at Copperleaf Golf Estate</span>
-            </div>
-
-            <p class="pt-2 text-[10px] font-semibold text-gray-500 border-t border-purple-50/60">
-              We look forward to seeing you again!
-            </p>
-          </div>
-        </div>
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/hole.png" alt="Course Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">18-Hole Course</span>
       </div>
-
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Trophy.png" alt="Trophy Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Team Competitions</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Medal.png" alt="Medal Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Prize Ceremony</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Food.png" alt="Lunch Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Lunch Included</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Handshake.png" alt="Sponsor Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Sponsor Exhibitions</span>
+      </div>
     </div>
-
   </div>
-
-</div>
 
 </section>
 
@@ -1310,110 +1234,159 @@ function toggleFaq(button) {
     });
 </script>
 
+/*
+  Event State Engine
+  ------------------
+  This script manages the display of different event states based on the current time.
+  It supports URL-based state overrides and mock date simulation for testing purposes.
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Schedule Timestamps (South Africa Timezone UTC+2)
+    const EVENT_DATE_STR      = '2026-11-06';
+    const REGISTRATION_START  = new Date(`${EVENT_DATE_STR}T07:30:00+02:00`).getTime();
+    const TEE_OFF_START       = new Date(`${EVENT_DATE_STR}T08:00:00+02:00`).getTime();
+    const EVENT_END           = new Date(`${EVENT_DATE_STR}T16:30:00+02:00`).getTime();
 
- <script>
-document.addEventListener('DOMContentLoaded', () => {
+    const stateUpcoming   = document.getElementById('state-upcoming');
+    const stateToday      = document.getElementById('state-today');
+    const stateProgress   = document.getElementById('state-progress');
+    const stateHighlights = document.getElementById('state-highlights');
+
+    function showState(activeElement) {
+      const states = [stateUpcoming, stateToday, stateProgress, stateHighlights];
+      states.forEach(el => {
+        if (el === activeElement) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+    }
+
+    function updateCountdown(diff) {
+      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent  = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent  = String(secs).padStart(2, '0');
+    }
+
+    function evaluateEventSchedule() {
+      const now = new Date().getTime();
+
+      if (now < REGISTRATION_START) {
+        // State 1: Upcoming Event (Countdown active)
+        showState(stateUpcoming);
+        const timeRemaining = TEE_OFF_START - now;
+        if (timeRemaining > 0) {
+          updateCountdown(timeRemaining);
+        }
+      } else if (now >= REGISTRATION_START && now < TEE_OFF_START) {
+        // State 2: Today's the Day! (07:30 - 07:59)
+        showState(stateToday);
+      } else if (now >= TEE_OFF_START && now < EVENT_END) {
+        // State 3: Event in Progress (08:00 - 16:30)
+        showState(stateProgress);
+      } else {
+        // State 4: Event Highlights (After 16:30)
+        showState(stateHighlights);
+      }
+    }
+
+    // Run on load and update every 1 second
+    evaluateEventSchedule();
+    setInterval(evaluateEventSchedule, 1000);
+  });
+</script>
+
+*/
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
   initEventStateEngine();
 });
 
-// All managed state container IDs
+// Target state IDs
 const ALL_STATES = ['state-upcoming', 'state-today', 'state-progress', 'state-highlights'];
 
-// Schedule Timestamps (South Africa Timezone UTC+2)
-const EVENT_DATE_STR     = '2026-11-06';
-const REGISTRATION_START = new Date(`${EVENT_DATE_STR}T07:30:00+02:00`).getTime();
-const TEE_OFF_START      = new Date(`${EVENT_DATE_STR}T08:00:00+02:00`).getTime();
-const EVENT_END          = new Date(`${EVENT_DATE_STR}T16:30:00+02:00`).getTime();
+// Event Schedule Settings (6 Nov 2026)
+const EVENT_DATE = '2026-11-06';
+const TIME_REGISTRATION = new Date(`${EVENT_DATE}T07:30:00`);
+const TIME_TEE_OFF     = new Date(`${EVENT_DATE}T08:00:00`);
+const TIME_HIGHLIGHTS  = new Date(`${EVENT_DATE}T16:30:00`);
 
 let autoSwitcherInterval = null;
-let forcedStateId = null;
-let currentMockDate = null;
 
 function initEventStateEngine() {
   const urlParams = new URLSearchParams(window.location.search);
-  const stateParam = urlParams.get('state');
+  const forcedState = urlParams.get('state');
   const mockDateParam = urlParams.get('mockDate');
 
-  // 1. URL State Override (e.g., ?state=progress or ?state=state-progress)
-  if (stateParam) {
-    const formattedId = stateParam.startsWith('state-') ? stateParam : `state-${stateParam}`;
-    if (ALL_STATES.includes(formattedId)) {
-      forcedStateId = formattedId;
-      console.log(`[QA Engine] Forced view state via URL: ${forcedStateId}`);
-    }
+  // 1. URL State Override (e.g., ?state=progress)
+  if (forcedState && ALL_STATES.includes(`state-${forcedState}`)) {
+    forceState(`state-${forcedState}`);
+    console.log(`[QA Engine] Forced view via URL: state-${forcedState}`);
+    return;
   }
 
-  // 2. Mock Date Override (e.g., ?mockDate=2026-11-06T07:45:00+02:00)
+  // 2. Mock Date Override (e.g., ?mockDate=2026-11-06T08:15:00)
   if (mockDateParam) {
-    const simDate = new Date(mockDateParam);
-    if (!isNaN(simDate.getTime())) {
-      currentMockDate = simDate;
-      console.log(`[QA Engine] Simulating time: ${simDate.toString()}`);
+    const simulatedNow = new Date(mockDateParam);
+    if (!isNaN(simulatedNow)) {
+      evaluateStateForTime(simulatedNow);
+      console.log(`[QA Engine] Simulating time: ${simulatedNow.toString()}`);
+      return;
     }
   }
 
-  // Start continuous 1-second state & countdown loop
-  runEngine();
+  // 3. Normal Live Time Engine
+  runLiveTimeEngine();
 }
 
-function updateCountdown(diff) {
-  const safeDiff = Math.max(0, diff);
-  const days  = Math.floor(safeDiff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((safeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const mins  = Math.floor((safeDiff % (1000 * 60 * 60)) / (1000 * 60));
-  const secs  = Math.floor((safeDiff % (1000 * 60)) / 1000);
-
-  const elDays  = document.getElementById('cd-days');
-  const elHours = document.getElementById('cd-hours');
-  const elMins  = document.getElementById('cd-mins');
-  const elSecs  = document.getElementById('cd-secs');
-
-  if (elDays)  elDays.textContent  = String(days).padStart(2, '0');
-  if (elHours) elHours.textContent = String(hours).padStart(2, '0');
-  if (elMins)  elMins.textContent  = String(mins).padStart(2, '0');
-  if (elSecs)  elSecs.textContent  = String(secs).padStart(2, '0');
-}
-
-function evaluateAndTick() {
-  let now = new Date().getTime();
-
-  // If testing with a mock date, increment it by 1 second each tick
-  if (currentMockDate) {
-    now = currentMockDate.getTime();
-    currentMockDate = new Date(now + 1000);
-  }
-
+function evaluateStateForTime(nowDate) {
   let activeStateId = 'state-upcoming';
 
-  // State evaluation priority logic
-  if (forcedStateId) {
-    activeStateId = forcedStateId;
-  } else if (now >= EVENT_END) {
-    activeStateId = 'state-highlights'; // After 16:30
-  } else if (now >= TEE_OFF_START) {
-    activeStateId = 'state-progress';   // 08:00 - 16:30
-  } else if (now >= REGISTRATION_START) {
-    activeStateId = 'state-today';      // 07:30 - 07:59
+  if (nowDate >= TIME_HIGHLIGHTS) {
+    activeStateId = 'state-highlights';
+  } else if (nowDate >= TIME_TEE_OFF) {
+    activeStateId = 'state-progress';
+  } else if (nowDate >= TIME_REGISTRATION) {
+    activeStateId = 'state-today';
   } else {
-    activeStateId = 'state-upcoming';   // Before 07:30
+    activeStateId = 'state-upcoming';
   }
 
   showStateCard(activeStateId);
-
-  // Update active countdown numbers whenever "state-upcoming" is visible
-  if (activeStateId === 'state-upcoming') {
-    const timeRemaining = TEE_OFF_START - now;
-    updateCountdown(timeRemaining);
-  }
 }
 
-function runEngine() {
-  evaluateAndTick();
+function runLiveTimeEngine() {
+  evaluateStateForTime(new Date());
+  
+  // Re-check every 10 seconds for smooth transitions
   if (!autoSwitcherInterval) {
-    // 1-second interval keeps live countdown smooth
-    autoSwitcherInterval = setInterval(evaluateAndTick, 1000);
+    autoSwitcherInterval = setInterval(() => {
+      evaluateStateForTime(new Date());
+    }, 10000);
   }
 }
+
+// Global functions accessible by the UI Switcher Bar
+window.forceState = function(targetStateId) {
+  if (autoSwitcherInterval) clearInterval(autoSwitcherInterval);
+  showStateCard(targetStateId);
+};
+
+window.resetToLiveTime = function() {
+  // Clear URL params without reloading page
+  const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+  window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+  
+  runLiveTimeEngine();
+};
 
 function showStateCard(targetStateId) {
   ALL_STATES.forEach(id => {
@@ -1427,28 +1400,6 @@ function showStateCard(targetStateId) {
     }
   });
 }
-
-// =========================================================
-// GLOBAL QA / STAKEHOLDER TOOLBAR CONTROLLER FUNCTIONS
-// =========================================================
-window.forceState = function(targetStateId) {
-  const formattedId = targetStateId.startsWith('state-') ? targetStateId : `state-${targetStateId}`;
-  if (ALL_STATES.includes(formattedId)) {
-    forcedStateId = formattedId;
-    evaluateAndTick();
-  }
-};
-
-window.resetToLiveTime = function() {
-  forcedStateId = null;
-  currentMockDate = null;
-
-  // Clear query parameters from URL bar without reloading
-  const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-  window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
-
-  evaluateAndTick();
-};
 </script>
 
 

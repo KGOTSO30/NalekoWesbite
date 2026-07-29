@@ -64,9 +64,7 @@
 <section id="dynamic-event-container" class="container px-4 py-4 mx-auto max-w-7xl">
 
   <!-- STATE 1: UPCOMING EVENT (Before 6 Nov 2026, 07:30) -->
-  <div id="state-upcoming" class="p-6 overflow-hidden transition-opacity duration-500 bg-white border border-purple-100 shadow-xl md:p-10 event-state-card rounded-3xl">
-    
-    <!-- Top Content & Hero Grid -->
+  <div id="state-upcoming" class="hidden p-6 transition-opacity duration-500 bg-white border border-purple-100 shadow-xl event-state-card rounded-3xl md:p-10">
     <div class="grid items-center grid-cols-1 gap-8 lg:grid-cols-12">
       
       <!-- Left Content Column -->
@@ -86,19 +84,19 @@
           <p class="mb-3 text-xs font-bold tracking-wider text-purple-700 uppercase">Event Starts In</p>
           <div class="grid grid-cols-4 gap-2 text-center md:gap-4">
             <div class="p-3 bg-white border border-gray-100 shadow-sm rounded-xl">
-              <span id="cd-days" class="block text-2xl font-extrabold text-indigo-800 md:text-4xl">00</span>
+              <span id="cd-days" class="block text-2xl font-extrabold text-indigo-900 md:text-4xl">00</span>
               <span class="text-xs font-semibold text-gray-500 uppercase">Days</span>
             </div>
             <div class="p-3 bg-white border border-gray-100 shadow-sm rounded-xl">
-              <span id="cd-hours" class="block text-2xl font-extrabold text-indigo-600 md:text-4xl">00</span>
+              <span id="cd-hours" class="block text-2xl font-extrabold text-indigo-900 md:text-4xl">00</span>
               <span class="text-xs font-semibold text-gray-500 uppercase">Hours</span>
             </div>
             <div class="p-3 bg-white border border-gray-100 shadow-sm rounded-xl">
-              <span id="cd-mins" class="block text-2xl font-extrabold text-indigo-400 md:text-4xl">00</span>
+              <span id="cd-mins" class="block text-2xl font-extrabold text-indigo-900 md:text-4xl">00</span>
               <span class="text-xs font-semibold text-gray-500 uppercase">Minutes</span>
             </div>
             <div class="p-3 bg-white border border-gray-100 shadow-sm rounded-xl">
-              <span id="cd-secs" class="block text-2xl font-extrabold text-naleko-dark-blue md:text-4xl">00</span>
+              <span id="cd-secs" class="block text-2xl font-extrabold text-indigo-900 md:text-4xl">00</span>
               <span class="text-xs font-semibold text-gray-500 uppercase">Seconds</span>
             </div>
           </div>
@@ -107,27 +105,21 @@
         <!-- Event Details Pills -->
         <div class="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-3">
           <div class="flex items-center p-3 space-x-3 bg-purple-50 rounded-xl">
-            <div class="flex-shrink-0">
-              <img src="/src/Icons/Calender.png" alt="Calendar Icon" class="object-contain w-7 h-7">
-            </div>
+            <div class="text-xl text-purple-600"><img src="/src/Icons/Calender.png" alt="Academy Icon" class="w-20 mb-4 h-19"></div>
             <div>
               <p class="text-xs font-semibold text-gray-500 uppercase">Date</p>
               <p class="text-sm font-bold text-gray-800">6 November 2026</p>
             </div>
           </div>
           <div class="flex items-center p-3 space-x-3 bg-purple-50 rounded-xl">
-            <div class="flex-shrink-0">
-              <img src="/src/Icons/Location.png" alt="Location Icon" class="object-contain w-7 h-7">
-            </div>
+            <div class="text-xl text-purple-600"><img src="/src/Icons/Location.png" alt="Academy Icon" class="w-20 mb-4 h-19"></div>
             <div>
               <p class="text-xs font-semibold text-gray-500 uppercase">Venue</p>
               <p class="text-xs font-bold text-gray-800">Copperleaf Golf Estate</p>
             </div>
           </div>
           <div class="flex items-center p-3 space-x-3 bg-purple-50 rounded-xl">
-            <div class="flex-shrink-0">
-              <img src="/src/Icons/Clock.png" alt="Clock Icon" class="object-contain w-7 h-7">
-            </div>
+            <div class="text-xl text-purple-600"><img src="/src/Icons/Clock.png" alt="Academy Icon" class="w-20 mb-4 h-19"></div>
             <div>
               <p class="text-xs font-semibold text-gray-500 uppercase">Tee-Off</p>
               <p class="text-sm font-bold text-gray-800">08:00 AM</p>
@@ -136,66 +128,18 @@
         </div>
       </div>
 
-      <!-- Right Image Column with Semi-Circular Gradient Frame -->
-      <div class="h-full lg:col-span-5">
-        <div class="relative w-full h-[360px] lg:h-full min-h-[380px] rounded-3xl overflow-hidden shadow-md">
-          <img src="/src/GolfDayPictures/_MG_7632.JPG" alt="Naleko Golf Day Hero" class="absolute inset-0 object-cover w-full h-full">
-          
-          <!-- Curved Gradient Frame Overlay -->
-          <div class="absolute inset-y-0 w-20 pointer-events-none -left-1 sm:w-28 lg:w-36">
-            <svg viewBox="0 0 120 400" class="w-full h-full" preserveAspectRatio="none">
-              <path d="M 0,0 C 110,120 110,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-1)" opacity="0.35"/>
-              <path d="M 0,0 C 90,120 90,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-2)"/>
-              <path d="M 0,0 C 65,120 65,280 0,400 L 0,400 L 0,0 Z" fill="#FFFFFF"/>
-              <defs>
-                <linearGradient id="swoosh-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#A855F7"/>
-                  <stop offset="100%" stop-color="#6366F1"/>
-                </linearGradient>
-                <linearGradient id="swoosh-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#7C3AED"/>
-                  <stop offset="100%" stop-color="#3B82F6"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
+      <!-- Right Image/Hero Column -->
+      <div class="lg:col-span-5">
+        <div class="relative overflow-hidden border-4 border-white shadow-2xl rounded-2xl">
+          <img src="/src/GolfDayPictures/_MG_7632.JPG" alt="Naleko Golf Day Hero" class="w-full h-80 lg:h-[420px] object-cover">
         </div>
       </div>
     </div>
-
-    <!-- Integrated Bottom Icons Row (Inside Card) -->
-    <div class="grid grid-cols-2 gap-2 pt-6 mt-8 border-t md:gap-4 border-purple-50 md:grid-cols-3 lg:grid-cols-6">
-      <div class="flex flex-col items-center justify-center p-3 text-center border-r border-purple-100 bg-purple-50/40 rounded-xl last:border-r-0">
-        <img src="/src/Icons/Collab333.png" alt="Networking Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Corporate Networking</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center border-r border-purple-100 bg-purple-50/40 rounded-xl last:border-r-0">
-        <img src="/src/Icons/hole.png" alt="Course Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">18-Hole Course</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center border-r border-purple-100 bg-purple-50/40 rounded-xl last:border-r-0">
-        <img src="/src/Icons/Trophy.png" alt="Trophy Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Team Competitions</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center border-r border-purple-100 bg-purple-50/40 rounded-xl last:border-r-0">
-        <img src="/src/Icons/Medal.png" alt="Medal Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Prize Ceremony</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center border-r border-purple-100 bg-purple-50/40 rounded-xl last:border-r-0">
-        <img src="/src/Icons/Food.png" alt="Lunch Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Lunch Included</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center border-r border-purple-100 bg-purple-50/40 rounded-xl last:border-r-0">
-        <img src="/src/Icons/Handshake.png" alt="Sponsor Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Sponsor Exhibitions</span>
-      </div>
-    </div>
-
   </div>
 
 
   <!-- STATE 2: TODAY'S THE DAY! (6 Nov 2026, 07:30 – 07:59) -->
-  <div id="state-today" class="hidden p-6 overflow-hidden transition-opacity duration-500 bg-white border border-purple-100 shadow-xl md:p-10 event-state-card rounded-3xl">
+  <div id="state-today" class="hidden p-6 transition-opacity duration-500 bg-white border border-purple-100 shadow-xl event-state-card rounded-3xl md:p-10">
     <div class="grid items-center grid-cols-1 gap-8 lg:grid-cols-12">
       <div class="space-y-6 text-left lg:col-span-7">
         <span class="inline-block px-4 py-2 text-xs font-bold tracking-widest text-white uppercase rounded-full shadow-sm bg-gradient-to-r from-blue-500 to-indigo-600 animate-pulse">
@@ -225,57 +169,21 @@
         </div>
       </div>
 
-      <div class="h-full lg:col-span-5">
-        <div class="relative w-full h-[360px] lg:h-full min-h-[380px] rounded-3xl overflow-hidden shadow-md">
-          <img src="/src/GolfDayPictures/_MG_7632.JPG" alt="Naleko Golf Day Hero" class="absolute inset-0 object-cover w-full h-full">
-          
-          <div class="absolute inset-y-0 w-20 pointer-events-none -left-1 sm:w-28 lg:w-36">
-            <svg viewBox="0 0 120 400" class="w-full h-full" preserveAspectRatio="none">
-              <path d="M 0,0 C 110,120 110,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-1)" opacity="0.35"/>
-              <path d="M 0,0 C 90,120 90,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-2)"/>
-              <path d="M 0,0 C 65,120 65,280 0,400 L 0,400 L 0,0 Z" fill="#FFFFFF"/>
-            </svg>
-          </div>
+      <div class="lg:col-span-5">
+        <div class="relative overflow-hidden border-4 border-white shadow-2xl rounded-2xl">
+          <img src="/src/GolfDayPictures/_MG_7632.JPG" alt="Naleko Golf Day Hero" class="w-full h-80 lg:h-[380px] object-cover">
         </div>
-      </div>
-    </div>
-
-    <!-- Integrated Bottom Icons Row -->
-    <div class="grid grid-cols-2 gap-2 pt-6 mt-8 border-t md:gap-4 border-purple-50 md:grid-cols-3 lg:grid-cols-6">
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Collab333.png" alt="Networking Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Corporate Networking</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/hole.png" alt="Course Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">18-Hole Course</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Trophy.png" alt="Trophy Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Team Competitions</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Medal.png" alt="Medal Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Prize Ceremony</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Food.png" alt="Lunch Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Lunch Included</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Handshake.png" alt="Sponsor Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Sponsor Exhibitions</span>
       </div>
     </div>
   </div>
 
 
   <!-- STATE 3: EVENT IN PROGRESS (6 Nov 2026, 08:00 – 16:30) -->
-  <div id="state-progress" class="hidden p-6 overflow-hidden transition-opacity duration-500 bg-white border border-purple-100 shadow-xl md:p-10 event-state-card rounded-3xl">
+  <div id="state-progress" class="hidden p-6 transition-opacity duration-500 bg-white border border-purple-100 shadow-xl event-state-card rounded-3xl md:p-10">
     <div class="grid items-center grid-cols-1 gap-8 lg:grid-cols-12">
       <div class="space-y-6 text-left lg:col-span-7">
-        <span class="inline-flex items-center px-4 py-2 text-xs font-bold tracking-widest text-white uppercase rounded-full shadow-sm bg-emerald-500 animate-bounce">
-          ⛳ Event In Progress
+        <span class="inline-block px-4 py-2 text-xs font-bold tracking-widest text-white uppercase rounded-full shadow-sm bg-emerald-500 animate-bounce">
+          <img src="/src/Icons/hole.png" alt="Academy Icon" class="w-20 mb-4 h-19">
         </span>
         <h1 class="text-4xl font-black leading-tight md:text-5xl text-naleko-dark-blue">
           NALEKO GOLF DAY 2026
@@ -301,227 +209,78 @@
         </div>
       </div>
 
-      <div class="h-full lg:col-span-5">
-        <div class="relative w-full h-[360px] lg:h-full min-h-[380px] rounded-3xl overflow-hidden shadow-md">
-          <img src="/src/GolfDayPictures/_MG_7632.JPG" alt="Naleko Golf Day Live" class="absolute inset-0 object-cover w-full h-full">
-          
-          <div class="absolute inset-y-0 w-20 pointer-events-none -left-1 sm:w-28 lg:w-36">
-            <svg viewBox="0 0 120 400" class="w-full h-full" preserveAspectRatio="none">
-              <path d="M 0,0 C 110,120 110,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-1)" opacity="0.35"/>
-              <path d="M 0,0 C 90,120 90,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-2)"/>
-              <path d="M 0,0 C 65,120 65,280 0,400 L 0,400 L 0,0 Z" fill="#FFFFFF"/>
-            </svg>
-          </div>
+      <div class="lg:col-span-5">
+        <div class="relative overflow-hidden border-4 border-white shadow-2xl rounded-2xl">
+          <img src="/src/GolfDayPictures/_MG_7632.JPG" alt="Naleko Golf Day Live" class="w-full h-80 lg:h-[380px] object-cover">
         </div>
-      </div>
-    </div>
-
-    <!-- Integrated Bottom Icons Row -->
-    <div class="grid grid-cols-2 gap-2 pt-6 mt-8 border-t md:gap-4 border-purple-50 md:grid-cols-3 lg:grid-cols-6">
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Collab333.png" alt="Networking Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Corporate Networking</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/hole.png" alt="Course Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">18-Hole Course</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Trophy.png" alt="Trophy Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Team Competitions</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Medal.png" alt="Medal Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Prize Ceremony</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Food.png" alt="Lunch Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Lunch Included</span>
-      </div>
-      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
-        <img src="/src/Icons/Handshake.png" alt="Sponsor Icon" class="object-contain mb-2 w-7 h-7">
-        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Sponsor Exhibitions</span>
       </div>
     </div>
   </div>
 
 
   <!-- STATE 4: EVENT HIGHLIGHTS (After 6 Nov 2026, 16:30) -->
-<!-- STATE 4: EVENT HIGHLIGHTS (After 6 Nov 2026, 16:30) -->
-<div id="state-highlights" class="relative p-6 overflow-hidden transition-opacity duration-500 bg-white border border-purple-100 shadow-xl md:p-10 event-state-card rounded-3xl">
-  
-  <div class="grid items-start grid-cols-1 gap-8 lg:grid-cols-12">
-    
-    <!-- Left Column: Content & Event Highlights Gallery -->
-    <div class="space-y-6 text-left lg:col-span-7">
-      
-      <!-- Event Highlights Badge -->
-      <span class="inline-flex items-center px-4 py-1.5 text-xs font-bold tracking-widest text-white uppercase rounded-full shadow-sm bg-gradient-to-r from-purple-600 to-indigo-600">
-        ⭐ Event Highlights
-      </span>
-
-      <!-- Title -->
-      <h1 class="text-4xl font-black leading-tight md:text-5xl text-naleko-dark-blue">
-        NALEKO GOLF DAY 2026
-      </h1>
-
-      <!-- Thank You Block with WHeart Icon -->
-      <div class="flex items-start pt-1 space-x-4">
-        <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 border border-purple-200 rounded-full bg-purple-100/70">
-          <img src="/src/Icons/WHeart.png" alt="Thank You Heart" class="object-contain w-6 h-6">
+  <div id="state-highlights" class="hidden p-6 transition-opacity duration-500 bg-white border border-purple-100 shadow-xl event-state-card rounded-3xl md:p-10">
+    <div class="grid items-center grid-cols-1 gap-8 lg:grid-cols-12">
+      <div class="space-y-6 text-left lg:col-span-7">
+        <span class="inline-block px-4 py-2 text-xs font-bold tracking-widest text-white uppercase bg-purple-700 rounded-full shadow-sm">
+          ⭐ Event Highlights
+        </span>
+        <h1 class="text-4xl font-black leading-tight md:text-5xl text-naleko-dark-blue">
+          NALEKO GOLF DAY 2026
+        </h1>
+        <div class="space-y-2">
+          <h3 class="text-2xl font-extrabold text-gray-800">Thank you!</h3>
+          <p class="text-gray-600">What an incredible day of golf, networking and celebration. We appreciate all our players, partners, and sponsors for making Naleko Golf Day 2026 a huge success.</p>
         </div>
-        <div class="space-y-1">
-          <h3 class="text-2xl font-black text-gray-900">Thank you!</h3>
-          <p class="text-sm font-extrabold text-indigo-900">
-            What an incredible day of golf, networking and celebration.
-          </p>
-          <p class="text-xs leading-relaxed text-gray-600">
-            We appreciate all our players, partners and sponsors for making Naleko Golf Day 2026 a huge success.
-          </p>
+
+        <!-- Next Year Save The Date Card -->
+        <div class="p-6 border border-purple-200 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl">
+          <p class="mb-1 text-xs font-extrabold tracking-widest text-purple-700 uppercase">What's Next?</p>
+          <h4 class="text-xl font-black text-naleko-dark-blue">Save the Date! Naleko Golf Day 2027</h4>
+          <div class="flex flex-wrap gap-4 mt-3 text-sm font-bold text-gray-700">
+            <span>🗓️ 5 November 2027</span>
+            <span>📍 The Els Club at Copperleaf Golf Estate</span>
+          </div>
         </div>
       </div>
 
-      <!-- Event Highlights Row (4 Thumbnails with Icons) -->
-      <div class="pt-4">
-        <p class="mb-3 text-[11px] font-black tracking-widest text-purple-600 uppercase">
-          Event Highlights
-        </p>
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          
-          <!-- Highlight 1 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight1.jpg" alt="Great Moments Captured" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/Camera.png" alt="Camera Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Great Moments Captured</span>
-            </div>
-          </div>
-
-          <!-- Highlight 2 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight2.jpg" alt="Connections That Matter" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/People.png" alt="Connections Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Connections That Matter</span>
-            </div>
-          </div>
-
-          <!-- Highlight 3 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight3.jpg" alt="Winners Celebrated" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/Trophy.png" alt="Trophy Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Winners Celebrated</span>
-            </div>
-          </div>
-
-          <!-- Highlight 4 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight4.jpg" alt="Memories Shared" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/Star.png" alt="Star Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Memories Shared</span>
-            </div>
-          </div>
-
+      <div class="lg:col-span-5">
+        <div class="relative overflow-hidden border-4 border-white shadow-2xl rounded-2xl">
+          <img src="/src/GolfDayPictures/_MG_7735 Copy.JPG" alt="Golf Day Group Highlights" class="w-full h-80 lg:h-[380px] object-cover">
         </div>
       </div>
-
     </div>
-
-    <!-- Right Column: Hero Image with Curved Frame + Floating Save the Date Card -->
-    <div class="relative lg:col-span-5 h-full min-h-[420px] flex flex-col justify-between">
-      
-      <!-- Golfer Hero Image Frame -->
-      <div class="relative w-full h-[320px] lg:h-[380px] rounded-3xl overflow-hidden shadow-md">
-        <img src="/src/GolfDayPictures/_MG_7632.JPG" alt="Naleko Golf Day Highlights" class="absolute inset-0 object-cover w-full h-full">
-        
-        <!-- Curved Gradient Overlay -->
-        <div class="absolute inset-y-0 w-20 pointer-events-none -left-1 sm:w-28 lg:w-36">
-          <svg viewBox="0 0 120 400" class="w-full h-full" preserveAspectRatio="none">
-            <path d="M 0,0 C 110,120 110,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-1)" opacity="0.35"/>
-            <path d="M 0,0 C 90,120 90,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-2)"/>
-            <path d="M 0,0 C 65,120 65,280 0,400 L 0,400 L 0,0 Z" fill="#FFFFFF"/>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Floating Save the Date Card (Positioned Over Bottom Right) -->
-      <div class="relative z-10 p-5 mt-4 border border-purple-100 shadow-2xl lg:absolute lg:-bottom-4 lg:-left-12 lg:right-0 lg:mt-0 bg-white/95 backdrop-blur-md rounded-2xl">
-        <div class="flex items-start space-x-3">
-          <!-- Calendar Icon Badge -->
-          <div class="flex items-center justify-center flex-shrink-0 p-2.5 bg-blue-50 border border-blue-100 rounded-xl">
-            <img src="/src/Icons/Calender.png" alt="Calendar Icon" class="object-contain w-6 h-6">
-          </div>
-
-          <div class="w-full space-y-1">
-            <p class="text-[10px] font-black tracking-widest text-indigo-600 uppercase">
-              WHAT'S NEXT?
-            </p>
-            <h4 class="text-base font-black leading-tight text-gray-900">
-              Save the Date!
-            </h4>
-            <p class="text-sm font-black text-purple-600">
-              Naleko Golf Day 2027
-            </p>
-
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 text-[11px] font-bold text-gray-700">
-              <span class="flex items-center gap-1">🗓️ 5 November 2027</span>
-              <span class="flex items-center gap-1">📍 The Els Club at Copperleaf Golf Estate</span>
-            </div>
-
-            <p class="pt-2 text-[10px] font-semibold text-gray-500 border-t border-purple-50/60">
-              We look forward to seeing you again!
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
   </div>
 
-</div>
+  <!-- Shared Value Proposition Icons Bar (Displayed in all states) -->
+  <div class="grid grid-cols-2 gap-4 mt-8 md:grid-cols-3 lg:grid-cols-6">
+    <div class="flex flex-col items-center justify-center p-4 text-center bg-white border border-gray-100 shadow-sm rounded-2xl">
+      <span class="mb-1 text-2xl"><img src="/src/Icons/Collab333.png" alt="Academy Icon" class="w-20 mb-4 h-19"></span>
+      <span class="text-xs font-bold text-gray-800 uppercase">Corporate Networking</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-4 text-center bg-white border border-gray-100 shadow-sm rounded-2xl">
+      <span class="mb-1 text-2xl"><img src="/src/Icons/hole.png" alt="Academy Icon" class="w-20 mb-4 h-19"></span>
+      <span class="text-xs font-bold text-gray-800 uppercase">18-Hole Course</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-4 text-center bg-white border border-gray-100 shadow-sm rounded-2xl">
+      <span class="mb-1 text-2xl"><img src="/src/Icons/Trophy.png" alt="Academy Icon" class="w-20 mb-4 h-19"></span>
+      <span class="text-xs font-bold text-gray-800 uppercase">Team Competitions</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-4 text-center bg-white border border-gray-100 shadow-sm rounded-2xl">
+      <span class="mb-1 text-2xl"><img src="/src/Icons/Medal.png" alt="Academy Icon" class="w-20 mb-4 h-19"></span>
+      <span class="text-xs font-bold text-gray-800 uppercase">Prize Ceremony</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-4 text-center bg-white border border-gray-100 shadow-sm rounded-2xl">
+      <span class="mb-1 text-2xl"><img src="/src/Icons/Food.png" alt="Academy Icon" class="w-20 mb-4 h-19"></span>
+      <span class="text-xs font-bold text-gray-800 uppercase">Lunch Included</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-4 text-center bg-white border border-gray-100 shadow-sm rounded-2xl">
+      <span class="mb-1 text-2xl"><img src="/src/Icons/Handshake.png" alt="Academy Icon" class="w-20 mb-4 h-19"></span>
+      <span class="text-xs font-bold text-gray-800 uppercase">Sponsor Exhibitions</span>
+    </div>
+  </div>
 
 </section>
-
-
-<!-- =========================================================
-     QA / STAKEHOLDER STATE PREVIEW TOOLBAR
-     (Tip: You can hide this in production using a URL flag like ?qa=true)
-     ========================================================= -->
-<div id="qa-switcher-bar" class="fixed z-50 max-w-xs p-3 text-xs text-white border border-gray-700 shadow-2xl bg-gray-900/90 backdrop-blur-md bottom-4 right-4 rounded-2xl sm:max-w-md">
-  <div class="flex items-center justify-between pb-2 mb-2 border-b border-gray-700">
-    <span class="font-bold tracking-wider text-purple-400 uppercase">🧪 QA View Switcher</span>
-    <button onclick="resetToLiveTime()" class="px-2 py-1 text-[10px] font-semibold text-gray-300 bg-gray-800 rounded hover:bg-gray-700 transition">
-      🔄 Live Time
-    </button>
-  </div>
-  
-  <p class="mb-2 text-gray-400">Force View State:</p>
-  <div class="grid grid-cols-2 gap-1.5 sm:grid-cols-4">
-    <button onclick="forceState('state-upcoming')" class="px-2 py-1.5 font-medium bg-purple-900/50 hover:bg-purple-800 text-purple-200 border border-purple-700/50 rounded-lg text-center transition">
-      1. Upcoming
-    </button>
-    <button onclick="forceState('state-today')" class="px-2 py-1.5 font-medium bg-blue-900/50 hover:bg-blue-800 text-blue-200 border border-blue-700/50 rounded-lg text-center transition">
-      2. Today
-    </button>
-    <button onclick="forceState('state-progress')" class="px-2 py-1.5 font-medium bg-emerald-900/50 hover:bg-emerald-800 text-emerald-200 border border-emerald-700/50 rounded-lg text-center transition">
-      3. Live
-    </button>
-    <button onclick="forceState('state-highlights')" class="px-2 py-1.5 font-medium bg-indigo-900/50 hover:bg-indigo-800 text-indigo-200 border border-indigo-700/50 rounded-lg text-center transition">
-      4. Highlights
-    </button>
-  </div>
-</div>
 
 
 
@@ -1311,144 +1070,68 @@ function toggleFaq(button) {
 </script>
 
 
- <script>
-document.addEventListener('DOMContentLoaded', () => {
-  initEventStateEngine();
-});
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Schedule Timestamps (South Africa Timezone UTC+2)
+    const EVENT_DATE_STR      = '2026-11-06';
+    const REGISTRATION_START  = new Date(`${EVENT_DATE_STR}T07:30:00+02:00`).getTime();
+    const TEE_OFF_START       = new Date(`${EVENT_DATE_STR}T08:00:00+02:00`).getTime();
+    const EVENT_END           = new Date(`${EVENT_DATE_STR}T16:30:00+02:00`).getTime();
 
-// All managed state container IDs
-const ALL_STATES = ['state-upcoming', 'state-today', 'state-progress', 'state-highlights'];
+    const stateUpcoming   = document.getElementById('state-upcoming');
+    const stateToday      = document.getElementById('state-today');
+    const stateProgress   = document.getElementById('state-progress');
+    const stateHighlights = document.getElementById('state-highlights');
 
-// Schedule Timestamps (South Africa Timezone UTC+2)
-const EVENT_DATE_STR     = '2026-11-06';
-const REGISTRATION_START = new Date(`${EVENT_DATE_STR}T07:30:00+02:00`).getTime();
-const TEE_OFF_START      = new Date(`${EVENT_DATE_STR}T08:00:00+02:00`).getTime();
-const EVENT_END          = new Date(`${EVENT_DATE_STR}T16:30:00+02:00`).getTime();
-
-let autoSwitcherInterval = null;
-let forcedStateId = null;
-let currentMockDate = null;
-
-function initEventStateEngine() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const stateParam = urlParams.get('state');
-  const mockDateParam = urlParams.get('mockDate');
-
-  // 1. URL State Override (e.g., ?state=progress or ?state=state-progress)
-  if (stateParam) {
-    const formattedId = stateParam.startsWith('state-') ? stateParam : `state-${stateParam}`;
-    if (ALL_STATES.includes(formattedId)) {
-      forcedStateId = formattedId;
-      console.log(`[QA Engine] Forced view state via URL: ${forcedStateId}`);
+    function showState(activeElement) {
+      const states = [stateUpcoming, stateToday, stateProgress, stateHighlights];
+      states.forEach(el => {
+        if (el === activeElement) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
     }
-  }
 
-  // 2. Mock Date Override (e.g., ?mockDate=2026-11-06T07:45:00+02:00)
-  if (mockDateParam) {
-    const simDate = new Date(mockDateParam);
-    if (!isNaN(simDate.getTime())) {
-      currentMockDate = simDate;
-      console.log(`[QA Engine] Simulating time: ${simDate.toString()}`);
+    function updateCountdown(diff) {
+      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent  = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent  = String(secs).padStart(2, '0');
     }
-  }
 
-  // Start continuous 1-second state & countdown loop
-  runEngine();
-}
+    function evaluateEventSchedule() {
+      const now = new Date().getTime();
 
-function updateCountdown(diff) {
-  const safeDiff = Math.max(0, diff);
-  const days  = Math.floor(safeDiff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((safeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const mins  = Math.floor((safeDiff % (1000 * 60 * 60)) / (1000 * 60));
-  const secs  = Math.floor((safeDiff % (1000 * 60)) / 1000);
-
-  const elDays  = document.getElementById('cd-days');
-  const elHours = document.getElementById('cd-hours');
-  const elMins  = document.getElementById('cd-mins');
-  const elSecs  = document.getElementById('cd-secs');
-
-  if (elDays)  elDays.textContent  = String(days).padStart(2, '0');
-  if (elHours) elHours.textContent = String(hours).padStart(2, '0');
-  if (elMins)  elMins.textContent  = String(mins).padStart(2, '0');
-  if (elSecs)  elSecs.textContent  = String(secs).padStart(2, '0');
-}
-
-function evaluateAndTick() {
-  let now = new Date().getTime();
-
-  // If testing with a mock date, increment it by 1 second each tick
-  if (currentMockDate) {
-    now = currentMockDate.getTime();
-    currentMockDate = new Date(now + 1000);
-  }
-
-  let activeStateId = 'state-upcoming';
-
-  // State evaluation priority logic
-  if (forcedStateId) {
-    activeStateId = forcedStateId;
-  } else if (now >= EVENT_END) {
-    activeStateId = 'state-highlights'; // After 16:30
-  } else if (now >= TEE_OFF_START) {
-    activeStateId = 'state-progress';   // 08:00 - 16:30
-  } else if (now >= REGISTRATION_START) {
-    activeStateId = 'state-today';      // 07:30 - 07:59
-  } else {
-    activeStateId = 'state-upcoming';   // Before 07:30
-  }
-
-  showStateCard(activeStateId);
-
-  // Update active countdown numbers whenever "state-upcoming" is visible
-  if (activeStateId === 'state-upcoming') {
-    const timeRemaining = TEE_OFF_START - now;
-    updateCountdown(timeRemaining);
-  }
-}
-
-function runEngine() {
-  evaluateAndTick();
-  if (!autoSwitcherInterval) {
-    // 1-second interval keeps live countdown smooth
-    autoSwitcherInterval = setInterval(evaluateAndTick, 1000);
-  }
-}
-
-function showStateCard(targetStateId) {
-  ALL_STATES.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      if (id === targetStateId) {
-        el.classList.remove('hidden');
+      if (now < REGISTRATION_START) {
+        // State 1: Upcoming Event (Countdown active)
+        showState(stateUpcoming);
+        const timeRemaining = TEE_OFF_START - now;
+        if (timeRemaining > 0) {
+          updateCountdown(timeRemaining);
+        }
+      } else if (now >= REGISTRATION_START && now < TEE_OFF_START) {
+        // State 2: Today's the Day! (07:30 - 07:59)
+        showState(stateToday);
+      } else if (now >= TEE_OFF_START && now < EVENT_END) {
+        // State 3: Event in Progress (08:00 - 16:30)
+        showState(stateProgress);
       } else {
-        el.classList.add('hidden');
+        // State 4: Event Highlights (After 16:30)
+        showState(stateHighlights);
       }
     }
+
+    // Run on load and update every 1 second
+    evaluateEventSchedule();
+    setInterval(evaluateEventSchedule, 1000);
   });
-}
-
-// =========================================================
-// GLOBAL QA / STAKEHOLDER TOOLBAR CONTROLLER FUNCTIONS
-// =========================================================
-window.forceState = function(targetStateId) {
-  const formattedId = targetStateId.startsWith('state-') ? targetStateId : `state-${targetStateId}`;
-  if (ALL_STATES.includes(formattedId)) {
-    forcedStateId = formattedId;
-    evaluateAndTick();
-  }
-};
-
-window.resetToLiveTime = function() {
-  forcedStateId = null;
-  currentMockDate = null;
-
-  // Clear query parameters from URL bar without reloading
-  const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-  window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
-
-  evaluateAndTick();
-};
 </script>
 
 

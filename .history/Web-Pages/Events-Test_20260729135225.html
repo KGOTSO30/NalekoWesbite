@@ -347,149 +347,73 @@
 
 
   <!-- STATE 4: EVENT HIGHLIGHTS (After 6 Nov 2026, 16:30) -->
-<!-- STATE 4: EVENT HIGHLIGHTS (After 6 Nov 2026, 16:30) -->
-<div id="state-highlights" class="relative p-6 overflow-hidden transition-opacity duration-500 bg-white border border-purple-100 shadow-xl md:p-10 event-state-card rounded-3xl">
-  
-  <div class="grid items-start grid-cols-1 gap-8 lg:grid-cols-12">
-    
-    <!-- Left Column: Content & Event Highlights Gallery -->
-    <div class="space-y-6 text-left lg:col-span-7">
-      
-      <!-- Event Highlights Badge -->
-      <span class="inline-flex items-center px-4 py-1.5 text-xs font-bold tracking-widest text-white uppercase rounded-full shadow-sm bg-gradient-to-r from-purple-600 to-indigo-600">
-        ⭐ Event Highlights
-      </span>
-
-      <!-- Title -->
-      <h1 class="text-4xl font-black leading-tight md:text-5xl text-naleko-dark-blue">
-        NALEKO GOLF DAY 2026
-      </h1>
-
-      <!-- Thank You Block with WHeart Icon -->
-      <div class="flex items-start pt-1 space-x-4">
-        <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 border border-purple-200 rounded-full bg-purple-100/70">
-          <img src="/src/Icons/WHeart.png" alt="Thank You Heart" class="object-contain w-6 h-6">
+  <div id="state-highlights" class="hidden p-6 overflow-hidden transition-opacity duration-500 bg-white border border-purple-100 shadow-xl md:p-10 event-state-card rounded-3xl">
+    <div class="grid items-center grid-cols-1 gap-8 lg:grid-cols-12">
+      <div class="space-y-6 text-left lg:col-span-7">
+        <span class="inline-block px-4 py-2 text-xs font-bold tracking-widest text-white uppercase bg-purple-700 rounded-full shadow-sm">
+          ⭐ Event Highlights
+        </span>
+        <h1 class="text-4xl font-black leading-tight md:text-5xl text-naleko-dark-blue">
+          NALEKO GOLF DAY 2026
+        </h1>
+        <div class="space-y-2">
+          <h3 class="text-2xl font-extrabold text-gray-800">Thank you!</h3>
+          <p class="text-gray-600">What an incredible day of golf, networking and celebration. We appreciate all our players, partners, and sponsors for making Naleko Golf Day 2026 a huge success.</p>
         </div>
-        <div class="space-y-1">
-          <h3 class="text-2xl font-black text-gray-900">Thank you!</h3>
-          <p class="text-sm font-extrabold text-indigo-900">
-            What an incredible day of golf, networking and celebration.
-          </p>
-          <p class="text-xs leading-relaxed text-gray-600">
-            We appreciate all our players, partners and sponsors for making Naleko Golf Day 2026 a huge success.
-          </p>
+
+        <div class="p-6 border border-purple-200 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl">
+          <p class="mb-1 text-xs font-extrabold tracking-widest text-purple-700 uppercase">What's Next?</p>
+          <h4 class="text-xl font-black text-naleko-dark-blue">Save the Date! Naleko Golf Day 2027</h4>
+          <div class="flex flex-wrap gap-4 mt-3 text-sm font-bold text-gray-700">
+            <span>🗓️ 5 November 2027</span>
+            <span>📍 The Els Club at Copperleaf Golf Estate</span>
+          </div>
         </div>
       </div>
 
-      <!-- Event Highlights Row (4 Thumbnails with Icons) -->
-      <div class="pt-4">
-        <p class="mb-3 text-[11px] font-black tracking-widest text-purple-600 uppercase">
-          Event Highlights
-        </p>
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div class="h-full lg:col-span-5">
+        <div class="relative w-full h-[360px] lg:h-full min-h-[380px] rounded-3xl overflow-hidden shadow-md">
+          <img src="/src/GolfDayPictures/_MG_7735 Copy.JPG" alt="Golf Day Group Highlights" class="absolute inset-0 object-cover w-full h-full">
           
-          <!-- Highlight 1 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight1.jpg" alt="Great Moments Captured" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/Camera.png" alt="Camera Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Great Moments Captured</span>
-            </div>
+          <div class="absolute inset-y-0 w-20 pointer-events-none -left-1 sm:w-28 lg:w-36">
+            <svg viewBox="0 0 120 400" class="w-full h-full" preserveAspectRatio="none">
+              <path d="M 0,0 C 110,120 110,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-1)" opacity="0.35"/>
+              <path d="M 0,0 C 90,120 90,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-2)"/>
+              <path d="M 0,0 C 65,120 65,280 0,400 L 0,400 L 0,0 Z" fill="#FFFFFF"/>
+            </svg>
           </div>
-
-          <!-- Highlight 2 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight2.jpg" alt="Connections That Matter" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/People.png" alt="Connections Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Connections That Matter</span>
-            </div>
-          </div>
-
-          <!-- Highlight 3 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight3.jpg" alt="Winners Celebrated" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/Trophy.png" alt="Trophy Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Winners Celebrated</span>
-            </div>
-          </div>
-
-          <!-- Highlight 4 -->
-          <div class="flex flex-col">
-            <div class="w-full h-20 overflow-hidden bg-gray-100 border border-gray-100 shadow-sm rounded-xl">
-              <img src="/src/GolfDayPictures/Highlight4.jpg" alt="Memories Shared" class="object-cover w-full h-full">
-            </div>
-            <div class="flex items-center space-x-1.5 mt-2">
-              <img src="/src/Icons/Star.png" alt="Star Icon" class="w-3.5 h-3.5 object-contain flex-shrink-0">
-              <span class="text-[10px] font-bold text-gray-800 leading-tight">Memories Shared</span>
-            </div>
-          </div>
-
         </div>
       </div>
-
     </div>
 
-    <!-- Right Column: Hero Image with Curved Frame + Floating Save the Date Card -->
-    <div class="relative lg:col-span-5 h-full min-h-[420px] flex flex-col justify-between">
-      
-      <!-- Golfer Hero Image Frame -->
-      <div class="relative w-full h-[320px] lg:h-[380px] rounded-3xl overflow-hidden shadow-md">
-        <img src="/src/GolfDayPictures/_MG_7632.JPG" alt="Naleko Golf Day Highlights" class="absolute inset-0 object-cover w-full h-full">
-        
-        <!-- Curved Gradient Overlay -->
-        <div class="absolute inset-y-0 w-20 pointer-events-none -left-1 sm:w-28 lg:w-36">
-          <svg viewBox="0 0 120 400" class="w-full h-full" preserveAspectRatio="none">
-            <path d="M 0,0 C 110,120 110,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-1)" opacity="0.35"/>
-            <path d="M 0,0 C 90,120 90,280 0,400 L 0,0 Z" fill="url(#swoosh-grad-2)"/>
-            <path d="M 0,0 C 65,120 65,280 0,400 L 0,400 L 0,0 Z" fill="#FFFFFF"/>
-          </svg>
-        </div>
+    <!-- Integrated Bottom Icons Row -->
+    <div class="grid grid-cols-2 gap-2 pt-6 mt-8 border-t md:gap-4 border-purple-50 md:grid-cols-3 lg:grid-cols-6">
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Collab333.png" alt="Networking Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Corporate Networking</span>
       </div>
-
-      <!-- Floating Save the Date Card (Positioned Over Bottom Right) -->
-      <div class="relative z-10 p-5 mt-4 border border-purple-100 shadow-2xl lg:absolute lg:-bottom-4 lg:-left-12 lg:right-0 lg:mt-0 bg-white/95 backdrop-blur-md rounded-2xl">
-        <div class="flex items-start space-x-3">
-          <!-- Calendar Icon Badge -->
-          <div class="flex items-center justify-center flex-shrink-0 p-2.5 bg-blue-50 border border-blue-100 rounded-xl">
-            <img src="/src/Icons/Calender.png" alt="Calendar Icon" class="object-contain w-6 h-6">
-          </div>
-
-          <div class="w-full space-y-1">
-            <p class="text-[10px] font-black tracking-widest text-indigo-600 uppercase">
-              WHAT'S NEXT?
-            </p>
-            <h4 class="text-base font-black leading-tight text-gray-900">
-              Save the Date!
-            </h4>
-            <p class="text-sm font-black text-purple-600">
-              Naleko Golf Day 2027
-            </p>
-
-            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 text-[11px] font-bold text-gray-700">
-              <span class="flex items-center gap-1">🗓️ 5 November 2027</span>
-              <span class="flex items-center gap-1">📍 The Els Club at Copperleaf Golf Estate</span>
-            </div>
-
-            <p class="pt-2 text-[10px] font-semibold text-gray-500 border-t border-purple-50/60">
-              We look forward to seeing you again!
-            </p>
-          </div>
-        </div>
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/hole.png" alt="Course Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">18-Hole Course</span>
       </div>
-
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Trophy.png" alt="Trophy Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Team Competitions</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Medal.png" alt="Medal Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Prize Ceremony</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Food.png" alt="Lunch Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Lunch Included</span>
+      </div>
+      <div class="flex flex-col items-center justify-center p-3 text-center bg-purple-50/40 rounded-xl">
+        <img src="/src/Icons/Handshake.png" alt="Sponsor Icon" class="object-contain mb-2 w-7 h-7">
+        <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">Sponsor Exhibitions</span>
+      </div>
     </div>
-
   </div>
-
-</div>
 
 </section>
 
@@ -1310,7 +1234,11 @@ function toggleFaq(button) {
     });
 </script>
 
-
+/*
+  Event State Engine
+  ------------------
+  This script manages the display of different event states based on the current time.
+  It supports URL-based state overrides and mock date simulation for testing purposes.
  <script>
 document.addEventListener('DOMContentLoaded', () => {
   initEventStateEngine();

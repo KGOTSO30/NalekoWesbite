@@ -1234,114 +1234,153 @@ function toggleFaq(button) {
     });
 </script>
 
-/*
-  Event State Engine
-  ------------------
-  This script manages the display of different event states based on the current time.
-  It supports URL-based state overrides and mock date simulation for testing purposes.
- <script>
-document.addEventListener('DOMContentLoaded', () => {
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Schedule Timestamps (South Africa Timezone UTC+2)
+    const EVENT_DATE_STR      = '2026-11-06';
+    const REGISTRATION_START  = new Date(`${EVENT_DATE_STR}T07:30:00+02:00`).getTime();
+    const TEE_OFF_START       = new Date(`${EVENT_DATE_STR}T08:00:00+02:00`).getTime();
+    const EVENT_END           = new Date(`${EVENT_DATE_STR}T16:30:00+02:00`).getTime();
+
+    const stateUpcoming   = document.getElementById('state-upcoming');
+    const stateToday      = document.getElementById('state-today');
+    const stateProgress   = document.getElementById('state-progress');
+    const stateHighlights = document.getElementById('state-highlights');
+
+    function showState(activeElement) {
+      const states = [stateUpcoming, stateToday, stateProgress, stateHighlights];
+      states.forEach(el => {
+        if (el === activeElement) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+    }
+
+    function updateCountdown(diff) {
+      const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs  = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent  = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent  = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent  = String(secs).padStart(2, '0');
+    }
+
+    function evaluateEventSchedule() {
+      const now = new Date().getTime();
+
+      if (now < REGISTRATION_START) {
+        // State 1: Upcoming Event (Countdown active)
+        showState(stateUpcoming);
+        const timeRemaining = TEE_OFF_START - now;
+        if (timeRemaining > 0) {
+          updateCountdown(timeRemaining);
+        }
+      } else if (now >= REGISTRATION_START && now < TEE_OFF_START) {
+        // State 2: Today's the Day! (07:30 - 07:59)
+        showState(stateToday);
+      } else if (now >= TEE_OFF_START && now < EVENT_END) {
+        // State 3: Event in Progress (08:00 - 16:30)
+        showState(stateProgress);
+      } else {
+        // State 4: Event Highlights (After 16:30)
+        showState(stateHighlights);
+      }
+    }
+
+    // Run on load and update every 1 second
+    evaluateEventSchedule();
+    setInterval(evaluateEventSchedule, 1000);
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
   initEventStateEngine();
 });
 
-// All managed state container IDs
+// Target state IDs
 const ALL_STATES = ['state-upcoming', 'state-today', 'state-progress', 'state-highlights'];
 
-// Schedule Timestamps (South Africa Timezone UTC+2)
-const EVENT_DATE_STR     = '2026-11-06';
-const REGISTRATION_START = new Date(`${EVENT_DATE_STR}T07:30:00+02:00`).getTime();
-const TEE_OFF_START      = new Date(`${EVENT_DATE_STR}T08:00:00+02:00`).getTime();
-const EVENT_END          = new Date(`${EVENT_DATE_STR}T16:30:00+02:00`).getTime();
+// Event Schedule Settings (6 Nov 2026)
+const EVENT_DATE = '2026-11-06';
+const TIME_REGISTRATION = new Date(`${EVENT_DATE}T07:30:00`);
+const TIME_TEE_OFF     = new Date(`${EVENT_DATE}T08:00:00`);
+const TIME_HIGHLIGHTS  = new Date(`${EVENT_DATE}T16:30:00`);
 
 let autoSwitcherInterval = null;
-let forcedStateId = null;
-let currentMockDate = null;
 
 function initEventStateEngine() {
   const urlParams = new URLSearchParams(window.location.search);
-  const stateParam = urlParams.get('state');
+  const forcedState = urlParams.get('state');
   const mockDateParam = urlParams.get('mockDate');
 
-  // 1. URL State Override (e.g., ?state=progress or ?state=state-progress)
-  if (stateParam) {
-    const formattedId = stateParam.startsWith('state-') ? stateParam : `state-${stateParam}`;
-    if (ALL_STATES.includes(formattedId)) {
-      forcedStateId = formattedId;
-      console.log(`[QA Engine] Forced view state via URL: ${forcedStateId}`);
-    }
+  // 1. URL State Override (e.g., ?state=progress)
+  if (forcedState && ALL_STATES.includes(`state-${forcedState}`)) {
+    forceState(`state-${forcedState}`);
+    console.log(`[QA Engine] Forced view via URL: state-${forcedState}`);
+    return;
   }
 
-  // 2. Mock Date Override (e.g., ?mockDate=2026-11-06T07:45:00+02:00)
+  // 2. Mock Date Override (e.g., ?mockDate=2026-11-06T08:15:00)
   if (mockDateParam) {
-    const simDate = new Date(mockDateParam);
-    if (!isNaN(simDate.getTime())) {
-      currentMockDate = simDate;
-      console.log(`[QA Engine] Simulating time: ${simDate.toString()}`);
+    const simulatedNow = new Date(mockDateParam);
+    if (!isNaN(simulatedNow)) {
+      evaluateStateForTime(simulatedNow);
+      console.log(`[QA Engine] Simulating time: ${simulatedNow.toString()}`);
+      return;
     }
   }
 
-  // Start continuous 1-second state & countdown loop
-  runEngine();
+  // 3. Normal Live Time Engine
+  runLiveTimeEngine();
 }
 
-function updateCountdown(diff) {
-  const safeDiff = Math.max(0, diff);
-  const days  = Math.floor(safeDiff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((safeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const mins  = Math.floor((safeDiff % (1000 * 60 * 60)) / (1000 * 60));
-  const secs  = Math.floor((safeDiff % (1000 * 60)) / 1000);
-
-  const elDays  = document.getElementById('cd-days');
-  const elHours = document.getElementById('cd-hours');
-  const elMins  = document.getElementById('cd-mins');
-  const elSecs  = document.getElementById('cd-secs');
-
-  if (elDays)  elDays.textContent  = String(days).padStart(2, '0');
-  if (elHours) elHours.textContent = String(hours).padStart(2, '0');
-  if (elMins)  elMins.textContent  = String(mins).padStart(2, '0');
-  if (elSecs)  elSecs.textContent  = String(secs).padStart(2, '0');
-}
-
-function evaluateAndTick() {
-  let now = new Date().getTime();
-
-  // If testing with a mock date, increment it by 1 second each tick
-  if (currentMockDate) {
-    now = currentMockDate.getTime();
-    currentMockDate = new Date(now + 1000);
-  }
-
+function evaluateStateForTime(nowDate) {
   let activeStateId = 'state-upcoming';
 
-  // State evaluation priority logic
-  if (forcedStateId) {
-    activeStateId = forcedStateId;
-  } else if (now >= EVENT_END) {
-    activeStateId = 'state-highlights'; // After 16:30
-  } else if (now >= TEE_OFF_START) {
-    activeStateId = 'state-progress';   // 08:00 - 16:30
-  } else if (now >= REGISTRATION_START) {
-    activeStateId = 'state-today';      // 07:30 - 07:59
+  if (nowDate >= TIME_HIGHLIGHTS) {
+    activeStateId = 'state-highlights';
+  } else if (nowDate >= TIME_TEE_OFF) {
+    activeStateId = 'state-progress';
+  } else if (nowDate >= TIME_REGISTRATION) {
+    activeStateId = 'state-today';
   } else {
-    activeStateId = 'state-upcoming';   // Before 07:30
+    activeStateId = 'state-upcoming';
   }
 
   showStateCard(activeStateId);
-
-  // Update active countdown numbers whenever "state-upcoming" is visible
-  if (activeStateId === 'state-upcoming') {
-    const timeRemaining = TEE_OFF_START - now;
-    updateCountdown(timeRemaining);
-  }
 }
 
-function runEngine() {
-  evaluateAndTick();
+function runLiveTimeEngine() {
+  evaluateStateForTime(new Date());
+  
+  // Re-check every 10 seconds for smooth transitions
   if (!autoSwitcherInterval) {
-    // 1-second interval keeps live countdown smooth
-    autoSwitcherInterval = setInterval(evaluateAndTick, 1000);
+    autoSwitcherInterval = setInterval(() => {
+      evaluateStateForTime(new Date());
+    }, 10000);
   }
 }
+
+// Global functions accessible by the UI Switcher Bar
+window.forceState = function(targetStateId) {
+  if (autoSwitcherInterval) clearInterval(autoSwitcherInterval);
+  showStateCard(targetStateId);
+};
+
+window.resetToLiveTime = function() {
+  // Clear URL params without reloading page
+  const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+  window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+  
+  runLiveTimeEngine();
+};
 
 function showStateCard(targetStateId) {
   ALL_STATES.forEach(id => {
@@ -1355,28 +1394,6 @@ function showStateCard(targetStateId) {
     }
   });
 }
-
-// =========================================================
-// GLOBAL QA / STAKEHOLDER TOOLBAR CONTROLLER FUNCTIONS
-// =========================================================
-window.forceState = function(targetStateId) {
-  const formattedId = targetStateId.startsWith('state-') ? targetStateId : `state-${targetStateId}`;
-  if (ALL_STATES.includes(formattedId)) {
-    forcedStateId = formattedId;
-    evaluateAndTick();
-  }
-};
-
-window.resetToLiveTime = function() {
-  forcedStateId = null;
-  currentMockDate = null;
-
-  // Clear query parameters from URL bar without reloading
-  const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-  window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
-
-  evaluateAndTick();
-};
 </script>
 
 

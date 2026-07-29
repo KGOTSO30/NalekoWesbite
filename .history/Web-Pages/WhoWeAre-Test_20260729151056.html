@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-   
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect With Us</title>
+    <title>About Us</title>
      <link href="/src/StylesFinal.css" rel="stylesheet">
      <link href="/src/StylesV2.css" rel="stylesheet">
      <link href="/src/output.css" rel="stylesheet"> 
-     <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
-   
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+<style>
+  [id] {
+  scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
+}
+</style>
 </head>
 <body class="flex flex-col min-h-screen">
+
+
              <!--  Navigation Bar Begins Here-->
-                 <!--  Navigation Bar Begins Here-->
   <header x-data="{ open: false}"
         x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
        
         class="fixed top-0 left-0 z-50 w-full px-4 py-6 text-white transition-all duration-300 ease-in-out bg-naleko-dark-blue">
-    <div class="container relative mx-auto text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+    <div class="container relative mx-auto text-white bg-naleko-dark-blue"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
                 class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
 
         <button id="menu-btn" class="absolute block text-white md:hidden top-4 right-4 focus:outline-none">
@@ -29,12 +35,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </button>
-        <div class="bg-red"> 
-      
-        <a href="/testing/naleko-campaigns/" class="flex-1 inline-flex items-center justify-center py-2.5 bg-white border border-gray-300 rounded-lg text-black text-xl font-semibold hover:bg-indigo-700 hover:text-white transition duration-300">
-             #Naleko Free Campaigns 
-        </a>
-    </div>
+        
             <nav id="menu" :class="{'hidden': !open, 'flex': open}"
                  class="absolute left-0 flex-col flex-wrap items-center justify-center hidden w-full p-4 text-sm text-white bg-black md:bg-transparent md:flex md:flex-row md:justify-end gap-x-6 gap-y-2 md:text-base header md:static top-full md:w-auto md:p-0">
                 <a href="/testing/about-us/" class="block transition duration-300 hover:text-blue-300">Who we are</a>
@@ -63,154 +64,157 @@
     </div>
 </header>
                 <!--  Navigation Bar ENDS Here-->
-                <!--  Navigation Bar ENDS Here-->
-
     
 <main class="flex-grow p-4 mt-40">
 
-     </div>
 
-<section class="container px-4 py-16 mx-auto max-w-8xl">
-    <h2 class="text-3xl font-black text-center md:text-4xl text-naleko-dark-blue ">
-        Let's Build Something Great Together
-    </h2>
-    <p class="mx-auto text-lg font-black text-center text-naleko-dark-blue">
-        Connect with Naleko Digital Solutions to start your journey towards innovation and efficiency.
-    </p>
-    
-    <br>
-    <p class="text-sm text-center max-w-9xl">
-        At <b> Naleko Digital Solutions</b>, we don’t just offer tech, we unlock potential. Whether you're an individual ready to upskill or an organization seeking cloud-first transformation, we’re here to guide, support, and scale with you. <b>Connect with us</b> today and take the first step toward a smarter, more empowered digital future.
-    </p>
-</section>
+</div>
 
-<div class="container px-4 mx-auto mt-0 shadow-lg rounded-xl">
-     <form  class="grid grid-cols-1 gap-8 p-6 bg-white md:grid-cols-3 sm:p-8" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST">
-  <input type="hidden" name="oid" value="00D07000000ZYWX">
-  <input type="hidden" name="retURL" value="http://naleko.com">
+<section class="container px-4 py-16 mx-auto mt-18" >
+        <h2 id="WhoWeAre" class="mb-4 text-3xl font-black text-center md:text-4xl text-naleko-dark-blue">Our Origin Story</h2>
+        <p class="mb-8 text-lg font-extrabold text-center text-naleko-dark-blue md:text-xl">Cloud experts driving smart, scalable solutions for a digital-first world.</p>
+        <div class="mx-auto text-base leading-relaxed text-justify text-gray-800 max-w-7xl">
+            <p class="mb-4">Our company is driven by a <span class="font-bold">love</span> for innovation, striving to <span class="font-bold">make good</span> on every opportunity <span class="font-bold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</span></p>
+            <p class="mb-4">Naleko Digital Solutions was born out of <span class="font-bold">collaboration, resilience, and a shared passion for technology.</span> In 2020, during the height of remote work adaptation, a Software Developer, a Software Engineer, and a Business Analyst created a WhatsApp group to support one another. What started as casual peer support quickly blossomed into something far greater, <span class="font-bold">a vision to transform the digital landscape</span>. And so, Naleko Digital Solutions was founded.</p>
+            <p class="mb-4">Today, we are a fast-growing IT software company with <span class="font-bold">a strong focus on cloud computing, CRM transformation, and intelligent application development.</span> We empower businesses across healthcare, finance, retail, banking, and insurance to elevate customer experiences and streamline operations through scalable, cloud-first strategies.</p>
+            <p>At the heart of our services lies Salesforce, enabling smarter customer management, AI-powered insights, and stronger relationships. <span class="font-bold">We’ve since expanded our technology stack to include a range of cloud platforms</span>, broadening our impact and adapting to the ever-evolving needs of modern enterprises.</p>
+        </div>
+    </section>
 
-  <div>
-    <label for="first_name">First Name</label>
-    <input id="first_name" maxlength="40" name="first_name" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
-  </div>
 
-  <div>
-    <label for="last_name">Last Name</label>
-    <input id="last_name" maxlength="80" name="last_name" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
-  </div>
 
-  <div>
-    <label for="email">Email</label>
-    <input id="email" maxlength="80" name="email" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
-  </div>
+ <!-- Mission and Vision Cards-->
+    <section id="Mission" class="container px-4 py-16 mx-auto">
+        <div class="grid max-w-5xl grid-cols-1 gap-8 mx-auto md:grid-cols-2">
+            <div class="flex flex-col items-center p-8 text-center bg-white rounded-2xl shadow-custom-dark">
+                <h3 class="mb-4 text-3xl font-semibold text-naleko-dark-blue">Our Mission</h3>
+                <p class="text-base leading-relaxed text-gray-800">
+                    <span class="font-bold">We are Naleko.</span><br>
+                    We design intelligent cloud computing solutions that empower businesses to build meaningful, lasting customer relationships.<br>
+                    Our cloud-based innovations enhance customer experiences, improve satisfaction, and drive measurable success.
+                    <span class="font-bold">Join us in redefining the future of cloud solutions.</span>
+                </p>
+            </div>
+            <div class="flex flex-col items-center p-8 text-center bg-white rounded-2xl shadow-custom-dark">
+                <h3 class="mb-4 text-3xl font-semibold text-naleko-dark-blue">Our Vision</h3>
+                <p class="text-base leading-relaxed text-gray-800">
+                    <span class="font-bold">To be a transformative force in Africa’s digital future</span> where <span class="font-bold">inclusive innovation, intelligent cloud solutions, and empowered communities</span> converge to shape a <span class="font-bold">smarter, more equitable world.</span> We envision <span class="font-bold">a tech ecosystem</span> where <span class="font-bold">businesses thrive, talent flourishes,</span> and every solution is <span class="font-bold">designed to uplift lives and unlock potential.</span>
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <div>
-    <label for="00NTt00000Et2h6">Are you a Non-Profit?</label>
-    <select id="00NTt00000Et2h6" name="00NTt00000Et2h6" title="Are you a Non-Profit?" class="w-full h-10 px-4 border border-black rounded-lg shadow-md">
-      <option value="">--None--</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-  </div>
+    <!-- Values  Cards-->
+    <section id="vision" class="container px-4 py-16 mx-auto">
+        <h2 class="mb-12 text-3xl font-semibold text-center md:text-4xl text-naleko-dark-blue">Our Values</h2>
+       <div class="grid max-w-6xl grid-cols-1 gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
 
-  <div class="md:col-span-2">
-    <label for="00NTt00000Et4ir">Technology Or Service</label>
-    <select id="00NTt00000Et4ir" name="00NTt00000Et4ir" title="Technology Or Service" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
-      <option value="">--None--</option>
-      <option value="Salesforce - CRM and Cloud solution tailored for business success.">Salesforce - CRM and Cloud solution tailored for business success.</option>
-      <option value="AWS - Scalable and secure cloud computing services.">AWS - Scalable and secure cloud computing services.</option>
-      <option value="Microsoft - Azure-powered enterprise cloud solutions.">Microsoft - Azure-powered enterprise cloud solutions.</option>
-      <option value="Google Cloud - AL-Driven and data-centric cloud innovation.">Google Cloud - AL-Driven and data-centric cloud innovation.</option>
-      <option value="SAP - Intelligent cloud solutions for business.">SAP - Intelligent cloud solutions for business.</option>
-      <option value="Oracle - Cloud infrastructure and enterprise applications.">Oracle - Cloud infrastructure and enterprise applications.</option>
-      <option value="Cloud Security &amp; Compliance">Cloud Security &amp; Compliance</option>
-      <option value="Enterprise Cloud Integration">Enterprise Cloud Integration</option>
-      <option value="Cloud Migration">Cloud Migration</option>
-      <option value="Managed Service">Managed Service</option>
-      <option value="Industry-Specific Training">Industry-Specific Training</option>
-      <option value="Naleko Corporate Training">Naleko Corporate Training</option>
-      <option value="Naleko Academy">Naleko Academy</option>
-      <option value="Naleko Girls In Tech">Naleko Girls In Tech</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
-
-  <div>
-    <label for="phone">Phone</label>
-    <input id="phone" maxlength="40" name="phone" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
-  </div>
-
-  <div>
-    <label for="company">Company</label>
-    <input id="company" maxlength="40" name="company" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
-  </div>
-
-  <div>
-    <label for="lead_source">Lead Source</label>
-    <select id="lead_source" name="lead_source" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
-      <option value="">--None--</option>
-      <option value="Web">Web</option>
-      <option value="Naleko Email">Naleko Email</option>
-      <option value="Linkedln">Linkedln</option>
-      <option value="Event">Event</option>
-      <option value="Facebook">Facebook</option>
-      <option value="AWM">AWM</option>
-      <option value="Exhibition">Exhibition</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
-
-  <div class="md:col-span-2">
-    <label for="description">Description</label>
-    <textarea id="description" name="description" rows="5" class="w-full px-4 py-2 border border-black rounded-lg shadow-md"></textarea>
-  </div>
-
-  <div class="mt-20 text-center">
-    <button type="submit" name="submit" class="w-52 h-11 bg-[#120C4E] text-white rounded-lg shadow text-base font-semibold">Send Message</button>
-  </div>
-</form>
-
-        <div>
-            <p class="max-w-6xl mx-auto mb-2 text-lg font-black text-center text-naleko-dark-blue">
-        Connect with Naleko Digital Solutions Campaigns.
-              </p>
-              
-                <p class="text-sm text-center max-w-7xl">
-                <b>Naleko Digital Solutions</b>  is on a mission to empower <b> professionals</b> and <b> businesses </b> across Africa through hands-on, impactful initiatives. Whether you're an <b> individual looking to upskill </b> or an <b> organization seeking clarity on next steps</b>, our expert team is here to help you move forward with confidence.
-              </p>
-             
-   <section class="container flex items-center justify-center mt-2 mb-2">
-    <div class="flex flex-row  items-center gap-4 w-65% justify-center"> 
-      
-        <a href="/naleko-campaigns/"  class="flex-1 inline-flex items-center justify-center py-2.5 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">
-             #NalekoFreeCampaigns 
-        </a>
-    </div>
-</section>
-   
-        
-        
+    <div id="card-innovation" class="cursor-pointer flip-card">
+        <div class="flip-card-inner">
+            <div class="flex flex-col items-center justify-center p-6 text-center bg-white flip-card-front rounded-xl shadow-custom-light">
+                <img src="/src/Icons/BulbIconV2.png" alt="Innovation Icon" class="w-12 h-10 mb-4 text-blue-900">
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Innovation with Purpose</h3>
+            </div>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Innovation with Purpose</h3>
+                <p class="text-sm">We foster a culture of relentless curiosity and groundbreaking solutions, ensuring every innovation serves a clear, impactful goal for our clients.</p>
+            </div>
         </div>
     </div>
 
+    <div id="card-empowerment" class="cursor-pointer flip-card">
+        <div class="flip-card-inner">
+            <div class="flex flex-col items-center justify-center p-6 text-center bg-white flip-card-front rounded-xl shadow-custom-light">
+                <img src="/src/Icons/Wexcelence.png" alt="Learning Icon" class="w-12 h-12 mb-4 text-blue-900">
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Empowerment through Learning</h3>
+            </div>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Empowerment through Learning</h3>
+                <p class="text-sm">We empower our team and clients by promoting continuous growth and knowledge sharing, ensuring everyone has the tools to excel in a dynamic world.</p>
+            </div>
+        </div>
+    </div>
 
-   <script src="/Web-Pages/form-handler.js"></script>
+    <div id="card-collaboration" class="cursor-pointer flip-card">
+        <div class="flip-card-inner">
+            <div class="flex flex-col items-center justify-center p-6 text-center bg-white flip-card-front rounded-xl shadow-custom-light">
+                <img src="/src/Icons/WCollaborate.png" alt="Collaboration Icon" class="w-12 mb-4 text-blue-900 h-11">
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Collaboration & Community</h3>
+            </div>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Collaboration & Community</h3>
+                <p class="text-sm">We believe in the power of collective effort and foster a supportive environment where diverse ideas converge to create exceptional outcomes.</p>
+            </div>
+        </div>
+    </div>
 
-  
-       
+    <div id="card-diversity" class="cursor-pointer flip-card">
+        <div class="flip-card-inner">
+            <div class="flex flex-col items-center justify-center p-6 text-center bg-white flip-card-front rounded-xl shadow-custom-light">
+                <img src="/src/Icons/WHeart.png" alt="Diversity Icon" class="w-12 h-12 mb-4 text-blue-900">
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Diversity<br/>& Inclusion</h3>
+            </div>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Diversity<br/>& Inclusion</h3>
+                <p class="text-sm">We celebrate varied perspectives and experiences, creating an environment where every voice is heard and valued, enriching our solutions.</p>
+            </div>
+        </div>
+    </div>
 
-<!-- Contact Us Body Ends Here-->
+    <div id="card-customer" class="cursor-pointer flip-card">
+        <div class="flip-card-inner">
+            <div class="flex flex-col items-center justify-center p-6 text-center bg-white flip-card-front rounded-xl shadow-custom-light">
+                <img src="/src/Icons/WIntegrity.png" alt="Customer Icon" class="w-12 mb-4 text-blue-900 h-11">
+                <h3 class="text-lg font-normal mb-2 text-gray-800 font-['Inter']">Customer-Centric Design</h3>
+            </div>
+            <div class="flip-card-back bg-white p-6 rounded-xl shadow-custom-light flex flex-col items-center justify-center text-center text-black font-['Inter']">
+                <h3 class="text-lg font-bold mb-2 text-[#120C4E]">Customer-Centric Design</h3>
+                <p class="text-sm">Our solutions are meticulously crafted around client needs, ensuring intuitive, powerful, and effective tools that truly solve business challenges.</p>
+            </div>
+        </div>
+    </div>
 
+</div>
+    </section>
+
+
+            <!-- Flagship Programs -->
+
+    <section id="flags" class="container px-4 py-16 mx-auto">
+        <h2 id="flags" class="mb-12 text-3xl font-semibold text-center md:text-4xl text-naleko-dark-blue">Our Flagship Programs</h2>
+        <div class="grid max-w-5xl grid-cols-1 gap-8 mx-auto md:grid-cols-2">
+            <div class="flex flex-col items-center p-6 text-center bg-white-alpha rounded-2xl shadow-custom-dark">
+                <img src="/src/Icons/CorpTrainingIconV2.png" alt="Corp Training Icon" class="w-20 h-20 mb-4">
+                <h3 class="mb-4 text-3xl font-semibold text-naleko-dark-blue">Corp Training</h3>
+                <p class="mb-6 text-base leading-relaxed text-gray-800">We tailor our solutions to the unique needs of each client. From systems integration to team enablement, our training programs help businesses get the most from their cloud investments.</p>
+                <a href="/training/" class="inline-flex items-center justify-center px-6 py-2 text-lg text-white transition duration-300 border rounded-lg bg-naleko-dark-blue border-naleko-dark-blue hover:bg-naleko-dark-blue hover:bg-indigo-700">Learn More</a>
+            </div>
+
+            <div class="flex flex-col items-center p-6 text-center bg-white-alpha rounded-2xl shadow-custom-dark">
+                <img src="/src/Icons/CollaborationIconV2.png" alt="Girls In Tech Icon" class="w-20 h-20 mb-4">
+                <h3 class="mb-4 text-3xl font-semibold text-naleko-dark-blue">Girls In Tech</h3>
+                <p class="mb-6 text-base leading-relaxed text-gray-800">We are committed to closing the gender gap in tech. By supporting and empowering young women, we aim to build a more inclusive, diverse, and dynamic technology industry for all.</p>
+                <a href="/girls-in-tech/" class="inline-flex items-center justify-center px-6 py-2 text-lg text-white transition duration-300 border rounded-lg bg-naleko-dark-blue border-naleko-dark-blue hover:bg-naleko-dark-blue hover:bg-indigo-700">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container px-4 py-16 mx-auto text-center">
+        <h2 class="mb-4 text-3xl font-semibold md:text-4xl text-naleko-dark-blue">Your Team’s Success Could Be Next</h2>
+        <p class="mb-8 text-lg text-gray-800">Partner with Naleko to unlock smarter systems, stronger teams, and long-term digital success.</p>
+        <a href="/contact-us/" class="btn-primary-demo">Book a Discovery Call</a>
+    </section>
 
 </main>
-           
-                
-
  
+
+
+
+
                 <!--  Site Footer Begins Here -->
 
     
-    <footer class="p-4 px-4 py-8 text-white  bg-naleko-dark-blue"> <!-- Need five columns-->
+    <footer class="p-4 px-4 py-8 text-white bg-naleko-dark-blue"> <!-- Need five columns-->
         <div class="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-5">
             <div class="flex flex-col items-center text-center md:items-start md:text-left">
                  <div class="flex items-center mb-4">
@@ -255,7 +259,7 @@
                 </div>
             </div>
 
-               <div class="flex flex-col items-center text-center md:items-start md:text-left">
+              <div class="flex flex-col items-center text-center md:items-start md:text-left">
                 <h3 class="py-2 mb-4 text-xl font-semibold">Quick Links</h3>
                 <ul class="space-y-2">
                     <li><a href="/Web-Pages/WhoWeAre.html" class="text-gray-300 transition duration-300 hover:text-white">Who Are We</a></li>
@@ -300,7 +304,7 @@
             
 
              <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                 <div class="flex items-center">
+                   <div class="flex items-center">
                    <h3 class="py-2 text-xl font-semibold md:mx-12">Scan Me</h3>
                     
                 </div>
@@ -308,9 +312,6 @@
                     <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder"  style="width: 80px; height: 80px;">
                     
                 </div>
-               
-
-                
                
             </div>
             
@@ -324,9 +325,24 @@
     </footer>
 
                 <!--  Site footer Ends Here -->
-                <!--  Site footer Ends Here -->
 
-    <script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all elements with the class 'flip-card'
+        const flipCards = document.querySelectorAll('.flip-card');
+
+        // Loop through each flip card and add a click event listener
+        flipCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Toggle the 'flipped' class on the card
+                card.classList.toggle('flipped');
+            });
+        });
+    });
+</script>
+<script>
         const menuBtn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
 
@@ -334,6 +350,7 @@
             menu.classList.toggle('hidden');
         });
     </script>
-    
+</body>
+</html>
 </body>
 </html>

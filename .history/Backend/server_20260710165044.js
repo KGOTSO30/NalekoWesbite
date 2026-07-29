@@ -8,7 +8,6 @@ const cors = require('cors'); // To handle CORS issues from your frontend
 const stream = require('stream');
 
 const app = express();
-app.use('/src', express.static(path.join(__dirname, '../src')));
 const port = process.env.PORT || 3000; // Use port from .env or default to 3000
 
 // --- CORS Configuration ---

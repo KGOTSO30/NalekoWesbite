@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naleko Digital Solutions</title>
     <link href="/src/StylesFinal.css" rel="stylesheet">
+    <link href="/src/StylesV2.css" rel="stylesheet">
     <link href="/src/output.css" rel="stylesheet"> 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -33,7 +34,7 @@
         x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30 }"
         :class="{
             'bg-naleko-dark-blue shadow-md text-4xl md:text-5xl header': scrolled,
-            'bg-transparent': !scrolled
+            'bg-none': !scrolled
         }"
         class="fixed w-full top-0 left-0 z-50 transition-all duration-300 ease-in-out">
 
@@ -50,16 +51,16 @@
                 class="md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
                         gap-x-6 gap-y-2 text-sm md:text-base header 
                         absolute md:static top-full left-0 w-full md:w-auto 
-                        bg-naleko-dark-blue md:bg-transparent p-4 md:p-0">
-                <a href="/about-us/" class="block hover:text-blue-300 transition duration-300">About Us</a>
-                <a href="/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
-                <a href="/who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
-                <a href="/contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
-                <a href="/training/" class="block hover:text-blue-300 transition duration-300">Training</a>
-                <a href="/girls-in-tech/" class="block  hover:text-blue-300 transition duration-300">Girls in Tech</a>
-                <a href="/events/" class="block  hover:text-blue-300 transition duration-300">Events</a>
-                <a href="/partner-with-us/" class="block  hover:text-blue-300 transition duration-300">Partner With Us</a>
-                <a href="/book-a-demo/" class="block  hover:text-blue-300 transition duration-300">Book a demo</a>
+                          p-4 md:p-0">
+                <a href="/About-us/" class="block hover:text-blue-300 transition duration-300">About Us</a>
+                <a href="/What-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
+                <a href="/Who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
+                <a href="/Contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
+                <a href="/Training/" class="block hover:text-blue-300 transition duration-300">Training</a>
+                <a href="/Girls-in-tech/" class="block  hover:text-blue-300 transition duration-300">Girls in Tech</a>
+                <a href="/Events/" class="block  hover:text-blue-300 transition duration-300">Events</a>
+                <a href="/Partner-with-us/" class="block  hover:text-blue-300 transition duration-300">Partner With Us</a>
+                <a href="/Book-a-demo/" class="block  hover:text-blue-300 transition duration-300">Book a demo</a>
                 
                 <div class="flex space-x-2 ml-4 mt-2 md:mt-0"> <a href="https://za.linkedin.com/company/nalekodigital"
                         class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
@@ -88,7 +89,7 @@
                     <h1 class="text-3xl md:text-5xl font-bold mb-4">Empowering Collaborative Cloud Solutions</h1>
 
                     <div>
-                        <a href="/what-we-do/" class="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition mb-8 mt-8 pointer-events-auto">
+                        <a href="/What-we-do/" class="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition mb-8 mt-8 pointer-events-auto">
                             Discover Our Solutions
                         </a>
                     </div>
@@ -293,11 +294,11 @@
               
           </div>
       
-      <div  class="width: 80%; height: 120%; margin: 10 auto; border: 1px solid" id="blog" >
+      <div  class="width: 80%; height: 80%; margin: 10 auto; border: 1px solid" id="blog" >
       
        
-       <div class="tagembed-widget" style="width:100%;height:100%;overflow:auto;" data-widget-id="292740" website="1"></div>
-       <script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
+       <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+        <div class="commonninja_component pid-cd552a51-ac58-4786-a804-8736db2c3924"></div>
        
        
         <div class="white_block"></div>
@@ -415,7 +416,7 @@
             <section class="container flex  items-center mt-2 mb-2 justify-center">
                 <div class="flex flex-row  items-center gap-4 w-65% justify-center"> 
                   
-                    <a href="/naleko-campaigns/"  class="flex-1 inline-flex items-center justify-center py-2.5 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">
+                    <a href="/Naleko-campaigns/"  class="flex-1 inline-flex items-center justify-center py-2.5 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">
                          #NalekoFreeCampaigns 
                     </a>
                 </div>
@@ -441,9 +442,9 @@
                 <!--  Site Footer Begins Here -->
 
     
-    <footer class=" bg-naleko-dark-blue text-white py-8 px-4 p-4"> <!-- Need five columns-->
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+    <footer class="p-4 px-4 py-8 text-white bg-naleko-dark-blue"> <!-- Need five columns-->
+        <div class="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-5">
+            <div class="flex flex-col items-center text-center md:items-start md:text-left">
                  <div class="flex items-center mb-4">
                 <!-- Cloud Icon -->
                 <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -451,31 +452,31 @@
                 </svg>
                 <h3 class="text-4xl header">Naleko</h3>
             </div>
-                <p class="text-sm text-gray-300 mb-4 py-2">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+                <p class="py-2 mb-4 text-sm text-gray-300">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
                 <div class="flex space-x-4">
                    <!-- LinkedIn -->
-                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 transition duration-300 hover:text-white" aria-label="LinkedIn">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
                     </svg>
                     </a>
 
                     <!-- TikTok -->
-                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="TikTok">
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 transition duration-300 hover:text-white" aria-label="TikTok">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
                     </svg>
                     </a>
 
                      <!-- Instagram -->
-                    <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="Instagram">
+                    <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 transition duration-300 hover:text-white" aria-label="Instagram">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.25 2.415.415a4.9 4.9 0 0 1 1.695 1.06 4.9 4.9 0 0 1 1.06 1.695c.165.455.361 1.244.415 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.25 1.96-.415 2.415a4.9 4.9 0 0 1-1.06 1.695 4.9 4.9 0 0 1-1.695 1.06c-.455.165-1.244.361-2.415.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.25-2.415-.415a4.9 4.9 0 0 1-1.695-1.06 4.9 4.9 0 0 1-1.06-1.695c-.165-.455-.361-1.244-.415-2.415-.058-1.266-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.25-1.96.415-2.415a4.9 4.9 0 0 1 1.06-1.695 4.9 4.9 0 0 1 1.695-1.06c.455-.165 1.244-.361 2.415-.415 1.266-.058 1.65-.07 4.85-.07zm0 1.8c-3.153 0-3.515.012-4.757.068-.987.046-1.518.205-1.87.342a3.1 3.1 0 0 0-1.136.736 3.1 3.1 0 0 0-.736 1.136c-.137.352-.296.883-.342 1.87-.056 1.242-.068 1.604-.068 4.757s.012 3.515.068 4.757c.046.987.205 1.518.342 1.87.17.44.42.83.736 1.136.306.316.696.566 1.136.736.352.137.883.296 1.87.342 1.242.056 1.604.068 4.757.068s3.515-.012 4.757-.068c.987-.046 1.518-.205 1.87-.342a3.1 3.1 0 0 0 1.136-.736 3.1 3.1 0 0 0 .736-1.136c.137-.352.296-.883.342-1.87.056-1.242.068-1.604.068-4.757s-.012-3.515-.068-4.757c-.046-.987-.205-1.518-.342-1.87a3.1 3.1 0 0 0-.736-1.136 3.1 3.1 0 0 0-1.136-.736c-.352-.137-.883-.296-1.87-.342-1.242-.056-1.604-.068-4.757-.068zm0 3.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 1.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8zm6.4-.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
                     </svg>
                     </a>
 
                     <!-- Facebook -->
-                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 hover:text-white transition duration-300" aria-label="Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 transition duration-300 hover:text-white" aria-label="Facebook">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
                     </svg>
@@ -486,28 +487,28 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
+              <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                <h3 class="py-2 mb-4 text-xl font-semibold">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="/Web-Pages/WhoWeAre.html" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
-                    <li><a href="/Web-Pages/WhoWeAre.html#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
-                    <li><a href="/Web-Pages/WhoWeAre.html#vission" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
-                    <li><a href="/flagship/" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                    <li><a href="/About-us/" class="text-gray-300 transition duration-300 hover:text-white">Who Are We</a></li>
+                    <li><a href="/About-us/#Mission" class="text-gray-300 transition duration-300 hover:text-white">Our Mission</a></li>
+                    <li><a href="/About-us/#Values" class="text-gray-300 transition duration-300 hover:text-white">Our Values</a></li>
+                    <li><a href="/About-us/#Flagship Programs" class="text-gray-300 transition duration-300 hover:text-white">Flagship Programs</a></li>
                 </ul>
             </div>
 
-            <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
+            <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                <h3 class="py-2 mb-4 text-xl font-semibold">Flagship Programs</h3>
                 <ul class="space-y-2">
-                    <li><a href="/Web-Pages/CorpTraining.html" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
-                    <li><a href="/Web-Pages/Academy.html" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
-                    <li><a href="/Web-Pages/GirlsInTech.html" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                    <li><a href="/Training/" class="text-gray-300 transition duration-300 hover:text-white">Corporate Training</a></li>
+                    <li><a href="/Training/" class="text-gray-300 transition duration-300 hover:text-white">Naleko Academy</a></li>
+                    <li><a href="/Girls-in-tech/" class="text-gray-300 transition duration-300 hover:text-white">Girls in Tech</a></li>
                 </ul>
             </div>
 
             
-                    <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 class="text-xl font-semibold mb-4 py-2">Contact Us</h3>
+                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                <h3 class="py-2 mb-4 text-xl font-semibold">Contact Us</h3>
                 <div class="flex items-center mb-2">
                     <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     <p class="text-gray-300">admin@naleko.com</p>
@@ -530,16 +531,15 @@
             </div>
             
 
-             <div class="flex flex-col items-center md:items-start text-center md:text-left">
-                 <div class="flex items-center">
-                   <h3 class="text-xl font-semibold py-2 md:mx-12">Scan Me</h3>
+             <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                   <div class="flex items-center">
+                   <h3 class="py-2 text-xl font-semibold md:mx-12">Scan Me</h3>
                     
                 </div>
                 <div class="flex items-center mt-6 px-14">
                     <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder"  style="width: 80px; height: 80px;">
                     
                 </div>
-                
                
             </div>
             
@@ -547,13 +547,12 @@
             
             
         </div>
-        <div class="container mx-auto text-center text-gray-400 text-sm mt-8 pt-4 border-t border-gray-700">
+        <div class="container pt-4 mx-auto mt-8 text-sm text-center text-gray-400 border-t border-gray-700">
             COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
         </div>
     </footer>
 
                 <!--  Site footer Ends Here -->
-
 <script>
     function carousel() {
         return {
@@ -565,7 +564,7 @@
                 },
                 {
                     image: '/src/Images/slide2.jpg',
-                    with: "Elevate your cloud potential with expert solutions for seamless growth",
+                   
                     subtext: "Elevate your cloud potential with expert solutions for seamless growth"
                 },
                 {

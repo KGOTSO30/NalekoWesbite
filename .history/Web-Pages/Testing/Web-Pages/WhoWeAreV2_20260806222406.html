@@ -31,8 +31,8 @@
 <header x-data="{ scrolled: false, open: false}"
     x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30 }"
     :class="{
-        'bg-naleko-dark-blue  text-4xl  header': scrolled,
-        'bg-transparent text-4xl header': !scrolled
+        'bg-naleko-dark-blue shadow-md text-4xl md:text-5xl header': scrolled,
+        'bg-transparent': !scrolled
     }"
     class="fixed w-full top-0 left-0 z-50 transition-all duration-300 ease-in-out">
 
@@ -52,11 +52,11 @@
         </button>
         
         <!-- Full-Screen Nav on Mobile -->
-        <nav :class="{'hidden': !open, 'bg-naleko-dark-blue flex': open}"
+        <nav :class="{'hidden': !open, 'flex': open}"
             class="md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
                     gap-x-6 gap-y-6 text-xl md:text-base header 
                     fixed md:static top-0 left-0 w-full h-screen md:h-auto md:w-auto 
-                     md:bg-transparent p-8 md:p-0 z-40 transition-all duration-300">
+                    bg-naleko-dark-blue:open md:bg-transparent p-8 md:p-0 z-40 transition-all duration-300">
                     
            <a href="/About-us/" class="block hover:text-blue-300 transition duration-300">About Us</a>
                 <a href="/What-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
@@ -68,13 +68,26 @@
                 <a href="/Partner-with-us/" class="block  hover:text-blue-300 transition duration-300">Partner With Us</a>
                 <a href="/Book-a-demo/" class="block  hover:text-blue-300 transition duration-300">Book a demo</a>
               
-
+            <div class="flex space-x-2 ml-0 md:ml-4 mt-4 md:mt-0"> 
+                <a href="https://za.linkedin.com/company/nalekodigital"
+                    class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-8 h-8 md:w-6 md:h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z" />
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@nalekodigital/"
+                    class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                    <svg class="w-8 h-8 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z" />
+                    </svg>
+                </a>
+            </div>
         </nav>
     </div>
 </header>
     <!-- Navigation Bar ENDS Here -->
     
-    <main class="flex-grow p-4 mt-10">
+    <main class="flex-grow p-4 mt-40">
         <section class="container px-4 py-16 mx-auto mt-20">
             <h2 id="WhoWeAre" class="mb-4 text-3xl font-black text-center md:text-4xl text-naleko-dark-blue">Our Origin Story</h2>
             <p class="mb-8 text-lg font-extrabold text-center text-naleko-dark-blue md:text-xl">Cloud experts driving smart, scalable solutions for a digital-first world.</p>

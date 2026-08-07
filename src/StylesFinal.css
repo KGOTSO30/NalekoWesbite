@@ -65,9 +65,47 @@ body {
 .shadow-custom-light {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
-.shadow-custom-dark {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+.shadow-custom-dark{
+ box-shadow: var(--card-shadow);
+ border: 1px solid #B800B8;
+  
+    border-radius: 12px;
+    padding: 30px 20px;
+
 }
+.shadow-custom-dark:hover {
+   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);*/
+    background: #ffffff;
+    border: 3px solid #B800B8;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*****shadow added*/
+
+/*.shadow-custom-dark {
+    background: #ffffff;
+    border: 3px solid #B800B8;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}*/
+
+/***end*/
+
 .shadow-custom-card {
     box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -645,8 +683,36 @@ body {
   width: 100%; 
   height: 250px; 
   perspective: 1000px; 
+  box-shadow: var(--card-shadow);
 }
-
+.flip-card-front:hover {
+   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);*/
+ /*   background: #ffffff;*/
+    border: 3px solid #B800B8;
+  /*  border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;*/
+}
+.flip-card-back:hover {
+   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);*/
+   /* background: #ffffff;*/
+    border: 3px solid #B800B8;
+   /* border-radius: 12px;
+    padding: 30px 20px;*/
+ /**   text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    display: flex;
+   flex-direction: column;
+    align-items: center;*/
+}
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -656,7 +722,7 @@ body {
   transform-style: preserve-3d; 
 }
 
-.flip-card.flipped .flip-card-inner {
+.flip-card.flipped .flip-card-inner:hover {
   transform: rotateY(180deg); 
 }
 

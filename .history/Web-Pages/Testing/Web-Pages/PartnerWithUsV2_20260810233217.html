@@ -10,10 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     
     <script src="https://js.paystack.co/v1/inline.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
     <style>
@@ -21,7 +20,7 @@
             scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
         }
     </style>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen ">
     
     <!-- Navigation Bar Begins Here -->
 <header x-data="{ scrolled: false, open: false}"
@@ -70,7 +69,7 @@
 </header>
     <!-- Navigation Bar ENDS Here -->
 
-    <main class="flex-grow p-4 mt-10 mb-8">
+    <main class="flex-grow p-4 mt-36 mb-8">
      <button id="back-btn" onclick="goBack()" class="hidden fixed bottom-6 left-6 md:top-32 md:bottom-auto md:left-8 z-40 bg-white border border-gray-200 text-naleko-dark-blue shadow-custom-card hover:bg-blue-50 rounded-full px-4 py-2 flex items-center gap-2 font-semibold text-sm transition-all duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />

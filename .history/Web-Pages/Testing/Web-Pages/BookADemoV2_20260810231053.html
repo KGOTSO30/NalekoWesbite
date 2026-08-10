@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naleko Digital Solutions - Training</title>
-     <link href="/src/StylesFinal.css" rel="stylesheet">
-     <link href="/src/StylesV2.css" rel="stylesheet">
-      <link href="/src/output.css" rel="stylesheet"> 
+    <title>Naleko AI Platform</title>
+    <link href="/src/StylesFinal.css" rel="stylesheet">
+    <link href="/src/StylesV2.css" rel="stylesheet">
+    <link href="/src/output.css" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-    <style>
-        [id] {
-            scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
-        }
-    </style>
-<body class="flex flex-col min-h-screen ">
+<body class="flex flex-col min-h-screen font-inter bg-white">
     <!-- Navigation Bar Begins Here -->
 <header x-data="{ scrolled: false, open: false}"
     x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30 }"
@@ -65,67 +61,181 @@
     </div>
 </header>
     <!-- Navigation Bar ENDS Here -->
- <main class="flex-grow p-4 mb-8">
-
-     </div>
-        <section class="container mx-auto py-16 px-4 text-center">
-            <h1 id="CorpTrain" class="text-3xl md:text-4xl font-black text-naleko-dark-blue mb-4">Corporate Training</h1>
-            <p class="text-lg md:text-xl font-black text-naleko-dark-blue mb-4 max-w-2xl mx-auto">Empowering Teams. Enhancing Performance.</p>
-            <p class="text-base font-normal text-gray-800 mb-16 max-w-7xl mx-auto">At Naleko Digital Solutions, we understand that every organization is unique. That’s why our Corporate Training programs are designed to align with your specific goals, technology stack, and team dynamics. Whether you're adopting new systems or upskilling your workforce, we provide tailored training that drives real business results.</p>
-            <a href="/Contact-us/" class="btn-primary-demo">Book a Discovery Call</a>
+  
+    <main class="flex-grow mt-36">
+        <section class="hero-section">
+            <a href="#" class="partner-link"></a>
+            <h1>NALEKO AI PLATFORM</h1>
+            <p>The Naleko AI-HCM Stack is an integrated, intelligent system designed to power the entire talent lifecycle from recruitment to retirement. Built on a bedrock of unified talent data and real-time analytics, the platform seamlessly connects core human capital management with advanced agentic AI to manage, deploy, and measure organizational talent automatically.</p>
         </section>
 
-        <section class="container mx-auto py-16 px-4 text-center">
-            <h2 id="WhatWeOffer" class="text-3xl md:text-4xl font-black text-naleko-dark-blue mb-4">What We Offer</h2>
-            <p class="text-base font-normal text-black max-w-7xl mb-12 mx-auto">Our training solutions are built to meet you where you are empowering your teams with the right knowledge, tools, and support to thrive in a digital-first world.</p>
+        <section class="apps-header">
+            <h2>AI APPLICATIONS WE BUILT</h2>
+            <p>Each application is trained on real Naleko programme data and deployed inside our HCM platform. Click any application to request a specialized live demo.</p>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto mt-8 mb-12">
-                <div class="bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
-                    <h3 class="text-3xl font-semibold text-naleko-dark-blue mb-4">Flexible Delivery</h3>
-                    <p class="text-base font-normal text-gray-800 leading-relaxed">Choose from on-site workshops, virtual classrooms, or hybrid formats that suit your team’s location and schedule.</p>
+         <section class="apps-grid">
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/agent.png" alt="Agentforce Screening">
                 </div>
-                <div class="bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
-                    <h3 class="text-3xl font-semibold text-naleko-dark-blue mb-4">Expert Facilitators</h3>
-                    <p class="text-base font-normal text-gray-800 leading-relaxed">Our instructors are experienced tech professionals and certified consultants who bring both industry knowledge and teaching expertise.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden">
-                    <h3 class="text-3xl font-semibold text-naleko-dark-blue mb-4">Hands-On Training</h3>
-                    <p class="text-base font-normal text-gray-800 leading-relaxed">Your teams will learn by doing, through practical exercises, sandbox environments, and real-world case studies using platforms like Salesforce, AWS, Microsoft Azure, and more.</p>
-                </div>
-               
-                
+                <h3>Agentforce Screening</h3>
+                <p>Auto-screens 1000+ CVs against programme criteria in under 2 min<br><strong>95% accuracy</strong></p>
+                <div class="tag-pill">Used in AI Programmes</div>
+                <span class="demo-link" onclick="openDemoModal('Agentforce Screening')">Demo</span>
             </div>
-                <div  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-4xl mx-auto mt-8 mb-8">
-                    <div class="bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden border border-white">
-                        <h3 class="text-3xl font-semibold text-naleko-dark-blue mb-4">Enablement for Long-Term Success</h3>
-                        <p class="text-base font-normal text-gray-800 leading-relaxed">We go beyond knowledge transfer. Our focus is on team enablement, giving your employees the confidence and skills to fully leverage your cloud investments.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-custom-card overflow-hidden">
-                        <h3 class="text-3xl font-semibold text-naleko-dark-blue mb-4">Customized Learning Paths</h3>
-                        <p class="text-base font-normal text-gray-800 leading-relaxed">We don’t believe in one-size-fits-all. We assess your business needs and develop training programs that directly support your digital strategy and operations.</p>
-                    </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                  <img src="../src/Images/bookADemo/images/skills.png" alt="Skills Match Engine">
                 </div>
-                
-           
+                <h3>Skills Match Engine wise</h3>
+                <p>Maps learner competencies to employer job specs in real time<br><strong>92% match rate</strong></p>
+                <div class="tag-pill">Used in Placements</div>
+                <span class="demo-link" onclick="openDemoModal('Skills Match Engine')">Demo</span>
+            </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/pred.png" alt="Predictive Dropout">
+                </div>
+                <h3>Predictive Dropout</h3>
+                <p>Identifies at-risk learners 3 weeks before disengagement<br><strong>78% early detection</strong></p>
+                <div class="tag-pill">Used in Learnerships</div>
+                <span class="demo-link" onclick="openDemoModal('Predictive Dropout')">Demo</span>
+            </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/com.png" alt="Compliance Automation">
+                </div>
+                <h3>Compliance Automation</h3>
+                <p>Auto-generates & refreshes reports from live programme data.<br><strong>100% audit-ready</strong></p>
+                <div class="tag-pill">Used in Reporting</div>
+                <span class="demo-link" onclick="openDemoModal('Compliance Automation')">Demo</span>
+            </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/agent.png" alt="Prompt Co-Pilot">
+                </div>
+                <h3>Prompt Co-Pilot</h3>
+                <p>Trains learners with intelligent AI tutor on inside the LMS<br><strong>40% faster mastery</strong></p>
+                <div class="tag-pill">Used in AI Fundamentals</div>
+                <span class="demo-link" onclick="openDemoModal('Prompt Co-Pilot')">Demo</span>
+            </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/work.png" alt="Workforce Forecast">
+                </div>
+                <h3>Workforce Forecast</h3>
+                <p>Predict employer hiring needs 6 months ahead for pipeline planning.<br><strong>75% accuracy</strong></p>
+                <div class="tag-pill">Used in Strategy</div>
+                <span class="demo-link" onclick="openDemoModal('Workforce Forecast')">Demo</span>
+            </div>
         </section>
 
-        <section class="container mx-auto py-16 px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-black text-naleko-dark-blue mb-4">The Result?</h2>
-            <p class="text-xl font-black text-naleko-dark-blue mb-4 max-w-2xl mx-auto">Stronger teams. Smarter systems. Better performance.</p>
-            <p class="text-base font-normal text-gray-800 mb-12 max-w-5xl mx-auto">Naleko Corporate Training helps you turn technology into a strategic advantage, driving productivity, innovation, and growth.</p>
-            <a href="https://trailhead.salesforce.com" class="btn-primary-demo">
-    Get Started in Salesforce 
-      </a>
-        </section>
+        <div style="display: flex; justify-content: center; width: 100%; margin-bottom: 40px;">
+            <a href="#" class="btn-primary-demo" onclick="openDemoModal('')">Request Application Demo</a>
+        </div>
 
-       
-    
+ <section class="infrastructure">
+    <h2 class="infra">BUILT ON ENTERPRISE-GRADE INFRASTRUCTURE</h2>
+    <div class="marquee-track">
+        <div class="marquee-content">
+            <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo"></a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo"></a>
+            <a href="https://moodle.org" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo"></a>
+            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo"></a>
+            
+            <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo"></a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo"></a>
+            <a href="https://moodle.org" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo"></a>
+            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo"></a>
+
+              <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo"></a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo"></a>
+            <a href="https://moodle.org" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo"></a>
+            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo"></a>
+
+        </div>
+    </div>
+</section>
     </main>
-    <!-- Page break using an image provided by Lerato -->
 
-     <div class=" w-full h-[541px] Picture-background mx-auto"></div> 
-          
-              
+    
+
+
+   <div class="modal-backdrop" id="demoModal" onclick="closeDemoModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="document.getElementById('demoModal').style.display='none'">&times;</button>
+            <h3 id="modalTitle">Request Application Demo</h3>
+            
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST">
+                <input type="hidden" name="oid" value="00D07000000ZYWX">
+                <input type="hidden" name="retURL" value="https://wiseman-2312.github.io/thankyoupagenaleko">
+                <input type="hidden" name="lead_source" value="Web">
+
+                <div class="form-group">
+    <label for="modalAppInput">Selected Application</label>
+    <select id="modalAppInput" name="00NTt00000IiwIr" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-weight:bold; color:var(--accent-blue)">
+        <option value="" disabled selected>-- Please Select an Application --</option>
+    
+        <option value="Agentforce Screening">Agentforce Screening</option>
+         <option value="Skills Match Engine">Skills Match Engine</option>
+          <option value="Predictive Dropout">Predictive Dropout</option>
+           <option value="Compliance Automation">Compliance Automation</option>
+            <option value="Prompt Co-Pilot">Prompt Co-Pilot</option>
+             <option value="Workforce Forecast">Workforce Forecast</option>
+        </select>
+</div>
+                
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" maxlength="40" required placeholder="Enter your first name">
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" maxlength="80" required placeholder="Enter your last name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" maxlength="80" name="email" size="20" type="email" required placeholder="name@company.com" />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="e.g. +27 11 123 4567"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" maxlength="40" placeholder="Your company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwM5">Job Title</label>
+                    <input type="text" id="00NTt00000IiwM5" name="00NTt00000IiwM5" maxlength="250" placeholder="Your job title">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwNh">Preferred Date & Time (Time available)</label>
+                    <input type="datetime-local" id="00NTt00000IiwNh" name="00NTt00000IiwNh" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="00NTt00000IiwKTMAZ">How can we help you?</label>
+                    <textarea id="00NTt00000IiwKTMAZ" name="00NTt00000IiwKTMAZ" wrap="soft" rows="4"></textarea>
+                </div>
+
+                <button type="submit" name="submit" class="submit-btn">Request Live Demo Connection</button>
+            </form>
+        </div>
+    </div>
+
 
                 <!--  Site Footer Begins Here -->
 
@@ -241,13 +351,27 @@
     </footer>
 
                 <!--  Site footer Ends Here -->
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
 
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>        
-    </body>
+<script>
+    function openDemoModal(appName) {
+    const selectDropdown = document.getElementById('modalAppInput');
+    
+    if (appName && appName !== '') {
+        // If an app name is passed (from an app card), auto-select it
+        selectDropdown.value = appName;
+    } else {
+        // If no app name is passed (from the main header button), reset to the placeholder selection
+        selectDropdown.value = '';
+    }
+    
+    // Keep your original flex display logic to open the modal
+    document.getElementById('demoModal').style.display = 'flex';
+}
+
+function closeDemoModal(event) {
+    // Keep your original logic to close the modal
+    document.getElementById('demoModal').style.display = 'none';
+}
+    </script>
+</body>
 </html>

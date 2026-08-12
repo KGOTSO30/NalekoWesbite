@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-   
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect With Us</title>
+    <title>Campaigns</title>
      <link href="/src/StylesFinal.css" rel="stylesheet">
-     <link href="/src/StylesV2.css" rel="stylesheet">
-     
      <link href="/src/output.css" rel="stylesheet"> 
-     <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
-   
+     
+      <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
+     <script src="/Web-Pages/url-rewrite.js" defer></script>
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+ [id] {
+  scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
+}
+</style>
 </head>
-
-    <style>
-        [id] {
-            scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
-        }
-    </style>
-<body class="min-h-screen flex flex-col">
+<body class="flex flex-col min-h-screen">
     <!-- Navigation Bar Begins Here -->
 <header x-data="{ scrolled: false, open: false}"
     x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30 }"
@@ -69,148 +67,177 @@
     </div>
 </header>
     <!-- Navigation Bar ENDS Here -->
+     <main id="content" class="flex-grow p-4 mt-10">
 
-    
-<main class="flex-grow p-4 mt-40">
 
-     </div>
+</div>
+<section id="campaigns-section" class="container mx-auto py-16 px-4">
+    <div class="text-center mb-10">
+            <h2 class="text-4xl md:text-5xl font-black text-naleko-dark-blue mb-4">
+                Free <span class="text-naleko-blue">Lead Management</span> Consultation
+            </h2>
+            <p class="text-naleko-dark-blue text-xl md:text-2xl font-extrabold max-w-3xl mx-auto leading-tight">
+                Lead Smarter, <span class="text-naleko-blue">Grow Faster</span>
+            </p>
+            <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
+                Transform how you capture and convert leads with expert guidance
+            </p>
+        </div>
+    <div class="relative rounded-2xl p-4 sm:p-6 lg:p-8 Bear-background bg-center">
 
-<section class="container mx-auto max-w-8xl py-16 px-4">
-    <h2 class="text-3xl md:text-4xl font-black text-center text-naleko-dark-blue ">
-        Let's Build Something Great Together
-    </h2>
-    <p class="text-lg font-black text-center text-naleko-dark-blue  mx-auto">
-        Connect with Naleko Digital Solutions to start your journey towards innovation and efficiency.
-    </p>
-    
-    <br>
-    <p class="text-sm text-center max-w-9xl">
-        At <b> Naleko Digital Solutions</b>, we don’t just offer tech, we unlock potential. Whether you're an individual ready to upskill or an organization seeking cloud-first transformation, we’re here to guide, support, and scale with you. <b>Connect with us</b> today and take the first step toward a smarter, more empowered digital future.
-    </p>
-</section>
-
-<div class="container mx-auto px-4  rounded-xl shadow-lg mt-0">
-     <form  class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-6 sm:p-8" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST">
-  <input type="hidden" name="oid" value="00D07000000ZYWX">
-  <input type="hidden" name="retURL" value="http://naleko.com">
-
-  <div>
-    <label for="first_name">First Name</label>
-    <input id="first_name" maxlength="40" name="first_name" size="20" type="text" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" />
-  </div>
-
-  <div>
-    <label for="last_name">Last Name</label>
-    <input id="last_name" maxlength="80" name="last_name" size="20" type="text" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" />
-  </div>
-
-  <div>
-    <label for="email">Email</label>
-    <input id="email" maxlength="80" name="email" size="20" type="text" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" />
-  </div>
-
-  <div>
-    <label for="00NTt00000Et2h6">Are you a Non-Profit?</label>
-    <select id="00NTt00000Et2h6" name="00NTt00000Et2h6" title="Are you a Non-Profit?" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
-      <option value="">--None--</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-    </select>
-  </div>
-
-  <div class="md:col-span-2">
-    <label for="00NTt00000Et4ir">Technology Or Service</label>
-    <select id="00NTt00000Et4ir" name="00NTt00000Et4ir" title="Technology Or Service" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
-      <option value="">--None--</option>
-      <option value="Salesforce - CRM and Cloud solution tailored for business success.">Salesforce - CRM and Cloud solution tailored for business success.</option>
-      <option value="AWS - Scalable and secure cloud computing services.">AWS - Scalable and secure cloud computing services.</option>
-      <option value="Microsoft - Azure-powered enterprise cloud solutions.">Microsoft - Azure-powered enterprise cloud solutions.</option>
-      <option value="Google Cloud - AL-Driven and data-centric cloud innovation.">Google Cloud - AL-Driven and data-centric cloud innovation.</option>
-      <option value="SAP - Intelligent cloud solutions for business.">SAP - Intelligent cloud solutions for business.</option>
-      <option value="Oracle - Cloud infrastructure and enterprise applications.">Oracle - Cloud infrastructure and enterprise applications.</option>
-      <option value="Cloud Security &amp; Compliance">Cloud Security &amp; Compliance</option>
-      <option value="Enterprise Cloud Integration">Enterprise Cloud Integration</option>
-      <option value="Cloud Migration">Cloud Migration</option>
-      <option value="Managed Service">Managed Service</option>
-      <option value="Industry-Specific Training">Industry-Specific Training</option>
-      <option value="Naleko Corporate Training">Naleko Corporate Training</option>
-      <option value="Naleko Academy">Naleko Academy</option>
-      <option value="Naleko Girls In Tech">Naleko Girls In Tech</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
-
-  <div>
-    <label for="phone">Phone</label>
-    <input id="phone" maxlength="40" name="phone" size="20" type="text" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" />
-  </div>
-
-  <div>
-    <label for="company">Company</label>
-    <input id="company" maxlength="40" name="company" size="20" type="text" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" />
-  </div>
-
-  <div>
-    <label for="lead_source">Lead Source</label>
-    <select id="lead_source" name="lead_source" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
-      <option value="">--None--</option>
-      <option value="Web">Web</option>
-      <option value="Naleko Email">Naleko Email</option>
-      <option value="Linkedln">Linkedln</option>
-      <option value="Event">Event</option>
-      <option value="Facebook">Facebook</option>
-      <option value="AWM">AWM</option>
-      <option value="Exhibition">Exhibition</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
-
-  <div class="md:col-span-2">
-    <label for="description">Description</label>
-    <textarea id="description" name="description" rows="5" class="w-full px-4 py-2 border border-black rounded-lg shadow-md"></textarea>
-  </div>
-
-  <div class="text-center mt-20">
-    <button type="submit" name="submit" class="btn-primary-demo">Send Message</button>
-  </div>
-</form>
-
-        <div>
-            <p class="text-lg font-black text-center text-naleko-dark-blue max-w-6xl mb-2 mx-auto">
-        Connect with Naleko Digital Solutions Campaigns.
-              </p>
-              
-                <p class="text-sm text-center max-w-7xl">
-                <b>Naleko Digital Solutions</b>  is on a mission to empower <b> professionals</b> and <b> businesses </b> across Africa through hands-on, impactful initiatives. Whether you're an <b> individual looking to upskill </b> or an <b> organization seeking clarity on next steps</b>, our expert team is here to help you move forward with confidence.
-              </p>
-             
-   <section class="container flex  items-center mt-2 mb-2 justify-center">
-    <div class="flex flex-row  items-center gap-4 w-65% justify-center"> 
-      
-        <a href="/Naleko-campaigns/"  class="btn-primary-demo">
-             #NalekoFreeCampaigns 
-        </a>
-    </div>
-</section>
-   
         
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="bg-white p-6 rounded-2xl shadow-custom-dark flex flex-col">
+            <h3 class="text-2xl text-left font-semibold mb-4 text-naleko-dark-blue">
+                Discovery Consultation (30-60 Minutes)
+            </h3>
         
+            <div class="flex justify-center">
+                <ul class="text-left text-base text-gray-800 space-y-2 list-disc list-inside">
+                    <li>Understand your business goals and lead management challenges</li>
+                    <li>Review your current tools and processes (if any)</li>
+                    <li>Identify growth opportunities</li>
+                </ul>
+            </div>
+        </div>
+
+           <div class="bg-white p-6 rounded-2xl shadow-custom-dark flex flex-col">
+                <h3 class="text-2xl text-left font-semibold mb-4 text-naleko-dark-blue">
+                    Feedback, Design & Next Steps (30-60 Minutes)
+                </h3>
+            
+                <div class="flex justify-center">
+                    <ul class="text-left text-base text-gray-800 space-y-2 list-disc list-inside">
+                        <li>A basic lead capture web page or simple site layout mock-up</li>
+                        <li>A summary of key insights from the consultation</li>
+                        <li>Actionable next steps tailored to your business</li>
+                        <li>Demo snippet of CRM lead management features</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-12">
+             <a href="https://outlook.office.com/bookwithme/user/b5a70a9ef2734a1583f16282871474c5@naleko.com/meetingtype/Z_OoBRJNDUK5UYZJUcZxiw2?anonymous&ismsaljsauthenabled&ep=mlink" class="inline-block bg-naleko-dark-blue text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition duration-300">
+                Book Free Consultation
+            </a>
+        </div>
+
+          <div class="bg-naleko-dark-blue p-8 rounded-2xl shadow-custom-dark w-full text-white text-center mb-8">
+            <h3 class="text-2xl font-semibold mb-2">
+                Certified Agentforce Specialist Campaign
+            </h3>
+            <p class="text-lg leading-relaxed mb-4 max-w-4xl mx-auto">
+                Building a smarter Salesforce ecosystem by empowering professionals with the tools, knowledge, and credentials to lead in the era of AI-powered CRM.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 text-left max-w-4xl mx-auto">
+                
+                <div x-data="{ open: false }" class="space-y-3">
+                    <button @click="open = !open" class="flex justify-between items-center w-full text-left font-bold text-lg py-4 px-6 bg-gradient-to-r from-naleko-blue to-blue-800 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transform transition-all duration-300">
+                        <span>Official Exam Information</span>
+                        <svg :class="{'rotate-180': open}" class="w-6 h-6 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition class="bg-white/10 p-4 rounded-lg">
+                        <ul class="space-y-3 text-base">
+                            <li><strong>Sign up for Trailhead:</strong> <a href="https://trailhead.salesforce.com/" class="underline hover:text-gray-300">Create your free account</a></li>
+                            <li><strong>Official Exam:</strong> <a href="https://trailhead.salesforce.com/en/credentials/agentforcespecialist" class="underline hover:text-gray-300"> Agentforce Specialist</a></li>
+                            <li><strong>Exam Registration:</strong> <a href="https://trailheadacademy.salesforce.com/" class="underline hover:text-gray-300">Trailhead Academy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div x-data="{ open: false }" class="space-y-3">
+                     <button @click="open = !open" class="flex justify-between items-center w-full text-left font-bold text-lg py-4 px-6 bg-gradient-to-r from-naleko-blue to-blue-800 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transform transition-all duration-300">
+                        <span>Study Resources</span>
+                        <svg :class="{'rotate-180': open}" class="w-6 h-6 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition class="bg-white/10 p-4 rounded-lg">
+                        <ul class="space-y-3 list-disc list-inside text-base">
+                            <li><a href="https://trailhead.salesforce.com/agentblazer" class="hover:underline">Trailhead Study Module (AgentBlazer)</a></li>
+                            <li><a href="https://trailhead.salesforce.com/content/learn/modules/cert-prep-agentforce-specialist" class="hover:underline">Certification Prep Module</a></li>
+                            <li><a href="https://trailhead.salesforce.com/content/learn/superbadges/superbadge-agentforce-service-sbu" class="hover:underline">Agentforce Superbadge</a></li>
+                            <li><a href="https://www.salesforce.com/eu/form/agentforce/demo/?d=pb&utm_medium=email&d=701ed00000Rkclu" class="hover:underline">Live Demo Access</a></li>
+                            <li><a href="https://www.salesforceexams.com/Agentforce-Specialist-Practice-Questions" class="hover:underline">Practice Exams</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-naleko-blue p-6 rounded-2xl text-white text-center">
+            <h3 class="text-2xl font-semibold mb-4">Ready to Transform Your Business?</h3>
+            <p class="text-lg mb-4">Book your free consultation today and start your journey toward certified expertise.</p>
+            <a href="https://trailhead.salesforce.com/agentblazer" class="inline-block bg-naleko-dark-blue text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition duration-300">
+                Get Started Now
+            </a>
         </div>
     </div>
+</section>
 
 
-   <script src="/Web-Pages/form-handler.js"></script>
+<!-- Unlock AWS Certificate Section -->
+<section class="unlock-aws" style="background: #f9fbff; padding: 60px 20px;">
+  <div class="container" style="max-width: 700px; margin: 20px auto;"></div>
+ <!-- Section Title -->
+      
+    <!-- Dark Blue Frame -->
+    <div style="background: hsl(248, 86%, 20%); color: white;padding: 40px; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); text-align: center;">
+ 
+     <h2 class="section-title" style="margin-bottom: 30px; font-size: 22px; font-weight: bold;">UNLOCK YOUR 100% FREE AWS CERTIFICATE TODAY</h2>
 
-  
-       
+      <!-- Three Columns -->
+      <div class="feature-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: left;">
 
-<!-- Contact Us Body Ends Here-->
+        <!-- Column 1 -->
+        <div class="feature-card">
+          <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold;">Why AWS Certification Cloud</h3>
+          <ul style="margin: 0; padding-left: 20px; list-style: disc;">
+            <li>Cloud, DevOps &amp; AI roles</li>
+            <li>Verified cloud skills &amp; global AWS</li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="feature-card">
+          <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold;">AWS Educate</h3>
+          <ul style="margin: 0; padding-left: 20px; list-style: disc;">
+            <li>Hands-on labs &amp; simulations</li>
+            <li>Access to ETC community</li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="feature-card">
+          <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold;">To Join Emerging Talent Community</h3>
+          <ul style="margin: 0; padding-left: 20px; list-style: disc;">
+            <li>18+ years old</li>
+            <li>Complete at least one badge</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Final Call-to-Action -->
+      <div style="margin-top: 40px;">
+  <a href="https://aws.amazon.com/education/awseducate/" 
+     style="display: inline-block; padding: 15px 35px; font-size: 16px; font-weight: bold; background: hsl(250, 9%, 87%); color: rgb(10, 9, 9); border-radius: 8px; text-decoration: none; cursor: pointer;">
+    Sign Up for Free
+  </a>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
 
 
 </main>
-           
-                
-
  
 
                 <!--  Site Footer Begins Here -->
@@ -328,7 +355,21 @@
 
                 <!--  Site footer Ends Here -->
 
-    <script>
+     <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all elements with the class 'flip-card'
+        const flipCards = document.querySelectorAll('.flip-card');
+
+        // Loop through each flip card and add a click event listener
+        flipCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Toggle the 'flipped' class on the card
+                card.classList.toggle('flipped');
+            });
+        });
+    });
+</script>
+<script>
         const menuBtn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
 
@@ -336,6 +377,7 @@
             menu.classList.toggle('hidden');
         });
     </script>
-    
+</body>
+</html>
 </body>
 </html>

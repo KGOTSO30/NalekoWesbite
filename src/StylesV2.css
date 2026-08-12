@@ -148,7 +148,9 @@ footer a:hover {
 .hero-subtitle,
 .hero-description {
 
-    color: var(--naleko-purple) !important;
+    /*color: var(--naleko-purple) !important;*/
+
+    color:black;
 }
 
 
@@ -278,10 +280,10 @@ h3,
    ICONS
    ===================================================== */
 
-.card-icon {
+/*.card-icon {
 
     background: var(--gradient-button);
-}
+}*/
 
 
 /* =====================================================

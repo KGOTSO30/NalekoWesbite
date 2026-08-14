@@ -83,7 +83,7 @@
     color: var(--naleko-purple) !important;
 }
 
-.text-naleko-card-title {
+.text-naleko-card-title , h3{
 
        background: var(--gradient-hero);
 

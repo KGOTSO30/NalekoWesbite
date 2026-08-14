@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campaigns</title>
-     <link href="/src/StylesFinal.css" rel="stylesheet">
-     <link href="/src/output.css" rel="stylesheet"> 
-     
-      <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
-     <script src="/Web-Pages/url-rewrite.js" defer></script>
-     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-     
+    <title>Naleko AI Platform</title>
+    <link href="/src/StylesFinal.css" rel="stylesheet">
+    <link href="/src/StylesV2.css" rel="stylesheet">
+    <link href="/src/output.css" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
- [id] {
-  scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
-}
-</style>
 </head>
-<body class="flex flex-col min-h-screen">
+
+    <style>
+        [id] {
+            scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
+        }
+    </style>
+<body class="flex flex-col min-h-screen bg-white font-inter">
     
 <!-- Navigation Bar Begins Here -->
 <header x-data="{ scrolled: false, open: false }"
@@ -32,7 +32,7 @@
         
         <!-- Top Row: Title & Mobile Hamburger Button -->
         <div class="flex items-center justify-between w-full gap-2">
-            <a href="/" class="header text-[13px] min-[360px]:text-base sm:text-2xl md:text-4xl lg:text-5xl whitespace-nowrap tracking-tight min-[360px]:tracking-wide uppercase min-w-0">
+            <a href="/" class="header text-[13px] min-[360px]:text-base sm:text-2xl lg:text-3xl xl:text-4xl whitespace-nowrap tracking-tight min-[360px]:tracking-wide uppercase min-w-0">
                 Naleko Digital Solutions
             </a>
             
@@ -47,7 +47,7 @@
         
         <!-- Bottom Row: Navigation Items (Switches to horizontal row at 1024px+) -->
         <nav :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
-             class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
+             class="hidden w-full mt-3 text-xs font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
                             
             <a href="/About-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
             <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
@@ -63,196 +63,183 @@
     </div>
 </header>
 <!-- Navigation Bar ENDS Here -->
-     <main id="content" class="flex-grow p-4 mt-40">
+  
+    <main class="flex-grow mt-36">
+        <section class="hero-section">
+            <a href="#" class="partner-link"></a>
+            <h1>NALEKO AI PLATFORM</h1>
+            <p>The Naleko AI-HCM Stack is an integrated, intelligent system designed to power the entire talent lifecycle from recruitment to retirement. Built on a bedrock of unified talent data and real-time analytics, the platform seamlessly connects core human capital management with advanced agentic AI to manage, deploy, and measure organizational talent automatically.</p>
+        </section>
 
+        <section class="apps-header">
+            <h2>AI APPLICATIONS WE BUILT</h2>
+            <p>Each application is trained on real Naleko programme data and deployed inside our HCM platform. Click any application to request a specialized live demo.</p>
+        </section>
 
-</div>
-<section id="campaigns-section" class="container px-4 py-16 mx-auto">
-    <div class="mb-10 text-center">
-            <h2 class="mb-4 text-4xl font-black md:text-5xl text-naleko-dark-blue">
-                Free <span class="text-naleko-blue">Lead Management</span> Consultation
-            </h2>
-            <p class="max-w-3xl mx-auto text-xl font-extrabold leading-tight text-naleko-dark-blue md:text-2xl">
-                Lead Smarter, <span class="text-naleko-blue">Grow Faster</span>
-            </p>
-            <p class="max-w-2xl mx-auto mt-2 text-gray-600">
-                Transform how you capture and convert leads with expert guidance
-            </p>
-        </div>
-    <div class="relative p-4 bg-center rounded-2xl sm:p-6 lg:p-8 Bear-background">
-
-        
-
-        <div class="grid grid-cols-1 gap-8 mb-8 md:grid-cols-2">
-        <div class="flex flex-col p-6 bg-white rounded-2xl shadow-custom-dark">
-            <h3 class="mb-4 text-2xl font-semibold text-left text-naleko-dark-blue">
-                Discovery Consultation (30-60 Minutes)
-            </h3>
-        
-            <div class="flex justify-center">
-                <ul class="space-y-2 text-base text-left text-gray-800 list-disc list-inside">
-                    <li>Understand your business goals and lead management challenges</li>
-                    <li>Review your current tools and processes (if any)</li>
-                    <li>Identify growth opportunities</li>
-                </ul>
+           <section class="apps-grid">
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/Agentforce Screening.png" alt="Agentforce Screening">
+                </div>
+                <h3>Agentforce Screening</h3>
+                <p>Auto-screens 1000+ CVs against programme criteria in under 2 min<br><strong>95% accuracy</strong></p>
+                <div class="tag-pill">Used in AI Programmes</div>
+                <span class="demo-link" onclick="openDemoModal('Agentforce Screening')">Demo</span>
             </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                  <img src="../src/Images/bookADemo/images/Skills Match Engine wise.png" alt="Skills Match Engine">
+                </div>
+                <h3>Skills Match Engine wise</h3>
+                <p>Maps learner competencies to employer job specs in real time<br><strong>92% match rate</strong></p>
+                <div class="tag-pill">Used in Placements</div>
+                <span class="demo-link" onclick="openDemoModal('Skills Match Engine')">Demo</span>
+            </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/Predictive Dropout.png" alt="Predictive Dropout">
+                </div>
+                <h3>Predictive Dropout</h3>
+                <p>Identifies at-risk learners 3 weeks before disengagement<br><strong>78% early detection</strong></p>
+                <div class="tag-pill">Used in Learnerships</div>
+                <span class="demo-link" onclick="openDemoModal('Predictive Dropout')">Demo</span>
+            </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/Compliance Automation.png" alt="Compliance Automation">
+                </div>
+                <h3>Compliance Automation</h3>
+                <p>Auto-generates & refreshes reports from live programme data.<br><strong>100% audit-ready</strong></p>
+                <div class="tag-pill">Used in Reporting</div>
+                <span class="demo-link" onclick="openDemoModal('Compliance Automation')">Demo</span>
+            </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/Prompt Co-Pilot.png" alt="Prompt Co-Pilot">
+                </div>
+                <h3>Prompt Co-Pilot</h3>
+                <p>Trains learners with intelligent AI tutor on inside the LMS<br><strong>40% faster mastery</strong></p>
+                <div class="tag-pill">Used in AI Fundamentals</div>
+                <span class="demo-link" onclick="openDemoModal('Prompt Co-Pilot')">Demo</span>
+            </div>
+
+            <div class="app-card" >
+                <div class="card-icon">
+                    <img src="../src/Images/bookADemo/images/Workforce Forecast.png" alt="Workforce Forecast">
+                </div>
+                <h3>Workforce Forecast</h3>
+                <p>Predict employer hiring needs 6 months ahead for pipeline planning.<br><strong>75% accuracy</strong></p>
+                <div class="tag-pill">Used in Strategy</div>
+                <span class="demo-link" onclick="openDemoModal('Workforce Forecast')">Demo</span>
+            </div>
+        </section>
+
+        <div style="display: flex; justify-content: center; width: 100%; margin-bottom: 40px;">
+            <a href="#" class="btn-primary-demo" onclick="openDemoModal('')">Request Application Demo</a>
         </div>
 
-           <div class="flex flex-col p-6 bg-white rounded-2xl shadow-custom-dark">
-                <h3 class="mb-4 text-2xl font-semibold text-left text-naleko-dark-blue">
-                    Feedback, Design & Next Steps (30-60 Minutes)
-                </h3>
+ <section class="infrastructure">
+    <h2 class="infra">BUILT ON ENTERPRISE-GRADE INFRASTRUCTURE</h2>
+    <div class="marquee-track">
+        <div class="marquee-content">
+            <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo"></a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo"></a>
+            <a href="https://moodle.org" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo"></a>
+            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer"><img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo"></a>
             
-                <div class="flex justify-center">
-                    <ul class="space-y-2 text-base text-left text-gray-800 list-disc list-inside">
-                        <li>A basic lead capture web page or simple site layout mock-up</li>
-                        <li>A summary of key insights from the consultation</li>
-                        <li>Actionable next steps tailored to your business</li>
-                        <li>Demo snippet of CRM lead management features</li>
-                    </ul>
-                </div>
-            </div>
+            <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo"></a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo"></a>
+            <a href="https://moodle.org" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo"></a>
+            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo"></a>
+
+              <a href="https://www.salesforce.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/sales.png" alt="Salesforce logo"></a>
+            <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/aws.png" alt="Amazon Web Services logo"></a>
+            <a href="https://moodle.org" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/moodle.png" alt="Moodle logo"></a>
+            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener noreferrer" aria-hidden="true"><img src="../src/Images/bookADemo/images/dash.png" alt="Microsoft Power BI logo"></a>
+
         </div>
+    </div>
+</section>
+    </main>
 
-        <div class="mb-12 text-center">
-             <a href="https://outlook.office.com/bookwithme/user/b5a70a9ef2734a1583f16282871474c5@naleko.com/meetingtype/Z_OoBRJNDUK5UYZJUcZxiw2?anonymous&ismsaljsauthenabled&ep=mlink" class="inline-block px-8 py-3 font-semibold text-white transition duration-300 rounded-lg bg-naleko-dark-blue hover:opacity-90">
-                Book Free Consultation
-            </a>
-        </div>
+    
 
-          <div class="w-full p-8 mb-8 text-center text-white bg-naleko-dark-blue rounded-2xl shadow-custom-dark">
-            <h3 class="mb-2 text-2xl font-semibold">
-                Certified Agentforce Specialist Campaign
-            </h3>
-            <p class="max-w-4xl mx-auto mb-4 text-lg leading-relaxed">
-                Building a smarter Salesforce ecosystem by empowering professionals with the tools, knowledge, and credentials to lead in the era of AI-powered CRM.
-            </p>
 
-            <div class="grid max-w-4xl grid-cols-1 gap-6 mx-auto mt-8 text-left md:grid-cols-2">
+   <div class="modal-backdrop" id="demoModal" onclick="closeDemoModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="document.getElementById('demoModal').style.display='none'">&times;</button>
+            <h3 id="modalTitle">Request Application Demo</h3>
+            
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST">
+                <input type="hidden" name="oid" value="00D07000000ZYWX">
+                <input type="hidden" name="retURL" value="https://wiseman-2312.github.io/thankyoupagenaleko">
+                <input type="hidden" name="lead_source" value="Web">
+
+                <div class="form-group">
+    <label for="modalAppInput">Selected Application</label>
+    <select id="modalAppInput" name="00NTt00000IiwIr" required style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; font-weight:bold; color:var(--accent-blue)">
+        <option value="" disabled selected>-- Please Select an Application --</option>
+    
+        <option value="Agentforce Screening">Agentforce Screening</option>
+         <option value="Skills Match Engine">Skills Match Engine</option>
+          <option value="Predictive Dropout">Predictive Dropout</option>
+           <option value="Compliance Automation">Compliance Automation</option>
+            <option value="Prompt Co-Pilot">Prompt Co-Pilot</option>
+             <option value="Workforce Forecast">Workforce Forecast</option>
+        </select>
+</div>
                 
-                <div x-data="{ open: false }" class="space-y-3">
-                    <button @click="open = !open" class="flex justify-between items-center w-full text-left font-bold text-lg py-4 px-6 bg-gradient-to-r from-naleko-blue to-blue-800 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transform transition-all duration-300">
-                        <span>Official Exam Information</span>
-                        <svg :class="{'rotate-180': open}" class="flex-shrink-0 w-6 h-6 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div x-show="open" x-transition class="p-4 rounded-lg bg-white/10">
-                        <ul class="space-y-3 text-base">
-                            <li><strong>Sign up for Trailhead:</strong> <a href="https://trailhead.salesforce.com/" class="underline hover:text-gray-300">Create your free account</a></li>
-                            <li><strong>Official Exam:</strong> <a href="https://trailhead.salesforce.com/en/credentials/agentforcespecialist" class="underline hover:text-gray-300"> Agentforce Specialist</a></li>
-                            <li><strong>Exam Registration:</strong> <a href="https://trailheadacademy.salesforce.com/" class="underline hover:text-gray-300">Trailhead Academy</a></li>
-                        </ul>
-                    </div>
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" maxlength="40" required placeholder="Enter your first name">
                 </div>
 
-                <div x-data="{ open: false }" class="space-y-3">
-                     <button @click="open = !open" class="flex justify-between items-center w-full text-left font-bold text-lg py-4 px-6 bg-gradient-to-r from-naleko-blue to-blue-800 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transform transition-all duration-300">
-                        <span>Study Resources</span>
-                        <svg :class="{'rotate-180': open}" class="flex-shrink-0 w-6 h-6 transition-transform duration-300 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div x-show="open" x-transition class="p-4 rounded-lg bg-white/10">
-                        <ul class="space-y-3 text-base list-disc list-inside">
-                            <li><a href="https://trailhead.salesforce.com/agentblazer" class="hover:underline">Trailhead Study Module (AgentBlazer)</a></li>
-                            <li><a href="https://trailhead.salesforce.com/content/learn/modules/cert-prep-agentforce-specialist" class="hover:underline">Certification Prep Module</a></li>
-                            <li><a href="https://trailhead.salesforce.com/content/learn/superbadges/superbadge-agentforce-service-sbu" class="hover:underline">Agentforce Superbadge</a></li>
-                            <li><a href="https://www.salesforce.com/eu/form/agentforce/demo/?d=pb&utm_medium=email&d=701ed00000Rkclu" class="hover:underline">Live Demo Access</a></li>
-                            <li><a href="https://www.salesforceexams.com/Agentforce-Specialist-Practice-Questions" class="hover:underline">Practice Exams</a></li>
-                        </ul>
-                    </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" maxlength="80" required placeholder="Enter your last name">
                 </div>
-            </div>
-        </div>
-        <div class="p-6 text-center text-white bg-naleko-blue rounded-2xl">
-            <h3 class="mb-4 text-2xl font-semibold">Ready to Transform Your Business?</h3>
-            <p class="mb-4 text-lg">Book your free consultation today and start your journey toward certified expertise.</p>
-            <a href="https://trailhead.salesforce.com/agentblazer" class="inline-block px-8 py-3 font-semibold text-white transition duration-300 rounded-lg bg-naleko-dark-blue hover:opacity-90">
-                Get Started Now
-            </a>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" maxlength="80" name="email" size="20" type="email" required placeholder="name@company.com" />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="e.g. +27 11 123 4567"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" maxlength="40" placeholder="Your company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwM5">Job Title</label>
+                    <input type="text" id="00NTt00000IiwM5" name="00NTt00000IiwM5" maxlength="250" placeholder="Your job title">
+                </div>
+
+                <div class="form-group">
+                    <label for="00NTt00000IiwNh">Preferred Date & Time (Time available)</label>
+                    <input type="datetime-local" id="00NTt00000IiwNh" name="00NTt00000IiwNh" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="00NTt00000IiwKTMAZ">How can we help you?</label>
+                    <textarea id="00NTt00000IiwKTMAZ" name="00NTt00000IiwKTMAZ" wrap="soft" rows="4"></textarea>
+                </div>
+
+                <button type="submit" name="submit" class="submit-btn">Request Live Demo Connection</button>
+            </form>
         </div>
     </div>
-</section>
-
-
-<!-- Unlock AWS Certificate Section -->
-<section class="unlock-aws" style="background: #f9fbff; padding: 60px 20px;">
-  <div class="container" style="max-width: 700px; margin: 20px auto;"></div>
- <!-- Section Title -->
-      
-    <!-- Dark Blue Frame -->
-    <div style="background: hsl(248, 86%, 20%); color: white;padding: 40px; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); text-align: center;">
- 
-     <h2 class="section-title" style="margin-bottom: 30px; font-size: 22px; font-weight: bold;">UNLOCK YOUR 100% FREE AWS CERTIFICATE TODAY</h2>
-
-      <!-- Three Columns -->
-      <div class="feature-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: left;">
-
-        <!-- Column 1 -->
-        <div class="feature-card">
-          <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold;">Why AWS Certification Cloud</h3>
-          <ul style="margin: 0; padding-left: 20px; list-style: disc;">
-            <li>Cloud, DevOps &amp; AI roles</li>
-            <li>Verified cloud skills &amp; global AWS</li>
-          </ul>
-        </div>
-
-        <!-- Column 2 -->
-        <div class="feature-card">
-          <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold;">AWS Educate</h3>
-          <ul style="margin: 0; padding-left: 20px; list-style: disc;">
-            <li>Hands-on labs &amp; simulations</li>
-            <li>Access to ETC community</li>
-          </ul>
-        </div>
-
-        <!-- Column 3 -->
-        <div class="feature-card">
-          <h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold;">To Join Emerging Talent Community</h3>
-          <ul style="margin: 0; padding-left: 20px; list-style: disc;">
-            <li>18+ years old</li>
-            <li>Complete at least one badge</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Final Call-to-Action -->
-      <div style="margin-top: 40px;">
-  <a href="https://aws.amazon.com/education/awseducate/" 
-     style="display: inline-block; padding: 15px 35px; font-size: 16px; font-weight: bold; background: hsl(250, 9%, 87%); color: rgb(10, 9, 9); border-radius: 8px; text-decoration: none; cursor: pointer;">
-    Sign Up for Free
-  </a>
-</div>
-
-
-    </div>
-  </div>
-</section>
 
 
 
-</main>
- 
-
-
-                <!-- QTCO Accreditation Badge Component -->
-
-<div style="display: flex; justify-content: flex-end; width: 100%;">
- <div class="mt-4 mb-4 qtco-badge header">
-  <div class="qtco-badge-inner">
-    <div class="qtco-icon-box">
-      <span class="qtco-icon-text header ">Q</span>
-    </div>
-    <div class="qtco-divider"></div>
-    <div class="qtco-text-content">
-      <span class="qtco-subtitle header">Accredited By</span>
-      <span class="qtco-title header">QTCO</span>
-    </div>
-  </div>
-</div>
-</div>
 
                 <!--  Site Footer Begins Here -->
 
@@ -369,29 +356,26 @@
 
                 <!--  Site footer Ends Here -->
 
-     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Get all elements with the class 'flip-card'
-        const flipCards = document.querySelectorAll('.flip-card');
-
-        // Loop through each flip card and add a click event listener
-        flipCards.forEach(card => {
-            card.addEventListener('click', () => {
-                // Toggle the 'flipped' class on the card
-                card.classList.toggle('flipped');
-            });
-        });
-    });
-</script>
 <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
+    function openDemoModal(appName) {
+    const selectDropdown = document.getElementById('modalAppInput');
+    
+    if (appName && appName !== '') {
+        // If an app name is passed (from an app card), auto-select it
+        selectDropdown.value = appName;
+    } else {
+        // If no app name is passed (from the main header button), reset to the placeholder selection
+        selectDropdown.value = '';
+    }
+    
+    // Keep your original flex display logic to open the modal
+    document.getElementById('demoModal').style.display = 'flex';
+}
 
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+function closeDemoModal(event) {
+    // Keep your original logic to close the modal
+    document.getElementById('demoModal').style.display = 'none';
+}
     </script>
-</body>
-</html>
 </body>
 </html>

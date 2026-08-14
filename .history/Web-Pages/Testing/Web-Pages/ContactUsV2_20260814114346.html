@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naleko Digital Solutions - Training</title>
+    <title>Connect With Us</title>
      <link href="/src/StylesFinal.css" rel="stylesheet">
      <link href="/src/StylesV2.css" rel="stylesheet">
-      <link href="/src/output.css" rel="stylesheet"> 
+     
+     <link href="/src/output.css" rel="stylesheet"> 
+     <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
+
     <style>
         [id] {
             scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
         }
     </style>
-<body class="flex flex-col min-h-screen ">
+<body class="flex flex-col min-h-screen">
     
 <!-- Navigation Bar Begins Here -->
 <header x-data="{ scrolled: false, open: false }"
         x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30 }"
         :class="{ 'bg-naleko-dark-blue shadow-lg': scrolled, 'bg-transparent': !scrolled }"
-        class="fixed top-0 left-0 z-50 w-full px-3 py-4 text-white transition-all duration-300 ease-in-out sm:px-6 lg:px-8">
+        class="fixed top-0 left-0 z-50 w-full px-3 py-4 text-white transition-all duration-300 ease-in-out sm:px-6 md:px-8">
 
     <div class="container flex flex-col justify-between mx-auto"> 
         
@@ -34,8 +38,8 @@
                 Naleko Digital Solutions
             </a>
             
-            <!-- Mobile Hamburger Button (Shows up to 1024px) -->
-            <button @click="open = !open" class="relative z-50 p-1 text-white lg:hidden focus:outline-none shrink-0">
+            <!-- Mobile Hamburger Button (shrink-0 keeps it intact) -->
+            <button @click="open = !open" class="relative z-50 p-1 text-white md:hidden focus:outline-none shrink-0">
                 <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -43,85 +47,166 @@
             </button>
         </div>
         
-        <!-- Bottom Row: Navigation Items (Switches to horizontal row at 1024px+) -->
+        <!-- Bottom Row: Navigation Items -->
         <nav :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
-             class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
+             class="hidden w-full mt-3 text-xl font-medium uppercase md:flex md:flex-row md:justify-end md:items-center gap-x-6 gap-y-2 lg:text-sm header md:static md:bg-transparent md:p-0">
                             
-            <a href="/About-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
-            <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
-            <a href="/Who-we-serve/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
-            <a href="/Contact-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
-            <a href="/Training/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
-            <a href="/Girls-in-tech/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
-            <a href="/Events/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
-            <a href="/Partner-with-us/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Partner With Us</a>
-            <a href="/Book-a-demo/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Book a demo</a>
+            <a href="/About-us/" class="block transition duration-300 hover:text-blue-300">About Us</a>
+            <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300">What we do</a>
+            <a href="/Who-we-serve/" class="block transition duration-300 hover:text-blue-300">Who we serve</a>
+            <a href="/Contact-us/" class="block transition duration-300 hover:text-blue-300">Contact Us</a>
+            <a href="/Training/" class="block transition duration-300 hover:text-blue-300">Training</a>
+            <a href="/Girls-in-tech/" class="block transition duration-300 hover:text-blue-300">Girls in Tech</a>
+            <a href="/Events/" class="block transition duration-300 hover:text-blue-300">Events</a>
+            <a href="/Partner-with-us/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300">Partner With Us</a>
+            <a href="/Book-a-demo/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300">Book a demo</a>
+
 
         </nav>
     </div>
 </header>
 <!-- Navigation Bar ENDS Here -->
- <main class="flex-grow p-4 mt-40 mb-8">
+
+    
+<main class="flex-grow p-4 mt-40">
 
      </div>
-        <section class="container px-4 py-16 mx-auto text-center">
-            <h1 id="CorpTrain" class="mb-4 text-3xl font-black md:text-4xl text-naleko-dark-blue">Corporate Training</h1>
-            <p class="max-w-2xl mx-auto mb-4 text-lg font-black md:text-xl text-naleko-dark-blue">Empowering Teams. Enhancing Performance.</p>
-            <p class="mx-auto mb-16 text-base font-normal text-gray-800 max-w-7xl">At Naleko Digital Solutions, we understand that every organization is unique. That’s why our Corporate Training programs are designed to align with your specific goals, technology stack, and team dynamics. Whether you're adopting new systems or upskilling your workforce, we provide tailored training that drives real business results.</p>
-            <a href="/Contact-us/" class="btn-primary-demo">Book a Discovery Call</a>
-        </section>
 
-        <section class="container px-4 py-16 mx-auto text-center">
-            <h2 id="WhatWeOffer" class="mb-4 text-3xl font-black md:text-4xl text-naleko-dark-blue">What We Offer</h2>
-            <p class="mx-auto mb-12 text-base font-normal text-black max-w-7xl">Our training solutions are built to meet you where you are empowering your teams with the right knowledge, tools, and support to thrive in a digital-first world.</p>
-
-            <div class="grid max-w-6xl grid-cols-1 gap-12 mx-auto mt-8 mb-12 md:grid-cols-2 lg:grid-cols-3">
-                <div class="p-6 overflow-hidden bg-white border border-white rounded-2xl shadow-custom-card">
-                    <h3 class="mb-4 text-3xl font-semibold text-naleko-dark-blue">Flexible Delivery</h3>
-                    <p class="text-base font-normal leading-relaxed text-gray-800">Choose from on-site workshops, virtual classrooms, or hybrid formats that suit your team’s location and schedule.</p>
-                </div>
-                <div class="p-6 overflow-hidden bg-white border border-white rounded-2xl shadow-custom-card">
-                    <h3 class="mb-4 text-3xl font-semibold text-naleko-dark-blue">Expert Facilitators</h3>
-                    <p class="text-base font-normal leading-relaxed text-gray-800">Our instructors are experienced tech professionals and certified consultants who bring both industry knowledge and teaching expertise.</p>
-                </div>
-                <div class="p-6 overflow-hidden bg-white rounded-2xl shadow-custom-card">
-                    <h3 class="mb-4 text-3xl font-semibold text-naleko-dark-blue">Hands-On Training</h3>
-                    <p class="text-base font-normal leading-relaxed text-gray-800">Your teams will learn by doing, through practical exercises, sandbox environments, and real-world case studies using platforms like Salesforce, AWS, Microsoft Azure, and more.</p>
-                </div>
-               
-                
-            </div>
-                <div  class="grid max-w-4xl grid-cols-1 gap-12 mx-auto mt-8 mb-8 md:grid-cols-2 lg:grid-cols-2">
-                    <div class="p-6 overflow-hidden bg-white border border-white rounded-2xl shadow-custom-card">
-                        <h3 class="mb-4 text-3xl font-semibold text-naleko-dark-blue">Enablement for Long-Term Success</h3>
-                        <p class="text-base font-normal leading-relaxed text-gray-800">We go beyond knowledge transfer. Our focus is on team enablement, giving your employees the confidence and skills to fully leverage your cloud investments.</p>
-                    </div>
-                    <div class="p-6 overflow-hidden bg-white rounded-2xl shadow-custom-card">
-                        <h3 class="mb-4 text-3xl font-semibold text-naleko-dark-blue">Customized Learning Paths</h3>
-                        <p class="text-base font-normal leading-relaxed text-gray-800">We don’t believe in one-size-fits-all. We assess your business needs and develop training programs that directly support your digital strategy and operations.</p>
-                    </div>
-                </div>
-                
-           
-        </section>
-
-        <section class="container px-4 py-16 mx-auto text-center">
-            <h2 class="mb-4 text-3xl font-black md:text-4xl text-naleko-dark-blue">The Result?</h2>
-            <p class="max-w-2xl mx-auto mb-4 text-xl font-black text-naleko-dark-blue">Stronger teams. Smarter systems. Better performance.</p>
-            <p class="max-w-5xl mx-auto mb-12 text-base font-normal text-gray-800">Naleko Corporate Training helps you turn technology into a strategic advantage, driving productivity, innovation, and growth.</p>
-            <a href="https://trailhead.salesforce.com" class="btn-primary-demo">
-    Get Started in Salesforce 
-      </a>
-        </section>
-
-       
+<section class="container px-4 py-16 mx-auto max-w-8xl">
+    <h2 class="text-3xl font-black text-center md:text-4xl text-naleko-dark-blue ">
+        Let's Build Something Great Together
+    </h2>
+    <p class="mx-auto text-lg font-black text-center text-naleko-dark-blue">
+        Connect with Naleko Digital Solutions to start your journey towards innovation and efficiency.
+    </p>
     
-    </main>
-    <!-- Page break using an image provided by Lerato -->
+    <br>
+    <p class="text-sm text-center max-w-9xl">
+        At <b> Naleko Digital Solutions</b>, we don’t just offer tech, we unlock potential. Whether you're an individual ready to upskill or an organization seeking cloud-first transformation, we’re here to guide, support, and scale with you. <b>Connect with us</b> today and take the first step toward a smarter, more empowered digital future.
+    </p>
+</section>
 
-     <div class=" w-full h-[541px] Picture-background mx-auto"></div> 
-          
+<div class="container px-4 mx-auto mt-0 shadow-lg rounded-xl">
+     <form  class="grid grid-cols-1 gap-8 p-6 bg-white md:grid-cols-3 sm:p-8" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D07000000ZYWX" method="POST">
+  <input type="hidden" name="oid" value="00D07000000ZYWX">
+  <input type="hidden" name="retURL" value="http://naleko.com">
+
+  <div>
+    <label for="first_name">First Name</label>
+    <input id="first_name" maxlength="40" name="first_name" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
+  </div>
+
+  <div>
+    <label for="last_name">Last Name</label>
+    <input id="last_name" maxlength="80" name="last_name" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" maxlength="80" name="email" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
+  </div>
+
+  <div>
+    <label for="00NTt00000Et2h6">Are you a Non-Profit?</label>
+    <select id="00NTt00000Et2h6" name="00NTt00000Et2h6" title="Are you a Non-Profit?" class="w-full h-10 px-4 border border-black rounded-lg shadow-md">
+      <option value="">--None--</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+
+  <div class="md:col-span-2">
+    <label for="00NTt00000Et4ir">Technology Or Service</label>
+    <select id="00NTt00000Et4ir" name="00NTt00000Et4ir" title="Technology Or Service" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
+      <option value="">--None--</option>
+      <option value="Salesforce - CRM and Cloud solution tailored for business success.">Salesforce - CRM and Cloud solution tailored for business success.</option>
+      <option value="AWS - Scalable and secure cloud computing services.">AWS - Scalable and secure cloud computing services.</option>
+      <option value="Microsoft - Azure-powered enterprise cloud solutions.">Microsoft - Azure-powered enterprise cloud solutions.</option>
+      <option value="Google Cloud - AL-Driven and data-centric cloud innovation.">Google Cloud - AL-Driven and data-centric cloud innovation.</option>
+      <option value="SAP - Intelligent cloud solutions for business.">SAP - Intelligent cloud solutions for business.</option>
+      <option value="Oracle - Cloud infrastructure and enterprise applications.">Oracle - Cloud infrastructure and enterprise applications.</option>
+      <option value="Cloud Security &amp; Compliance">Cloud Security &amp; Compliance</option>
+      <option value="Enterprise Cloud Integration">Enterprise Cloud Integration</option>
+      <option value="Cloud Migration">Cloud Migration</option>
+      <option value="Managed Service">Managed Service</option>
+      <option value="Industry-Specific Training">Industry-Specific Training</option>
+      <option value="Naleko Corporate Training">Naleko Corporate Training</option>
+      <option value="Naleko Academy">Naleko Academy</option>
+      <option value="Naleko Girls In Tech">Naleko Girls In Tech</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="phone">Phone</label>
+    <input id="phone" maxlength="40" name="phone" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
+  </div>
+
+  <div>
+    <label for="company">Company</label>
+    <input id="company" maxlength="40" name="company" size="20" type="text" class="w-full h-10 px-4 border border-black rounded-lg shadow-md" />
+  </div>
+
+  <div>
+    <label for="lead_source">Lead Source</label>
+    <select id="lead_source" name="lead_source" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
+      <option value="">--None--</option>
+      <option value="Web">Web</option>
+      <option value="Naleko Email">Naleko Email</option>
+      <option value="Linkedln">Linkedln</option>
+      <option value="Event">Event</option>
+      <option value="Facebook">Facebook</option>
+      <option value="AWM">AWM</option>
+      <option value="Exhibition">Exhibition</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="md:col-span-2">
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="5" class="w-full px-4 py-2 border border-black rounded-lg shadow-md"></textarea>
+  </div>
+
+  <div class="mt-20 text-center">
+    <button type="submit" name="submit" class="btn-primary-demo">Send Message</button>
+  </div>
+</form>
+
+        <div>
+            <p class="max-w-6xl mx-auto mb-2 text-lg font-black text-center text-naleko-dark-blue">
+        Connect with Naleko Digital Solutions Campaigns.
+              </p>
               
+                <p class="text-sm text-center max-w-7xl">
+                <b>Naleko Digital Solutions</b>  is on a mission to empower <b> professionals</b> and <b> businesses </b> across Africa through hands-on, impactful initiatives. Whether you're an <b> individual looking to upskill </b> or an <b> organization seeking clarity on next steps</b>, our expert team is here to help you move forward with confidence.
+              </p>
+             
+   <section class="container flex items-center justify-center mt-2 mb-2">
+    <div class="flex flex-row  items-center gap-4 w-65% justify-center"> 
+      
+        <a href="/Naleko-campaigns/"  class="btn-primary-demo">
+             #NalekoFreeCampaigns 
+        </a>
+    </div>
+</section>
+   
+        
+        
+        </div>
+    </div>
+
+
+   <script src="/Web-Pages/form-handler.js"></script>
+
+  
+       
+
+<!-- Contact Us Body Ends Here-->
+
+
+</main>
+           
+                
 
 
 
@@ -239,6 +324,7 @@
     </footer>
 
                 <!--  Site footer Ends Here -->
+
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
@@ -246,6 +332,7 @@
         menuBtn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
-    </script>        
-    </body>
+    </script>
+    
+</body>
 </html>

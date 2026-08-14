@@ -37,7 +37,7 @@
 <!-- Homepage Navigation Bar Begins Here -->
 <header x-data="{ scrolled: false, open: false }"
         x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30 }"
-        :class="{ 'my-header shadow-md text-3xl lg:text-4xl header': scrolled, 'bg-transparent': !scrolled }"
+        :class="{ 'my-header shadow-md': scrolled, 'bg-transparent': !scrolled }"
         class="fixed top-0 left-0 z-50 w-full px-3 py-4 text-white transition-all duration-300 ease-in-out sm:px-6 lg:px-8">
 
     <div class="container flex flex-col justify-between mx-auto"> 
@@ -59,7 +59,7 @@
         
         <!-- Bottom Row: Navigation Items (Positioned Underneath Title) -->
         <nav :class="{'hidden': !open, 'fixed inset-0 my-header flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
-             class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
+             class="hidden w-full mt-3 text-xs xl:text-sm font-medium uppercase header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
                             
             <a href="/About-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
             <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>

@@ -1,0 +1,121 @@
+:root {
+
+    /* =================================================
+       NEW BRAND PALETTE
+       ================================================= */
+
+    --naleko-navy: #120C4E;
+    --naleko-sky: #6EC6F5;
+    --naleko-violet: #A78BFA;
+    --naleko-purple: #C450E8;
+    --naleko-magenta: #D020D0;
+    --naleko-deep-magenta: #B800B8;
+
+    --text-light: #FFFFFF;
+    --text-dark: #120C4E;
+
+    /* =================================================
+       SEMANTIC COLORS
+       ================================================= */
+
+    --color-primary: var(--naleko-navy);
+    --color-secondary: var(--naleko-magenta);
+
+    --color-heading: var(--naleko-navy);
+    --color-subheading: var(--naleko-purple);
+
+    --color-card-border: var(--naleko-deep-magenta);
+
+    /* =================================================
+       GRADIENTS
+       ================================================= */
+
+    --gradient-header:
+        linear-gradient(
+            90deg,
+            #120C4E 0%,
+            #6EC6F5 45%,
+            #B800B8 80%,
+            #D020D0 100%
+        );
+
+    --gradient-hero:
+        linear-gradient(
+            90deg,
+            #6EC6F5 0%,
+            #A78BFA 35%,
+            #C450E8 70%,
+            #D020D0 100%
+        );
+
+    --gradient-card:
+        linear-gradient(
+            135deg,
+            #120C4E 0%,
+            #6EC6F5 50%,
+            #B800B8 100%
+        );
+
+    --gradient-button:
+        linear-gradient(
+            90deg,
+            #D020D0 0%,
+            #B800B8 100%
+        );
+}
+
+.my-header {
+    background: var(--gradient-header);
+}
+
+.my-button {
+    background: var(--gradient-button);
+}
+
+
+/* =====================================================
+   GENERAL HEADINGS
+   ===================================================== */
+
+
+.text-naleko-dark-blue {
+
+    color: var(--naleko-purple) !important;
+}
+
+.text-[#120C4E] {
+
+    color: var(--gradient-hero) !important;
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.btn-primary,
+.btn-primary-demo,
+.call-to-action-button,
+.submit-btn {
+
+    background: var(--gradient-button) !important;
+    border: none !important;
+    color: white !important;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-primary-demo:hover,
+.call-to-action-button:hover,
+.submit-btn:hover {
+
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(184,0,184,.35);
+}
+
+.btn-primary:active,
+.btn-primary-demo:active {
+
+    transform: translateY(0);
+}

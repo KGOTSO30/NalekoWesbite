@@ -83,13 +83,9 @@
     color: var(--naleko-purple) !important;
 }
 
-.text-naleko-card-title {
+.text-naleko-card-title , h3{
 
-       background: var(--gradient-hero);
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-   /* color: var(--naleko-purple) !important; */
+    color: var(--gradient-hero) !important;
 }
 
 

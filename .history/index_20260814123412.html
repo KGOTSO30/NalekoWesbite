@@ -35,32 +35,35 @@
 </head>
 <body class="flex flex-col min-h-screen">
 <!-- Homepage Navigation Bar Begins Here -->
-<header x-data="{ scrolled: false, open: false }"
+<header x-data="{ scrolled: false, open: false}"
         x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30 }"
-        :class="{ 'my-header shadow-md text-3xl lg:text-4xl header': scrolled, 'bg-transparent': !scrolled }"
-        class="fixed top-0 left-0 z-50 w-full px-3 py-4 text-white transition-all duration-300 ease-in-out sm:px-6 lg:px-8">
+        :class="{
+            'my-header shadow-md text-3xl lg:text-4xl header': scrolled,
+            'bg-transparent': !scrolled
+        }"
+        class="fixed top-0 left-0 z-50 w-full transition-all duration-300 ease-in-out">
 
-    <div class="container flex flex-col justify-between mx-auto"> 
+    <!-- Switched to flex layout with shrink protection -->
+    <div class="container relative flex items-center justify-between gap-2 px-3 py-4 mx-auto text-white sm:px-4 lg:py-6"> 
         
-        <!-- Top Row: Title & Mobile Hamburger Button -->
-        <div class="flex items-center justify-between w-full gap-2">
-            <a href="/" class="header text-[13px] min-[360px]:text-base sm:text-2xl lg:text-3xl xl:text-4xl whitespace-nowrap tracking-tight min-[360px]:tracking-wide uppercase min-w-0">
-                Naleko Digital Solutions
-            </a>
-            
-            <!-- Mobile Hamburger Button (Shows up to 1024px) -->
-            <button @click="open = !open" class="relative z-50 p-1 text-white lg:hidden focus:outline-none shrink-0">
-                <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
+        <!-- Logo -->
+        <a href="/" :class="{ 'text-xl lg:text-3xl': scrolled, 'text-xl lg:text-3xl': !scrolled }"
+             class="relative z-50 header text-[13px] min-[360px]:text-base sm:text-xl whitespace-nowrap tracking-tight min-[360px]:tracking-wide uppercase min-w-0">
+            Naleko Digital Solutions
+        </a>
         
-        <!-- Bottom Row: Navigation Items (Positioned Underneath Title) -->
-        <nav :class="{'hidden': !open, 'fixed inset-0 my-header flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
-             class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
-                            
+        <!-- Hamburger Button (Shows up to 1024px screen size) -->
+        <button @click="open = !open" class="relative z-50 p-1 text-white lg:hidden focus:outline-none shrink-0">
+            <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        
+        <!-- Full-Screen Nav on Mobile/Tablet (< 1024px) & Inline Row on Desktop (>= 1024px) -->
+        <nav :class="{'hidden': !open, 'my-header flex': open}"
+             class="fixed top-0 left-0 z-40 flex-col flex-wrap items-center justify-center w-full h-screen p-8 text-xl font-medium uppercase transition-all duration-300 lg:flex lg:flex-row lg:justify-end gap-x-4 xl:gap-x-6 gap-y-6 lg:text-xs xl:text-sm header lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:p-0">
+                    
             <a href="/About-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
             <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
             <a href="/Who-we-serve/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>

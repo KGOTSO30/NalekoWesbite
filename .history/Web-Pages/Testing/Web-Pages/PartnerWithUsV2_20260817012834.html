@@ -900,68 +900,32 @@
                 </div>
 
 
-                <!-- Offerings / Features Cards Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto my-8 px-4">
-                    
-                    <!-- 1. Training & Facilitation -->
-                    <div class="p-6 bg-white border border-purple-200/60 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
-                        <div class="w-14 h-14 mb-4 rounded-full flex items-center justify-center text-white shadow-md" style="background: linear-gradient(135deg, #2563eb, #9333ea, #db2777);">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                        </div>
-                        <h4 class="text-sm font-bold text-slate-800 leading-tight">
-                            Training &amp; Facilitation
-                        </h4>
+
+                <!-- Detail Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+                    <!-- Curriculum Highlights -->
+                    <div class="p-8 bg-white border border-gray-100 rounded-2xl shadow-custom-card">
+                        <h3 class="mb-4 text-xl font-bold text-naleko-dark-blue">Curriculum Highlights</h3>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 font-bold">•</span>
+                                <span><strong>Introduction to Generative AI:</strong> Large language models, prompt structure, and AI ethics.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 font-bold">•</span>
+                                <span><strong>Cloud Fundamentals:</strong> Cloud architecture basics, security practices, and data management.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 font-bold">•</span>
+                                <span><strong>Applied Workplace Automation:</strong> Building custom workflows using AI co-pilots and digital tools.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-blue-600 font-bold">•</span>
+                                <span><strong>Capstone Project:</strong> Practical project solving real-world business challenges.</span>
+                            </li>
+                        </ul>
                     </div>
 
-                    <!-- 2. Learning Materials -->
-                    <div class="p-6 bg-white border border-purple-200/60 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
-                        <div class="w-14 h-14 mb-4 rounded-full flex items-center justify-center text-white shadow-md" style="background: linear-gradient(135deg, #2563eb, #9333ea, #db2777);">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                            </svg>
-                        </div>
-                        <h4 class="text-sm font-bold text-slate-800 leading-tight">
-                            Learning Materials
-                        </h4>
-                    </div>
-
-                    <!-- 3. Assessments -->
-                    <div class="p-6 bg-white border border-purple-200/60 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
-                        <div class="w-14 h-14 mb-4 rounded-full flex items-center justify-center text-white shadow-md" style="background: linear-gradient(135deg, #2563eb, #9333ea, #db2777);">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                            </svg>
-                        </div>
-                        <h4 class="text-sm font-bold text-slate-800 leading-tight">
-                            Assessments
-                        </h4>
-                    </div>
-
-                    <!-- 4. Industry Recognised Certification -->
-                    <div class="p-6 bg-white border border-purple-200/60 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
-                        <div class="w-14 h-14 mb-4 rounded-full flex items-center justify-center text-white shadow-md" style="background: linear-gradient(135deg, #2563eb, #9333ea, #db2777);">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <h4 class="text-sm font-bold text-slate-800 leading-tight">
-                            Industry Recognised Certification
-                        </h4>
-                    </div>
-
-                    <!-- 5. Career & Placement Support -->
-                    <div class="p-6 bg-white border border-purple-200/60 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center col-span-2 sm:col-span-1">
-                        <div class="w-14 h-14 mb-4 rounded-full flex items-center justify-center text-white shadow-md" style="background: linear-gradient(135deg, #2563eb, #9333ea, #db2777);">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15l-2 5l3-1.5L16 20l-2-5m-2-12a4 4 0 100 8 4 4 0 000-8zm-7 4a7 7 0 1114 0A7 7 0 013 7z" />
-                            </svg>
-                        </div>
-                        <h4 class="text-sm font-bold text-slate-800 leading-tight">
-                            Career &amp; Placement Support
-                        </h4>
-                    </div>
 
                 </div>
 
@@ -969,8 +933,6 @@
                 <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
                     <a href="/Contact-us/" class="btn-primary-demo">Book a Discovery Call</a>
                 </div>
-
-                  <div class=" w-full mt-8 h-[541px] Youth-background mx-auto"></div> 
             </section>
         </div>
 

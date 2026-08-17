@@ -3110,7 +3110,8 @@ body {
 }
 .app-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  /*border: 1px solid #e2e8f0;*/
+    border-color: #C450E8;
   border-radius: 12px;
   padding: 30px 20px;
   text-align: center;
@@ -3125,7 +3126,10 @@ body {
 .app-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-blue);
-  box-shadow: var(--card-shadow-active);
+  /*box-shadow: var(--card-shadow-active);*/
+  border-color: #C450E8;
+           
+  box-shadow: 0 2px 10px #C450E8;
 }
 .app-card:active {
   transform: translateY(-1px);

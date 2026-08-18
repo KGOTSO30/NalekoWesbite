@@ -159,7 +159,6 @@ footer a:hover {
    ===================================================== */
 
 h1,
-h2,
 h3,
 .section-title,
 .text-naleko-dark-blue {
@@ -215,6 +214,7 @@ h3,
     border-color: var(--naleko-magenta);
     box-shadow:
         0 8px 25px rgba(208,32,208,.20);
+        
 }
 
 .app-card h3 {
@@ -292,8 +292,8 @@ h3,
 
 .offer-section .section-title,
 .result-section .section-title,
-.infrastructure h2,
-.apps-header h2 {
+.infrastructure,
+.apps-header {
 
     color: var(--naleko-navy) !important;
 }
@@ -397,7 +397,7 @@ button.bg-naleko-dark-blue:hover{
 /* Main section titles */
 
 h1,
-h2,
+
 .section-title,
 .page-title,
 .hero-title,

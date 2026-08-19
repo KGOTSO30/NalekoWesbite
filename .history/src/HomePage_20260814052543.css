@@ -1,0 +1,73 @@
+:root {
+
+    /* =================================================
+       NEW BRAND PALETTE
+       ================================================= */
+
+    --naleko-navy: #120C4E;
+    --naleko-sky: #6EC6F5;
+    --naleko-violet: #A78BFA;
+    --naleko-purple: #C450E8;
+    --naleko-magenta: #D020D0;
+    --naleko-deep-magenta: #B800B8;
+
+    --text-light: #FFFFFF;
+    --text-dark: #120C4E;
+
+    /* =================================================
+       SEMANTIC COLORS
+       ================================================= */
+
+    --color-primary: var(--naleko-navy);
+    --color-secondary: var(--naleko-magenta);
+
+    --color-heading: var(--naleko-navy);
+    --color-subheading: var(--naleko-purple);
+
+    --color-card-border: var(--naleko-deep-magenta);
+
+    /* =================================================
+       GRADIENTS
+       ================================================= */
+
+    --gradient-header:
+        linear-gradient(
+            90deg,
+            #120C4E 0%,
+            #6EC6F5 45%,
+            #B800B8 80%,
+            #D020D0 100%
+        );
+
+    --gradient-hero:
+        linear-gradient(
+            90deg,
+            #6EC6F5 0%,
+            #A78BFA 35%,
+            #C450E8 70%,
+            #D020D0 100%
+        );
+
+    --gradient-card:
+        linear-gradient(
+            135deg,
+            #120C4E 0%,
+            #6EC6F5 50%,
+            #B800B8 100%
+        );
+
+    --gradient-button:
+        linear-gradient(
+            90deg,
+            #D020D0 0%,
+            #B800B8 100%
+        );
+}
+
+.my-header {
+    background: var(--gradient-header);
+}
+
+.my-button {
+    background: var(--gradient-button);
+}

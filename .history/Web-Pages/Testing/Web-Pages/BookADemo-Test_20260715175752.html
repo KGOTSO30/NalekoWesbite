@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Demo - Naleko</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Book a Demo</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Schedule Your Demo</h2>
+            <p>Fill out the form below to book a demo with us.</p>
+            <form action="/submit-demo-request" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <button type="submit">Book Demo</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Naleko. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naleko Digital Solutions</title>
+    <link href="/src/StylesFinal.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Utility for a smooth transition on height/width properties */
+        .transition-height {
+            transition: height 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <header x-data="{ scrolled: false, open: false}"
+        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+        :class="{
+            'bg-naleko-dark-blue shadow-md text-4xl md:text-5xl header': scrolled,
+            'bg-transparent': !scrolled
+        }"
+        class="fixed w-full top-0 left-0 z-50 transition-all duration-300 ease-in-out">
+
+        <div class="container mx-auto px-4 py-6 text-white relative"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+                class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+            
+            <button @click="open = !open" class="md:hidden absolute top-6 right-4 text-white focus:outline-none z-50">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <nav :class="{'hidden': !open, 'flex': open}"
+                class="md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                        gap-x-6 gap-y-2 text-sm md:text-base header 
+                        absolute md:static top-full left-0 w-full md:w-auto 
+                        bg-naleko-dark-blue md:bg-transparent p-4 md:p-0">
+                <a href="Web-Pages/WhoWeAre.html" class="block  hover:text-blue-300 transition duration-300">Who we are</a>
+                <a href="Web-Pages/WhatWeDo.html" class="block  hover:text-blue-300 transition duration-300">What we do</a>
+                <a href="#WwK" class="block  hover:text-blue-300 transition duration-300">What we know</a>
+                <a href="Web-Pages/WhoWeServe.html" class="block  hover:text-blue-300 transition duration-300">Who we serve</a>
+                <a href="Web-Pages/ContactUs.html" class="block  hover:text-blue-300 transition duration-300">Contact Us</a>
+                <a href="Web-Pages/CorpTraining.html" class="block  hover:text-blue-300 transition duration-300">Corp Training</a>
+                <a href="Web-Pages/Academy.html" class="block  hover:text-blue-300 transition duration-300">Academy</a>
+                <a href="Web-Pages/GirlsInTech.html" class="block  hover:text-blue-300 transition duration-300">Girls in Tech</a>
+                <div class="flex space-x-2 ml-4 mt-2 md:mt-0"> <a href="https://za.linkedin.com/company/nalekodigital"
+                        class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@nalekodigital/"
+                        class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z" />
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+       <div x-data="carousel()" x-init="init()" class="relative w-full h-[60vh] md:h-[700px] lg:h-[800px] overflow-hidden">
+
+   <div class="absolute inset-0 flex items-center justify-center px-6 z-20 pointer-events-none">
+        <div class="text-white text-center max-w-3xl">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Empowering Collaborative Cloud Solutions</h1>
+
+            <div>
+                <a href="Web-Pages/WhatWeDo.html" class="inline-block bg-white text-black font-semibold px-6 py-3 rounded-lg hover:bg-gray-200 transition mb-8 mt-8 pointer-events-auto">
+                    Discover Our Solutions
+                </a>
+            </div>
+
+            <p x-show="activeSlide === index"
+               x-transition:enter="transition-opacity duration-700 ease-in-out delay-900"
+               x-transition:leave="transition-opacity duration-300 ease-in-out"
+               class="text-lg md:text-xl mb-6 z-50" x-text="slide.subtext"></p>
+        </div>
+    </div>
+
+    <template x-for="(slide, index) in slides" :key="index">
+        <div x-show="activeSlide === index"
+             x-transition:enter="transition-opacity duration-1000 ease-in-out"
+             x-transition:leave="transition-opacity duration-1000 ease-in-out"
+             class="absolute inset-0 bg-cover bg-center" :style="`background-image: url(${slide.image})`">
+            <div class="bg-black bg-opacity-50 w-full h-full">
+                </div>
+        </div>
+    </template>
+
+    <button @click="prev()"
+        class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
+        &#10094;
+    </button>
+    <button @click="next()"
+        class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 z-10">
+        &#10095;
+    </button>
+
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+        <template x-for="(slide, index) in slides" :key="index">
+            <div @click="goToSlide(index)" class="w-3 h-3 rounded-full cursor-pointer"
+                :class="activeSlide === index ? 'bg-white' : 'bg-gray-500'">
+            </div>
+        </template>
+    </div>
+</div>
+
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Our Core Values</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Innovation</h3>
+                        <p class="text-gray-600">We constantly seek new and better ways to solve challenges and create value.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Collaboration</h3>
+                        <p class="text-gray-600">Working together is key to achieving exceptional results for our clients.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Excellence</h3>
+                        <p class="text-gray-600">We are committed to delivering the highest quality in all our endeavors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                        <svg class="w-12 h-12 text-naleko-dark-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h4l2-2m0-6V9a4 4 0 10-8 0v4l3 3m6-3l-3-3m0 0l3-3m0 0l3 3m0 0l-3 3"></path></svg>
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Cloud Migration</h3>
+                        <p class="text-gray-600">Seamlessly move your infrastructure to the cloud with minimal disruption.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                        <svg class="w-12 h-12 text-naleko-dark-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">DevOps Consulting</h3>
+                        <p class="text-gray-600">Automate and streamline your development and operations workflows.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex flex-col items-center">
+                        <svg class="w-12 h-12 text-naleko-dark-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"></path></svg>
+                        <h3 class="text-xl font-semibold text-naleko-dark-blue mb-2">Cloud Security</h3>
+                        <p class="text-gray-600">Protect your cloud assets with robust security strategies and solutions.</p>
+                    </div>
+                </div>
+                <a href="Web-Pages/WhatWeDo.html" class="inline-block bg-naleko-dark-blue text-white font-semibold px-8 py-3 rounded-lg hover:bg-naleko-dark-blue/90 transition mt-10">View All Services</a>
+            </div>
+        </section>
+
+
+    <div id="cloudSecurityModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">&times;</button>
+            <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Cloud Security & Compliance Details</h2>
+            <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
+                This is where you can place more detailed information about Cloud Security & Compliance.
+                You could include service specifics, FAQs, a mini-form, or a call to action.
+                <br><br>
+                For example:
+            </p>
+            <ul class="list-disc list-inside text-black text-base font-normal font-['Inter']">
+                <li>Comprehensive risk assessments</li>
+                <li>Data encryption and access controls</li>
+                <li>Compliance with industry standards (e.g., GDPR, HIPAA)</li>
+                <li>Ongoing monitoring and threat detection</li>
+            </ul>
+            <div class="mt-6 text-center">
+                <a href="ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Contact Us for a Quote</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="infraOptimizationModal" class="fixed inset-0 bg-black bg-opacity-50  items-center justify-center p-4 hidden z-50">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
+            <button id="closeInfraModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">&times;</button>
+            <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Infrastructure Optimisation Details</h2>
+            <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
+                Optimize your IT infrastructure for peak performance and cost efficiency. This service includes detailed resource scaling, workload balancing, and proactive cost management strategies. We help you achieve maximum output from your cloud investments.
+            </p>
+            <div class="mt-6 text-center">
+                <a href="ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Get an Infrastructure Assessment</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="enterpriseIntegrationModal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center p-4 hidden z-50">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full relative">
+            <button id="closeEnterpriseModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none">&times;</button>
+            <h2 class="text-[#120C4E] text-2xl font-bold font-['Inter'] mb-4">Enterprise Cloud Integration Details</h2>
+            <p class="text-black text-base font-normal font-['Inter'] leading-relaxed mb-4">
+                Seamlessly connect your existing on-premises systems with new cloud solutions. Our integration services ensure unified data flow, automated processes, and a holistic view of your entire operational landscape.
+            </p>
+            <div class="mt-6 text-center">
+                <a href="ContactUs.html" class="inline-block bg-[#120C4E] text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors font-['Inter'] font-semibold">Discuss Your Integration Needs</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get all card elements that trigger a modal
+        const cards = [
+            { cardId: 'cloudSecurityCard', modalId: 'cloudSecurityModal' },
+            { cardId: 'infraOptimizationCard', modalId: 'infraOptimizationModal' },
+            { cardId: 'enterpriseIntegrationCard', modalId: 'enterpriseIntegrationModal' },
+            // Ensure these card IDs and corresponding modal IDs exist in your HTML if you uncomment them above
+            // { cardId: 'cloudMigrationCard', modalId: 'cloudMigrationModal' },
+            // { cardId: 'managedServicesCard', modalId: 'managedServicesModal' },
+            // { cardId: 'industrySolutionsCard', modalId: 'industrySolutionsModal' }
+        ];
+
+        // Function to show a specific modal
+        function showModal(modalElement) {
+            if (modalElement) {
+                modalElement.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent body scrolling
+            }
+        }
+
+        // Function to hide a specific modal
+        function hideModal(modalElement) {
+            if (modalElement) {
+                modalElement.classList.add('hidden');
+                document.body.style.overflow = ''; // Re-enable body scrolling
+            }
+        }
+
+        // Attach event listeners for each card
+        cards.forEach(item => {
+            const card = document.getElementById(item.cardId);
+            const modal = document.getElementById(item.modalId);
+            const closeModalButton = modal ? modal.querySelector('button[id^="close"]') : null; // Finds the close button within this modal
+
+            if (card) {
+                card.addEventListener('click', () => showModal(modal));
+            }
+
+            if (closeModalButton) {
+                closeModalButton.addEventListener('click', () => hideModal(modal));
+            }
+
+            // Close modal when clicking outside of the content area
+            if (modal) {
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) { // Ensure click is directly on the overlay, not its children
+                        hideModal(modal);
+                    }
+                });
+            }
+        });
+
+        // Close any open modal with Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                cards.forEach(item => {
+                    const modal = document.getElementById(item.modalId);
+                    if (modal && !modal.classList.contains('hidden')) {
+                        hideModal(modal);
+                    }
+                });
+            }
+        });
+    </script>
+    
+    <h2 id="WwK" class="text-4xl md:text-5xl text-center text-naleko-dark-blue font-black mb-8 mt-20">What We Know</h2>
+    <div class="w3-container w3-center mb-4 mt-8" id="blog"> <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+        <div class="elfsight-app-ede7470f-fdf2-4c66-bbb0-b0bfa7769c2b" data-elfsight-app-lazy></div>
+        <div class="white_block"></div>
+    </div>
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl text-center text-naleko-dark-blue font-black mb-2 mt-8">Connect With Us</h2>
+        <form id="Form-N" class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-6 sm:p-8 rounded-xl shadow-lg mb-40">
+            <div>
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
+            </div>
+            <div>
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" placeholder="you@example.com">
+            </div>
+            
+            <div>
+                <label for="nonProfit">Are you a Non-Profit?</label>
+                <select id="nonProfit" name="nonProfit" class="w-full px-4 h-10 border border-black rounded-lg shadow-md">
+                    <option value="">Select Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="md:col-span-2">
+                <label for="technology">Technology Or Service</label>
+                <select id="technology" name="technology" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
+                    <option value="">Select Option</option>
+                    <option value="Salesforce">Salesforce – CRM and cloud solutions tailored for business success.</option>
+                    <option value="AWS">AWS – Scalable and secure cloud computing services.</option>
+                    <option value="Microsoft">Microsoft – Azure-powered enterprise cloud solutions.</option>
+                    <option value="Google Cloud">Google Cloud – AI-driven and data-centric cloud innovations.</option>
+                    <option value="SAP">SAP – Intelligent cloud solutions for business transformation.</option>
+                    <option value="Oracle">Oracle – Cloud infrastructure and enterprise applications.</option>
+                    <option value="Cloud Security & Compliance">☁️ Cloud Security & Compliance</option>
+                    <option value="Enterprise Cloud Integration">☁️ Enterprise Cloud Integration</option>
+                    <option value="Cloud Migration">☁️ Cloud Migration</option>
+                    <option value="Managed Services">☁️ Managed Services</option>
+                    <option value="Industry-Specific Solutions">☁️ Industry-Specific Solutions</option>
+                    <option value="Naleko Corporate Training">Naleko Corporate Training</option>
+                    <option value="Naleko Academy">Naleko Academy</option>
+                    <option value="Naleko Girls in Tech">Naleko Girls in Tech</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="w-full px-4 h-10 border border-black rounded-lg shadow-md" placeholder="e.g. 082 123 4567">
+            </div>
+
+            <div>
+                <label for="city">City</label>
+                <select id="city" name="city" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
+                    <option value="">Select Option</option>
+                    <option value="Johannesburg">Johannesburg</option>
+                    <option value="Cape Town">Cape Town</option>
+                    <option value="Durban">Durban</option>
+                    <option value="Pretoria">Pretoria</option>
+                    <option value="Port Elizabeth">Port Elizabeth</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="source">Where did you get this Link?</label>
+                <select id="source" name="source" class="w-full px-4 py-2 border border-black rounded-lg shadow-md">
+                    <option value="">Select Option</option>
+                    <option value="Website">Website</option>
+                    <option value="Naleko Email">Naleko Email</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Event">Event</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="AWM">AWM</option>
+                    <option value="Exhibition">Exhibition</option>
+                </select>
+            </div>
+            
+            <div class="md:col-span-2">
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" rows="5" class="w-full px-4 py-2 border border-black rounded-lg shadow-md" placeholder="Add your message or notes here..."></textarea>
+            </div>
+            <div class="text-center mt-20">
+                <button type="submit" class="w-52 h-11 bg-[#120C4E] text-white rounded-lg shadow text-base font-semibold">Send Message</button>
+            </div>
+        </form>
+        <div>
+            <p class="text-lg font-black text-center text-naleko-dark-blue max-w-6xl mx-auto">
+                Connect with Naleko Digital Solutions Campaigns.
+            </p>
+            <br>
+            <section class="container mx-auto mt-2 mb-2 text-center flex flex-wrap justify-center gap-2">
+                <a href="/src/AuxFiles/Naleko Salesforce Campaign.pdf" download="Naleko Salesforce Campaign.pdf" class="inline-flex items-center justify-center py-2.5 px-4 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">#NalekoTribeSalesforce</a>
+                <a href="/src/AuxFiles/Naleko Salesforce Campaign.pdf" download="Naleko Salesforce Campaign.pdf" class="inline-flex items-center justify-center py-2.5 px-4 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">#NalekoTribeAWS</a>
+                <a href="/src/AuxFiles/Naleko Salesforce Campaign.pdf" download="Naleko Salesforce Campaign.pdf" class="inline-flex items-center justify-center py-2.5 px-4 bg-naleko-dark-blue rounded-lg text-white text-xl font-semibold hover:bg-indigo-700 transition duration-300">#NalekoFreeConsult</a>
+            </section>
+        </div>
+    </div>
+    
+    </main>
+
+    <footer class="bg-naleko-dark-blue text-white py-8 px-4 p-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
+                    </svg>
+                    <h3 class="text-4xl header">Naleko</h3>
+                </div>
+                <p class="text-sm text-gray-300 mb-4 py-2">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+                <div class="flex space-x-4">
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
+                    </svg>
+                    </a>
+
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="TikTok">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
+                    </svg>
+                    </a>
+
+                    <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.25 2.415.415a4.9 4.9 0 0 1 1.695 1.06 4.9 4.9 0 0 1 1.06 1.695c.165.455.361 1.244.415 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.25 1.96-.415 2.415a4.9 4.9 0 0 1-1.06 1.695 4.9 4.9 0 0 1-1.695 1.06c-.455.165-1.244.361-2.415.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.25-2.415-.415a4.9 4.9 0 0 1-1.695-1.06 4.9 4.9 0 0 1-1.06-1.695c-.165-.455-.361-1.244-.415-2.415-.058-1.266-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.25-1.96.415-2.415a4.9 4.9 0 0 1 1.06-1.695 4.9 4.9 0 0 1 1.695-1.06c.455-.165 1.244-.361 2.415-.415 1.266-.058 1.65-.07 4.85-.07zm0 1.8c-3.153 0-3.515.012-4.757.068-.987.046-1.518.205-1.87.342a3.1 3.1 0 0 0-1.136.736 3.1 3.1 0 0 0-.736 1.136c-.137.352-.296.883-.342 1.87-.056 1.242-.068 1.604-.068 4.757s.012 3.515.068 4.757c.046.987.205 1.518.342 1.87.17.44.42.83.736 1.136.306.316.696.566 1.136.736.352.137.883.296 1.87.342 1.242.056 1.604.068 4.757.068s3.515-.012 4.757-.068c.987-.046 1.518-.205 1.87-.342a3.1 3.1 0 0 0-1.136-.736 3.1 3.1 0 0 0-.736-1.136c-.137-.352-.296-.883-.342-1.87-1.242-.056-1.604-.068-4.757-.068zm0 3.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 1.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8zm6.4-.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
+                    </svg>
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 hover:text-white transition duration-300" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
+                    </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#WhoWeAre" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                    <li><a href="#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
+                </ul>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Contact Us</h3>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <p class="text-gray-300">admin@naleko.com</p>
+                </div>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
+                    </svg>
+                    <p class="text-gray-300">+27 10 025 2100</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Location</h3>
+                <p class="text-gray-300 mb-2">Building 4, Commerce Square</p>
+                <p class="text-gray-300 mb-2">39 Rivonia Road, Sandhurst</p>
+                <p class="text-gray-300 mb-2">Sandton, 2196</p>
+                <p class="text-gray-300">South Africa</p>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-4 text-center text-gray-400 text-sm">
+            &copy; 2025 Naleko Digital Solutions. All rights reserved.
+        </div>
+    </footer>
+
+   <script>
+    function carousel() {
+        return {
+            activeSlide: 0,
+            slides: [
+                {
+                    image: '/src/Images/slide1.jpg',
+                    subtext: "Unlock Efficiency, Security, and Innovation in the Cloud"
+                },
+                {
+                    image: '/src/Images/slide2.jpg',
+                    subtext: "Elevate your cloud potential with expert solutions for seamless growth"
+                },
+                {
+                    image: '/src/Images/slide3.jpg',
+                    subtext: "Where innovation meets excellence in the world of Cloud"
+                }
+            ],
+            // Add a property to store the interval ID
+            interval: null,
+
+            next() {
+                // Stop the current interval before changing slides manually
+                this.stopAutoPlay();
+                this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+                // Restart autoplay after manual interaction
+                this.startAutoPlay();
+            },
+            prev() {
+                // Stop the current interval before changing slides manually
+                this.stopAutoPlay();
+                this.activeSlide = (this.activeSlide - 1 + this.slides.length) % this.slides.length;
+                // Restart autoplay after manual interaction
+                this.startAutoPlay();
+            },
+            goToSlide(index) {
+                // Stop the current interval before changing slides manually
+                this.stopAutoPlay();
+                this.activeSlide = index;
+                // Restart autoplay after manual interaction
+                this.startAutoPlay();
+            },
+            startAutoPlay() {
+                // Clear any existing interval to prevent multiple intervals running
+                this.stopAutoPlay();
+                this.interval = setInterval(() => {
+                    this.next();
+                }, 5000); // Changed to 5 seconds (5000 milliseconds)
+            },
+            stopAutoPlay() {
+                clearInterval(this.interval);
+            },
+            init() {
+                // Call startAutoPlay on initialization
+                this.startAutoPlay();
+            }
+        };
+    }
+</script>
+</body>
+</html>

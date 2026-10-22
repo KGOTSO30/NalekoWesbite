@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Talent &amp; Recruitment | Naleko Digital Solutions</title>
+
+     <link href="/src/StylesFinal.css" rel="stylesheet">
+
+     <link href="/src/StylesV2.css" rel="stylesheet">
+
+      <link href="/src/output.css" rel="stylesheet">&#x20;
+
+      <!-- Swiper.js for the carousel functionality -->
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;90&#x30;*&*&#x64;isplay=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+             <!--  Navigation Bar Begins Here-->
+
+                 <!--  Navigation Bar Begins Here-->
+
+  <header x-data="{ open: false}"
+
+        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+
+
+
+        class="sticky top-0 left-0 z-50 w-full px-4 py-6 text-white transition-all duration-300 ease-in-out bg-naleko-dark-blue">
+
+    <div class="relative w-full mx-auto text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+
+                class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+
+
+
+        <button id="menu-btn" class="absolute block text-white md:hidden top-4 right-4 focus:outline-none">
+
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+
+            </svg>
+
+        </button>
+
+
+
+            <nav id="menu" :class="{'hidden': !open, 'flex': open}"
+
+                 class="absolute left-0 flex-col flex-nowrap items-center justify-center hidden w-full p-4 text-sm text-white bg-black md:bg-transparent md:flex md:flex-row md:justify-end gap-x-4 gap-y-2 md:text-base header md:static top-full md:w-auto md:p-0">
+
+                <a href="/testing/about-us/" class="block transition duration-300 hover:text-blue-300">Who we are</a>
+
+                <a href="/testing/what-we-do/" class="block transition duration-300 hover:text-blue-300">What we do</a>
+
+                <a href="/testing/who-we-serve/" class="block transition duration-300 hover:text-blue-300">Who we serve</a>
+
+                <a href="/testing/contact-us/" class="block transition duration-300 hover:text-blue-300">Contact Us</a>
+
+                <a href="/testing/corporate-training/" class="block transition duration-300 hover:text-blue-300">Corp Training</a>
+
+                <a href="/testing/naleko-academy/" class="block transition duration-300 hover:text-blue-300">Academy</a>
+
+                <a href="/testing/girls-in-tech/" class="block transition duration-300 hover:text-blue-300">Girls in Tech</a>
+
+                <a href="/testing/events/" class="block transition duration-300 hover:text-blue-300">Events</a>
+
+                <a href="/testing/partner-with-us/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300">Partner With Us</a>
+
+                <a href="/testing/book-a-demo/" class="block text-blue-300 transition duration-300 'm border-b-2 border-blue-300">Book a demo</a>
+
+                <a href="/Web-Pages/Testing/Talent-Test.html" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300">Talent &amp; Recruitment </a>
+
+                <div class="flex ml-4 space-x-2">
+
+
+
+                </div>
+
+            </nav>
+
+    </div>
+
+</header>
+
+                <!--  Navigation Bar ENDS Here-->
+
+                <!--  Navigation Bar ENDS Here-->
+
+
+_
+                <main class="application-page">
+
+
+
+    <!-- Page heading -->
+
+    <section class="application-heading">
+
+        <div class="application-container">
+
+            <h1>
+
+                Apply for
+
+                <span id="application-heading-position">
+
+                    Senior Frontend Engineer
+
+                </span>
+
+            </h1>
+
+
+
+            <p>
+
+                Complete the form below and tell us why you would be a great
+
+                addition to the Naleko team.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="application-content">
+
+        <div class="application-container application-layout">
+
+
+
+            <!-- Application form -->
+
+            <form
+
+                id="application-form"
+
+                class="application-form-card"
+
+                enctype="multipart/form-data"
+
+                novalidate
+
+            >
+
+                <!-- General form error -->
+
+                <div
+
+                    class="application-form-alert"
+
+                    id="application-form-alert"
+
+                    role="alert"
+
+                >
+
+                    Please correct the highlighted fields before submitting
+
+                    your application.
+
+                </div>
+
+
+
+
+
+                <!-- Personal information -->
+
+                <fieldset class="application-fieldset">
+
+                    <legend>Personal information</legend>
+
+
+
+                    <div class="application-form-grid">
+
+
+
+                        <div class="application-field">
+
+                            <label for="first-name">
+
+                                First Name
+
+                                <span aria-hidden="true">*</span>
+
+                            </label>
+
+
+
+                            <input
+
+                                type="text"
+
+                                id="first-name"
+
+                                name="firstName"
+
+                                placeholder="Enter your first name"
+
+                                autocomplete="given-name"
+
+                                required
+
+                            >
+
+
+
+                            <small class="application-error">
+
+                                Please enter your first name.
+
+                            </small>
+
+                        </div>
+
+
+
+
+
+                        <div class="application-field">
+
+                            <label for="last-name">
+
+                                Last Name
+
+                                <span aria-hidden="true">*</span>
+
+                            </label>
+
+
+
+                            <input
+
+                                type="text"
+
+                                id="last-name"
+
+                                name="lastName"
+
+                                placeholder="Enter your last name"
+
+                                autocomplete="family-name"
+
+                                required
+
+                            >
+
+
+
+                            <small class="application-error">
+
+                                Please enter your last name.
+
+                            </small>
+
+                        </div>
+
+
+
+
+
+                        <div class="application-field">
+
+                            <label for="email-address">
+
+                                Email Address
+
+                                <span aria-hidden="true">*</span>
+
+                            </label>
+
+
+
+                            <input
+
+                                type="email"
+
+                                id="email-address"
+
+                                name="email"
+
+                                placeholder="you@example.com"
+
+                                autocomplete="email"
+
+                                required
+
+                            >
+
+
+
+                            <small class="application-error">
+
+                                Please enter a valid email address.
+
+                            </small>
+
+                        </div>
+
+
+
+
+
+                        <div class="application-field">
+
+                            <label for="contact-number">
+
+                                Contact Number
+
+                                <span aria-hidden="true">*</span>
+
+                            </label>
+
+
+
+                            <input
+
+                                type="tel"
+
+                                id="contact-number"
+
+                                name="phone"
+
+                                placeholder="+27 12 345 6789"
+
+                                autocomplete="tel"
+
+                                required
+
+                            >
+
+
+
+                            <small class="application-error">
+
+                                Please enter your contact number.
+
+                            </small>
+
+                        </div>
+
+
+
+
+
+                        <div class="application-field application-field-full">
+
+                            <label for="current-location">
+
+                                Current Location
+
+                                <span aria-hidden="true">*</span>
+
+                            </label>
+
+
+
+                            <input
+
+                                type="text"
+
+                                id="current-location"
+
+                                name="currentLocation"
+
+                                placeholder="e.g. Midrand, Gauteng"
+
+                                autocomplete="address-level2"
+
+                                required
+
+                            >
+
+
+
+                            <small class="application-error">
+
+                                Please enter your current location.
+
+                            </small>
+
+                        </div>
+
+
+
+                    </div>
+
+                </fieldset>
+
+
+
+
+
+                <!-- Application information -->
+
+                <fieldset class="application-fieldset">
+
+                    <legend>Application information</legend>
+
+
+
+                    <div class="application-field">
+
+                        <label for="position">
+
+                            Position Applying For
+
+                        </label>
+
+
+
+                        <input
+
+                            type="text"
+
+                            id="position"
+
+                            name="position"
+
+                            value="Senior Frontend Engineer"
+
+                            readonly
+
+                        >
+
+                    </div>
+
+
+
+
+
+                    <div class="application-field">
+
+                        <label for="linkedin-profile">
+
+                            LinkedIn Profile
+
+                            <span class="optional-label">(Optional)</span>
+
+                        </label>
+
+
+
+                        <input
+
+                            type="url"
+
+                            id="linkedin-profile"
+
+                            name="linkedinProfile"
+
+                            placeholder="https://www.linkedin.com/in/yourprofile"
+
+                        >
+
+
+
+                        <small class="application-error">
+
+                            Please enter a valid LinkedIn URL.
+
+                        </small>
+
+                    </div>
+
+
+
+
+
+                    <div class="application-field">
+
+                        <label for="portfolio">
+
+                            Portfolio / Website
+
+                            <span class="optional-label">(Optional)</span>
+
+                        </label>
+
+
+
+                        <input
+
+                            type="url"
+
+                            id="portfolio"
+
+                            name="portfolio"
+
+                            placeholder="https://your-portfolio.com"
+
+                        >
+
+
+
+                        <small class="application-error">
+
+                            Please enter a valid website URL.
+
+                        </small>
+
+                    </div>
+
+
+
+
+
+                    <div class="application-field">
+
+                        <label for="motivation">
+
+                            Cover Letter / Motivation
+
+                            <span class="optional-label">(Optional)</span>
+
+                        </label>
+
+
+
+                        <textarea
+
+                            id="motivation"
+
+                            name="motivation"
+
+                            rows="5"
+
+                            placeholder="Tell us why you would be a great addition to the Naleko team..."
+
+                        ></textarea>
+
+                    </div>
+
+                </fieldset>
+
+
+
+
+
+                <!-- Document uploads -->
+
+                <fieldset class="application-fieldset">
+
+                    <legend>Upload documents</legend>
+
+
+
+                    <!-- CV -->
+
+                    <div class="application-upload-field">
+
+                        <label>
+
+                            CV / Resume
+
+                            <span aria-hidden="true">*</span>
+
+                        </label>
+
+
+
+                        <div
+
+                            class="application-upload-box"
+
+                            data-upload-box="cv"
+
+                        >
+
+                            <span class="application-upload-icon">
+
+                                ▣
+
+                            </span>
+
+
+
+                            <div class="application-upload-copy">
+
+                                <strong>
+
+                                    Upload PDF or DOCX — maximum 5 MB
+
+                                </strong>
+
+
+
+                                <span id="cv-file-name">
+
+                                    Drag and drop a file here, or click to
+
+                                    browse
+
+                                </span>
+
+                            </div>
+
+
+
+                            <label
+
+                                for="cv-file"
+
+                                class="application-file-button"
+
+                            >
+
+                                Choose file
+
+                            </label>
+
+
+
+                            <input
+
+    type="file"
+
+    id="cv-file"
+
+    name="cv"
+
+    accept=".pdf,application/pdf"
+
+    required
+
+    hidden
+
+>
+
+                        </div>
+
+
+
+                        <small
+
+                            class="application-upload-error"
+
+                            id="cv-error"
+
+                        >
+
+                            Please upload your CV in PDF or DOCX format.
+
+                        </small>
+
+                    </div>
+
+
+
+
+
+                    <!-- Cover-letter document -->
+
+                    <div class="application-upload-field">
+
+                        <label>
+
+                            Cover Letter
+
+                            <span class="optional-label">(Optional)</span>
+
+                        </label>
+
+
+
+                        <div
+
+                            class="application-upload-box"
+
+                            data-upload-box="cover-letter"
+
+                        >
+
+                            <span class="application-upload-icon">
+
+                                ▣
+
+                            </span>
+
+
+
+                            <div class="application-upload-copy">
+
+                                <strong>
+
+                                    Upload PDF or DOCX — maximum 5 MB
+
+                                </strong>
+
+
+
+                                <span id="cover-letter-file-name">
+
+                                    No file selected
+
+                                </span>
+
+                            </div>
+
+
+
+                            <label
+
+                                for="cover-letter-file"
+
+                                class="application-file-button"
+
+                            >
+
+                                Choose file
+
+                            </label>
+
+
+
+                            <input
+
+                                type="file"
+
+                                id="cover-letter-file"
+
+                                name="coverLetterFile"
+
+                                accept=".pdf,.doc,.docx"
+
+                                hidden
+
+                            >
+
+                        </div>
+
+
+
+                        <small
+
+                            class="application-upload-error"
+
+                            id="cover-letter-error"
+
+                        ></small>
+
+                    </div>
+
+
+
+
+
+                    <!-- Supporting documents -->
+
+                    <div class="application-upload-field">
+
+                        <label>
+
+                            Supporting Documents
+
+                            <span class="optional-label">(Optional)</span>
+
+                        </label>
+
+
+
+                        <div
+
+                            class="application-upload-box"
+
+                            data-upload-box="supporting"
+
+                        >
+
+                            <span class="application-upload-icon">
+
+                                ▣
+
+                            </span>
+
+
+
+                            <div class="application-upload-copy">
+
+                                <strong>
+
+                                    Upload PDF or DOCX — maximum 5 MB
+
+                                </strong>
+
+
+
+                                <span id="supporting-file-name">
+
+                                    No file selected
+
+                                </span>
+
+                            </div>
+
+
+
+                            <label
+
+                                for="supporting-file"
+
+                                class="application-file-button"
+
+                            >
+
+                                Choose file
+
+                            </label>
+
+
+
+                            <input
+
+                                type="file"
+
+                                id="supporting-file"
+
+                                name="supportingDocument"
+
+                                accept=".pdf,.doc,.docx"
+
+                                hidden
+
+                            >
+
+                        </div>
+
+
+
+                        <small
+
+                            class="application-upload-error"
+
+                            id="supporting-error"
+
+                        ></small>
+
+                    </div>
+
+                </fieldset>
+
+
+
+
+
+                <!-- Consent -->
+
+                <fieldset class="application-fieldset application-consent">
+
+                    <legend>Consent</legend>
+
+
+
+                    <label class="application-checkbox">
+
+                        <input
+
+                            type="checkbox"
+
+                            id="privacy-consent"
+
+                            name="privacyConsent"
+
+                            required
+
+                        >
+
+
+
+                        <span>
+
+                            I consent to Naleko processing my personal
+
+                            information for recruitment purposes in
+
+                            accordance with applicable data-protection
+
+                            requirements.
+
+                        </span>
+
+                    </label>
+
+
+
+                    <small
+
+                        class="application-consent-error"
+
+                        id="privacy-consent-error"
+
+                    >
+
+                        You must provide consent before submitting.
+
+                    </small>
+
+
+
+
+
+                    <label class="application-checkbox">
+
+                        <input
+
+                            type="checkbox"
+
+                            id="information-confirmation"
+
+                            name="informationConfirmation"
+
+                            required
+
+                        >
+
+
+
+                        <span>
+
+                            I confirm that the information provided is
+
+                            accurate.
+
+                        </span>
+
+                    </label>
+
+
+
+                    <small
+
+                        class="application-consent-error"
+
+                        id="information-confirmation-error"
+
+                    >
+
+                        Please confirm that your information is accurate.
+
+                    </small>
+
+                </fieldset>
+
+
+
+
+
+                <!-- Actions -->
+
+                <div class="application-form-actions">
+
+                    <a
+
+                        href="JobDetails-Test.html?job=senior-frontend-engineer"
+
+                        class="application-back-button"
+
+                        id="back-to-job"
+
+                    >
+
+                        Back to Job Details
+
+                    </a>
+
+
+
+                    <button
+
+                        type="submit"
+
+                        class="application-submit-button"
+
+                    >
+
+                        Submit Application
+
+                    </button>
+
+                </div>
+
+
+
+            </form>
+
+
+
+
+
+            <!-- Position summary -->
+
+            <aside class="application-position-summary">
+
+                <span>Position summary</span>
+
+
+
+                <h2 id="summary-position">
+
+                    Senior Frontend Engineer
+
+                </h2>
+
+
+
+                <div class="position-summary-divider"></div>
+
+
+
+                <dl>
+
+                    <div>
+
+                        <dt>Location</dt>
+
+                        <dd>Midrand, Gauteng</dd>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <dt>Employment Type</dt>
+
+                        <dd>Full-time</dd>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <dt>Department</dt>
+
+                        <dd>Product Engineering</dd>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <dt>Closing Date</dt>
+
+                        <dd>30 September 2026</dd>
+
+                    </div>
+
+                </dl>
+
+
+
+                <a
+
+    id="view-job-details-button"
+
+    href="./Jodetails-Test.html"
+
+    class="view-job-details-button"
+
+>
+
+    View Job Details →
+
+</a>
+
+
+
+                <p class="application-security-message">
+
+                    Your information is handled securely.
+
+                </p>
+
+            </aside>
+
+
+
+        </div>
+
+    </section>
+
+
+
+</main>
+
+
+
+<!-- Site Footer Begins Here -->
+
+    <footer class="p-4 px-4 py-8 text-white bg-naleko-dark-blue">
+
+        <div class="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-5">
+
+            <div class="flex flex-col items-center text-center md:items-start md:text-left">
+
+                 <div class="flex items-center mb-4">
+
+                    <!-- Cloud Icon -->
+
+                    <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
+
+                    </svg>
+
+                    <h3 class="text-4xl header">Naleko</h3>
+
+                </div>
+
+                <p class="py-2 mb-4 text-sm text-gray-300">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+
+                <div class="flex space-x-4">
+
+                    <!-- LinkedIn -->
+
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 transition duration-300 hover:text-white" aria-label="LinkedIn">
+
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+
+                            <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
+
+                        </svg>
+
+                    </a>
+
+
+
+                    <!-- TikTok -->
+
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 transition duration-300 hover:text-white" aria-label="TikTok">
+
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+
+                            <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
+
+                        </svg>
+
+                    </a>
+
+
+
+                     <!-- Instagram -->
+
+                    <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 transition duration-300 hover:text-white" aria-label="Instagram">
+
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+
+                            <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.25 2.415.415a4.9 4.9 0 0 1 1.695 1.06 4.9 4.9 0 0 1 1.06 1.695c.165.455.361 1.244.415 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.25 1.96-.415 2.415a4.9 4.9 0 0 1-1.06 1.695 4.9 4.9 0 0 1-1.695 1.06c-.455.165-1.244.361-2.415.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.25-2.415-.415a4.9 4.9 0 0 1-1.695-1.06 4.9 4.9 0 0 1-1.06-1.695c-.165-.455-.361-1.244-.415-2.415-.058-1.266-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.25-1.96.415-2.415a4.9 4.9 0 0 1 1.06-1.695 4.9 4.9 0 0 1 1.695-1.06c.455-.165 1.244-.361 2.415-.415 1.266-.058 1.65-.07 4.85-.07zm0 1.8c-3.153 0-3.515.012-4.757.068-.987.046-1.518.205-1.87.342a3.1 3.1 0 0 0-1.136.736 3.1 3.1 0 0 0-.736 1.136c-.137.352-.296.883-.342 1.87-.056 1.242-.068 1.604-.068 4.757s.012 3.515.068 4.757c.046.987.205 1.518.342 1.87.17.44.42.83.736 1.136.306.316.696.566 1.136.736.352.137.883.296 1.87.342 1.242.056 1.604.068 4.757.068s3.515-.012 4.757-.068c.987-.046 1.518-.205 1.87-.342a3.1 3.1 0 0 0 1.136-.736 3.1 3.1 0 0 0 .736-1.136c.137-.352.296-.883.342-1.87.056-1.242.068-1.604.068-4.757s-.012-3.515-.068-4.757c-.046-.987-.205-1.518-.342-1.87a3.1 3.1 0 0 0-.736-1.136 3.1 3.1 0 0 0-1.136-.736c-.352-.137-.883-.296-1.87-.342-1.242-.056-1.604-.068-4.757-.068zm0 3.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 1.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8zm6.4-.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
+
+                        </svg>
+
+                    </a>
+
+
+
+                    <!-- Facebook -->
+
+                    <a href="https://www.facebook.com/profile.php?id=10009223298342&#x31;*&*&#x6D;ibextid=ZbWKwL" class="text-gray-300 transition duration-300 hover:text-white" aria-label="Facebook">
+
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+
+                            <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="flex flex-col items-center text-center md:items-start md:text-left">
+
+                <h3 class="py-2 mb-4 text-xl font-semibold">Quick Links</h3>
+
+                <ul class="space-y-2">
+
+                    <li><a href="/About-us/" class="text-gray-300 transition duration-300 hover:text-white">Who Are We</a></li>
+
+                    <li><a href="/About-us/#Mission" class="text-gray-300 transition duration-300 hover:text-white">Our Mission</a></li>
+
+                    <li><a href="/About-us/#vision" class="text-gray-300 transition duration-300 hover:text-white">Our Values</a></li>
+
+                    <li><a href="/About-us/#flags" class="text-gray-300 transition duration-300 hover:text-white">Flagship Programs</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="flex flex-col items-center text-center md:items-start md:text-left">
+
+                <h3 class="py-2 mb-4 text-xl font-semibold">Flagship Programs</h3>
+
+                <ul class="space-y-2">
+
+                    <li><a href="/Training/" class="text-gray-300 transition duration-300 hover:text-white">Corporate Training</a></li>
+
+                    <li><a href="/Training/" class="text-gray-300 transition duration-300 hover:text-white">Naleko Academy</a></li>
+
+                    <li><a href="/Girls-in-tech/" class="text-gray-300 transition duration-300 hover:text-white">Girls in Tech</a></li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="flex flex-col items-center text-center md:items-start md:text-left">
+
+                <h3 class="py-2 mb-4 text-xl font-semibold">Contact Us</h3>
+
+                <div class="flex items-center mb-2">
+
+                    <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+
+                    <p class="text-gray-300">admin@naleko.com</p>
+
+                </div>
+
+                <div class="flex items-center mb-2">
+
+                    <!-- Phone Icon -->
+
+                    <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
+
+                    </svg>
+
+                    <p class="text-gray-300">+27 11 100 7632</p>
+
+                </div>
+
+                <div class="flex items-center mb-2">
+
+                    <!-- Location Icon -->
+
+                    <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+
+                    </svg>
+
+                    <p class="text-gray-300">191 Bekker RD, Midrand, 1686</p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="flex flex-col items-center text-center md:items-start md:text-left">
+
+                <div class="flex items-center">
+
+                    <h3 class="py-2 text-xl font-semibold md:mx-12">Scan Me</h3>
+
+                </div>
+
+                <div class="flex items-center mt-6 px-14">
+
+                    <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder" style="width: 80px; height: 80px;">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container pt-4 mx-auto mt-8 text-sm text-center text-gray-400 border-t border-gray-700">
+
+            COPYRIGHT 2026 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
+
+        </div>
+
+    </footer>
+
+    <!-- Site footer Ends Here -->
+
+
+
+    <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const form =
+
+            document.getElementById("application-form");
+
+
+
+        const formAlert =
+
+            document.getElementById("application-form-alert");
+
+
+
+        const parameters =
+
+            new URLSearchParams(window.location.search);
+
+
+
+        const selectedJob =
+
+            parameters.get("job") ||
+
+            "senior-frontend-engineer";
+
+
+
+
+
+        const jobs = {
+
+            "senior-frontend-engineer":
+
+                "Senior Frontend Engineer",
+
+
+
+            "cloud-solutions-architect":
+
+                "Cloud Solutions Architect",
+
+
+
+            "digital-learning-facilitator":
+
+                "Digital Learning Facilitator",
+
+
+
+            "product-designer":
+
+                "Product Designer",
+
+
+
+            "graduate-data-analyst":
+
+                "Graduate Data Analyst",
+
+
+
+            "technical-training-coordinator":
+
+                "Technical Training Coordinator",
+
+
+
+            "salesforce-developer":
+
+                "Salesforce Developer",
+
+
+
+            "project-coordinator":
+
+                "Project Coordinator",
+
+
+
+            "junior-ux-designer":
+
+                "Junior UX Designer",
+
+
+
+            "devops-engineer":
+
+                "DevOps Engineer",
+
+
+
+            "programme-administrator":
+
+                "Programme Administrator",
+
+
+
+            "marketing-communications-intern":
+
+                "Marketing & Communications Intern"
+
+        };
+
+
+
+
+
+        const selectedJobTitle =
+
+            jobs[selectedJob] ||
+
+            "Senior Frontend Engineer";
+
+
+
+
+
+        document.getElementById(
+
+            "application-heading-position"
+
+        ).textContent = selectedJobTitle;
+
+
+
+        document.getElementById(
+
+            "position"
+
+        ).value = selectedJobTitle;
+
+
+
+        document.getElementById(
+
+            "summary-position"
+
+        ).textContent = selectedJobTitle;
+
+
+
+
+
+        const jobDetailsUrl =
+
+            "./Jodetails-Test.html?job=" +
+
+            encodeURIComponent(selectedJob);
+
+
+
+        document.getElementById(
+
+            "back-to-job"
+
+        ).href = jobDetailsUrl;
+
+
+
+        const viewJobDetailsButton =
+    document.getElementById(
+        "view-job-details-button"
+    );
+
+if (viewJobDetailsButton) {
+    viewJobDetailsButton.href = jobDetailsUrl;
+}
+
+
+
+
+
+        const fileInputs = [
+
+            {
+
+                input: "cv-file",
+
+                name: "cv-file-name",
+
+                error: "cv-error",
+
+                required: true
+
+            },
+
+            {
+
+                input: "cover-letter-file",
+
+                name: "cover-letter-file-name",
+
+                error: "cover-letter-error",
+
+                required: false
+
+            },
+
+            {
+
+                input: "supporting-file",
+
+                name: "supporting-file-name",
+
+                error: "supporting-error",
+
+                required: false
+
+            }
+
+        ];
+
+
+
+
+
+        function validateFile(fileInput) {
+
+            const file = fileInput.files[0];
+
+
+
+            if (!file) {
+
+                return {
+
+                    valid: false,
+
+                    message: "Please select a file."
+
+                };
+
+            }
+
+
+
+            const maximumSize =
+
+                5 * 1024 * 1024;
+
+
+
+            const allowedExtensions =
+
+                ["pdf"];
+
+
+
+            const extension =
+
+                file.name
+
+                    .split(".")
+
+                    .pop()
+
+                    .toLowerCase();
+
+
+
+            if (!allowedExtensions.includes(extension)) {
+
+                return {
+
+                    valid: false,
+
+                    message:
+
+                        "The selected file must be in PDF format."
+
+                };
+
+            }
+
+
+
+            if (file.size > maximumSize) {
+
+                return {
+
+                    valid: false,
+
+                    message:
+
+                        "The selected file must be smaller than 5 MB."
+
+                };
+
+            }
+
+
+
+            return {
+
+                valid: true,
+
+                message: ""
+
+            };
+
+        }
+
+
+
+
+
+        fileInputs.forEach(function (configuration) {
+
+            const fileInput =
+
+                document.getElementById(configuration.input);
+
+
+
+            const fileName =
+
+                document.getElementById(configuration.name);
+
+
+
+            const error =
+
+                document.getElementById(configuration.error);
+
+
+
+            const uploadBox =
+
+                fileInput.closest(".application-upload-box");
+
+
+
+
+
+            fileInput.addEventListener("change", function () {
+
+                if (!fileInput.files.length) {
+
+                    fileName.textContent =
+
+                        configuration.required
+
+                            ? "Drag and drop a file here, or click to browse"
+
+                            : "No file selected";
+
+
+
+                    return;
+
+                }
+
+
+
+                const validation =
+
+                    validateFile(fileInput);
+
+
+
+                if (!validation.valid) {
+
+                    error.textContent =
+
+                        validation.message;
+
+
+
+                    error.classList.add("show");
+
+                    uploadBox.classList.add("has-error");
+
+                    fileInput.value = "";
+
+                    fileName.textContent =
+
+                        "No file selected";
+
+
+
+                    return;
+
+                }
+
+
+
+                error.classList.remove("show");
+
+                uploadBox.classList.remove("has-error");
+
+                fileName.textContent =
+
+                    fileInput.files[0].name;
+
+            });
+
+        });
+
+
+
+
+
+        function validateStandardFields() {
+
+            let fieldsValid = true;
+
+
+
+            const fields =
+
+                form.querySelectorAll(
+
+                    ".application-field input:not([readonly])," +
+
+                    ".application-field textarea"
+
+                );
+
+
+
+            fields.forEach(function (field) {
+
+                const fieldContainer =
+
+                    field.closest(".application-field");
+
+
+
+                const optionalEmpty =
+
+                    !field.required &&
+
+                    field.value.trim() === "";
+
+
+
+                const isValid =
+
+                    optionalEmpty ||
+
+                    field.checkValidity();
+
+
+
+                fieldContainer.classList.toggle(
+
+                    "has-error",
+
+                    !isValid
+
+                );
+
+
+
+                if (!isValid) {
+
+                    fieldsValid = false;
+
+                }
+
+            });
+
+
+
+            return fieldsValid;
+
+        }
+
+
+
+
+
+        function validateConsent() {
+
+            let consentValid = true;
+
+
+
+            const consentFields = [
+
+                {
+
+                    input: "privacy-consent",
+
+                    error: "privacy-consent-error"
+
+                },
+
+                {
+
+                    input: "information-confirmation",
+
+                    error:
+
+                        "information-confirmation-error"
+
+                }
+
+            ];
+
+
+
+            consentFields.forEach(function (field) {
+
+                const checkbox =
+
+                    document.getElementById(field.input);
+
+
+
+                const error =
+
+                    document.getElementById(field.error);
+
+
+
+                error.classList.toggle(
+
+                    "show",
+
+                    !checkbox.checked
+
+                );
+
+
+
+                if (!checkbox.checked) {
+
+                    consentValid = false;
+
+                }
+
+            });
+
+
+
+            return consentValid;
+
+        }
+
+
+
+
+
+        function validateCv() {
+
+            const cvInput =
+
+                document.getElementById("cv-file");
+
+
+
+            const cvError =
+
+                document.getElementById("cv-error");
+
+
+
+            const cvUploadBox =
+
+                cvInput.closest(".application-upload-box");
+
+
+
+            if (!cvInput.files.length) {
+
+                cvError.textContent =
+
+                    "Please upload your CV in PDF or DOCX format.";
+
+
+
+                cvError.classList.add("show");
+
+                cvUploadBox.classList.add("has-error");
+
+
+
+                return false;
+
+            }
+
+
+
+            const validation =
+
+                validateFile(cvInput);
+
+
+
+            cvError.classList.toggle(
+
+                "show",
+
+                !validation.valid
+
+            );
+
+
+
+            cvUploadBox.classList.toggle(
+
+                "has-error",
+
+                !validation.valid
+
+            );
+
+
+
+            if (!validation.valid) {
+
+                cvError.textContent =
+
+                    validation.message;
+
+            }
+
+
+
+            return validation.valid;
+
+        }
+
+
+
+        form.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+
+
+    const standardFieldsValid = validateStandardFields();
+
+    const cvValid = validateCv();
+
+    const consentValid = validateConsent();
+
+
+
+    const formValid =
+
+        standardFieldsValid &&
+
+        cvValid &&
+
+        consentValid;
+
+
+
+    formAlert.classList.toggle("show", !formValid);
+
+
+
+    if (!formValid) {
+
+        formAlert.textContent =
+
+            "Please correct the highlighted fields before submitting your application.";
+
+
+
+        formAlert.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+
+
+        return;
+
+    }
+
+
+
+    const submitButton =
+
+        form.querySelector(".application-submit-button");
+
+
+
+    submitButton.disabled = true;
+
+    submitButton.textContent = "Submitting...";
+
+
+
+    try {
+
+        const formData = new FormData(form);
+
+
+
+        const response = await fetch(
+
+            "http://localhost:3000/apply",
+
+            {
+
+                method: "POST",
+
+                body: formData
+
+            }
+
+        );
+
+
+
+        const result = await response.json();
+
+
+
+        if (!response.ok || !result.success) {
+
+            throw new Error(
+
+                result.message ||
+
+                "Application submission failed."
+
+            );
+
+        }
+
+
+
+        window.location.href =
+
+            "./ConfirmationPage-Test.html" +
+
+            "?reference=" +
+
+encodeURIComponent(
+    result.applicationReference
+) +
+
+            "&job=" +
+
+            encodeURIComponent(selectedJob);
+
+
+
+    } catch (error) {
+
+        console.error("Submission error:", error);
+
+
+
+        formAlert.textContent =
+
+            error.message ||
+
+            "We could not submit your application. Please try again.";
+
+
+
+        formAlert.classList.add("show");
+
+
+
+        formAlert.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "center"
+
+        });
+
+
+
+        submitButton.disabled = false;
+
+        submitButton.textContent = "Submit Application";
+
+    }
+
+});
+
+// Close the main DOMContentLoaded handler.
+});
+
+</script>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const parameters =
+
+        new URLSearchParams(window.location.search);
+
+
+
+    const selectedJob =
+
+        parameters.get("job") || "senior-frontend-engineer";
+
+
+
+    const viewJobDetailsButton =
+
+        document.getElementById("view-job-details-button");
+
+
+
+    if (viewJobDetailsButton) {
+
+        viewJobDetailsButton.href =
+
+            "./Jodetails-Test.html?job=" +
+
+            encodeURIComponent(selectedJob);
+
+    }
+
+});
+
+</script>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const uploads = [
+
+    {
+
+      inputId: "cv-file",
+
+      nameId: "cv-file-name"
+
+    },
+
+    {
+
+      inputId: "cover-letter-file",
+
+      nameId: "cover-letter-file-name"
+
+    },
+
+    {
+
+      inputId: "supporting-file",
+
+      nameId: "supporting-file-name"
+
+    }
+
+  ];
+
+
+
+  uploads.forEach(function (upload) {
+
+    const input = document.getElementById(upload.inputId);
+
+    const fileNameDisplay = document.getElementById(upload.nameId);
+
+
+
+    if (!input || !fileNameDisplay) return;
+
+
+
+    input.addEventListener("change", function () {
+
+      const uploadBox = input.closest(".application-upload-box");
+
+      const chooseButton = uploadBox.querySelector(
+
+        ".application-file-button"
+
+      );
+
+
+
+      if (input.files.length > 0) {
+
+        const selectedFile = input.files[0];
+
+
+
+        fileNameDisplay.textContent =
+
+          "✓ " + selectedFile.name;
+
+
+
+        uploadBox.classList.add("file-selected");
+
+
+
+        if (chooseButton) {
+
+          chooseButton.textContent = "Change file";
+
+        }
+
+      } else {
+
+        fileNameDisplay.textContent =
+
+          input.required
+
+            ? "Drag and drop a file here, or click to browse"
+
+            : "No file selected";
+
+
+
+        uploadBox.classList.remove("file-selected");
+
+
+
+        if (chooseButton) {
+
+          chooseButton.textContent = "Choose file";
+
+        }
+
+      }
+
+    });
+
+  });
+
+});
+
+</script>
+
+
+
+</body>
+
+</html>
+node

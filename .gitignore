@@ -8,3 +8,5 @@ node_modules/
 Backend/server-before-talent-community.js
 
 .history/
+
+Backend/*client_secret*.json

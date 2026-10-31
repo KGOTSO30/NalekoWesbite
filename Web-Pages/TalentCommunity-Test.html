@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent &amp; Recruitment | Naleko Digital Solutions</title>
+     <link href="/src/StylesFinal.css" rel="stylesheet">
+     <link href="/src/StylesV2.css" rel="stylesheet">
+      <link href="/src/output.css" rel="stylesheet"> 
+      <!-- Swiper.js for the carousel functionality -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+             <!--  Navigation Bar Begins Here-->
+                 <!--  Navigation Bar Begins Here-->
+  <header x-data="{ open: false}"
+        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+       
+        class="sticky top-0 left-0 z-50 w-full px-4 py-6 text-white transition-all duration-300 ease-in-out bg-naleko-dark-blue">
+    <div class="relative w-full mx-auto text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+                class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+
+        <button id="menu-btn" class="absolute block text-white md:hidden top-4 right-4 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+        
+            <!-- Navigation Links -->
+<nav
+    id="menu"
+    :class="{ 'hidden': !open, 'flex': open }"
+    class="absolute left-0 top-full flex-col flex-nowrap items-center justify-center w-full p-4 text-sm text-white bg-black md:bg-transparent md:flex md:flex-row md:justify-end gap-x-4 gap-y-2 md:text-base header md:static md:w-auto md:p-0">
+
+    <a href="/About-us/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
+
+    <a href="/What-we-do/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
+
+    <a href="/Who-we-serve/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
+
+    <a href="/Contact-us/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
+
+    <a href="/Training/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
+
+    <a href="/Web-Pages/Talent-no%20vacancies%20Test.html"
+       @click="open = false"
+       aria-current="page"
+       class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">
+       Talent &amp; Recruitment
+    </a>
+
+    <a href="/Girls-in-tech/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
+
+    <a href="/Events/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
+
+    <a href="/Partner-with-us/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Partner With Us</a>
+
+    <a href="/Book-a-demo/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Book a demo</a>
+</nav>
+    </div>
+</header>
+                <!--  Navigation Bar ENDS Here-->
+                <!--  Navigation Bar ENDS Here-->
+
+<main class="tc-page">
+    <section class="tc-heading">
+        <h1 class="mb-4 text-3xl font-black text-center md:text-4xl text-naleko-dark-blue">
+            Join our Talent Community
+        </h1>
+
+        <p class="text-lg font-extrabold text-center text-naleko-dark-blue md:text-xl">
+            Share your interests and CV with us. We’ll let you know when a
+            suitable opportunity becomes available at Naleko.
+        </p>
+    </section>
+
+  <div class="tc-layout">
+    <form id="talent-community-form" class="tc-form" action="TalentThankYouPage-Test.html" method="get">
+      <fieldset>
+        <legend>Personal information</legend>
+
+        <div class="tc-grid">
+          <div class="tc-field">
+            <label for="firstName">First Name *</label>
+            <input id="firstName" name="firstName" autocomplete="given-name"
+                   placeholder="Enter your first name" required>
+          </div>
+
+          <div class="tc-field">
+            <label for="lastName">Last Name *</label>
+            <input id="lastName" name="lastName" autocomplete="family-name"
+                   placeholder="Enter your last name" required>
+          </div>
+
+          <div class="tc-field">
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" type="email" autocomplete="email"
+                   placeholder="you@example.com" required>
+          </div>
+
+          <div class="tc-field">
+            <label for="phone">Contact Number *</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel"
+                   placeholder="+27 12 345 6789" required>
+          </div>
+
+          <div class="tc-field tc-full">
+            <label for="location">Current Location *</label>
+            <input id="location" name="location"
+                   placeholder="e.g. Midrand, Gauteng" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Career interests</legend>
+
+        <div class="tc-grid">
+          <div class="tc-field">
+            <label for="interest">Area of Interest *</label>
+            <select id="interest" name="interest" required>
+              <option value="">Select a department</option>
+              <option>Cloud Engineering</option>
+              <option>Salesforce Development</option>
+              <option>Software Development</option>
+              <option>UI/UX Design</option>
+              <option>Business Analysis</option>
+              <option>Project Management</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="tc-field">
+            <label for="opportunity">Opportunity Type *</label>
+            <select id="opportunity" name="opportunity" required>
+              <option value="">Select an opportunity type</option>
+              <option>Full-time</option>
+              <option>Part-time</option>
+              <option>Contract</option>
+              <option>Internship</option>
+              <option>Graduate Programme</option>
+            </select>
+          </div>
+
+          <div class="tc-field tc-full">
+            <label for="linkedin">LinkedIn Profile (Optional)</label>
+            <input id="linkedin" name="linkedin" type="url"
+                   placeholder="https://www.linkedin.com/in/yourprofile">
+          </div>
+
+          <div class="tc-field tc-full">
+            <label for="portfolio">Portfolio or Website (Optional)</label>
+            <input id="portfolio" name="portfolio" type="url"
+                   placeholder="https://your-portfolio.com">
+          </div>
+
+          <div class="tc-field tc-full">
+            <label for="summary">Career Summary (Optional)</label>
+            <textarea id="summary" name="summary" rows="5"
+              placeholder="Tell us about your experience, interests and career goals..."></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Upload documents</legend>
+
+        <div class="tc-field">
+          <label for="cv">CV / Resume *</label>
+          <div class="tc-upload">
+            <p>Upload PDF or DOCX — maximum 5 MB</p>
+            <input id="cv" name="cv" type="file"
+                   accept=".pdf,.docx" required>
+          </div>
+        </div>
+
+        <div class="tc-field">
+          <label for="supporting">Supporting Document (Optional)</label>
+          <div class="tc-upload">
+            <p>Upload PDF or DOCX — maximum 5 MB</p>
+            <input id="supporting" name="supporting" type="file"
+                   accept=".pdf,.docx">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Consent</legend>
+        <label class="tc-consent" for="consent">
+          <input id="consent" name="consent" type="checkbox" required>
+          <span>
+            I consent to Naleko processing my information for
+            recruitment purposes.
+          </span>
+        </label>
+      </fieldset>
+
+      <p id="tc-status" class="tc-status" role="status" hidden></p>
+
+      <div class="tc-actions">
+        <a href="/Web-Pages/Testing/Talent-Test.html" class="tc-back">
+          Back to Talent Page
+        </a>
+        <button type="submit" class="tc-submit btn-primary">
+    Join Talent Community
+</button>
+      </div>
+    </form>
+
+    <aside class="tc-sidebar">
+      <span class="tc-eyebrow">Talent community</span>
+      <h2>Let’s stay connected</h2>
+      <p>
+        Join our network and hear about roles that match your
+        interests and skills.
+      </p>
+
+      <h3>What happens next?</h3>
+      <ol>
+        <li>We securely store your profile.</li>
+        <li>We match your interests to roles.</li>
+        <li>We contact you when there’s a fit.</li>
+      </ol>
+
+      <a href="https://www.linkedin.com/company/nalekodigital/"
+         target="_blank" rel="noopener noreferrer"
+         class="tc-linkedin">
+        Follow Naleko on LinkedIn
+      </a>
+    </aside>
+  </div>
+</main>
+
+
+                <!--  Site Footer Begins Here -->
+
+    
+    <footer class="p-4 px-4 py-8 text-white bg-naleko-dark-blue"> <!-- Need five columns-->
+        <div class="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-5">
+            <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                 <div class="flex items-center mb-4">
+                <!-- Cloud Icon -->
+                <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
+                </svg>
+                <h3 class="text-4xl header">Naleko</h3>
+            </div>
+                <p class="py-2 mb-4 text-sm text-gray-300">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+                <div class="flex space-x-4">
+                   <!-- LinkedIn -->
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 transition duration-300 hover:text-white" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
+                    </svg>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 transition duration-300 hover:text-white" aria-label="TikTok">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
+                    </svg>
+                    </a>
+
+                     <!-- Instagram -->
+                    <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 transition duration-300 hover:text-white" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.25 2.415.415a4.9 4.9 0 0 1 1.695 1.06 4.9 4.9 0 0 1 1.06 1.695c.165.455.361 1.244.415 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.25 1.96-.415 2.415a4.9 4.9 0 0 1-1.06 1.695 4.9 4.9 0 0 1-1.695 1.06c-.455.165-1.244.361-2.415.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.25-2.415-.415a4.9 4.9 0 0 1-1.695-1.06 4.9 4.9 0 0 1-1.06-1.695c-.165-.455-.361-1.244-.415-2.415-.058-1.266-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.25-1.96.415-2.415a4.9 4.9 0 0 1 1.06-1.695 4.9 4.9 0 0 1 1.695-1.06c.455-.165 1.244-.361 2.415-.415 1.266-.058 1.65-.07 4.85-.07zm0 1.8c-3.153 0-3.515.012-4.757.068-.987.046-1.518.205-1.87.342a3.1 3.1 0 0 0-1.136.736 3.1 3.1 0 0 0-.736 1.136c-.137.352-.296.883-.342 1.87-.056 1.242-.068 1.604-.068 4.757s.012 3.515.068 4.757c.046.987.205 1.518.342 1.87.17.44.42.83.736 1.136.306.316.696.566 1.136.736.352.137.883.296 1.87.342 1.242.056 1.604.068 4.757.068s3.515-.012 4.757-.068c.987-.046 1.518-.205 1.87-.342a3.1 3.1 0 0 0 1.136-.736 3.1 3.1 0 0 0 .736-1.136c.137-.352.296-.883.342-1.87.056-1.242.068-1.604.068-4.757s-.012-3.515-.068-4.757c-.046-.987-.205-1.518-.342-1.87a3.1 3.1 0 0 0-.736-1.136 3.1 3.1 0 0 0-1.136-.736c-.352-.137-.883-.296-1.87-.342-1.242-.056-1.604-.068-4.757-.068zm0 3.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 1.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8zm6.4-.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
+                    </svg>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 transition duration-300 hover:text-white" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
+                    </svg>
+                    </a>
+
+                   
+
+                </div>
+            </div>
+
+              <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                <h3 class="py-2 mb-4 text-xl font-semibold">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/Web-Pages/WhoWeAre.html" class="text-gray-300 transition duration-300 hover:text-white">Who Are We</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#Mission" class="text-gray-300 transition duration-300 hover:text-white">Our Mission</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#vision" class="text-gray-300 transition duration-300 hover:text-white">Our Values</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#flags" class="text-gray-300 transition duration-300 hover:text-white">Flagship Programs</a></li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                <h3 class="py-2 mb-4 text-xl font-semibold">Flagship Programs</h3>
+                <ul class="space-y-2">
+                    <li><a href="/Web-Pages/CorpTraining.html" class="text-gray-300 transition duration-300 hover:text-white">Corporate Training</a></li>
+                    <li><a href="/Web-Pages/Academy.html" class="text-gray-300 transition duration-300 hover:text-white">Naleko Academy</a></li>
+                    <li><a href="/Web-Pages/GirlsInTech.html" class="text-gray-300 transition duration-300 hover:text-white">Girls in Tech</a></li>
+                </ul>
+            </div>
+
+            
+                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                <h3 class="py-2 mb-4 text-xl font-semibold">Contact Us</h3>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <p class="text-gray-300">admin@naleko.com</p>
+                </div>
+              <div class="flex items-center mb-2">
+                <!-- Phone Icon -->
+                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
+                </svg>
+                <p class="text-gray-300">+27 11 100 7632</p>
+            </div>
+                <div class="flex items-center mb-2">
+                <!-- Location Icon -->
+                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                </svg>
+                <p class="text-gray-300">191 Bekker RD, Midrand, 1686</p>
+            </div>
+                 
+            </div>
+            
+
+             <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                   <div class="flex items-center">
+                   <h3 class="py-2 text-xl font-semibold md:mx-12">Scan Me</h3>
+                    
+                </div>
+                <div class="flex items-center mt-6 px-14">
+                    <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder"  style="width: 80px; height: 80px;">
+                    
+                </div>
+               
+            </div>
+            
+            
+            
+            
+        </div>
+        <div class="container pt-4 mx-auto mt-8 text-sm text-center text-gray-400 border-t border-gray-700">
+            COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
+        </div>
+    </footer>
+
+                <!--  Site footer Ends Here -->
+
+    <script>
+  const talentForm = document.getElementById("talent-community-form");
+  const talentStatus = document.getElementById("tc-status");
+
+  function validateDocument(input) {
+    input.setCustomValidity("");
+
+    const file = input.files[0];
+    if (!file) return;
+
+    if (!/\.(pdf|docx)$/i.test(file.name)) {
+      input.setCustomValidity("Please upload a PDF or DOCX file.");
+    } else if (file.size > 5 * 1024 * 1024) {
+      input.setCustomValidity("The file must be 5 MB or smaller.");
+    }
+  }
+
+  ["cv", "supporting"].forEach((id) => {
+    const input = document.getElementById(id);
+    input.addEventListener("change", () => validateDocument(input));
+  });
+
+  ["firstName", "lastName", "location", "phone"].forEach((id) => {
+    const input = document.getElementById(id);
+    input.addEventListener("input", () => {
+      input.setCustomValidity(
+        input.value.trim() ? "" : "Please complete this field."
+      );
+    });
+  });
+
+  talentForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    // The form layout and validation are ready.
+    // Connect the recruitment submission service here before going live.
+    talentStatus.textContent =
+      window.location.href = "TalentThankYouPage-Test.html";
+    talentStatus.hidden = false;
+    talentStatus.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+</script>
+
+</body>
+</html>
+

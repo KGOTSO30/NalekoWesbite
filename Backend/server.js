@@ -44,6 +44,16 @@ app.use(cors(corsOptions));
 app.use(express.json()); // For parsing application/json
 app.use(express.urlencoded({ extended: true }));
 
+// --- Serve website pages and assets ---
+app.use('/src', express.static(path.join(__dirname, '../src')));
+
+app.use('/Web-Pages', express.static(path.join(__dirname, '../Web-Pages')));
+
+// Serve the main landing page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../index.html'));
+});
+
 // --- Multer Storage Setup ---
 // Use memory storage for Multer as files will be directly streamed to Google Drive
 const upload = multer({

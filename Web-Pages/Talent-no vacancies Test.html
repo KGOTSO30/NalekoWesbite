@@ -27,10 +27,25 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
 
     <style>
-        [x-cloak] {
-            display: none !important;
-        }
-    </style>
+    [x-cloak] {
+        display: none !important;
+    }
+
+    /* Join our Talent Community button */
+    .opportunity-btn.talent-btn {
+        color: #ffffff;
+        background: #D744DC;
+        border: 1px solid #D744DC;
+        transition: all 0.3s ease;
+    }
+
+    .opportunity-btn.talent-btn:hover {
+        background: #B800B8;
+        border-color: #B800B8;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(208, 32, 208, 0.18);
+    }
+</style>
 </head>
 
 <body>
@@ -39,77 +54,86 @@
      NAVIGATION BAR
 ========================================== -->
 
+
+
+<!-- Navigation Bar Begins Here -->
 <header
-    x-data="{ open: false, scrolled: false }"
-    @scroll.window="scrolled = window.pageYOffset > 50"
-    class="sticky top-0 left-0 z-50 w-full px-4 py-6 text-white transition-all duration-300 ease-in-out bg-naleko-dark-blue">
+    x-data="{ scrolled: false, open: false }"
+    @scroll.window="scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30"
+    :class="{ 'bg-naleko-dark-blue shadow-lg': scrolled, 'bg-naleko-dark-blue': !scrolled }"
+    class="fixed top-0 left-0 z-50 w-full px-3 py-4 text-white transition-all duration-300 ease-in-out sm:px-6 lg:px-8">
 
-    <div class="relative w-full mx-auto text-white">
+    <div class="container flex flex-col justify-between mx-auto">
 
-        <div
-            class="header mb-[31px] transition-all duration-300"
-            :class="scrolled ? 'text-4xl md:text-5xl' : 'text-3xl md:text-5xl'">
-            Naleko Digital Solutions
+        <!-- Top Row: Title and Mobile Menu -->
+        <div class="flex items-center justify-between w-full gap-2">
+
+            <a href="/"
+               class="header text-[13px] min-[360px]:text-base sm:text-2xl md:text-4xl lg:text-5xl whitespace-nowrap tracking-tight min-[360px]:tracking-wide uppercase min-w-0">
+                Naleko Digital Solutions
+            </a>
+
+            <button
+                @click="open = !open"
+                :aria-expanded="open.toString()"
+                aria-controls="menu"
+                aria-label="Toggle navigation menu"
+                class="relative z-50 p-1 text-white lg:hidden focus:outline-none shrink-0">
+
+                <svg class="w-7 h-7 sm:w-8 sm:h-8"
+                     fill="none"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path x-show="!open"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h16m-7 6h7"></path>
+                    <path x-show="open"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button
-            id="menu-btn"
-            @click="open = !open"
-            :aria-expanded="open.toString()"
-            aria-controls="menu"
-            aria-label="Toggle navigation menu"
-            class="absolute block text-white md:hidden top-4 right-4 focus:outline-none">
+        <!-- Bottom Row: Navigation Items -->
+        <nav
+            id="menu"
+            :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
+            class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
 
-            <svg class="w-8 h-8" fill="none" stroke="currentColor"
-                 viewBox="0 0 24 24">
-                <path stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h16m-7 6h7">
-                </path>
-            </svg>
-        </button>
+            <a href="/About-us/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
 
-        <!-- Navigation Links -->
-<nav
-    id="menu"
-    :class="{ 'hidden': !open, 'flex': open }"
-    class="absolute left-0 top-full flex-col flex-nowrap items-center justify-center w-full p-4 text-sm text-white bg-black md:bg-transparent md:flex md:flex-row md:justify-end gap-x-4 gap-y-2 md:text-base header md:static md:w-auto md:p-0">
+            <a href="/What-we-do/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
 
-    <a href="/About-us/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
+            <a href="/Who-we-serve/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
 
-    <a href="/What-we-do/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
+            <a href="/Contact-us/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
 
-    <a href="/Who-we-serve/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
+            <a href="/Training/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
 
-    <a href="/Contact-us/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
+            <a href="/Talent-and-Recruitment/" @click="open = false"
+               aria-current="page"
+               class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Talent &amp; Recruitment</a>
 
-    <a href="/Training/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
+            <a href="/Girls-in-tech/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
 
-    <a href="/Web-Pages/Talent-no%20vacancies%20Test.html"
-       @click="open = false"
-       aria-current="page"
-       class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">
-       Talent &amp; Recruitment
-    </a>
+            <a href="/Events/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
 
-    <a href="/Girls-in-tech/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
+            <a href="/Partner-with-us/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Partner With Us</a>
 
-    <a href="/Events/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
-
-    <a href="/Partner-with-us/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Partner With Us</a>
-
-    <a href="/Book-a-demo/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Book a demo</a>
+            <a href="/Book-a-demo/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Book a demo</a>
 
         </nav>
     </div>
@@ -120,17 +144,19 @@
      MAIN CONTENT
 ========================================== -->
 
-<main class="talent-page">
+<main class="talent-page flex-grow p-4 mt-28">
 
     <!-- INTRODUCTION SECTION -->
     <section class="talent-intro">
 
-        <h1>Grow with purpose</h1>
+        <h1 class="mb-4 text-3xl font-black text-center md:text-4xl text-naleko-dark-blue">
+    Grow with purpose
+</h1>
 
-        <p>
-            Build your career in a supportive environment where learning,
-            innovation and meaningful work come together with Naleko.
-        </p>
+        <p class="text-lg font-extrabold text-center text-naleko-dark-blue md:text-xl">
+    Build your career in a supportive environment where learning,
+    innovation and meaningful work come together with Naleko.
+</p>
 
         <!-- BENEFIT CARDS -->
         <div class="talent-benefits">
@@ -187,9 +213,9 @@
 
     <section class="opportunities-section" id="current-opportunities">
 
-        <h2 class="opportunities-title">
-            Current opportunities
-        </h2>
+        <h2 class="mb-4 text-3xl font-black text-center md:text-4xl text-naleko-dark-blue">
+    Current Opportunities
+</h2>
 
         <!-- Briefcase Icon -->
         <div class="opportunities-icon">

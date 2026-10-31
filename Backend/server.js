@@ -54,6 +54,52 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
 });
 
+// Main website page routes
+
+// Main website page routes
+
+app.get('/About-us/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/WhoWeAreV2.html'));
+});
+
+app.get('/What-we-do/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/WhatWeDoV2.html'));
+});
+
+app.get('/Who-we-serve/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/WhoWeServeV2.html'));
+});
+
+app.get('/Contact-us/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/ContactUsV2.html'));
+});
+
+app.get('/Training/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/CorporateLearningV2.html'));
+});
+
+app.get('/Girls-in-tech/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/GirlsInTechV2.html'));
+});
+
+app.get('/Events/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/EventsV2.html'));
+});
+
+app.get('/Partner-with-us/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/PartnerWithUsV2.html'));
+});
+
+app.get('/Book-a-demo/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/BookADemoV2.html'));
+});
+
+// Talent & Recruitment
+app.get('/Talent-and-Recruitment/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Web-Pages/Talent-no vacancies Test.html'));
+});
+
+
 // --- Multer Storage Setup ---
 // Use memory storage for Multer as files will be directly streamed to Google Drive
 const upload = multer({

@@ -47,20 +47,24 @@
         </div>
         
         <!-- Bottom Row: Navigation Items (Switches to horizontal row at 1024px+) -->
-        <nav :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
-             class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
-                            
-            <a href="/About-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
-            <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
-            <a href="/Who-we-serve/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
-            <a href="/Contact-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
-            <a href="/Training/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
-            <a href="/Girls-in-tech/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
-            <a href="/Events/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
-            <a href="/Partner-with-us/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Partner With Us</a>
-            <a href="/Book-a-demo/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Book a demo</a>
+        
+<!-- Bottom Row: Navigation Items -->
+<nav :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
+     class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
 
-        </nav>
+    <a href="/About-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
+    <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
+    <a href="/Who-we-serve/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
+    <a href="/Contact-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
+    <a href="/Training/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
+    <a href="/Talent-and-Recruitment/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Talent &amp; Recruitment</a>
+    <a href="/Girls-in-tech/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
+    <a href="/Events/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
+    <a href="/Partner-with-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Partner With Us</a>
+    <a href="/Book-a-demo/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Book a demo</a>
+
+</nav>
+
     </div>
 </header>
 <!-- Navigation Bar ENDS Here -->
@@ -74,7 +78,9 @@
     </button>   
         <div id="view-landing" class="partner-view">
             <section class="container px-4 py-12 mx-auto text-center">
-                <h1 class="mb-4 text-3xl font-black tracking-tight uppercase md:text-5xl text-naleko-dark-blue">Partner With Naleko Digital Solutions</h1>
+                <h1 class="mb-4 text-3xl font-black tracking-tight uppercase md:text-4xl text-naleko-dark-blue">
+    Partner With Naleko Digital Solutions
+</h1>
                 <p class="max-w-4xl mx-auto mb-12 text-lg font-medium text-gray-600 md:text-xl">Together, we empower people, accelerate digital transformation, build a future driven by AI, technology and innovation.</p>
                 
                 <div class="grid grid-cols-1 gap-8 mx-auto mb-20 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl">
@@ -245,7 +251,7 @@
     
         <!-- Centered Text -->
         <div class="text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">What Our Partners Say</h2>
+            <h2 class="text-3xl font-black text-center text-naleko-dark-blue md:text-4xl"> What Our Partners Say </h2>
             <p class="mt-4 text-xl text-gray-500">Empowering youth and driving innovation together.</p>
         </div>
 

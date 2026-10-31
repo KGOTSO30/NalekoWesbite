@@ -1,0 +1,21 @@
+[1mdiff --git a/Backend/server.js b/Backend/server.js[m
+[1mindex be94cf5..3214bc1 100644[m
+[1m--- a/Backend/server.js[m
+[1m+++ b/Backend/server.js[m
+[36m@@ -44,6 +44,16 @@[m [mapp.use(cors(corsOptions));[m
+ app.use(express.json()); // For parsing application/json[m
+ app.use(express.urlencoded({ extended: true }));[m
+ [m
+[32m+[m[32m// --- Serve website pages and assets ---[m
+[32m+[m[32mapp.use('/src', express.static(path.join(__dirname, '../src')));[m
+[32m+[m
+[32m+[m[32mapp.use('/Web-Pages', express.static(path.join(__dirname, '../Web-Pages')));[m
+[32m+[m
+[32m+[m[32m// Serve the main landing page[m
+[32m+[m[32mapp.get('/', (req, res) => {[m
+[32m+[m[32m    res.sendFile(path.join(__dirname, '../index.html'));[m
+[32m+[m[32m});[m
+[32m+[m
+ // --- Multer Storage Setup ---[m
+ // Use memory storage for Multer as files will be directly streamed to Google Drive[m
+ const upload = multer({[m

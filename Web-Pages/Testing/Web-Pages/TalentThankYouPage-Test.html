@@ -33,23 +33,46 @@
             </svg>
         </button>
         
-            <nav id="menu" :class="{'hidden': !open, 'flex': open}"
-                 class="absolute left-0 flex-col flex-nowrap items-center justify-center hidden w-full p-4 text-sm text-white bg-black md:bg-transparent md:flex md:flex-row md:justify-end gap-x-4 gap-y-2 md:text-base header md:static top-full md:w-auto md:p-0">
-                <a href="/testing/about-us/" class="block transition duration-300 hover:text-blue-300">Who we are</a>
-                <a href="/testing/what-we-do/" class="block transition duration-300 hover:text-blue-300">What we do</a>
-                <a href="/testing/who-we-serve/" class="block transition duration-300 hover:text-blue-300">Who we serve</a>
-                <a href="/testing/contact-us/" class="block transition duration-300 hover:text-blue-300">Contact Us</a>
-                <a href="/testing/corporate-training/" class="block transition duration-300 hover:text-blue-300">Corp Training</a>
-                <a href="/testing/naleko-academy/" class="block transition duration-300 hover:text-blue-300">Academy</a>
-                <a href="/testing/girls-in-tech/" class="block transition duration-300 hover:text-blue-300">Girls in Tech</a>
-                <a href="/testing/events/" class="block transition duration-300 hover:text-blue-300">Events</a>
-                <a href="/testing/partner-with-us/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300">Partner With Us</a>
-                <a href="/testing/book-a-demo/" class="block text-blue-300 transition duration-300 'm border-b-2 border-blue-300">Book a demo</a>
-                <a href="/Web-Pages/Testing/Talent-Test.html" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300">Talent &amp; Recruitment </a>
-                <div class="flex ml-4 space-x-2">
-                    
-                </div>
-            </nav>
+            <!-- Navigation Links -->
+<nav
+    id="menu"
+    :class="{ 'hidden': !open, 'flex': open }"
+    class="absolute left-0 top-full flex-col flex-nowrap items-center justify-center w-full p-4 text-sm text-white bg-black md:bg-transparent md:flex md:flex-row md:justify-end gap-x-4 gap-y-2 md:text-base header md:static md:w-auto md:p-0">
+
+    <a href="/About-us/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
+
+    <a href="/What-we-do/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
+
+    <a href="/Who-we-serve/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
+
+    <a href="/Contact-us/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
+
+    <a href="/Training/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
+
+    <a href="/Web-Pages/Talent-no%20vacancies%20Test.html"
+       @click="open = false"
+       aria-current="page"
+       class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">
+       Talent &amp; Recruitment
+    </a>
+
+    <a href="/Girls-in-tech/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
+
+    <a href="/Events/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
+
+    <a href="/Partner-with-us/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Partner With Us</a>
+
+    <a href="/Book-a-demo/" @click="open = false"
+       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Book a demo</a>
+</nav>
     </div>
 </header>
                 <!--  Navigation Bar ENDS Here-->

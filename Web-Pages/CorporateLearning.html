@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naleko Training</title>
 
-    <link href="/src/StylesFinal.css" rel="stylesheet">
+    <link href="/src/StylesV2.css" rel="stylesheet">
     <link href="/src/output.css" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
@@ -671,6 +671,65 @@
         </div>
     </section>
 
+
+    <!--GovTech Section-->
+<section class="govtech-section" id="govtech-gallery">
+  <div class="govtech-heading">
+    <h2 class="text-naleko-dark-blue">Our GovTech Journey</h2>
+    <p>
+      Connecting with industry leaders, sharing ideas and exploring digital innovation.
+    </p>
+  </div>
+
+  
+<div class="govtech-gallery-wrapper">
+  <div class="govtech-gallery" id="govtechGallery">
+
+    <article class="govtech-card">
+      <img src="/src/Icons/govte.jpeg" alt="Connecting with industry leaders at GovTech">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/last.jpeg" alt="Team members sharing ideas">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/govtech4.jpeg" alt="Digital technology and innovation">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/govtech 5.jpeg" alt="Highlights from the GovTech event">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/3 govt.jpeg" alt="Networking with other professionals">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/Screenshot 2026-10-29 094542.png" alt="Technology discussions and collaboration">
+    </article>
+
+  </div>
+
+    <button
+      class="govtech-arrow"
+      id="govtechNext"
+      type="button"
+      aria-label="Scroll to more GovTech pictures"
+    >
+      &#8250;
+    </button>
+  </div>
+
+  <div class="govtech-dots" aria-label="Gallery position">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
+
+
     <!-- CALL TO ACTION: START YOUR TECH JOURNEY -->
     <section class="cta-section">
         <h2 class="cta-title">Start Your Tech Journey Today</h2>
@@ -898,5 +957,56 @@
     window.addEventListener('resize', updateCarousel);
 });
 </script>
+
+<!-- GovTech Gallery Script -->
+ <script>
+    
+const gallery = document.getElementById("govtechGallery");
+const nextButton = document.getElementById("govtechNext");
+const dots = document.querySelectorAll(".govtech-dots span");
+
+if (gallery && nextButton) {
+  nextButton.addEventListener("click", () => {
+    const card = gallery.querySelector(".govtech-card");
+
+    if (!card) return;
+
+    const styles = window.getComputedStyle(gallery);
+    const gap = parseFloat(styles.columnGap) || 0;
+    const distance = card.getBoundingClientRect().width + gap;
+
+    // Scroll to the next group of pictures.
+    if (
+      gallery.scrollLeft + gallery.clientWidth >=
+      gallery.scrollWidth - 5
+    ) {
+      gallery.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      gallery.scrollBy({
+        left: distance,
+        behavior: "smooth"
+      });
+    }
+  });
+
+  gallery.addEventListener("scroll", () => {
+    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+    const progress = maxScroll > 0
+      ? gallery.scrollLeft / maxScroll
+      : 0;
+
+    const activeIndex = Math.min(
+      dots.length - 1,
+      Math.round(progress * (dots.length - 1))
+    );
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === activeIndex);
+    });
+  });
+}
+</script>
+
 </body>
 </html>

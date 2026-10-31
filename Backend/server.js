@@ -75,7 +75,7 @@ app.get('/Contact-us/', (req, res) => {
 });
 
 app.get('/Training/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Web-Pages/Testing/Web-Pages/CorporateLearningV2.html'));
+    res.sendFile(path.join(__dirname, '../Web-Pages/CorporateLearning.html'));
 });
 
 app.get('/Girls-in-tech/', (req, res) => {

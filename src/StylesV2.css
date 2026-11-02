@@ -4374,6 +4374,104 @@ h1,
 }
 
 
+/* GOVTECH IMAGE LIGHTBOX */
+
+.govtech-card img {
+    cursor: zoom-in;
+}
+
+.govtech-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(12, 16, 40, 0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 60px 70px;
+    box-sizing: border-box;
+}
+
+.govtech-lightbox.is-open {
+    display: flex;
+}
+
+.govtech-lightbox img {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.govtech-lightbox button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.govtech-lightbox button:hover {
+    background: #23439C;
+}
+
+.govtech-lightbox-close {
+    top: 20px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    font-size: 32px;
+}
+
+.govtech-lightbox-prev,
+.govtech-lightbox-next {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+}
+
+.govtech-lightbox-prev {
+    left: 18px;
+}
+
+.govtech-lightbox-next {
+    right: 18px;
+}
+
+.govtech-lightbox-counter {
+    position: absolute;
+    bottom: 12px;
+    color: #fff;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .govtech-lightbox {
+        padding: 55px 15px;
+    }
+
+    .govtech-lightbox img {
+        max-height: 75vh;
+    }
+
+    .govtech-lightbox-prev {
+        left: 8px;
+    }
+
+    .govtech-lightbox-next {
+        right: 8px;
+    }
+}
+
+
 /* ==========================================
    NO VACANCIES OPEN SECTION
 ========================================== */

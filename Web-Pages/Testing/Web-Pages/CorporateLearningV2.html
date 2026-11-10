@@ -5,25 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naleko Training</title>
 
-    <link href="/src/StylesFinal.css" rel="stylesheet">
-     <link href="/src/StylesV2.css" rel="stylesheet">
+    <link href="/src/StylesV2.css" rel="stylesheet">
     <link href="/src/output.css" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Font Awesome for Footer Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts for Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        [id] {
-            scroll-margin-top: 120px; /* Adjust this value to be the height of your sticky header */
-        }
-    </style>
+
     
     <style>
         /* --- Base Reset & Variable Tokens --- */
@@ -66,11 +60,13 @@
         }
 
         .highlight-text-large {
-        
+            color: var(--dark-navy);
+            font-size: 1.15rem;
+            
+            max-width: 850px;
+            margin: 0 auto 40px auto;
 
-            font-size: 0.95rem;
-            color: #4A4A4A;
-            margin-bottom: 25px;
+            
         }
 
         /* --- Hero Section & Gallery --- */
@@ -217,11 +213,11 @@
  /* Card Styling exactly matching image layout */
         .offer-card {
             background: #ffffff;
-            border: 3px solid #B800B8;
+            border: 3px solid #e2e8f0;
             border-radius: 12px;
             padding: 30px 20px;
             text-align: center;
-           box-shadow: var(--card-shadow);
+            box-shadow: var(--card-shadow);
             
             transition: all 0.2s ease-in-out;
             position: relative;
@@ -233,14 +229,13 @@
         /* Interactive feedback when clicked / hovered */
         .offer-card:hover {
             transform: translateY(-4px);
-            border-color: #C450E8;
-           
-             box-shadow: 0 2px 10px #C450E8;
+            border-color: rgb(90, 90, 142);
+            box-shadow: var(--card-shadow-active);
         }
 
         .offer-card:active {
             transform: translateY(-1px);
-            box-shadow: 0 2px 10px #C450E8;
+            box-shadow: 0 2px 10px rgba(0, 102, 204, 0.15);
         }
 
         /*******/
@@ -253,7 +248,7 @@
         }
 
         .offer-card p {
-           font-size: 14px;
+            font-size: 0.88rem;
             color: #555;
             line-height: 1.6;
         }
@@ -528,53 +523,54 @@
     </style>
 </head>
 <body>
-    
-<!-- Navigation Bar Begins Here -->
-<header x-data="{ scrolled: false, open: false }"
-        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30 }"
-        :class="{ 'bg-naleko-dark-blue shadow-lg': scrolled, 'bg-transparent': !scrolled }"
-        class="fixed top-0 left-0 z-50 w-full px-3 py-4 text-white transition-all duration-300 ease-in-out sm:px-6 lg:px-8">
+<header x-data="{ open: false }"
+            x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
+            class="fixed w-full top-0 left-0 z-50 bg-naleko-dark-blue text-white py-6 px-4 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto relative text-white"> 
+            <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
+                 class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
 
-    <div class="container flex flex-col justify-between mx-auto"> 
-        
-        <!-- Top Row: Title & Mobile Hamburger Button -->
-        <div class="flex items-center justify-between w-full gap-2">
-            <a href="/" class="header text-[13px] min-[360px]:text-base sm:text-2xl md:text-4xl lg:text-5xl whitespace-nowrap tracking-tight min-[360px]:tracking-wide uppercase min-w-0">
-                Naleko Digital Solutions
-            </a>
-            
-            <!-- Mobile Hamburger Button (Shows up to 1024px) -->
-            <button @click="open = !open" class="relative z-50 p-1 text-white lg:hidden focus:outline-none shrink-0">
-                <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <button id="menu-btn" class="md:hidden block text-white absolute top-4 right-4 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
+            
+            <nav id="menu" :class="{'hidden': !open, 'flex': open}"
+                 class="hidden bg-black md:bg-transparent md:flex flex-col md:flex-row flex-wrap justify-center md:justify-end items-center 
+                        gap-x-6 gap-y-2 text-sm md:text-base header 
+                        absolute md:static top-full left-0 w-full md:w-auto 
+                        p-4 md:p-0 text-white">
+                <a href="/about-us/" class="block hover:text-blue-300 transition duration-300">About Us</a>
+                <a href="/what-we-do/" class="block hover:text-blue-300 transition duration-300">What we do</a>
+                <a href="/who-we-serve/" class="block hover:text-blue-300 transition duration-300">Who we serve</a>
+                <a href="/contact-us/" class="block hover:text-blue-300 transition duration-300">Contact Us</a>
+                <a href="/training/" class="block hover:text-blue-300 transition duration-300">Training</a>
+                <a href="/girls-in-tech/" class="block hover:text-blue-300 transition duration-300">Girls in Tech</a>
+                <a href="/events/" class="block hover:text-blue-300 transition duration-300">Events</a>
+                <a href="/partner-with-us/" class="block text-blue-300 border-b-2 border-blue-300  transition duration-300">Partner With Us</a>
+                <a href="/book-a-demo/" class="block text-blue-300 border-b-2 border-blue-300 transition duration-300">Book a demo</a>
+                <div class="flex space-x-2 ml-4">
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-blue-500 hover:text-white/70 transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                            <path d="M22.238 0H1.762C.787 0 0 .787 0 1.762v20.476c0 .975.787 1.762 1.762 1.762h20.476c.975 0 1.762-.787 1.762-1.762V1.762C24 .787 23.213 0 22.238 0zM7.127 20.476H3.59V9.177h3.537v11.299zM5.358 7.64C4.195 7.64 3.25 6.694 3.25 5.531c0-1.163.945-2.108 2.108-2.108 1.163 0 2.108.945 2.108 2.108 0 1.163-.945 2.109-2.108 2.109zM20.476 20.476h-3.538v-5.69c0-1.353-.025-3.093-1.884-3.093-1.884 0-2.176 1.472-2.176 3.003v5.78H9.34v-11.299h3.407v1.547h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-white hover:text-blue-300 transition duration-300" aria-label="TikTok">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.75 0H9.56v16.36a2.06 2.06 0 1 1-2.06-2.06 2.03 2.03 0 0 1 1.03.28V11.2a6.1 6.1 0 0 0-1.03-.08A5.94 5.94 0 1 0 13.5 17V7.62c.75.52 1.63.91 2.56 1.1V5.5a4.17 4.17 0 0 1-2.56-1.2A4.15 4.15 0 0 1 12.75 0z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
         </div>
-        
-        <!-- Bottom Row: Navigation Items (Switches to horizontal row at 1024px+) -->
-        <nav :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
-             class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
-                            
-            <a href="/About-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
-            <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
-            <a href="/Who-we-serve/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
-            <a href="/Contact-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
-            <a href="/Training/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
-            <a href="/Girls-in-tech/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
-            <a href="/Events/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
-            <a href="/Partner-with-us/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Partner With Us</a>
-            <a href="/Book-a-demo/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Book a demo</a>
-
-        </nav>
-    </div>
-</header>
-<!-- Navigation Bar ENDS Here -->
+    </header>
 <main class="flex-grow p-4 mt-40">
        
-        <section class="container px-4 py-16 mx-auto text-center">
-            <h1 id="CorpTrain" class="mb-4 text-3xl font-black md:text-4xl text-naleko-dark-blue">Welcome To Naleko Training</h1>
-            <p class="max-w-2xl mx-auto mb-4 text-lg font-black md:text-xl text-naleko-dark-blue">Your path to tech success!</p>
+      
+               <section class="container mx-auto py-16 px-4 text-center">
+            <h1 id="CorpTrain" class="text-3xl md:text-4xl font-black text-naleko-dark-blue mb-4">Welcome To Naleko Training</h1>
+            <p class="text-lg md:text-xl font-black text-naleko-dark-blue mb-4 max-w-2xl mx-auto">Your path to tech success!</p>
             <div class="max-w-7xl mx-auto text-center text-black text-base font-normal font-['Inter'] mt-8">
                 Start your journey with Naleko Academy, where learning meets innovation. Whether you're a recent graduate launching your career or a professional looking to sharpen your tech skills, we're here to support your growth.
                 <br/><br/>
@@ -583,61 +579,61 @@
             
         </section>
 
-        
-    <section class="relative mb-12">
-            <div class="relative w-full overflow-hidden carousel-container">
-                <div class="flex carousel-track">
 
-                    <div class="flex-none w-1/3 p-4 carousel-slide">
-                        <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                            <img class="object-cover w-full h-60" src="/src/Images/Academy Images/WisemanNkarrLeGinza.jpg"
-                                alt="Carousel Image of Wiseman Nkar LeGinza" loading="lazy"/>
-                        </div>
-                    </div>
+        <section class="relative mb-12">
+    <div class="carousel-container relative w-full overflow-hidden">
+        <div class="carousel-track flex">
 
-                    <div class="flex-none w-1/3 p-4 carousel-slide">
-                        <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                            <img class="object-cover w-full h-60" src="/src/Images/Academy Images/JuniorGroupWhite.jpg"
-                                alt="Carousel Image of Junior Group in White"/>
-                        </div>
-                    </div>
-
-                    <div class="flex-none w-1/3 p-4 carousel-slide">
-                        <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                            <img class="object-cover w-full h-60" src="/src/Images/Academy Images/JuniorsAsInterns.jpg"
-                                alt="Carousel Image of Juniors as Interns"/>
-                        </div>
-                    </div>
-
-                    <div class="flex-none w-1/3 p-4 carousel-slide">
-                        <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                            <img class="object-cover w-full h-60" src="/src/Images/Academy Images/InternGirls.jpg"
-                                alt="Carousel Image of Intern Girls"/>
-                        </div>
-                    </div>
-
-                    <div class="flex-none w-1/3 p-4 carousel-slide">
-                        <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                            <img class="object-cover w-full h-60" src="/src/Images/Academy Images/InternGroup.jpg"
-                                alt="Carousel Image of Intern Group"/>
-                        </div>
-                    </div>
-
-                    <div class="flex-none w-1/3 p-4 carousel-slide">
-                        <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
-                            <img class="object-cover w-full h-60" src="/src/Images/Academy Images/Gents.jpg"
-                                alt="Carousel Image of Gents"/>
-                        </div>
-                    </div>
-                
-                
-
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/WisemanNkarrLeGinza.jpg"
+                         alt="Carousel Image of Wiseman Nkar LeGinza" loading="lazy"/>
                 </div>
             </div>
-            <button class="absolute left-0 z-10 p-2 -ml-4 text-white transform -translate-y-1/2 bg-gray-800 rounded-full carousel-prev top-1/2">
-                &#10094;</button>
-            <button class="absolute right-0 z-10 p-2 -mr-4 text-white transform -translate-y-1/2 bg-gray-800 rounded-full carousel-next top-1/2">
-                &#10095;</button>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/JuniorGroupWhite.jpg"
+                         alt="Carousel Image of Junior Group in White"/>
+                </div>
+            </div>
+
+             <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/JuniorsAsInterns.jpg"
+                         alt="Carousel Image of Juniors as Interns"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/InternGirls.jpg"
+                         alt="Carousel Image of Intern Girls"/>
+                </div>
+            </div>
+
+             <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/InternGroup.jpg"
+                         alt="Carousel Image of Intern Group"/>
+                </div>
+            </div>
+
+            <div class="carousel-slide flex-none w-1/3 p-4">
+                <div class="bg-white rounded-[20px] shadow-[2px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                    <img class="w-full h-60 object-cover" src="/src/Images/Academy Images/Gents.jpg"
+                         alt="Carousel Image of Gents"/>
+                </div>
+            </div>
+           
+           
+
+        </div>
+    </div>
+    <button class="carousel-prev absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 -ml-4">
+        &#10094;</button>
+    <button class="carousel-next absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 -mr-4">
+        &#10095;</button>
     </section>
    
 
@@ -675,6 +671,99 @@
         </div>
     </section>
 
+
+    <!--GovTech Section-->
+<section class="govtech-section" id="govtech-gallery">
+  <div class="govtech-heading">
+    <h2 class="text-naleko-dark-blue">Our GovTech Journey</h2>
+    <p>
+      Connecting with industry leaders, sharing ideas and exploring digital innovation.
+    </p>
+  </div>
+
+  
+<div class="govtech-gallery-wrapper">
+  <div class="govtech-gallery" id="govtechGallery">
+
+    <article class="govtech-card">
+      <img src="/src/Icons/1gv.jpeg" alt="Connecting with industry leaders at GovTech">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/3gv.jpeg" alt="Team members sharing ideas">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/5gv.jpeg" alt="Digital technology and innovation">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/last.jpeg" alt="Highlights from the GovTech event">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/3 govt.jpeg" alt="Networking with other professionals">
+    </article>
+
+    <article class="govtech-card">
+      <img src="/src/Icons/6gv.jpeg" alt="Technology discussions and collaboration">
+    </article>
+
+  </div>
+
+    <button
+      class="govtech-arrow"
+      id="govtechNext"
+      type="button"
+      aria-label="Scroll to more GovTech pictures"
+    >
+      &#8250;
+    </button>
+  </div>
+
+  <div class="govtech-dots" aria-label="Gallery position">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
+
+
+<!-- GOVTECH IMAGE LIGHTBOX -->
+<div class="govtech-lightbox" id="govtechLightbox" aria-hidden="true">
+
+    <button class="govtech-lightbox-close"
+        id="govtechLightboxClose"
+        type="button"
+        aria-label="Close image">
+        &times;
+    </button>
+
+    <button class="govtech-lightbox-prev"
+        id="govtechLightboxPrev"
+        type="button"
+        aria-label="Previous image">
+        &#10094;
+    </button>
+
+    <img id="govtechLightboxImage"
+        src=""
+        alt="Expanded GovTech event picture">
+
+    <button class="govtech-lightbox-next"
+        id="govtechLightboxNext"
+        type="button"
+        aria-label="Next image">
+        &#10095;
+    </button>
+
+    <p class="govtech-lightbox-counter" id="govtechLightboxCounter"></p>
+
+</div>
+
+
+
     <!-- CALL TO ACTION: START YOUR TECH JOURNEY -->
     <section class="cta-section">
         <h2 class="cta-title">Start Your Tech Journey Today</h2>
@@ -688,7 +777,7 @@
             <div class="graduates-text-side">
                 <h3>Hear From Our Graduates</h3>
                 <p>Our graduates are building careers, solving real-world problems, and making an impact. Watch their stories and be inspired.</p>
-                <a href="https://www.youtube.com/@KonaleFoundationChannel" class="btn btn-primary">Watch graduate interviews</a>
+                <a href="https://www.youtube.com/@KonaleFoundationChannel" class="btn btn-secondary">Watch graduate interviews</a>
             </div>
            <div class="graduates-video-side">
     <!-- Replace "YOUTUBE_VIDEO_ID" with your actual YouTube video ID (e.g., dQw4w9WgXcQ) -->
@@ -710,142 +799,90 @@
 </div>
         </div>
     </section>
-
-
 </main>
-
-                    <!-- QTCO Accreditation Badge Component -->
-
-<div style="display: flex; justify-content: flex-end; width: 100%;">
- <div class="mt-4 mb-4 qtco-badge header">
-  <div class="qtco-badge-inner">
-    <div class="qtco-icon-box">
-      <span class="qtco-icon-text header ">Q</span>
-    </div>
-    <div class="qtco-divider"></div>
-    <div class="qtco-text-content">
-      <span class="qtco-subtitle header">Accredited By</span>
-      <span class="qtco-title header">QTCO</span>
-    </div>
-  </div>
-</div>
-</div>
-   
-
-                <!--  Site Footer Begins Here -->
-
-    
-    <footer class="p-4 px-4 py-8 text-white bg-naleko-dark-blue"> <!-- Need five columns-->
-        <div class="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-5">
-            <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                 <div class="flex items-center mb-4">
-                <!-- Cloud Icon -->
-                <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
-                </svg>
-                <h3 class="text-4xl header">Naleko</h3>
-            </div>
-                <p class="py-2 mb-4 text-sm text-gray-300">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
+    <!-- GLOBAL FOOTER -->
+    <footer class="bg-naleko-dark-blue text-white py-8 px-4 p-4">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="flex items-center mb-4">
+                    <svg class="w-10 h-10 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4c-3.72 0-6.79 2.76-7.44 6.32C2.73 10.81 1 12.87 1 15.5c0 3.03 2.47 5.5 5.5 5.5h12.35c2.21 0 4-1.79 4-4 0-2.19-1.72-3.98-3.9-4.04z"/>
+                    </svg>
+                    <h3 class="text-4xl header">Naleko</h3>
+                </div>
+                <p class="text-sm text-gray-300 mb-4 py-2">Our company is driven by a <span class="font-semibold">love</span> for innovation, striving to <span class="font-semibold">make good</span> on every opportunity <span class="font-semibold">given</span> to us by delivering cutting-edge cloud-based solutions that transform industries.</p>
                 <div class="flex space-x-4">
-                   <!-- LinkedIn -->
-                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 transition duration-300 hover:text-white" aria-label="LinkedIn">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
-                    </svg>
+                    <a href="https://za.linkedin.com/company/nalekodigital" class="text-gray-300 hover:text-white transition duration-300" aria-label="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5v-14c0-2.8-2.2-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zm13.5 11.3h-3v-5.6c0-1.3-.5-2.1-1.6-2.1-0.9 0-1.4.6-1.6 1.2-.1.2-.1.5-.1.8v5.7h-3s.04-9.2 0-10h3v1.4c.4-.6 1.1-1.5 2.8-1.5 2.1 0 3.6 1.4 3.6 4.3v5.8z" />
+                        </svg>
                     </a>
-
-                    <!-- TikTok -->
-                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 transition duration-300 hover:text-white" aria-label="TikTok">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
-                    </svg>
+                    <a href="https://www.tiktok.com/@nalekodigital/" class="text-gray-300 hover:text-white transition duration-300" aria-label="TikTok">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.87 1.01h3.08c.3 2.08 1.79 3.64 3.67 4.06v3.1a7.99 7.99 0 0 1-4.56-1.41v7.89a6.23 6.23 0 1 1-6.19-6.28c.26 0 .5.02.75.06v3.12a3.12 3.12 0 1 0 2.25 3v-13.5z" />
+                        </svg>
                     </a>
-
-                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/nalekodigital/" class="text-gray-300 transition duration-300 hover:text-white" aria-label="Instagram">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.054 1.96.25 2.415.415a4.9 4.9 0 0 1 1.695 1.06 4.9 4.9 0 0 1 1.06 1.695c.165.455.361 1.244.415 2.415.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.25 1.96-.415 2.415a4.9 4.9 0 0 1-1.06 1.695 4.9 4.9 0 0 1-1.695 1.06c-.455.165-1.244.361-2.415.415-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.96-.25-2.415-.415a4.9 4.9 0 0 1-1.695-1.06 4.9 4.9 0 0 1-1.06-1.695c-.165-.455-.361-1.244-.415-2.415-.058-1.266-.07-1.65-.07-4.85s.012-3.584.07-4.85c.054-1.17.25-1.96.415-2.415a4.9 4.9 0 0 1 1.06-1.695 4.9 4.9 0 0 1 1.695-1.06c.455-.165 1.244-.361 2.415-.415 1.266-.058 1.65-.07 4.85-.07zm0 1.8c-3.153 0-3.515.012-4.757.068-.987.046-1.518.205-1.87.342a3.1 3.1 0 0 0-1.136.736 3.1 3.1 0 0 0-.736 1.136c-.137.352-.296.883-.342 1.87-.056 1.242-.068 1.604-.068 4.757s.012 3.515.068 4.757c.046.987.205 1.518.342 1.87.17.44.42.83.736 1.136.306.316.696.566 1.136.736.352.137.883.296 1.87.342 1.242.056 1.604.068 4.757.068s3.515-.012 4.757-.068c.987-.046 1.518-.205 1.87-.342a3.1 3.1 0 0 0 1.136-.736 3.1 3.1 0 0 0 .736-1.136c.137-.352.296-.883.342-1.87.056-1.242.068-1.604.068-4.757s-.012-3.515-.068-4.757c-.046-.987-.205-1.518-.342-1.87a3.1 3.1 0 0 0-.736-1.136 3.1 3.1 0 0 0-1.136-.736c-.352-.137-.883-.296-1.87-.342-1.242-.056-1.604-.068-4.757-.068zm0 3.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zm0 1.8a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 0 0 0-8.8zm6.4-.9a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88z"/>
-                    </svg>
+                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 hover:text-white transition duration-300" aria-label="Facebook">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
+                        </svg>
                     </a>
-
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/profile.php?id=100092232983421&mibextid=ZbWKwL" class="text-gray-300 transition duration-300 hover:text-white" aria-label="Facebook">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M22.68 0h-21.36c-.73 0-1.32.59-1.32 1.32v21.36c0 .73.59 1.32 1.32 1.32h11.49v-9.3h-3.12v-3.63h3.12v-2.68c0-3.1 1.89-4.78 4.65-4.78 1.32 0 2.45.1 2.78.14v3.22h-1.9c-1.49 0-1.78.71-1.78 1.75v2.3h3.56l-.46 3.63h-3.1v9.3h6.08c.73 0 1.32-.59 1.32-1.32v-21.36c0-.73-.59-1.32-1.32-1.32z"/>
-                    </svg>
-                    </a>
-
-                   
-
                 </div>
             </div>
 
-              <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                <h3 class="py-2 mb-4 text-xl font-semibold">Quick Links</h3>
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="/About-us/" class="text-gray-300 transition duration-300 hover:text-white">Who Are We</a></li>
-                    <li><a href="/About-us/#Mission" class="text-gray-300 transition duration-300 hover:text-white">Our Mission</a></li>
-                    <li><a href="/About-us/#Values" class="text-gray-300 transition duration-300 hover:text-white">Our Values</a></li>
-                    <li><a href="/About-us/#Flagship Programs" class="text-gray-300 transition duration-300 hover:text-white">Flagship Programs</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html" class="text-gray-300 hover:text-white transition duration-300">Who Are We</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#Mission" class="text-gray-300 hover:text-white transition duration-300">Our Mission</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#vision" class="text-gray-300 hover:text-white transition duration-300">Our Values</a></li>
+                    <li><a href="/Web-Pages/WhoWeAre.html#flags" class="text-gray-300 hover:text-white transition duration-300">Flagship Programs</a></li>
                 </ul>
             </div>
 
-            <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                <h3 class="py-2 mb-4 text-xl font-semibold">Flagship Programs</h3>
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Flagship Programs</h3>
                 <ul class="space-y-2">
-                    <li><a href="/Training/" class="text-gray-300 transition duration-300 hover:text-white">Corporate Training</a></li>
-                    <li><a href="/Training/" class="text-gray-300 transition duration-300 hover:text-white">Naleko Academy</a></li>
-                    <li><a href="/Girls-in-tech/" class="text-gray-300 transition duration-300 hover:text-white">Girls in Tech</a></li>
+                    <li><a href="/Web-Pages/CorpTraining.html" class="text-gray-300 hover:text-white transition duration-300">Corporate Training</a></li>
+                    <li><a href="/Web-Pages/Academy.html" class="text-gray-300 hover:text-white transition duration-300">Naleko Academy</a></li>
+                    <li><a href="/Web-Pages/GirlsInTech.html" class="text-gray-300 hover:text-white transition duration-300">Girls in Tech</a></li>
                 </ul>
             </div>
 
-            
-                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                <h3 class="py-2 mb-4 text-xl font-semibold">Contact Us</h3>
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 class="text-xl font-semibold mb-4 py-2">Contact Us</h3>
                 <div class="flex items-center mb-2">
                     <svg class="w-6 h-6 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     <p class="text-gray-300">admin@naleko.com</p>
                 </div>
-              <div class="flex items-center mb-2">
-                <!-- Phone Icon -->
-                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
-                </svg>
-                <p class="text-gray-300">+27 11 100 7632</p>
-            </div>
                 <div class="flex items-center mb-2">
-                <!-- Location Icon -->
-                <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-                </svg>
-                <p class="text-gray-300">191 Bekker RD, Midrand, 1686</p>
+                    <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.21-2.21c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02L6.62 10.79z"/>
+                    </svg>
+                    <p class="text-gray-300">+27 11 100 7632</p>
+                </div>
+                <div class="flex items-center mb-2">
+                    <svg class="w-6 h-6 mr-2 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                    </svg>
+                    <p class="text-gray-300">191 Bekker RD, Midrand, 1686</p>
+                </div>
             </div>
-                 
-            </div>
-            
 
-             <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                   <div class="flex items-center">
-                   <h3 class="py-2 text-xl font-semibold md:mx-12">Scan Me</h3>
-                    
+            <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <div class="flex items-center">
+                    <h3 class="text-xl font-semibold py-2 md:mx-12">Scan Me</h3>
                 </div>
                 <div class="flex items-center mt-6 px-14">
-                    <img src="/src/Icons/Scan Me Icon.png" alt="Image Placeholder"  style="width: 80px; height: 80px;">
-                    
+                    <img src="/src/Icons/Scan Me Icon.png" alt="Scan Me QR" style="width: 80px; height: 80px;">
                 </div>
-               
             </div>
-            
-            
-            
-            
         </div>
-        <div class="container pt-4 mx-auto mt-8 text-sm text-center text-gray-400 border-t border-gray-700">
+        <div class="container mx-auto text-center text-gray-400 text-sm mt-8 pt-4 border-t border-gray-700">
             COPYRIGHT 2025 | ALL RIGHTS RESERVED. POWERED BY NALEKO DIGITAL SOLUTIONS
         </div>
     </footer>
 
-                <!--  Site footer Ends Here -->
     <!-- INTERACTIVE TWO-WAY GALLERY SCROLL SCRIPT -->
     <script>
         const galleryGrid = document.getElementById('galleryGrid');
@@ -954,5 +991,150 @@
     window.addEventListener('resize', updateCarousel);
 });
 </script>
+
+<!-- GovTech Gallery Script -->
+ <script>
+    
+const gallery = document.getElementById("govtechGallery");
+const nextButton = document.getElementById("govtechNext");
+const dots = document.querySelectorAll(".govtech-dots span");
+
+if (gallery && nextButton) {
+  nextButton.addEventListener("click", () => {
+    const card = gallery.querySelector(".govtech-card");
+
+    if (!card) return;
+
+    const styles = window.getComputedStyle(gallery);
+    const gap = parseFloat(styles.columnGap) || 0;
+    const distance = card.getBoundingClientRect().width + gap;
+
+    // Scroll to the next group of pictures.
+    if (
+      gallery.scrollLeft + gallery.clientWidth >=
+      gallery.scrollWidth - 5
+    ) {
+      gallery.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      gallery.scrollBy({
+        left: distance,
+        behavior: "smooth"
+      });
+    }
+  });
+
+  gallery.addEventListener("scroll", () => {
+    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+    const progress = maxScroll > 0
+      ? gallery.scrollLeft / maxScroll
+      : 0;
+
+    const activeIndex = Math.min(
+      dots.length - 1,
+      Math.round(progress * (dots.length - 1))
+    );
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === activeIndex);
+    });
+  });
+}
+</script>
+
+<!-- GovTech Image Lightbox Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const govtechImages = Array.from(
+        document.querySelectorAll("#govtechGallery .govtech-card img")
+    );
+
+    const lightbox = document.getElementById("govtechLightbox");
+    const lightboxImage = document.getElementById("govtechLightboxImage");
+    const closeButton = document.getElementById("govtechLightboxClose");
+    const prevButton = document.getElementById("govtechLightboxPrev");
+    const nextButton = document.getElementById("govtechLightboxNext");
+    const counter = document.getElementById("govtechLightboxCounter");
+
+    if (
+        !govtechImages.length ||
+        !lightbox ||
+        !lightboxImage ||
+        !closeButton ||
+        !prevButton ||
+        !nextButton ||
+        !counter
+    ) return;
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+        currentIndex = (index + govtechImages.length) % govtechImages.length;
+
+        const selectedImage = govtechImages[currentIndex];
+
+        lightboxImage.src = selectedImage.src;
+        lightboxImage.alt = selectedImage.alt;
+
+        counter.textContent =
+            `${currentIndex + 1} / ${govtechImages.length}`;
+    }
+
+    function openLightbox(index) {
+        showImage(index);
+
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        document.body.style.overflow = "";
+    }
+
+    // Open an image when clicked
+    govtechImages.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            openLightbox(index);
+        });
+    });
+
+    // Close button
+    closeButton.addEventListener("click", closeLightbox);
+
+    // Previous image
+    prevButton.addEventListener("click", () => {
+        showImage(currentIndex - 1);
+    });
+
+    // Next image
+    nextButton.addEventListener("click", () => {
+        showImage(currentIndex + 1);
+    });
+
+    // Close when clicking the dark background
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Keyboard controls
+    document.addEventListener("keydown", (event) => {
+        if (!lightbox.classList.contains("is-open")) return;
+
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") showImage(currentIndex - 1);
+        if (event.key === "ArrowRight") showImage(currentIndex + 1);
+    });
+
+});
+</script>
+
 </body>
 </html>

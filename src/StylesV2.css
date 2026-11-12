@@ -1908,6 +1908,32 @@ h1,
   }
 }
 
+/* Talent Community Heading Fix */
+.tc-page {
+    display: block;
+    width: 100%;
+    padding-top: 130px;
+}
+
+.tc-heading {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto 35px;
+    text-align: center;
+}
+
+.tc-heading h1,
+.tc-heading p {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #120C4E !important;
+}
+
 /* =====================================================
    VACANCY LIST PAGE
    ===================================================== */

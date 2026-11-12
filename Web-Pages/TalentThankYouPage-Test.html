@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talent &amp; Recruitment | Naleko Digital Solutions</title>
-     <link href="/src/StylesFinal.css" rel="stylesheet">
-     <link href="/src/StylesV2.css" rel="stylesheet">
-      <link href="/src/output.css" rel="stylesheet"> 
-      <!-- Swiper.js for the carousel functionality -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
 
+    <title>Talent &amp; Recruitment | Naleko Digital Solutions</title>
+
+    <!-- Stylesheets -->
+    <link href="/src/StylesFinal.css" rel="stylesheet">
+    <link href="/src/StylesV2.css" rel="stylesheet">
+    <link href="/src/output.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js for navigation -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
+
+    <style>
+    [x-cloak] {
+        display: none !important;
+    }
+    </style>
 </head>
 <body>
              <!--  Navigation Bar Begins Here-->
@@ -39,36 +53,25 @@
     :class="{ 'hidden': !open, 'flex': open }"
     class="absolute left-0 top-full flex-col flex-nowrap items-center justify-center w-full p-4 text-sm text-white bg-black md:bg-transparent md:flex md:flex-row md:justify-end gap-x-4 gap-y-2 md:text-base header md:static md:w-auto md:p-0">
 
-    <a href="/About-us/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
+    <a href="/About-us/"  class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
 
-    <a href="/What-we-do/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
+    <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
 
-    <a href="/Who-we-serve/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
+    <a href="/Who-we-serve/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
 
-    <a href="/Contact-us/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
+    <a href="/Contact-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
 
-    <a href="/Training/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
+    <a href="/Training/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
 
-      <a href="/Talent.html" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">
-    Talent &amp; Recruitment
-</a>
+      <a href="/Talent/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap"> Talent &amp; Recruitment </a>
 
-    <a href="/Girls-in-tech/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
+    <a href="/Girls-in-tech/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
 
-    <a href="/Events/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
+    <a href="/Events/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
 
-    <a href="/Partner-with-us/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Partner With Us</a>
+    <a href="/Partner-with-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Partner With Us</a>
 
-    <a href="/Book-a-demo/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Book a demo</a>
+    <a href="/Book-a-demo/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Book a demo</a>
 </nav>
     </div>
 </header>

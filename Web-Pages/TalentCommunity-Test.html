@@ -1,80 +1,123 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talent &amp; Recruitment | Naleko Digital Solutions</title>
-     <link href="/src/StylesFinal.css" rel="stylesheet">
-     <link href="/src/StylesV2.css" rel="stylesheet">
-      <link href="/src/output.css" rel="stylesheet"> 
-      <!-- Swiper.js for the carousel functionality -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
 
+    <title>Talent &amp; Recruitment | Naleko Digital Solutions</title>
+
+    <!-- Stylesheets -->
+    <link href="/src/StylesFinal.css" rel="stylesheet">
+    <link href="/src/StylesV2.css" rel="stylesheet">
+    <link href="/src/output.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js for navigation -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/Icons/favicon-32x32.png">
+
+    <style>
+    [x-cloak] {
+        display: none !important;
+    }
+    </style>
 </head>
 <body>
              <!--  Navigation Bar Begins Here-->
                  <!--  Navigation Bar Begins Here-->
-  <header x-data="{ open: false}"
-        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
-       
-        class="sticky top-0 left-0 z-50 w-full px-4 py-6 text-white transition-all duration-300 ease-in-out bg-naleko-dark-blue">
-    <div class="relative w-full mx-auto text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
-                class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+ <header
+    x-data="{ scrolled: false, open: false }"
+    @scroll.window="scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30"
+    :class="{ 'bg-naleko-dark-blue shadow-lg': scrolled, 'bg-naleko-dark-blue': !scrolled }"
+    class="fixed top-0 left-0 z-50 w-full px-3 py-4 text-white transition-all duration-300 ease-in-out sm:px-6 lg:px-8">
 
-        <button id="menu-btn" class="absolute block text-white md:hidden top-4 right-4 focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-        </button>
+    <div class="container flex flex-col justify-between mx-auto">
+
+        <!-- Top Row: Title and Mobile Menu -->
+        <div class="flex items-center justify-between w-full gap-2">
+
+            <a href="/"
+               class="header text-[13px] min-[360px]:text-base sm:text-2xl md:text-4xl lg:text-5xl whitespace-nowrap tracking-tight min-[360px]:tracking-wide uppercase min-w-0">
+                Naleko Digital Solutions
+            </a>
+
+            <button
+                @click="open = !open"
+                :aria-expanded="open.toString()"
+                aria-controls="menu"
+                aria-label="Toggle navigation menu"
+                class="relative z-50 p-1 text-white lg:hidden focus:outline-none shrink-0">
+
+                <svg class="w-7 h-7 sm:w-8 sm:h-8"
+                     fill="none"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path x-show="!open"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h16m-7 6h7"></path>
+                    <path x-show="open"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
         
             <!-- Navigation Links -->
+
 <nav
-    id="menu"
-    :class="{ 'hidden': !open, 'flex': open }"
-    class="absolute left-0 top-full flex-col flex-nowrap items-center justify-center w-full p-4 text-sm text-white bg-black md:bg-transparent md:flex md:flex-row md:justify-end gap-x-4 gap-y-2 md:text-base header md:static md:w-auto md:p-0">
+            id="menu"
+            :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
+            class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
 
-    <a href="/About-us/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
+            <a href="/About-us/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
 
-    <a href="/What-we-do/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
+            <a href="/What-we-do/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
 
-    <a href="/Who-we-serve/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
+            <a href="/Who-we-serve/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
 
-    <a href="/Contact-us/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
+            <a href="/Contact-us/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
 
-    <a href="/Training/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
+            <a href="/Training/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
 
-    <a href="/Web-Pages/Talent-no%20vacancies%20Test.html"
-       @click="open = false"
-       aria-current="page"
-       class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">
-       Talent &amp; Recruitment
-    </a>
+            <a href="/Talent-and-Recruitment/" @click="open = false"
+               aria-current="page"
+               class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Talent &amp; Recruitment</a>
 
-    <a href="/Girls-in-tech/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
+            <a href="/Girls-in-tech/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
 
-    <a href="/Events/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
+            <a href="/Events/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
 
-    <a href="/Partner-with-us/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Partner With Us</a>
+            <a href="/Partner-with-us/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Partner With Us</a>
 
-    <a href="/Book-a-demo/" @click="open = false"
-       class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Book a demo</a>
-</nav>
+            <a href="/Book-a-demo/" @click="open = false"
+               class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Book a demo</a>
+
+        </nav>
     </div>
 </header>
+
                 <!--  Navigation Bar ENDS Here-->
                 <!--  Navigation Bar ENDS Here-->
 

@@ -71,6 +71,7 @@ RewriteRule ^Girls-in-tech/$ /Web-Pages/Testing/Web-Pages/GirlsInTechV2.html [L]
 RewriteRule ^Events/$ /Web-Pages/Testing/Web-Pages/EventsV2.html [L]
 RewriteRule ^Partner-with-us/$ /Web-Pages/Testing/Web-Pages/PartnerWithUsV2.html [L]
 RewriteRule ^Book-a-demo/$ /Web-Pages/Testing/Web-Pages/BookADemoV2.html [L]
+RewriteRule ^Talent/$ /Web-Pages/Testing/Web-Pages/Talent.html [L]
 
 RewriteRule ^what-we-know/?$ /indexV2.html [L]
 RewriteRule ^Naleko-campaigns/$ /Web-Pages/CampaignV2.html [L]

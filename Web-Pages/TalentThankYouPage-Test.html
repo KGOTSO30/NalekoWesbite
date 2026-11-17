@@ -34,12 +34,21 @@
 <body>
              <!--  Navigation Bar Begins Here-->
                  <!--  Navigation Bar Begins Here-->
-  <header x-data="{ open: false}"
-        x-init="window.onscroll = () => { scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 50 }"
-       
-        class="sticky top-0 left-0 z-50 w-full px-4 py-6 text-white transition-all duration-300 ease-in-out bg-naleko-dark-blue">
-    <div class="relative w-full mx-auto text-white"> <div :class="{ 'text-4xl md:text-5xl': scrolled, 'text-4xl md:text-5xl': !scrolled }"
-                class="text-3xl md:text-5xl header mb-[31px]">Naleko Digital Solutions</div>
+   <header
+    x-data="{ scrolled: false, open: false }"
+    @scroll.window="scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30"
+    :class="{ 'bg-naleko-dark-blue shadow-lg': scrolled, 'bg-naleko-dark-blue': !scrolled }"
+    class="fixed top-0 left-0 z-50 w-full px-3 py-4 text-white transition-all duration-300 ease-in-out sm:px-6 lg:px-8">
+
+    <div class="container flex flex-col justify-between mx-auto">
+
+        <!-- Top Row: Title and Mobile Menu -->
+        <div class="flex items-center justify-between w-full gap-2">
+
+            <a href="/"
+               class="header text-[13px] min-[360px]:text-base sm:text-2xl md:text-4xl lg:text-5xl whitespace-nowrap tracking-tight min-[360px]:tracking-wide uppercase min-w-0">
+                Naleko Digital Solutions
+            </a>
 
         <button id="menu-btn" class="absolute block text-white md:hidden top-4 right-4 focus:outline-none">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -48,10 +57,11 @@
         </button>
         
             <!-- Navigation Links -->
-<nav
-    id="menu"
-    :class="{ 'hidden': !open, 'flex': open }"
-    class="absolute left-0 top-full flex-col flex-nowrap items-center justify-center w-full p-4 text-sm text-white bg-black md:bg-transparent md:flex md:flex-row md:justify-end gap-x-4 gap-y-2 md:text-base header md:static md:w-auto md:p-0">
+
+            <nav
+            id="menu"
+            :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
+            class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
 
     <a href="/About-us/"  class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
 

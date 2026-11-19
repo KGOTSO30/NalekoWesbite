@@ -33,8 +33,8 @@
 </head>
 <body>
              <!--  Navigation Bar Begins Here-->
-                 <!--  Navigation Bar Begins Here-->
-   <header
+<!-- Navigation Bar Begins Here -->
+<header
     x-data="{ scrolled: false, open: false }"
     @scroll.window="scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 30"
     :class="{ 'bg-naleko-dark-blue shadow-lg': scrolled, 'bg-naleko-dark-blue': !scrolled }"
@@ -50,12 +50,31 @@
                 Naleko Digital Solutions
             </a>
 
-        <button id="menu-btn" class="absolute block text-white md:hidden top-4 right-4 focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-        </button>
-        
+            <button
+                @click="open = !open"
+                :aria-expanded="open.toString()"
+                aria-controls="menu"
+                aria-label="Toggle navigation menu"
+                class="relative z-50 p-1 text-white lg:hidden focus:outline-none shrink-0">
+
+                <svg class="w-7 h-7 sm:w-8 sm:h-8"
+                     fill="none"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24">
+                    <path x-show="!open"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h16m-7 6h7"></path>
+                    <path x-show="open"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
         <!-- Bottom Row: Navigation Items (Switches to horizontal row at 1024px+) -->
         <nav :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
              class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
@@ -191,14 +210,14 @@
 
                 <div class="community-actions">
                     <a
-                        href="/Web-Pages/Talent-no%20vacancies%20Test.html"
+                        href="/Talent/"
                         class="community-button community-primary-button"
                     >
                         View Current Opportunities
                     </a>
 
                     <a
-    href="/Web-Pages/Talent-no%20vacancies%20Test.html" class="community-button community-secondary-button" > Return to Talent Page </a>
+    href="/Talent/" class="community-button community-secondary-button" > Return to Talent Page </a>
                 </div>
 
             </article>

@@ -166,6 +166,10 @@ h3,
     color: var(--naleko-navy);
 }
 
+.solid {
+    color:  #C450E8 !important;
+    }
+
 
 /* =====================================================
    BUTTONS

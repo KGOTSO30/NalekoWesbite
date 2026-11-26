@@ -1,135 +1,161 @@
-require('dotenv').config(); // Load environment variables from .env file
-const express = require('express');
-const multer = require('multer'); // Middleware for handling multipart/form-data
-const { google } = require('googleapis');
-const path = require('path');
-const fs = require('fs'); // Node.js File System module (not strictly needed for memory storage, but common)
-const cors = require('cors'); // To handle CORS issues from your frontend
-const stream = require('stream');
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, ".env") });
+
+const express = require("express");
+const cors = require("cors");
+const salesforce = require("./salesforceClient");
+const { handleTalentFiles, uploadErrorHandler } = require("./uploadMiddleware");
 
 const app = express();
-const port = process.env.PORT || 3000; // Use port from .env or default to 3000
+const PORT = process.env.PORT || 3001;
 
-// --- CORS Configuration ---
-// Allow requests from your frontend's origin
-// IMPORTANT: Replace 'http://127.0.0.1:5500' with the EXACT URL your frontend is served from.
-// If you're using Live Server, it's typically http://127.0.0.1:5500 or http://localhost:5500.
-// Add all possible origins your frontend might run on.
-const corsOptions = {
-  origin: ['http://127.0.0.1:5500', 'http://localhost:5500',  'https://naleko.com','https://nalekowesbite-v2.onrender.com','https://nalekowesbite.onrender.com'
-    'https://www.naleko.com' ],
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // Allow cookies to be sent (though not strictly necessary for this upload)
-  optionsSuccessStatus: 204 // For pre-flight requests
-};
-app.use(cors(corsOptions));
-app.use(express.json()); // For parsing application/json
+const allowedOrigins = (
+    process.env.ALLOWED_ORIGINS ||
+    "https://naleko.com,https://www.naleko.com,http://127.0.0.1:5503,http://localhost:5503,http://127.0.0.1:5500,http://localhost:5500,http://127.0.0.1:5501,http://localhost:5501"
+)
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
 
-// --- Multer Storage Setup ---
-// Use memory storage for Multer as files will be directly streamed to Google Drive
-const upload = multer({
-  storage: multer.memoryStorage(),
-  limits: {
-    fileSize: 20 * 1024 * 1024 // 10 MB file size limit (adjust as needed)
-  },
-  fileFilter: (req, file, cb) => {
-    // Optional: Filter file types to only allow common document/resume formats
-    const allowedTypes = [
-      'application/pdf',
-      'application/msword', // .doc
-      'application/vnd.openxmlformats-officedocument.wordprocessingml.document' // .docx
-    ];
-    if (allowedTypes.includes(file.mimetype)) {
-      cb(null, true);
-    } else {
-      cb(new Error('Invalid file type. Only PDF, DOC, DOCX are allowed.'), false);
-    }
-  }
-});
-
-// --- Google Drive API Setup ---
-const oauth2Client = new google.auth.OAuth2(
-  process.env.GOOGLE_CLIENT_ID,
-  process.env.GOOGLE_CLIENT_SECRET,
-  process.env.GOOGLE_REDIRECT_URI
+app.use(
+    cors({
+        origin: allowedOrigins,
+        methods: ["GET", "POST", "OPTIONS"],
+        credentials: true
+    })
 );
 
-// Set the refresh token (obtained once manually from get-token.js)
-oauth2Client.setCredentials({
-  refresh_token: process.env.GOOGLE_REFRESH_TOKEN
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.get("/health", (req, res) => {
+    res.json({
+        status: "ok",
+        salesforceConfigured: salesforce.isConfigured()
+    });
 });
 
-// Create a Google Drive service instance
-const drive = google.drive({
-  version: 'v3',
-  auth: oauth2Client
+app.get("/login", (req, res) => {
+    if (!process.env.SALESFORCE_CLIENT_ID || !process.env.SALESFORCE_LOGIN_URL) {
+        return res.status(500).send("Missing Salesforce OAuth configuration in Backend/.env.");
+    }
+    res.redirect(salesforce.buildAuthorizationUrl());
 });
 
-// --- File Upload Endpoint ---
-// 'resumeFile' is the name of the input field in your HTML form
-app.post('/upload-resume', upload.single('resumeFile'), async (req, res) => {
-  // Check if a file was actually uploaded
-  if (!req.file) {
-    console.error('No file uploaded or invalid file type.');
-    return res.status(400).json({
-      message: 'No file uploaded or invalid file type.'
-    });
-  }
+app.get("/oauth/callback", async (req, res) => {
+    const { code, state, error, error_description } = req.query;
 
-  const { originalname, mimetype, buffer } = req.file;
-  const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID;
-
-  // Basic validation for folder ID
-  if (!folderId) {
-    console.error('GOOGLE_DRIVE_FOLDER_ID is not set in .env');
-    return res.status(500).json({
-      message: 'Server configuration error: Google Drive folder ID is missing.'
-    });
-  }
-
-  try {
-    const fileMetadata = {
-      name: originalname,
-      parents: [folderId] // Upload to the specified folder
-    };
-
-    const media = {
-      mimeType: mimetype,
-      body: stream.Readable.from(buffer) // Multer's memoryStorage gives us the file content as a buffer
-    };
-
-    const response = await drive.files.create({
-      requestBody: fileMetadata,
-      media: media,
-      fields: 'id, name, webViewLink' // Request specific fields in the response
-    });
-
-    console.log('File uploaded to Google Drive:', response.data.name, response.data.id);
-    res.status(200).json({
-      message: 'Resume uploaded successfully!',
-      fileId: response.data.id,
-      fileName: response.data.name,
-      webViewLink: response.data.webViewLink
-    });
-
-  } catch (error) {
-    console.error('Error uploading resume to Google Drive:', error.message);
-    // Provide more specific error details in development/debugging
-    if (error.code === 401) {
-      console.error('Authentication error. Check refresh token and client credentials.');
-    } else if (error.errors && error.errors[0] && error.errors[0].reason === 'notFound') {
-        console.error('Drive API Error: Folder ID might be incorrect or permissions insufficient.');
+    if (error) {
+        return res.status(400).send(`<h1>Salesforce Login Error</h1><p>${error}: ${error_description || ""}</p>`);
     }
 
-    res.status(500).json({
-      message: 'Failed to upload resume to Google Drive. ' + (error.errors ? error.errors[0].message : error.message),
-      errorDetails: error.errors ? error.errors : error.message
-    });
-  }
+    try {
+        const result = await salesforce.exchangeCodeForTokens(code, state);
+        res.send(`
+            <!DOCTYPE html>
+            <html lang="en">
+            <head><meta charset="UTF-8"><title>Salesforce Connected</title></head>
+            <body style="font-family: Arial, sans-serif; max-width: 680px; margin: 40px auto; padding: 20px;">
+                <h1>Salesforce Connected</h1>
+                <p>Instance: <strong>${result.instanceUrl}</strong></p>
+                <p>Refresh token saved to <code>Backend/.env</code>.</p>
+            </body>
+            </html>
+        `);
+    } catch (err) {
+        console.error("Salesforce OAuth Error:", JSON.stringify(err.response?.data || err.message, null, 2));
+        res.status(500).send(`<h1>Salesforce Connection Failed</h1><pre>${JSON.stringify(err.response?.data || err.message, null, 2)}</pre>`);
+    }
 });
 
-// --- Start the Server ---
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-  console.log(`Ensure your frontend is served from an allowed origin listed in corsOptions.origin`);
+app.post("/talent-community", handleTalentFiles, async (req, res) => {
+    try {
+        const {
+            firstName,
+            lastName,
+            email,
+            phone,
+            location,
+            interest,
+            opportunity,
+            linkedin,
+            portfolio,
+            summary,
+            consent
+        } = req.body;
+
+        if (
+            !firstName?.trim() ||
+            !lastName?.trim() ||
+            !email?.trim() ||
+            !phone?.trim() ||
+            !location?.trim() ||
+            !interest?.trim() ||
+            !opportunity?.trim()
+        ) {
+            return res.status(400).json({
+                success: false,
+                message: "Please complete all required fields."
+            });
+        }
+
+        if (consent !== "on" && consent !== "true") {
+            return res.status(400).json({
+                success: false,
+                message: "Please provide consent before submitting."
+            });
+        }
+
+        const cv = req.files?.cv?.[0];
+        const supporting = req.files?.supporting?.[0];
+
+        if (!cv) {
+            return res.status(400).json({
+                success: false,
+                message: "Please upload your CV in PDF or DOCX format."
+            });
+        }
+
+        const recordId = await salesforce.createTalentCommunityRecord({
+            First_Name__c: firstName.trim(),
+            Last_Name__c: lastName.trim(),
+            Email_Address__c: email.trim(),
+            Contact_Number__c: phone.trim(),
+            Current_Location_Text__c: location.trim(),
+            Area_of_Interest__c: interest.trim(),
+            Opportunity_Type__c: opportunity.trim(),
+            Profile_Link__c: linkedin?.trim() || null,
+            Portfolio_or_Website__c: portfolio?.trim() || null,
+            Career_Summary__c: summary?.trim() || null,
+            Processing_Consent__c: true
+        });
+
+        const fileIds = [await salesforce.uploadAndLinkFile(cv, recordId)];
+
+        if (supporting) {
+            fileIds.push(await salesforce.uploadAndLinkFile(supporting, recordId));
+        }
+
+        return res.status(201).json({
+            success: true,
+            message: "Talent Community application submitted successfully!",
+            talentCommunityId: recordId,
+            fileIds
+        });
+    } catch (error) {
+        console.error(
+            "Talent Community submission error:",
+            JSON.stringify(error.response?.data || error.message, null, 2)
+        );
+        return res.status(500).json({
+            success: false,
+            message: "We could not submit your profile right now. Please try again shortly."
+        });
+    }
+});
+
+app.use(uploadErrorHandler);
+
+app.listen(PORT, () => {
+    console.log(`Naleko Talent Community API running on port ${PORT}`);
 });

@@ -2,17 +2,19 @@ const talentForm = document.getElementById("talent-community-form");
 const talentStatus = document.getElementById("tc-status");
 const submitButton = talentForm?.querySelector('button[type="submit"]');
 
-const isLocalHost =
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1";
+const isLocalHost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
 const API_BASE_URL =
-    window.TALENT_API_BASE_URL ||
-    (isLocalHost ? "http://localhost:3001" : "https://api.naleko.com");
+    window.TALENT_COMMUNITY_API_URL ||
+    (isLocalHost ? "http://localhost:3001" : "https://nalekowesbite-v2.onrender.com");
 
 const THANK_YOU_ROUTE = isLocalHost
     ? "/Web-Pages/TalentThankYouPage-Test.html"
     : "/Thank-You/";
+
+if (!isLocalHost) {
+    fetch(`${API_BASE_URL}/health`, { method: "GET", mode: "cors" }).catch(() => {});
+}
 
 function validateDocument(input) {
     if (!input) return;

@@ -25,6 +25,7 @@ RewriteRule ^Partner-with-us/$ /Web-Pages/Testing/Web-Pages/PartnerWithUsV2.html
 RewriteRule ^Book-a-demo/$ /Web-Pages/Testing/Web-Pages/BookADemoV2.html [NC,L]
 RewriteRule ^Talent/$ /Web-Pages/Testing/Web-Pages/Talent.html [NC,L]
 RewriteRule ^Thank-You/$ /Web-Pages/TalentThankYouPage-Test.html [NC,L]
+RewriteRule ^Community/$ /Web-Pages/TalentCommunity-Test.html [NC,L]
 
 
 RewriteRule ^what-we-know/?$ /indexV2.html [NC,L]

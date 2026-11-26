@@ -47,23 +47,20 @@
             </button>
         </div>
         
-        <!-- Bottom Row: Navigation Items -->
+        <!-- Bottom Row: Navigation Items (Switches to horizontal row at 1024px+) -->
         <nav :class="{'hidden': !open, 'fixed inset-0 bg-naleko-dark-blue flex flex-col items-center justify-center gap-y-6 text-xl z-40 p-8': open}"
-             class="hidden w-full mt-3 text-xl font-medium uppercase md:flex md:flex-row md:justify-end md:items-center gap-x-6 gap-y-2 lg:text-sm header md:static md:bg-transparent md:p-0">
+             class="hidden w-full mt-3 text-xl font-medium uppercase xl:text-sm header lg:flex lg:flex-row lg:justify-end lg:items-center gap-x-4 xl:gap-x-6 gap-y-2 lg:static lg:bg-transparent lg:p-0">
                             
-            <a href="/About-us/" class="block transition duration-300 hover:text-blue-300">About Us</a>
-            <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300">What we do</a>
-            <a href="/Who-we-serve/" class="block transition duration-300 hover:text-blue-300">Who we serve</a>
-            <a href="/Contact-us/" class="block transition duration-300 hover:text-blue-300">Contact Us</a>
-            <a href="/Training/" class="block transition duration-300 hover:text-blue-300">Training</a>
-               <a href="/Talent/" @click="open = false" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">
-    Talent &amp; Recruitment
-</a>
-            <a href="/Girls-in-tech/" class="block transition duration-300 hover:text-blue-300">Girls in Tech</a>
-            <a href="/Events/" class="block transition duration-300 hover:text-blue-300">Events</a>
-            <a href="/Partner-with-us/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300">Partner With Us</a>
-            <a href="/Book-a-demo/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300">Book a demo</a>
-
+            <a href="/About-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">About Us</a>
+            <a href="/What-we-do/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">What we do</a>
+            <a href="/Who-we-serve/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Who we serve</a>
+            <a href="/Contact-us/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Contact Us</a>
+            <a href="/Training/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Training</a>
+            <a href="/Talent/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Talent &amp; Recruitment</a>
+            <a href="/Girls-in-tech/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Girls in Tech</a>
+            <a href="/Events/" class="block transition duration-300 hover:text-blue-300 whitespace-nowrap">Events</a>
+            <a href="/Partner-with-us/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Partner With Us</a>
+            <a href="/Book-a-demo/" class="block text-blue-300 transition duration-300 border-b-2 border-blue-300 whitespace-nowrap">Book a demo</a>
 
         </nav>
     </div>
@@ -78,12 +75,12 @@
                     <section class="px-4 py-16 mb-4 text-center">
                     
                     <!-- Main Title -->
-                    <h2 id="StartPoint" class="mb-4 text-3xl font-black text-center md:text-4xl text-naleko-dark-blue">
+                    <h2 id="StartPoint" class="mb-4 text-3xl font-black text-center md:text-4xl solid">
                          Fueling Growth for Individuals, Startups & Enterprises
                     </h2>
 
                     <!-- Primary Subheading -->
-                    <p class="max-w-4xl mx-auto mb-8 font-black text-m text-naleko-dark-blue">
+                    <p class="max-w-4xl mx-auto mb-8 text-lg font-extrabold text-center solid md:text-xl">
                         "A trusted, impact-driven partner empowering organizations with innovative, scalable cloud solutions that transform operations, drive growth, and create lasting value."
                     </p>
 
@@ -97,27 +94,27 @@
                     </h2>
                     
                      <div class="flex flex-col items-center justify-start max-w-4xl gap-6 mx-auto mb-12">
-                        <h4 class="text-naleko-dark-blue text-2xl font-semibold font-['Inter']">Aspiring Cloud Professionals</h4>
+                        <h4 class="text-black  text-2xl font-semibold font-['Inter']">Aspiring Cloud Professionals</h4>
                         <p class="text-center text-black text-base font-medium font-['Inter']">Students, graduates, and career switchers eager to break into cloud, DevOps, or AI with real certifications and hands-on learning.</p>
                     </div>
 
                     <div class="flex flex-col items-center justify-start max-w-4xl gap-6 mx-auto mb-12">
-                        <h4 class="text-naleko-dark-blue text-2xl font-semibold font-['Inter']">Early to Mid-Career Tech Talent Individuals</h4>
+                        <h4 class="text-black text-2xl font-semibold font-['Inter']">Early to Mid-Career Tech Talent Individuals</h4>
                         <p class="text-center text-black text-base font-medium font-['Inter']">looking to up-skill, specialize, or earn industry-recognized certifications to advance their careers.</p>
                     </div>
 
                     <div class="flex flex-col items-center justify-start max-w-4xl gap-6 mx-auto mb-12">
-                        <h4 class="text-naleko-dark-blue text-2xl font-semibold font-['Inter']">Startups and SMEs Businesses</h4>
+                        <h4 class="text-black text-2xl font-semibold font-['Inter']">Startups and SMEs Businesses</h4>
                         <p class="text-center text-black text-base font-medium font-['Inter']">seeking expert guidance to modernize operations, implement CRM or cloud solutions, and drive digital transformation.</p>
                     </div>
                     
                     <div class="flex flex-col items-center justify-start max-w-4xl gap-6 mx-auto mb-12">
-                        <h4 class="text-naleko-dark-blue text-2xl font-semibold font-['Inter']">Nonprofits and Community Projects</h4>
+                        <h4 class="text-black text-2xl font-semibold font-['Inter']">Nonprofits and Community Projects</h4>
                         <p class="text-center text-black text-base font-medium font-['Inter']">Organizations working to make impact at scale, we offer consultation and tech strategy to help you do more with less.</p>
                     </div>
                     
                     <div class="flex flex-col items-center justify-start max-w-4xl gap-6 mx-auto mb-12">
-                        <h4 class="text-naleko-dark-blue text-2xl font-semibold font-['Inter']">Enterprise Teams</h4>
+                        <h4 class="text-black text-2xl font-semibold font-['Inter']">Enterprise Teams</h4>
                         <p class="text-center text-black text-base font-medium font-['Inter']">Corporates aiming to reskill internal teams, adopt AI-driven tools, or streamline data infrastructure across Salesforce, AWS, Microsoft, Google, Oracle, and SAP.</p>
                     </div>
 

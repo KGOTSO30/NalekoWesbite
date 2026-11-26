@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Environment & Secrets
+.env
+Backend/.env
+
+# Local Editor & Salesforce CLI Caches
+.history/
+.sf/
+.sfdx/
+
+# Logs
+npm-debug.log*
